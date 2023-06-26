@@ -1,3 +1,9 @@
+using System;
+using System.Windows.Forms;
+using act.Models;
+using act.Presenters;
+using act._Repositories;
+using act.Views;
 namespace act
 {
     internal static class Program
@@ -11,6 +17,9 @@ namespace act
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            string sqlConnectionString;
+            IProjectview projectview = new ProjectView();
+            IProjectRepository projectRepository = projectRepository();
             Application.Run(new Form1());
         }
     }
