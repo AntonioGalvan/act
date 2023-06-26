@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using SQLite;
 
 namespace act.Models
 {
@@ -18,6 +19,7 @@ namespace act.Models
 
         [DisplayName("Id")]
         [Required(ErrorMessage = "Id es requerido")]
+        [AutoIncrement]
         public int Id { get { return id; } set {  id = value; } }
 
         [DisplayName("Nombre")]
