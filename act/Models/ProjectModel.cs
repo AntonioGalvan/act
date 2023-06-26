@@ -14,8 +14,8 @@ namespace act.Models
         private int id;
         private string name;
         private string description;
-        private DateOnly startDate;
-        private DateOnly endDate;
+        private DateTime startDate;
+        private DateTime endDate;
 
         [DisplayName("Id")]
         [Required(ErrorMessage = "Id es requerido")]
@@ -32,10 +32,10 @@ namespace act.Models
 
         [DisplayName("Fecha de inicio")]
         [Required(ErrorMessage = "La fecha de inicio es requerida")]
-        public DateOnly StartDate { get {  return startDate; } set { startDate = value; } }
+        public DateTime StartDate { get {  return startDate; } set { startDate = value; } }
 
         [DisplayName("Fecha de finalización")]
         [Required(ErrorMessage = "La fecha de finalización es requerida")]
-        public DateOnly EndDate { get {  return endDate; } set {  endDate = value; } }
+        public DateTime EndDate { get {  return endDate; } set {  endDate = value; } }
     }
 }

@@ -33,31 +33,31 @@
             pnlHeader = new Panel();
             contextMenuStrip1 = new ContextMenuStrip(components);
             tbpAdd = new TabPage();
-            lblId = new Label();
-            tbxId = new TextBox();
-            lblName = new Label();
-            tbxName = new TextBox();
-            lblType = new Label();
-            lblDesc = new Label();
-            tbxDesc = new TextBox();
-            btnSave = new Button();
-            btnCancel = new Button();
-            tbpList = new TabPage();
-            lblSearch = new Label();
-            tbxSearch = new TextBox();
-            btnSearch = new Button();
-            dgbProjects = new DataGridView();
-            btnAdd = new Button();
-            btnEdit = new Button();
-            btnDelete = new Button();
-            tbcPets = new TabControl();
-            dtpStart = new DateTimePicker();
             dtpEnd = new DateTimePicker();
+            dtpStart = new DateTimePicker();
+            btnCancel = new Button();
+            btnSave = new Button();
+            tbxDesc = new TextBox();
+            tbxName = new TextBox();
+            tbxId = new TextBox();
+            lblDesc = new Label();
+            lblType = new Label();
+            lblName = new Label();
+            lblId = new Label();
+            tbpList = new TabPage();
+            btnDelete = new Button();
+            btnEdit = new Button();
+            btnAdd = new Button();
+            dgbProjects = new DataGridView();
+            btnSearch = new Button();
+            tbxSearch = new TextBox();
+            lblSearch = new Label();
+            tbcProjects = new TabControl();
             pnlHeader.SuspendLayout();
             tbpAdd.SuspendLayout();
             tbpList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgbProjects).BeginInit();
-            tbcPets.SuspendLayout();
+            tbcProjects.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitle
@@ -108,62 +108,30 @@
             tbpAdd.Text = "Agregar";
             tbpAdd.UseVisualStyleBackColor = true;
             // 
-            // lblId
+            // dtpEnd
             // 
-            lblId.AutoSize = true;
-            lblId.Location = new Point(24, 27);
-            lblId.Name = "lblId";
-            lblId.Size = new Size(22, 20);
-            lblId.TabIndex = 0;
-            lblId.Text = "Id";
+            dtpEnd.Format = DateTimePickerFormat.Short;
+            dtpEnd.Location = new Point(152, 181);
+            dtpEnd.Name = "dtpEnd";
+            dtpEnd.Size = new Size(125, 27);
+            dtpEnd.TabIndex = 12;
             // 
-            // tbxId
+            // dtpStart
             // 
-            tbxId.Location = new Point(21, 47);
-            tbxId.Name = "tbxId";
-            tbxId.Size = new Size(125, 27);
-            tbxId.TabIndex = 1;
+            dtpStart.Format = DateTimePickerFormat.Short;
+            dtpStart.Location = new Point(21, 181);
+            dtpStart.Name = "dtpStart";
+            dtpStart.Size = new Size(125, 27);
+            dtpStart.TabIndex = 11;
             // 
-            // lblName
+            // btnCancel
             // 
-            lblName.AutoSize = true;
-            lblName.Location = new Point(24, 92);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(64, 20);
-            lblName.TabIndex = 2;
-            lblName.Text = "Nombre";
-            // 
-            // tbxName
-            // 
-            tbxName.Location = new Point(21, 112);
-            tbxName.Name = "tbxName";
-            tbxName.Size = new Size(125, 27);
-            tbxName.TabIndex = 3;
-            // 
-            // lblType
-            // 
-            lblType.AutoSize = true;
-            lblType.Location = new Point(21, 158);
-            lblType.Name = "lblType";
-            lblType.Size = new Size(199, 20);
-            lblType.TabIndex = 4;
-            lblType.Text = "Fecha de inicio y finalización";
-            // 
-            // lblDesc
-            // 
-            lblDesc.AutoSize = true;
-            lblDesc.Location = new Point(24, 226);
-            lblDesc.Name = "lblDesc";
-            lblDesc.Size = new Size(87, 20);
-            lblDesc.TabIndex = 6;
-            lblDesc.Text = "Descripción";
-            // 
-            // tbxDesc
-            // 
-            tbxDesc.Location = new Point(21, 246);
-            tbxDesc.Name = "tbxDesc";
-            tbxDesc.Size = new Size(273, 27);
-            tbxDesc.TabIndex = 7;
+            btnCancel.Location = new Point(169, 292);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(125, 29);
+            btnCancel.TabIndex = 9;
+            btnCancel.Text = "Cancelar";
+            btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
@@ -174,14 +142,62 @@
             btnSave.Text = "Guardar";
             btnSave.UseVisualStyleBackColor = true;
             // 
-            // btnCancel
+            // tbxDesc
             // 
-            btnCancel.Location = new Point(169, 292);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(125, 29);
-            btnCancel.TabIndex = 9;
-            btnCancel.Text = "Cancelar";
-            btnCancel.UseVisualStyleBackColor = true;
+            tbxDesc.Location = new Point(21, 246);
+            tbxDesc.Name = "tbxDesc";
+            tbxDesc.Size = new Size(273, 27);
+            tbxDesc.TabIndex = 7;
+            // 
+            // tbxName
+            // 
+            tbxName.Location = new Point(21, 112);
+            tbxName.Name = "tbxName";
+            tbxName.Size = new Size(125, 27);
+            tbxName.TabIndex = 3;
+            // 
+            // tbxId
+            // 
+            tbxId.Location = new Point(21, 47);
+            tbxId.Name = "tbxId";
+            tbxId.Size = new Size(125, 27);
+            tbxId.TabIndex = 1;
+            // 
+            // lblDesc
+            // 
+            lblDesc.AutoSize = true;
+            lblDesc.Location = new Point(24, 226);
+            lblDesc.Name = "lblDesc";
+            lblDesc.Size = new Size(87, 20);
+            lblDesc.TabIndex = 6;
+            lblDesc.Text = "Descripción";
+            // 
+            // lblType
+            // 
+            lblType.AutoSize = true;
+            lblType.Location = new Point(21, 158);
+            lblType.Name = "lblType";
+            lblType.Size = new Size(199, 20);
+            lblType.TabIndex = 4;
+            lblType.Text = "Fecha de inicio y finalización";
+            // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.Location = new Point(24, 92);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(64, 20);
+            lblName.TabIndex = 2;
+            lblName.Text = "Nombre";
+            // 
+            // lblId
+            // 
+            lblId.AutoSize = true;
+            lblId.Location = new Point(24, 27);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(22, 20);
+            lblId.TabIndex = 0;
+            lblId.Text = "Id";
             // 
             // tbpList
             // 
@@ -200,30 +216,32 @@
             tbpList.Text = "Listado";
             tbpList.UseVisualStyleBackColor = true;
             // 
-            // lblSearch
+            // btnDelete
             // 
-            lblSearch.AutoSize = true;
-            lblSearch.Location = new Point(6, 6);
-            lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(53, 20);
-            lblSearch.TabIndex = 0;
-            lblSearch.Text = "Search";
+            btnDelete.Location = new Point(690, 129);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 29);
+            btnDelete.TabIndex = 6;
+            btnDelete.Text = "Eliminar";
+            btnDelete.UseVisualStyleBackColor = true;
             // 
-            // tbxSearch
+            // btnEdit
             // 
-            tbxSearch.Location = new Point(8, 26);
-            tbxSearch.Name = "tbxSearch";
-            tbxSearch.Size = new Size(222, 27);
-            tbxSearch.TabIndex = 1;
+            btnEdit.Location = new Point(690, 94);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(94, 29);
+            btnEdit.TabIndex = 5;
+            btnEdit.Text = "Editar";
+            btnEdit.UseVisualStyleBackColor = true;
             // 
-            // btnSearch
+            // btnAdd
             // 
-            btnSearch.Location = new Point(236, 24);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(94, 29);
-            btnSearch.TabIndex = 2;
-            btnSearch.Text = "Buscar";
-            btnSearch.UseVisualStyleBackColor = true;
+            btnAdd.Location = new Point(690, 59);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(94, 29);
+            btnAdd.TabIndex = 4;
+            btnAdd.Text = "Agregar";
+            btnAdd.UseVisualStyleBackColor = true;
             // 
             // dgbProjects
             // 
@@ -235,66 +253,48 @@
             dgbProjects.Size = new Size(676, 282);
             dgbProjects.TabIndex = 3;
             // 
-            // btnAdd
+            // btnSearch
             // 
-            btnAdd.Location = new Point(690, 59);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(94, 29);
-            btnAdd.TabIndex = 4;
-            btnAdd.Text = "Agregar";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnSearch.Location = new Point(236, 24);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(94, 29);
+            btnSearch.TabIndex = 2;
+            btnSearch.Text = "Buscar";
+            btnSearch.UseVisualStyleBackColor = true;
             // 
-            // btnEdit
+            // tbxSearch
             // 
-            btnEdit.Location = new Point(690, 94);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(94, 29);
-            btnEdit.TabIndex = 5;
-            btnEdit.Text = "Editar";
-            btnEdit.UseVisualStyleBackColor = true;
+            tbxSearch.Location = new Point(8, 26);
+            tbxSearch.Name = "tbxSearch";
+            tbxSearch.Size = new Size(222, 27);
+            tbxSearch.TabIndex = 1;
             // 
-            // btnDelete
+            // lblSearch
             // 
-            btnDelete.Location = new Point(690, 129);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(94, 29);
-            btnDelete.TabIndex = 6;
-            btnDelete.Text = "Eliminar";
-            btnDelete.UseVisualStyleBackColor = true;
+            lblSearch.AutoSize = true;
+            lblSearch.Location = new Point(6, 6);
+            lblSearch.Name = "lblSearch";
+            lblSearch.Size = new Size(53, 20);
+            lblSearch.TabIndex = 0;
+            lblSearch.Text = "Search";
             // 
-            // tbcPets
+            // tbcProjects
             // 
-            tbcPets.Controls.Add(tbpList);
-            tbcPets.Controls.Add(tbpAdd);
-            tbcPets.Dock = DockStyle.Fill;
-            tbcPets.Location = new Point(0, 68);
-            tbcPets.Name = "tbcPets";
-            tbcPets.SelectedIndex = 0;
-            tbcPets.Size = new Size(800, 382);
-            tbcPets.TabIndex = 4;
-            // 
-            // dtpStart
-            // 
-            dtpStart.Format = DateTimePickerFormat.Short;
-            dtpStart.Location = new Point(21, 181);
-            dtpStart.Name = "dtpStart";
-            dtpStart.Size = new Size(125, 27);
-            dtpStart.TabIndex = 11;
-            // 
-            // dtpEnd
-            // 
-            dtpEnd.Format = DateTimePickerFormat.Short;
-            dtpEnd.Location = new Point(152, 181);
-            dtpEnd.Name = "dtpEnd";
-            dtpEnd.Size = new Size(125, 27);
-            dtpEnd.TabIndex = 12;
+            tbcProjects.Controls.Add(tbpList);
+            tbcProjects.Controls.Add(tbpAdd);
+            tbcProjects.Dock = DockStyle.Fill;
+            tbcProjects.Location = new Point(0, 68);
+            tbcProjects.Name = "tbcProjects";
+            tbcProjects.SelectedIndex = 0;
+            tbcProjects.Size = new Size(800, 382);
+            tbcProjects.TabIndex = 4;
             // 
             // ProjectView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(tbcPets);
+            Controls.Add(tbcProjects);
             Controls.Add(pnlHeader);
             Name = "ProjectView";
             Text = "ProjectView";
@@ -305,7 +305,7 @@
             tbpList.ResumeLayout(false);
             tbpList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgbProjects).EndInit();
-            tbcPets.ResumeLayout(false);
+            tbcProjects.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -334,6 +334,6 @@
         private Button btnSearch;
         private TextBox tbxSearch;
         private Label lblSearch;
-        private TabControl tbcPets;
+        private TabControl tbcProjects;
     }
 }

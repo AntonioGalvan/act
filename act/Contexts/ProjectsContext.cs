@@ -18,8 +18,8 @@ namespace act.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ProjectModel>().HasData(
-                new ProjectModel { Name = "Project 1", Description = "project 1", StartDate = DateOnly.Parse("04/12/2023"), EndDate = DateOnly.Parse("06/12/2023") },
-                new ProjectModel { Name = "Project 2", Description = "project 2", StartDate = DateOnly.Parse("05/22/2023"), EndDate = DateOnly.Parse("08/30/2023") });
+                new ProjectModel { Name = "Project 1", Description = "project 1", StartDate = DateTime.Parse("04/12/2023"), EndDate = DateTime.Parse("06/12/2023") },
+                new ProjectModel { Name = "Project 2", Description = "project 2", StartDate = DateTime.Parse("05/22/2023"), EndDate = DateTime.Parse("08/30/2023") });
 
 
         }

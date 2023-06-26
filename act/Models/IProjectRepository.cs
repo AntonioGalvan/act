@@ -16,6 +16,6 @@ namespace act.Models
         IEnumerable<ProjectModel> GetAll();
 
         //Busquedas
-        IEnumerable<ProjectModel> GetByValue();
+        IEnumerable<ProjectModel> GetByValue(string value);
     }
 }
