@@ -20,6 +20,7 @@ namespace act.Models
         [DisplayName("Id")]
         [Required(ErrorMessage = "Id es requerido")]
         [AutoIncrement]
+        [Key]
         public int Id { get { return id; } set {  id = value; } }
 
         [DisplayName("Nombre")]
