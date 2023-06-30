@@ -4,6 +4,9 @@ using act.Models;
 using act.Presenters;
 using act._Repositories;
 using act.Views;
+using act.Forms.Side_bar;
+using act.Forms.Roles;
+
 namespace act
 {
     internal static class Program
@@ -18,9 +21,9 @@ namespace act
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             string sqlConnectionString;
-            IProjectview projectview = new ProjectView();
-            IProjectRepository projectRepository = projectRepository();
-            Application.Run(new Form1());
+            //IProjectview projectview = new ProjectView();
+            //IProjectRepository projectRepository = projectRepository();
+            Application.Run(new RoleIndex());
         }
     }
 }
