@@ -53,6 +53,7 @@
             tbxSearch = new TextBox();
             lblSearch = new Label();
             tbcProjects = new TabControl();
+            sqliteCommand1 = new Microsoft.Data.Sqlite.SqliteCommand();
             pnlHeader.SuspendLayout();
             tbpAdd.SuspendLayout();
             tbpList.SuspendLayout();
@@ -289,6 +290,13 @@
             tbcProjects.Size = new Size(800, 382);
             tbcProjects.TabIndex = 4;
             // 
+            // sqliteCommand1
+            // 
+            sqliteCommand1.CommandTimeout = 30;
+            sqliteCommand1.Connection = null;
+            sqliteCommand1.Transaction = null;
+            sqliteCommand1.UpdatedRowSource = System.Data.UpdateRowSource.None;
+            // 
             // ProjectView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -296,7 +304,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tbcProjects);
             Controls.Add(pnlHeader);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "ProjectView";
             Text = "ProjectView";
             pnlHeader.ResumeLayout(false);
@@ -336,5 +343,6 @@
         private TextBox tbxSearch;
         private Label lblSearch;
         private TabControl tbcProjects;
+        private Microsoft.Data.Sqlite.SqliteCommand sqliteCommand1;
     }
 }
