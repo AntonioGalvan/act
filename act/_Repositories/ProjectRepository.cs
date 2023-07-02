@@ -9,7 +9,7 @@ using System.Data;
 
 namespace act._Repositories
 {
-    public class ProjectRepository : BaseRepository, IProjectRepository
+    internal class ProjectRepository : BaseRepository, IProjectRepository
     {
         private object sqlDbType;
 
@@ -41,7 +41,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select * from Projects order by id desc";
+                command.CommandText = "Select * from Projects";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -73,7 +73,7 @@ namespace act._Repositories
                                         where id=@id or name like @name+'%'
                                         order by id desc";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                command.Parameters.Add("@name", SqlDbType.Int).Value = name;
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
 
                 using (var reader = command.ExecuteReader())
                 {

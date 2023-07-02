@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace act._Repositories
 {
-    public abstract class BaseRepository
+    internal abstract class BaseRepository
     {
         protected string connectionString;
     }

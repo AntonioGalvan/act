@@ -30,9 +30,6 @@ namespace act.Models
         [ForeignKey("Project")]
         public int ProjectId { get { return projectId; } set { projectId = value; } }
 
-        [DisplayName("Id")]
-        [AutoIncrement]
-        public int Id { get { return id; } set { id = value; } }
 
         [DisplayName("Estado")]
         public string Name { get { return name; } set { name = value; } }

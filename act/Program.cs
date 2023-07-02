@@ -6,7 +6,7 @@ using act._Repositories;
 using act.Views;
 using act.Forms.Side_bar;
 using act.Forms.Roles;
-
+using System.Configuration;
 namespace act
 {
     internal static class Program
@@ -20,10 +20,12 @@ namespace act
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            string sqlConnectionString;
-            //IProjectview projectview = new ProjectView();
-            //IProjectRepository projectRepository = projectRepository();
-            Application.Run(new RoleIndex());
+            string sqlConnectionString = ConfigurationManager.ConnectionStrings[1].ConnectionString;
+            IProjectview projectview = new ProjectView();
+            IProjectRepository projectRepository = new ProjectRepository(sqlConnectionString);
+            new ProjectPresenter(projectview, projectRepository);
+
+            Application.Run((Form)projectview);
         }
     }
 }

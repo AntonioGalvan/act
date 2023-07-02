@@ -73,7 +73,7 @@
             // 
             // pnlHeader
             // 
-            pnlHeader.BackColor = Color.DarkSlateGray;
+            pnlHeader.BackColor = Color.FromArgb(30, 0, 64);
             pnlHeader.Controls.Add(lblTitle);
             pnlHeader.Dock = DockStyle.Top;
             pnlHeader.Location = new Point(0, 0);
@@ -296,6 +296,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tbcProjects);
             Controls.Add(pnlHeader);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "ProjectView";
             Text = "ProjectView";
             pnlHeader.ResumeLayout(false);

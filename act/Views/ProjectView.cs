@@ -83,7 +83,7 @@ namespace act.Views
 
         public void SetProjectListBindingSource(BindingSource projectList)
         {
-            throw new NotImplementedException();
+            dgbProjects.DataSource = projectList;
         }
     }
 }
