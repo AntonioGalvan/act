@@ -16,6 +16,18 @@ namespace act.Forms.Roles
         public RoleIndex()
         {
             InitializeComponent();
+            //Llamar el método al cargar la form
+            ShowSideMenu();
+        }
+
+        //Este código sirve para mostrar el menú dentro del panel
+        private void ShowSideMenu()
+        {
+            SideBar sdBar = new SideBar();
+            sdBar.TopLevel = false;
+            sdBar.AutoScroll = true;
+            pnlMenu.Controls.Add(sdBar);
+            sdBar.Show();
         }
     }
 }
