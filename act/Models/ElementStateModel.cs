@@ -5,20 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-using SQLite;
 
 namespace act.Models
 {
     internal class UseCaseStateModel
     {
-        private int id;
-        private string name;
 
-        [DisplayName("Id")]
-        [AutoIncrement]
-        public int Id { get { return id; } set {  id = value; } }
+        [MaxLength(1)]
+        [Key]
+        public int Id { get; set; }
 
-        [DisplayName("Estado")]
-        public string Name { get { return name; } set { name = value; } }
+        [MaxLength(15)]
+        public string Name { get; set; }
     }
 }

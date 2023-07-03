@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+act/Properties/Settings.Designer.cs
+act/Properties/Settings.settings
+act/App.config
