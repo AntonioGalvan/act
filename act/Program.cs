@@ -25,7 +25,7 @@ namespace act
             IProjectRepository projectRepository = new ProjectRepository(sqlConnectionString);
             new ProjectPresenter(projectview, projectRepository);
 
-            Application.Run((Form)projectview);
+            Application.Run(new SideBar());
         }
     }
 }

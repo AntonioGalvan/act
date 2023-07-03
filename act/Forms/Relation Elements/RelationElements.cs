@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace act.Forms.Side_bar
+namespace act.Forms.Relation_Elements
 {
-    public partial class SideBar : Form
+    public partial class RelationElements : Form
     {
-        public SideBar()
+        public RelationElements()
         {
             InitializeComponent();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

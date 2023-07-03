@@ -41,15 +41,18 @@
             btnRoles = new Button();
             btnInicio = new Button();
             btnSalir = new Button();
-            panel2 = new Panel();
+            pnlExit = new Panel();
             pictureBox5 = new PictureBox();
+            pnlComponent = new Panel();
+            pnlSideBar = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctHome).BeginInit();
-            panel2.SuspendLayout();
+            pnlExit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            pnlSideBar.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox4
@@ -149,6 +152,7 @@
             btnElementosR.TextAlign = ContentAlignment.MiddleLeft;
             btnElementosR.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnElementosR.UseVisualStyleBackColor = true;
+            btnElementosR.Click += btnElementosR_Click;
             // 
             // btnRoles
             // 
@@ -163,6 +167,7 @@
             btnRoles.TextAlign = ContentAlignment.MiddleLeft;
             btnRoles.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRoles.UseVisualStyleBackColor = true;
+            btnRoles.Click += btnRoles_Click;
             // 
             // btnInicio
             // 
@@ -184,7 +189,7 @@
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("HoloLens MDL2 Assets", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSalir.Location = new Point(191, 26);
+            btnSalir.Location = new Point(198, 23);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(82, 49);
             btnSalir.TabIndex = 7;
@@ -194,32 +199,51 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
-            // panel2
+            // pnlExit
             // 
-            panel2.BackColor = Color.FromArgb(207, 207, 207);
-            panel2.Controls.Add(pictureBox5);
-            panel2.Controls.Add(btnSalir);
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 937);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(348, 87);
-            panel2.TabIndex = 14;
+            pnlExit.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            pnlExit.BackColor = Color.FromArgb(207, 207, 207);
+            pnlExit.Controls.Add(pictureBox5);
+            pnlExit.Controls.Add(btnSalir);
+            pnlExit.Location = new Point(0, 766);
+            pnlExit.Name = "pnlExit";
+            pnlExit.Size = new Size(348, 87);
+            pnlExit.TabIndex = 14;
             // 
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(279, 26);
+            pictureBox5.Location = new Point(286, 23);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(47, 49);
             pictureBox5.TabIndex = 13;
             pictureBox5.TabStop = false;
+            // 
+            // pnlComponent
+            // 
+            pnlComponent.BackColor = Color.White;
+            pnlComponent.Dock = DockStyle.Right;
+            pnlComponent.Location = new Point(350, 0);
+            pnlComponent.Name = "pnlComponent";
+            pnlComponent.Size = new Size(1072, 853);
+            pnlComponent.TabIndex = 25;
+            // 
+            // pnlSideBar
+            // 
+            pnlSideBar.Controls.Add(pnlExit);
+            pnlSideBar.Dock = DockStyle.Left;
+            pnlSideBar.Location = new Point(0, 0);
+            pnlSideBar.Name = "pnlSideBar";
+            pnlSideBar.Size = new Size(348, 853);
+            pnlSideBar.TabIndex = 26;
             // 
             // SideBar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 236, 236);
-            ClientSize = new Size(348, 1024);
+            ClientSize = new Size(1422, 853);
+            Controls.Add(pnlComponent);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -231,17 +255,18 @@
             Controls.Add(btnElementosR);
             Controls.Add(btnRoles);
             Controls.Add(btnInicio);
-            Controls.Add(panel2);
-            FormBorderStyle = FormBorderStyle.None;
+            Controls.Add(pnlSideBar);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "SideBar";
-            Text = "SideBar";
+            Text = "ACT";
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pctHome).EndInit();
-            panel2.ResumeLayout(false);
+            pnlExit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            pnlSideBar.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -259,7 +284,9 @@
         private Button btnRoles;
         private Button btnInicio;
         private Button btnSalir;
-        private Panel panel2;
+        private Panel pnlExit;
         private PictureBox pictureBox5;
+        private Panel pnlComponent;
+        private Panel pnlSideBar;
     }
 }
