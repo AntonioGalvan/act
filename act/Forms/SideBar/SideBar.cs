@@ -9,15 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using act.Views;
 
 namespace act.Forms.Side_bar
 {
-    public partial class SideBar : Form
+    public partial class SideBar : Form, IMainView
     {
         public SideBar()
         {
             InitializeComponent();
+
+            btnElementosR.Click += delegate { ShowRelationElementsView?.Invoke(this, EventArgs.Empty); };
         }
+
+        public event EventHandler ShowRoleView;
+        public event EventHandler ShowRelationElementsView;
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

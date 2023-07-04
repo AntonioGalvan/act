@@ -9,5 +9,6 @@ namespace act.Views
     internal interface IMainView
     {
         event EventHandler ShowRoleView;
+        event EventHandler ShowRelationElementsView;
     }
 }
