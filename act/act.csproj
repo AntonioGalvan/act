@@ -41,9 +41,7 @@
 
   <ItemGroup>
     <Folder Include="Forms\Business Rules\Create\" />
-    <Folder Include="Forms\Business Rules\Edit\" />
     <Folder Include="Forms\Roles\Create\" />
-    <Folder Include="Forms\Roles\Edit\" />
     <Folder Include="Queries\" />
     <Folder Include="Presenters\" />
   </ItemGroup>
