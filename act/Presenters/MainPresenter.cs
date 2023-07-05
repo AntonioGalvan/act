@@ -24,7 +24,7 @@ namespace act.Presenters
 
         private void ShowRelationElementsView(object sender, EventArgs e)
         {
-            //Codigo TODO
+            
         }
     }
 }

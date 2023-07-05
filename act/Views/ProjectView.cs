@@ -31,17 +31,69 @@ namespace act.Views
                 if (e.KeyCode == Keys.Enter)
                     SearchEvent?.Invoke(this, EventArgs.Empty);
             };
+
+            btnAdd.Click += delegate 
+            {
+                AddNewEvent?.Invoke(this, EventArgs.Empty);
+                tbcProjects.TabPages.Remove(tbpList);
+                tbcProjects.TabPages.Add(tbpAdd);
+                tbpAdd.Text = "Agregar proyecto";
+            };
+
+            btnEdit.Click += delegate 
+            { 
+                EditEvent?.Invoke(this, EventArgs.Empty);
+                tbcProjects.TabPages.Remove(tbpList);
+                tbcProjects.TabPages.Add(tbpAdd);
+                tbpAdd.Text = "Editar proyecto";
+            };
+
+            btnSave.Click += delegate 
+            { 
+                SaveEvent?.Invoke(this, EventArgs.Empty); 
+                if (IsSuccessful)
+                {
+                    tbcProjects.TabPages.Remove(tbpAdd);
+                    tbcProjects.TabPages.Add(tbpList);
+                }
+                MessageBox.Show(Message);
+            };
+
+            btnCancel.Click += delegate 
+            { 
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+                tbcProjects.TabPages.Remove(tbpAdd);
+                tbcProjects.TabPages.Add(tbpList);
+            };
+
+            btnDelete.Click += delegate 
+            { 
+                var result = MessageBox.Show("¿Deseas eliminar el registro seleccionado?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+            };
         }
 
-        public int Id
+        public string Id
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get { return tbxId.Text; }
+            set { tbxId.Text = value; }
         }
+
+        public string Name
+        {
+            get { return tbxName.Text; }
+            set { tbxName.Text = value; }
+        }
+
         public string Description
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get { return tbxDesc.Text; }
+            set { tbxDesc.Text = value; }
         }
         public DateTime StartDate
         {
@@ -68,7 +120,7 @@ namespace act.Views
             get { return isSuccessful; }
             set { isSuccessful = value; }
         }
-        public string IsMessage
+        public string Message
         {
             get { return message; }
             set { message = value; }

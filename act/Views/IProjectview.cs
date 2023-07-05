@@ -8,7 +8,7 @@ namespace act.Views
 {
     internal interface IProjectview
     {
-        int Id { get; set; }
+        string Id { get; set; }
         string Name { get; set; }
         string Description { get; set; }
         DateTime StartDate { get; set; }
@@ -17,7 +17,7 @@ namespace act.Views
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
         bool IsSuccessful { get; set; }
-        string IsMessage { get; set; }
+        string Message { get; set; }
 
         //Events
         event EventHandler SearchEvent;

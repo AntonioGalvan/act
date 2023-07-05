@@ -53,27 +53,87 @@ namespace act.Presenters
 
         private void CancelAction(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            CleanViewFields();
         }
 
         private void SaveProject(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var model = new ProjectModel();
+            model.Id = Convert.ToInt32(this.view.Id);
+            model.Name = this.view.Name;
+            model.Description = this.view.Description;  
+            model.StartDate = this.view.StartDate;
+            model.EndDate = this.view.EndDate;
+
+            try
+            {
+                new Common.ModelDataValidation().Validate(model);
+
+                if(view.IsEdit)
+                {
+                    repository.Edit(model);
+                    view.Message = "Projecto editado correctamente";
+                }
+                else
+                {
+                    repository.Add(model);
+                    view.Message = "Projecto agregado correctamente";
+                }
+
+                view.IsSuccessful = true;
+                LoadAllProjectList();
+                CleanViewFields();
+
+            }
+            catch (Exception ex)
+            {
+
+                view.IsSuccessful = false;
+                view.Message = ex.Message;
+            }
+        }
+
+        private void CleanViewFields()
+        {
+            view.Id = "0";
+            view.Name = "";
+            view.Description = "";
+            view.StartDate = DateTime.Parse(string.Empty);
+            view.EndDate = DateTime.Parse(string.Empty);
         }
 
         private void DeleteSelectedProject(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var project = (ProjectModel)projectsBindingSource.Current;
+                repository.Delete(project.Id);
+                view.IsSuccessful = true;
+                view.Message = "Projecto eliminado correctamente";
+                LoadAllProjectList();
+            }
+            catch (Exception ex)
+            {
+
+                view.IsSuccessful = false;
+                view.Message = "Ha ocurrido un error, se pudo eliminar el proyecto";
+            }
         }
 
         private void LoadSelectedProjectToEdit(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var project = (ProjectModel)projectsBindingSource.Current;
+            view.Id = project.Id.ToString();
+            view.Name = project.Name;
+            view.Description = project.Description;
+            view.StartDate = project.StartDate;
+            view.EndDate = project.EndDate;
+            view.IsEdit = true;
         }
 
         private void AddNewProject(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.IsEdit = false;
         }
 
         
