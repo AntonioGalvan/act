@@ -16,14 +16,18 @@ namespace act.Presenters
     {
         private IMainView mainView;
         private readonly string sqlConnectionString;
+        private int projectId;
 
-        public MainPresenter(IMainView pMainView, string pSqlConnectionString)
+        public MainPresenter(IMainView pMainView, string pSqlConnectionString, int projectId)
         {
             this.mainView = pMainView;
             sqlConnectionString = pSqlConnectionString;
             this.mainView.ShowRelationElementsView += ShowRelationElementsView;
 
             this.mainView.ShowRoleView += ShowRoleView;
+
+            this.mainView.Show();
+            this.projectId = projectId;
         }
 
         private void ShowRelationElementsView(object sender, EventArgs e)
@@ -34,7 +38,7 @@ namespace act.Presenters
         private void ShowRoleView(object sender, EventArgs e)
         {
             IRoleView view = RoleView.GetInstance((Form)mainView);
-            IRoleRepository repository = new RoleRepository(sqlConnectionString, 2);
+            IRoleRepository repository = new RoleRepository(sqlConnectionString, projectId);
             new RolePresenter(view, repository);
         }
     }

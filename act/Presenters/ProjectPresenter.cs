@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using act.Forms.Side_bar;
 using act.Models;
 using act.Views;
 
@@ -14,8 +15,9 @@ namespace act.Presenters
         private IProjectRepository repository;
         private BindingSource projectsBindingSource;
         private IEnumerable<ProjectModel> projectList;
+        private readonly string sqlConnectionString;
 
-        public ProjectPresenter(IProjectview pView, IProjectRepository pRepository)
+        public ProjectPresenter(IProjectview pView, IProjectRepository pRepository, string sqlConnectionString)
         {
             this.projectsBindingSource = new BindingSource();
             view = pView;
@@ -27,12 +29,24 @@ namespace act.Presenters
             this.view.DeleteEvent += DeleteSelectedProject;
             this.view.SaveEvent += SaveProject;
             this.view.CancelEvent += CancelAction;
+            this.view.OpenEvent += OpenProject;
 
             this.view.SetProjectListBindingSource(projectsBindingSource);
 
             LoadAllProjectList();
 
             this.view.Show();
+            this.sqlConnectionString = sqlConnectionString;
+        }
+
+        private void OpenProject(object? sender, EventArgs e)
+        {
+            var project = (ProjectModel)projectsBindingSource.Current;
+            var projectId = project.Id;
+            IMainView view = new SideBar();
+            new MainPresenter(view, sqlConnectionString, projectId);
+            
+
         }
 
         private void LoadAllProjectList()

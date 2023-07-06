@@ -76,6 +76,11 @@ namespace act.Views
                     MessageBox.Show(Message);
                 }
             };
+
+            btnOpen.Click += delegate
+            {
+                OpenEvent?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         public string Id
@@ -132,6 +137,7 @@ namespace act.Views
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler OpenEvent;
 
         public void SetProjectListBindingSource(BindingSource projectList)
         {

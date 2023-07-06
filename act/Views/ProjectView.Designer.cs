@@ -45,6 +45,7 @@
             lblName = new Label();
             lblId = new Label();
             tbpList = new TabPage();
+            btnOpen = new Button();
             btnDelete = new Button();
             btnEdit = new Button();
             btnAdd = new Button();
@@ -54,7 +55,6 @@
             lblSearch = new Label();
             tbcProjects = new TabControl();
             sqliteCommand1 = new Microsoft.Data.Sqlite.SqliteCommand();
-            btnOpen = new Button();
             pnlHeader.SuspendLayout();
             tbpAdd.SuspendLayout();
             tbpList.SuspendLayout();
@@ -221,6 +221,15 @@
             tbpList.Text = "Listado";
             tbpList.UseVisualStyleBackColor = true;
             // 
+            // btnOpen
+            // 
+            btnOpen.Location = new Point(690, 312);
+            btnOpen.Name = "btnOpen";
+            btnOpen.Size = new Size(94, 29);
+            btnOpen.TabIndex = 7;
+            btnOpen.Text = "Abrir";
+            btnOpen.UseVisualStyleBackColor = true;
+            // 
             // btnDelete
             // 
             btnDelete.Location = new Point(690, 129);
@@ -302,15 +311,6 @@
             sqliteCommand1.Connection = null;
             sqliteCommand1.Transaction = null;
             sqliteCommand1.UpdatedRowSource = System.Data.UpdateRowSource.None;
-            // 
-            // btnOpen
-            // 
-            btnOpen.Location = new Point(690, 312);
-            btnOpen.Name = "btnOpen";
-            btnOpen.Size = new Size(94, 29);
-            btnOpen.TabIndex = 7;
-            btnOpen.Text = "Abrir";
-            btnOpen.UseVisualStyleBackColor = true;
             // 
             // ProjectView
             // 
