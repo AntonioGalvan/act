@@ -32,7 +32,7 @@ namespace act.Views
                     SearchEvent?.Invoke(this, EventArgs.Empty);
             };
 
-            btnAdd.Click += delegate 
+            btnAdd.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 tbcProjects.TabPages.Remove(tbpList);
@@ -40,17 +40,17 @@ namespace act.Views
                 tbpAdd.Text = "Agregar proyecto";
             };
 
-            btnEdit.Click += delegate 
-            { 
+            btnEdit.Click += delegate
+            {
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 tbcProjects.TabPages.Remove(tbpList);
                 tbcProjects.TabPages.Add(tbpAdd);
                 tbpAdd.Text = "Editar proyecto";
             };
 
-            btnSave.Click += delegate 
-            { 
-                SaveEvent?.Invoke(this, EventArgs.Empty); 
+            btnSave.Click += delegate
+            {
+                SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (IsSuccessful)
                 {
                     tbcProjects.TabPages.Remove(tbpAdd);
@@ -59,15 +59,15 @@ namespace act.Views
                 MessageBox.Show(Message);
             };
 
-            btnCancel.Click += delegate 
-            { 
+            btnCancel.Click += delegate
+            {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
                 tbcProjects.TabPages.Remove(tbpAdd);
                 tbcProjects.TabPages.Add(tbpList);
             };
 
-            btnDelete.Click += delegate 
-            { 
+            btnDelete.Click += delegate
+            {
                 var result = MessageBox.Show("¿Deseas eliminar el registro seleccionado?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)

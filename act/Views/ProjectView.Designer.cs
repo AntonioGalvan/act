@@ -54,6 +54,7 @@
             lblSearch = new Label();
             tbcProjects = new TabControl();
             sqliteCommand1 = new Microsoft.Data.Sqlite.SqliteCommand();
+            btnOpen = new Button();
             pnlHeader.SuspendLayout();
             tbpAdd.SuspendLayout();
             tbpList.SuspendLayout();
@@ -112,7 +113,7 @@
             // dtpEnd
             // 
             dtpEnd.Format = DateTimePickerFormat.Short;
-            dtpEnd.Location = new Point(152, 181);
+            dtpEnd.Location = new Point(149, 102);
             dtpEnd.Name = "dtpEnd";
             dtpEnd.Size = new Size(125, 27);
             dtpEnd.TabIndex = 12;
@@ -120,14 +121,14 @@
             // dtpStart
             // 
             dtpStart.Format = DateTimePickerFormat.Short;
-            dtpStart.Location = new Point(21, 181);
+            dtpStart.Location = new Point(18, 102);
             dtpStart.Name = "dtpStart";
             dtpStart.Size = new Size(125, 27);
             dtpStart.TabIndex = 11;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(169, 292);
+            btnCancel.Location = new Point(655, 312);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(125, 29);
             btnCancel.TabIndex = 9;
@@ -136,7 +137,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(21, 292);
+            btnSave.Location = new Point(524, 312);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(125, 29);
             btnSave.TabIndex = 8;
@@ -145,29 +146,30 @@
             // 
             // tbxDesc
             // 
-            tbxDesc.Location = new Point(21, 246);
+            tbxDesc.Location = new Point(18, 167);
             tbxDesc.Name = "tbxDesc";
-            tbxDesc.Size = new Size(273, 27);
+            tbxDesc.Size = new Size(256, 27);
             tbxDesc.TabIndex = 7;
             // 
             // tbxName
             // 
-            tbxName.Location = new Point(21, 112);
+            tbxName.Location = new Point(18, 33);
             tbxName.Name = "tbxName";
-            tbxName.Size = new Size(125, 27);
+            tbxName.Size = new Size(217, 27);
             tbxName.TabIndex = 3;
             // 
             // tbxId
             // 
-            tbxId.Location = new Point(21, 47);
+            tbxId.Location = new Point(659, 28);
             tbxId.Name = "tbxId";
             tbxId.Size = new Size(125, 27);
             tbxId.TabIndex = 1;
+            tbxId.Visible = false;
             // 
             // lblDesc
             // 
             lblDesc.AutoSize = true;
-            lblDesc.Location = new Point(24, 226);
+            lblDesc.Location = new Point(21, 147);
             lblDesc.Name = "lblDesc";
             lblDesc.Size = new Size(87, 20);
             lblDesc.TabIndex = 6;
@@ -176,7 +178,7 @@
             // lblType
             // 
             lblType.AutoSize = true;
-            lblType.Location = new Point(21, 158);
+            lblType.Location = new Point(18, 79);
             lblType.Name = "lblType";
             lblType.Size = new Size(199, 20);
             lblType.TabIndex = 4;
@@ -185,7 +187,7 @@
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(24, 92);
+            lblName.Location = new Point(21, 13);
             lblName.Name = "lblName";
             lblName.Size = new Size(64, 20);
             lblName.TabIndex = 2;
@@ -194,14 +196,16 @@
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(24, 27);
+            lblId.Location = new Point(662, 8);
             lblId.Name = "lblId";
             lblId.Size = new Size(22, 20);
             lblId.TabIndex = 0;
             lblId.Text = "Id";
+            lblId.Visible = false;
             // 
             // tbpList
             // 
+            tbpList.Controls.Add(btnOpen);
             tbpList.Controls.Add(btnDelete);
             tbpList.Controls.Add(btnEdit);
             tbpList.Controls.Add(btnAdd);
@@ -246,6 +250,8 @@
             // 
             // dgbProjects
             // 
+            dgbProjects.AllowUserToAddRows = false;
+            dgbProjects.AllowUserToDeleteRows = false;
             dgbProjects.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgbProjects.Location = new Point(8, 59);
             dgbProjects.Name = "dgbProjects";
@@ -297,6 +303,15 @@
             sqliteCommand1.Transaction = null;
             sqliteCommand1.UpdatedRowSource = System.Data.UpdateRowSource.None;
             // 
+            // btnOpen
+            // 
+            btnOpen.Location = new Point(690, 312);
+            btnOpen.Name = "btnOpen";
+            btnOpen.Size = new Size(94, 29);
+            btnOpen.TabIndex = 7;
+            btnOpen.Text = "Abrir";
+            btnOpen.UseVisualStyleBackColor = true;
+            // 
             // ProjectView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -344,5 +359,6 @@
         private Label lblSearch;
         private TabControl tbcProjects;
         private Microsoft.Data.Sqlite.SqliteCommand sqliteCommand1;
+        private Button btnOpen;
     }
 }

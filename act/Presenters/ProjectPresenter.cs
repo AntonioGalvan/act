@@ -136,6 +136,7 @@ namespace act.Presenters
 
         private void AddNewProject(object? sender, EventArgs e)
         {
+            view.Name = "";
             view.IsEdit = false;
         }
 
