@@ -23,9 +23,10 @@ namespace act
             string sqlConnectionString = ConfigurationManager.ConnectionStrings[1].ConnectionString;
             IProjectview projectview = new ProjectView();
             IProjectRepository projectRepository = new ProjectRepository(sqlConnectionString);
-            new ProjectPresenter(projectview, projectRepository);
-
-            Application.Run((Form)projectview);
+            //new ProjectPresenter(projectview, projectRepository);
+            IMainView view = new SideBar();
+            new MainPresenter(view, sqlConnectionString);
+            Application.Run((Form)view);
         }
     }
 }

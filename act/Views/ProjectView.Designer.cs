@@ -281,9 +281,9 @@
             lblSearch.AutoSize = true;
             lblSearch.Location = new Point(6, 6);
             lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(53, 20);
+            lblSearch.Size = new Size(52, 20);
             lblSearch.TabIndex = 0;
-            lblSearch.Text = "Search";
+            lblSearch.Text = "Buscar";
             // 
             // tbcProjects
             // 

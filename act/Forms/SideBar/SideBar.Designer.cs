@@ -167,7 +167,6 @@
             btnRoles.TextAlign = ContentAlignment.MiddleLeft;
             btnRoles.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRoles.UseVisualStyleBackColor = true;
-            btnRoles.Click += btnRoles_Click;
             // 
             // btnInicio
             // 

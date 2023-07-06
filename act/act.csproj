@@ -43,7 +43,6 @@
     <Folder Include="Forms\Business Rules\Create\" />
     <Folder Include="Forms\Roles\Create\" />
     <Folder Include="Queries\" />
-    <Folder Include="Presenters\" />
   </ItemGroup>
 
   <ItemGroup>
