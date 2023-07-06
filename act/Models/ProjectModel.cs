@@ -11,7 +11,6 @@ namespace act.Models
     internal class ProjectModel
     {
         [Key]
-        [MaxLength(8)]
         public int Id { get; set; }
 
         [DisplayName("Nombre")]

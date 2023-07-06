@@ -98,8 +98,8 @@ namespace act.Presenters
             view.Id = "0";
             view.Name = "";
             view.Description = "";
-            view.StartDate = DateTime.Parse(string.Empty);
-            view.EndDate = DateTime.Parse(string.Empty);
+            view.StartDate = DateTime.Today;
+            view.EndDate = DateTime.Today;
         }
 
         private void DeleteSelectedProject(object? sender, EventArgs e)
