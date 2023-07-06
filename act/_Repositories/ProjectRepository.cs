@@ -59,7 +59,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Update Projects set name=@name, description=@description, startDate=@startDate, endDate=@endDate where id=@id)";
+                command.CommandText = "Update Projects set name=@name, description=@description, startDate=@startDate, endDate=@endDate where id=@id";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = projectModel.Id;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = projectModel.Name;

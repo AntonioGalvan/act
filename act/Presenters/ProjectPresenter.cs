@@ -59,7 +59,10 @@ namespace act.Presenters
         private void SaveProject(object? sender, EventArgs e)
         {
             var model = new ProjectModel();
-            model.Id = Convert.ToInt32(this.view.Id);
+            if(view.IsEdit)
+            {
+                model.Id = Convert.ToInt32(this.view.Id);
+            }
             model.Name = this.view.Name;
             model.Description = this.view.Description;  
             model.StartDate = this.view.StartDate;
