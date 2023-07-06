@@ -10,5 +10,7 @@ namespace act.Views
     {
         event EventHandler ShowRoleView;
         event EventHandler ShowRelationElementsView;
+
+        void Show();
     }
 }

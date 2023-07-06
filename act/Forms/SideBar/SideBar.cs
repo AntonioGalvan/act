@@ -20,6 +20,7 @@ namespace act.Forms.Side_bar
             InitializeComponent();
 
             btnElementosR.Click += delegate { ShowRelationElementsView?.Invoke(this, EventArgs.Empty); };
+            btnRoles.Click += delegate { ShowRoleView?.Invoke(this, EventArgs.Empty); };
         }
 
         public event EventHandler ShowRoleView;
@@ -31,28 +32,5 @@ namespace act.Forms.Side_bar
             //Salir del proyecto actual
         }
 
-        private void UnloadPanel()
-        {
-            pnlComponent.Controls.Clear();
-        }
-        private void btnRoles_Click(object sender, EventArgs e)
-        {
-            UnloadPanel();
-            RoleIndex rIndex = new RoleIndex();
-            rIndex.TopLevel = false;
-            rIndex.AutoScroll = true;
-            pnlComponent.Controls.Add(rIndex);
-            rIndex.Show();
-        }
-
-        private void btnElementosR_Click(object sender, EventArgs e)
-        {
-            UnloadPanel();
-            RelationElements rIndex = new RelationElements();
-            rIndex.TopLevel = false;
-            rIndex.AutoScroll = true;
-            pnlComponent.Controls.Add(rIndex);
-            rIndex.Show();
-        }
     }
 }

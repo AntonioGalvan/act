@@ -1,4 +1,6 @@
-﻿using System;
+﻿using act.Forms.Side_bar;
+using act.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,20 +9,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
-namespace act.Views
+namespace act.Forms.Roles
 {
-    public partial class ProjectView : Form, IProjectview
+    public partial class RoleView : Form, IRoleView
     {
+
         private string message;
         private bool isSuccessful;
         private bool isEdit;
 
-        public ProjectView()
+        public RoleView()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
-            tbcProjects.TabPages.Remove(tbpAdd);
+            tbcRoles.TabPages.Remove(tbpAdd);
+            btnOut.Click += delegate { this.Close(); };
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -35,17 +40,17 @@ namespace act.Views
             btnAdd.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
-                tbcProjects.TabPages.Remove(tbpList);
-                tbcProjects.TabPages.Add(tbpAdd);
-                tbpAdd.Text = "Agregar proyecto";
+                tbcRoles.TabPages.Remove(tbpList);
+                tbcRoles.TabPages.Add(tbpAdd);
+                tbpAdd.Text = "Agregar rol";
             };
 
             btnEdit.Click += delegate
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
-                tbcProjects.TabPages.Remove(tbpList);
-                tbcProjects.TabPages.Add(tbpAdd);
-                tbpAdd.Text = "Editar proyecto";
+                tbcRoles.TabPages.Remove(tbpList);
+                tbcRoles.TabPages.Add(tbpAdd);
+                tbpAdd.Text = "Editar rol";
             };
 
             btnSave.Click += delegate
@@ -53,8 +58,8 @@ namespace act.Views
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (IsSuccessful)
                 {
-                    tbcProjects.TabPages.Remove(tbpAdd);
-                    tbcProjects.TabPages.Add(tbpList);
+                    tbcRoles.TabPages.Remove(tbpAdd);
+                    tbcRoles.TabPages.Add(tbpList);
                 }
                 MessageBox.Show(Message);
             };
@@ -62,8 +67,8 @@ namespace act.Views
             btnCancel.Click += delegate
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
-                tbcProjects.TabPages.Remove(tbpAdd);
-                tbcProjects.TabPages.Add(tbpList);
+                tbcRoles.TabPages.Remove(tbpAdd);
+                tbcRoles.TabPages.Add(tbpList);
             };
 
             btnDelete.Click += delegate
@@ -76,11 +81,6 @@ namespace act.Views
                     MessageBox.Show(Message);
                 }
             };
-
-            btnOpen.Click += delegate
-            {
-                OpenEvent?.Invoke(this, EventArgs.Empty);
-            };
         }
 
         public string Id
@@ -89,27 +89,24 @@ namespace act.Views
             set { tbxId.Text = value; }
         }
 
+        public string Key
+        {
+            get { return tbxKey.Text; }
+            set { tbxKey.Text = value; }
+        }
+
         public string Name
         {
             get { return tbxName.Text; }
             set { tbxName.Text = value; }
         }
 
-        public string Description
+        public string Purpose
         {
-            get { return tbxDesc.Text; }
-            set { tbxDesc.Text = value; }
+            get { return tbxPurpose.Text; }
+            set { tbxPurpose.Text = value; }
         }
-        public DateTime StartDate
-        {
-            get { return dtpStart.Value; }
-            set { dtpStart.Value = value; }
-        }
-        public DateTime EndDate
-        {
-            get { return dtpEnd.Value; }
-            set { dtpEnd.Value = value; }
-        }
+
         public string SearchValue
         {
             get { return tbxSearch.Text; }
@@ -137,11 +134,36 @@ namespace act.Views
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
-        public event EventHandler OpenEvent;
 
         public void SetProjectListBindingSource(BindingSource projectList)
         {
-            dgbProjects.DataSource = projectList;
+            dgvRoles.DataSource = projectList;
+        }
+
+        private static RoleView instance;
+
+        public static RoleView GetInstance(Form parent)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+
+                instance = new RoleView();
+
+                //Código para fijar vista en pantalla
+                instance.MdiParent = parent;
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+
+                instance.BringToFront();
+            }
+            return instance;
         }
     }
 }

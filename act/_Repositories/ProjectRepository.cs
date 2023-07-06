@@ -16,21 +16,59 @@ namespace act._Repositories
         public ProjectRepository(string connectionString)
         {
             this.connectionString = connectionString;
+
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "Delete from Projects where id = @id";
+
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+                command.ExecuteNonQuery();
+            }
         }
 
         void IProjectRepository.Add(ProjectModel projectModel)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "Insert into Projects values (@name, @description, @startDate, @endDate)";
+
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = projectModel.Name;
+                command.Parameters.Add("@description", SqlDbType.NVarChar).Value = projectModel.Description;
+                command.Parameters.Add("@startDate", SqlDbType.DateTime).Value = projectModel.StartDate;
+                command.Parameters.Add("@endDate", SqlDbType.DateTime).Value = projectModel.EndDate;
+
+                command.ExecuteNonQuery();
+            }
         }
 
         void IProjectRepository.Edit(ProjectModel projectModel)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "Update Projects set name=@name, description=@description, startDate=@startDate, endDate=@endDate where id=@id";
+
+                command.Parameters.Add("@id", SqlDbType.Int).Value = projectModel.Id;
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = projectModel.Name;
+                command.Parameters.Add("@description", SqlDbType.NVarChar).Value = projectModel.Description;
+                command.Parameters.Add("@startDate", SqlDbType.DateTime).Value = projectModel.StartDate;
+                command.Parameters.Add("@endDate", SqlDbType.DateTime).Value = projectModel.EndDate;
+
+                command.ExecuteNonQuery();
+            }
         }
 
         IEnumerable<ProjectModel> IProjectRepository.GetAll()

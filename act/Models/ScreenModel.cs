@@ -26,5 +26,7 @@ namespace act.Models
         public int ScreenElementState { get; set; }
         [DisplayName("Ubicación de imagen")]
         public string ImagePath { get; set; }
+
+        public virtual ProjectModel Project { get; set; }
     }
 }

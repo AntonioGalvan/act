@@ -43,7 +43,6 @@
             btnSalir = new Button();
             pnlExit = new Panel();
             pictureBox5 = new PictureBox();
-            pnlComponent = new Panel();
             pnlSideBar = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -152,7 +151,6 @@
             btnElementosR.TextAlign = ContentAlignment.MiddleLeft;
             btnElementosR.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnElementosR.UseVisualStyleBackColor = true;
-            btnElementosR.Click += btnElementosR_Click;
             // 
             // btnRoles
             // 
@@ -167,7 +165,6 @@
             btnRoles.TextAlign = ContentAlignment.MiddleLeft;
             btnRoles.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRoles.UseVisualStyleBackColor = true;
-            btnRoles.Click += btnRoles_Click;
             // 
             // btnInicio
             // 
@@ -219,15 +216,6 @@
             pictureBox5.TabIndex = 13;
             pictureBox5.TabStop = false;
             // 
-            // pnlComponent
-            // 
-            pnlComponent.BackColor = Color.White;
-            pnlComponent.Dock = DockStyle.Right;
-            pnlComponent.Location = new Point(350, 0);
-            pnlComponent.Name = "pnlComponent";
-            pnlComponent.Size = new Size(1072, 853);
-            pnlComponent.TabIndex = 25;
-            // 
             // pnlSideBar
             // 
             pnlSideBar.Controls.Add(pnlExit);
@@ -243,7 +231,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 236, 236);
             ClientSize = new Size(1422, 853);
-            Controls.Add(pnlComponent);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -257,6 +244,7 @@
             Controls.Add(btnInicio);
             Controls.Add(pnlSideBar);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            IsMdiContainer = true;
             Name = "SideBar";
             Text = "ACT";
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -286,7 +274,6 @@
         private Button btnSalir;
         private Panel pnlExit;
         private PictureBox pictureBox5;
-        private Panel pnlComponent;
         private Panel pnlSideBar;
     }
 }

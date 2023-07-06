@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.8" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.5" />
@@ -44,7 +45,6 @@
     <Folder Include="Forms\Roles\Create\" />
     <Folder Include="Forms\Use Cases\Create\" />
     <Folder Include="Queries\" />
-    <Folder Include="Presenters\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace act.Views
 {
-    internal interface IProjectview
+    internal interface IRoleView
     {
         string Id { get; set; }
         string Name { get; set; }
-        string Description { get; set; }
-        DateTime StartDate { get; set; }
-        DateTime EndDate { get; set; }
+        string Key { get; set; }
+        string Purpose { get; set; }
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
@@ -26,7 +25,7 @@ namespace act.Views
         event EventHandler DeleteEvent;
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
-        event EventHandler OpenEvent;
+
         void SetProjectListBindingSource(BindingSource projectList);
         void Show();
     }
