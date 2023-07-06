@@ -32,28 +32,5 @@ namespace act.Forms.Side_bar
             //Salir del proyecto actual
         }
 
-        private void UnloadPanel()
-        {
-            pnlComponent.Controls.Clear();
-        }
-        //private void btnRoles_Click(object sender, EventArgs e)
-        //{
-        //    UnloadPanel();
-        //    RoleView rIndex = new RoleView();
-        //    rIndex.TopLevel = false;
-        //    rIndex.AutoScroll = true;
-        //    pnlComponent.Controls.Add(rIndex);
-        //    rIndex.Show();
-        //}
-
-        private void btnElementosR_Click(object sender, EventArgs e)
-        {
-            UnloadPanel();
-            RelationElements rIndex = new RelationElements();
-            rIndex.TopLevel = false;
-            rIndex.AutoScroll = true;
-            pnlComponent.Controls.Add(rIndex);
-            rIndex.Show();
-        }
     }
 }

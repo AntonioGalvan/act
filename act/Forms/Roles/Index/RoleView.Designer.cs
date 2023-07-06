@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoleView));
             lblRoles = new Label();
             tbcRoles = new TabControl();
             tbpList = new TabPage();
@@ -37,10 +36,10 @@
             btnSearch = new Button();
             lblSearch = new Label();
             dgvRoles = new DataGridView();
-            pictureBox1 = new PictureBox();
             btnAdd = new Button();
             tbxSearch = new TextBox();
             tbpAdd = new TabPage();
+            tbxKey = new TextBox();
             btnCancel = new Button();
             btnSave = new Button();
             tbxPurpose = new TextBox();
@@ -50,11 +49,10 @@
             lblType = new Label();
             lblName = new Label();
             lblId = new Label();
-            tbxKey = new TextBox();
+            btnOut = new Button();
             tbcRoles.SuspendLayout();
             tbpList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRoles).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tbpAdd.SuspendLayout();
             SuspendLayout();
             // 
@@ -85,7 +83,6 @@
             tbpList.Controls.Add(btnSearch);
             tbpList.Controls.Add(lblSearch);
             tbpList.Controls.Add(dgvRoles);
-            tbpList.Controls.Add(pictureBox1);
             tbpList.Controls.Add(btnAdd);
             tbpList.Controls.Add(tbxSearch);
             tbpList.Location = new Point(4, 29);
@@ -146,15 +143,6 @@
             dgvRoles.Size = new Size(922, 670);
             dgvRoles.TabIndex = 10;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(910, 30);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(28, 26);
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            // 
             // btnAdd
             // 
             btnAdd.Font = new Font("HoloLens MDL2 Assets", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
@@ -193,6 +181,13 @@
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
             tbpAdd.UseVisualStyleBackColor = true;
+            // 
+            // tbxKey
+            // 
+            tbxKey.Location = new Point(13, 107);
+            tbxKey.Name = "tbxKey";
+            tbxKey.Size = new Size(90, 27);
+            tbxKey.TabIndex = 19;
             // 
             // btnCancel
             // 
@@ -271,12 +266,16 @@
             lblId.Text = "Id";
             lblId.Visible = false;
             // 
-            // tbxKey
+            // btnOut
             // 
-            tbxKey.Location = new Point(13, 107);
-            tbxKey.Name = "tbxKey";
-            tbxKey.Size = new Size(90, 27);
-            tbxKey.TabIndex = 19;
+            btnOut.Font = new Font("HoloLens MDL2 Assets", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnOut.Location = new Point(954, 12);
+            btnOut.Name = "btnOut";
+            btnOut.Size = new Size(102, 38);
+            btnOut.TabIndex = 9;
+            btnOut.Text = "Cerrar";
+            btnOut.TextAlign = ContentAlignment.TopCenter;
+            btnOut.UseVisualStyleBackColor = true;
             // 
             // RoleView
             // 
@@ -284,6 +283,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1068, 853);
+            Controls.Add(btnOut);
             Controls.Add(tbcRoles);
             Controls.Add(lblRoles);
             FormBorderStyle = FormBorderStyle.None;
@@ -293,7 +293,6 @@
             tbpList.ResumeLayout(false);
             tbpList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRoles).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tbpAdd.ResumeLayout(false);
             tbpAdd.PerformLayout();
             ResumeLayout(false);
@@ -304,7 +303,6 @@
         private TabControl tbcRoles;
         private TabPage tbpList;
         private DataGridView dgvRoles;
-        private PictureBox pictureBox1;
         private Button btnAdd;
         private TextBox tbxSearch;
         private TabPage tbpAdd;
@@ -322,5 +320,6 @@
         private Label lblId;
         private Button btnDelete;
         private TextBox tbxKey;
+        private Button btnOut;
     }
 }

@@ -8,6 +8,7 @@ using act.Forms;
 using act.Models;
 using act._Repositories;
 using act.Forms.Roles;
+using act.Forms.Side_bar;
 
 namespace act.Presenters
 {
@@ -32,7 +33,7 @@ namespace act.Presenters
 
         private void ShowRoleView(object sender, EventArgs e)
         {
-            IRoleView view = new RoleView();
+            IRoleView view = RoleView.GetInstance((Form)mainView);
             IRoleRepository repository = new RoleRepository(sqlConnectionString, 2);
             new RolePresenter(view, repository);
         }

@@ -25,6 +25,7 @@ namespace act.Forms.Roles
             InitializeComponent();
             AssociateAndRaiseViewEvents();
             tbcRoles.TabPages.Remove(tbpAdd);
+            btnOut.Click += delegate { this.Close(); };
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -137,6 +138,32 @@ namespace act.Forms.Roles
         public void SetProjectListBindingSource(BindingSource projectList)
         {
             dgvRoles.DataSource = projectList;
+        }
+
+        private static RoleView instance;
+
+        public static RoleView GetInstance(Form parent)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+
+                instance = new RoleView();
+
+                //Código para fijar vista en pantalla
+                instance.MdiParent = parent;
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+
+                instance.BringToFront();
+            }
+            return instance;
         }
     }
 }
