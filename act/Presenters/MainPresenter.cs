@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using act.Views;
-using act.Forms;
+﻿using act.Views;
 using act.Models;
 using act._Repositories;
 using act.Forms.Roles;
-using act.Forms.Side_bar;
+using act.Forms.Messages.Index;
 
 namespace act.Presenters
 {
@@ -26,13 +20,17 @@ namespace act.Presenters
 
             this.mainView.ShowRoleView += ShowRoleView;
 
+            this.mainView.ShowMessageView += ShowMessageView;
+
             this.mainView.Show();
             this.projectId = projectId;
         }
 
         private void ShowRelationElementsView(object sender, EventArgs e)
         {
-            
+            //IMessageView view = MessageView.GetInstance((Form)mainView);
+            //IMessageRepository repository = new MessageRepository(sqlConnectionString, projectId);
+            //new MessagePresenter(view, repository);
         }
 
         private void ShowRoleView(object sender, EventArgs e)
@@ -40,6 +38,13 @@ namespace act.Presenters
             IRoleView view = RoleView.GetInstance((Form)mainView);
             IRoleRepository repository = new RoleRepository(sqlConnectionString, projectId);
             new RolePresenter(view, repository);
+        }
+
+        private void ShowMessageView(object sender, EventArgs e)
+        {
+            IMessageView view = MessageView.GetInstance((Form)mainView);
+            IMessageRepository repository = new MessageRepository(sqlConnectionString, projectId);
+            new MessagePresenter(view, repository);
         }
     }
 }

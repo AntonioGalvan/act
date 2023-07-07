@@ -1,19 +1,18 @@
 ﻿using act.Views;
 
-namespace act.Forms.Roles
+namespace act.Forms.Messages.Index
 {
-    public partial class RoleView : Form, IRoleView
+    public partial class MessageView : Form, IMessageView
     {
-
         private string message;
         private bool isSuccessful;
         private bool isEdit;
-
-        public RoleView()
+        public MessageView()
         {
             InitializeComponent();
+            InitializeComponent();
             AssociateAndRaiseViewEvents();
-            tbcRoles.TabPages.Remove(tbpAdd);
+            tbcMessages.TabPages.Remove(tbpAdd);
             btnOut.Click += delegate { this.Close(); };
         }
 
@@ -29,17 +28,17 @@ namespace act.Forms.Roles
             btnAdd.Click += delegate
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
-                tbcRoles.TabPages.Remove(tbpList);
-                tbcRoles.TabPages.Add(tbpAdd);
-                tbpAdd.Text = "Agregar rol";
+                tbcMessages.TabPages.Remove(tbpList);
+                tbcMessages.TabPages.Add(tbpAdd);
+                tbpAdd.Text = "Agregar mensaje";
             };
 
             btnEdit.Click += delegate
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
-                tbcRoles.TabPages.Remove(tbpList);
-                tbcRoles.TabPages.Add(tbpAdd);
-                tbpAdd.Text = "Editar rol";
+                tbcMessages.TabPages.Remove(tbpList);
+                tbcMessages.TabPages.Add(tbpAdd);
+                tbpAdd.Text = "Editar mensaje";
             };
 
             btnSave.Click += delegate
@@ -47,8 +46,8 @@ namespace act.Forms.Roles
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (IsSuccessful)
                 {
-                    tbcRoles.TabPages.Remove(tbpAdd);
-                    tbcRoles.TabPages.Add(tbpList);
+                    tbcMessages.TabPages.Remove(tbpAdd);
+                    tbcMessages.TabPages.Add(tbpList);
                 }
                 MessageBox.Show(Message);
             };
@@ -56,8 +55,8 @@ namespace act.Forms.Roles
             btnCancel.Click += delegate
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
-                tbcRoles.TabPages.Remove(tbpAdd);
-                tbcRoles.TabPages.Add(tbpList);
+                tbcMessages.TabPages.Remove(tbpAdd);
+                tbcMessages.TabPages.Add(tbpList);
             };
 
             btnDelete.Click += delegate
@@ -72,30 +71,23 @@ namespace act.Forms.Roles
             };
         }
 
+        //Sacar del modelo
         public string Id
         {
             get { return tbxId.Text; }
             set { tbxId.Text = value; }
         }
-
         public string Key
         {
             get { return tbxKey.Text; }
             set { tbxKey.Text = value; }
         }
-
-        public string Name
+        public string Description
         {
-            get { return tbxName.Text; }
-            set { tbxName.Text = value; }
+            get { return tbxDescription.Text; }
+            set { tbxDescription.Text = value; }
         }
-
-        public string Purpose
-        {
-            get { return tbxPurpose.Text; }
-            set { tbxPurpose.Text = value; }
-        }
-
+        //Necesarios
         public string SearchValue
         {
             get { return tbxSearch.Text; }
@@ -126,17 +118,17 @@ namespace act.Forms.Roles
 
         public void SetProjectListBindingSource(BindingSource projectList)
         {
-            dgvRoles.DataSource = projectList;
+            dgvMessages.DataSource = projectList;
         }
 
-        private static RoleView instance;
+        private static MessageView instance;
 
-        public static RoleView GetInstance(Form parent)
+        public static MessageView GetInstance(Form parent)
         {
             if (instance == null || instance.IsDisposed)
             {
 
-                instance = new RoleView();
+                instance = new MessageView();
 
                 //Código para fijar vista en pantalla
                 instance.MdiParent = parent;
@@ -154,5 +146,6 @@ namespace act.Forms.Roles
             }
             return instance;
         }
+
     }
 }

@@ -17,5 +17,6 @@ namespace act.Contexts
         }
         public virtual DbSet<ProjectModel> Projects { get; set; }
         public virtual DbSet<RoleModel> Roles { get; set; }
+        public virtual DbSet<MessageModel> Messages { get; set; }
     }
 }

@@ -44,6 +44,29 @@
             pnlExit = new Panel();
             pictureBox5 = new PictureBox();
             pnlSideBar = new Panel();
+            lblMessages = new Label();
+            btnMessages = new Button();
+            pnlRelationEContainer = new Panel();
+            lblRn = new Label();
+            btnBusinessRules = new Button();
+            lblRnMs = new Label();
+            lblStateChanges = new Label();
+            btnStateChanges = new Button();
+            lblStates = new Label();
+            lblStatesbtn = new Label();
+            btnStates = new Button();
+            lblObjects = new Label();
+            btnObjects = new Button();
+            label4 = new Label();
+            lblObjectTypes = new Label();
+            btnObjectTypes = new Button();
+            lblAlternativeFlows = new Label();
+            btnAlternateFlows = new Button();
+            lblBaseFlows = new Label();
+            btnBaseFlows = new Button();
+            lblCu = new Label();
+            lblUseCases = new Label();
+            btnCUs = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -52,6 +75,7 @@
             pnlExit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             pnlSideBar.SuspendLayout();
+            pnlRelationEContainer.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox4
@@ -218,12 +242,299 @@
             // 
             // pnlSideBar
             // 
+            pnlSideBar.Controls.Add(lblMessages);
             pnlSideBar.Controls.Add(pnlExit);
+            pnlSideBar.Controls.Add(btnMessages);
             pnlSideBar.Dock = DockStyle.Left;
             pnlSideBar.Location = new Point(0, 0);
             pnlSideBar.Name = "pnlSideBar";
             pnlSideBar.Size = new Size(348, 853);
             pnlSideBar.TabIndex = 26;
+            // 
+            // lblMessages
+            // 
+            lblMessages.AutoSize = true;
+            lblMessages.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblMessages.Location = new Point(89, 620);
+            lblMessages.Name = "lblMessages";
+            lblMessages.Size = new Size(81, 20);
+            lblMessages.TabIndex = 42;
+            lblMessages.Text = "Mensajes";
+            // 
+            // btnMessages
+            // 
+            btnMessages.BackColor = Color.FromArgb(236, 236, 236);
+            btnMessages.BackgroundImage = (Image)resources.GetObject("btnMessages.BackgroundImage");
+            btnMessages.BackgroundImageLayout = ImageLayout.Center;
+            btnMessages.FlatAppearance.BorderSize = 0;
+            btnMessages.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMessages.Location = new Point(70, 533);
+            btnMessages.Name = "btnMessages";
+            btnMessages.Size = new Size(116, 80);
+            btnMessages.TabIndex = 41;
+            btnMessages.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnMessages.UseVisualStyleBackColor = false;
+            // 
+            // pnlRelationEContainer
+            // 
+            pnlRelationEContainer.BackColor = Color.White;
+            pnlRelationEContainer.Controls.Add(lblRn);
+            pnlRelationEContainer.Controls.Add(btnBusinessRules);
+            pnlRelationEContainer.Controls.Add(lblRnMs);
+            pnlRelationEContainer.Controls.Add(lblStateChanges);
+            pnlRelationEContainer.Controls.Add(btnStateChanges);
+            pnlRelationEContainer.Controls.Add(lblStates);
+            pnlRelationEContainer.Controls.Add(lblStatesbtn);
+            pnlRelationEContainer.Controls.Add(btnStates);
+            pnlRelationEContainer.Controls.Add(lblObjects);
+            pnlRelationEContainer.Controls.Add(btnObjects);
+            pnlRelationEContainer.Controls.Add(label4);
+            pnlRelationEContainer.Controls.Add(lblObjectTypes);
+            pnlRelationEContainer.Controls.Add(btnObjectTypes);
+            pnlRelationEContainer.Controls.Add(lblAlternativeFlows);
+            pnlRelationEContainer.Controls.Add(btnAlternateFlows);
+            pnlRelationEContainer.Controls.Add(lblBaseFlows);
+            pnlRelationEContainer.Controls.Add(btnBaseFlows);
+            pnlRelationEContainer.Controls.Add(lblCu);
+            pnlRelationEContainer.Controls.Add(lblUseCases);
+            pnlRelationEContainer.Controls.Add(btnCUs);
+            pnlRelationEContainer.Dock = DockStyle.Fill;
+            pnlRelationEContainer.Location = new Point(348, 0);
+            pnlRelationEContainer.Name = "pnlRelationEContainer";
+            pnlRelationEContainer.Size = new Size(1074, 853);
+            pnlRelationEContainer.TabIndex = 28;
+            // 
+            // lblRn
+            // 
+            lblRn.AutoSize = true;
+            lblRn.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblRn.Location = new Point(554, 444);
+            lblRn.Name = "lblRn";
+            lblRn.Size = new Size(137, 20);
+            lblRn.TabIndex = 40;
+            lblRn.Text = "Tipos de objetos";
+            // 
+            // btnBusinessRules
+            // 
+            btnBusinessRules.BackColor = Color.FromArgb(236, 236, 236);
+            btnBusinessRules.BackgroundImage = (Image)resources.GetObject("btnBusinessRules.BackgroundImage");
+            btnBusinessRules.BackgroundImageLayout = ImageLayout.Center;
+            btnBusinessRules.FlatAppearance.BorderSize = 0;
+            btnBusinessRules.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBusinessRules.Location = new Point(564, 357);
+            btnBusinessRules.Name = "btnBusinessRules";
+            btnBusinessRules.Size = new Size(116, 80);
+            btnBusinessRules.TabIndex = 39;
+            btnBusinessRules.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBusinessRules.UseVisualStyleBackColor = false;
+            // 
+            // lblRnMs
+            // 
+            lblRnMs.Font = new Font("HoloLens MDL2 Assets", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lblRnMs.Location = new Point(554, 289);
+            lblRnMs.Name = "lblRnMs";
+            lblRnMs.Size = new Size(365, 46);
+            lblRnMs.TabIndex = 38;
+            lblRnMs.Text = "Reglas de negocio y Mensajes";
+            lblRnMs.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblStateChanges
+            // 
+            lblStateChanges.AutoSize = true;
+            lblStateChanges.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStateChanges.Location = new Point(193, 443);
+            lblStateChanges.Name = "lblStateChanges";
+            lblStateChanges.Size = new Size(157, 20);
+            lblStateChanges.TabIndex = 37;
+            lblStateChanges.Text = "Cambios de estado";
+            // 
+            // btnStateChanges
+            // 
+            btnStateChanges.BackColor = Color.FromArgb(236, 236, 236);
+            btnStateChanges.BackgroundImage = (Image)resources.GetObject("btnStateChanges.BackgroundImage");
+            btnStateChanges.BackgroundImageLayout = ImageLayout.Center;
+            btnStateChanges.FlatAppearance.BorderSize = 0;
+            btnStateChanges.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnStateChanges.Location = new Point(214, 357);
+            btnStateChanges.Name = "btnStateChanges";
+            btnStateChanges.Size = new Size(116, 80);
+            btnStateChanges.TabIndex = 36;
+            btnStateChanges.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnStateChanges.UseVisualStyleBackColor = false;
+            // 
+            // lblStates
+            // 
+            lblStates.Font = new Font("HoloLens MDL2 Assets", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStates.Location = new Point(42, 289);
+            lblStates.Name = "lblStates";
+            lblStates.Size = new Size(105, 46);
+            lblStates.TabIndex = 35;
+            lblStates.Text = "Estados";
+            lblStates.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblStatesbtn
+            // 
+            lblStatesbtn.AutoSize = true;
+            lblStatesbtn.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStatesbtn.Location = new Point(67, 443);
+            lblStatesbtn.Name = "lblStatesbtn";
+            lblStatesbtn.Size = new Size(71, 20);
+            lblStatesbtn.TabIndex = 34;
+            lblStatesbtn.Text = "Estados";
+            // 
+            // btnStates
+            // 
+            btnStates.BackColor = Color.FromArgb(236, 236, 236);
+            btnStates.BackgroundImage = (Image)resources.GetObject("btnStates.BackgroundImage");
+            btnStates.BackgroundImageLayout = ImageLayout.Center;
+            btnStates.FlatAppearance.BorderSize = 0;
+            btnStates.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnStates.Location = new Point(42, 357);
+            btnStates.Name = "btnStates";
+            btnStates.Size = new Size(116, 80);
+            btnStates.TabIndex = 33;
+            btnStates.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnStates.UseVisualStyleBackColor = false;
+            // 
+            // lblObjects
+            // 
+            lblObjects.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblObjects.Location = new Point(760, 211);
+            lblObjects.Name = "lblObjects";
+            lblObjects.Size = new Size(81, 20);
+            lblObjects.TabIndex = 30;
+            lblObjects.Text = "Objetos";
+            lblObjects.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnObjects
+            // 
+            btnObjects.BackColor = Color.FromArgb(236, 236, 236);
+            btnObjects.BackgroundImage = (Image)resources.GetObject("btnObjects.BackgroundImage");
+            btnObjects.BackgroundImageLayout = ImageLayout.Center;
+            btnObjects.FlatAppearance.BorderSize = 0;
+            btnObjects.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnObjects.Location = new Point(741, 124);
+            btnObjects.Name = "btnObjects";
+            btnObjects.Size = new Size(116, 80);
+            btnObjects.TabIndex = 29;
+            btnObjects.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnObjects.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            label4.Font = new Font("HoloLens MDL2 Assets", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(564, 64);
+            label4.Name = "label4";
+            label4.Size = new Size(103, 46);
+            label4.TabIndex = 28;
+            label4.Text = "Objetos";
+            label4.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblObjectTypes
+            // 
+            lblObjectTypes.AutoSize = true;
+            lblObjectTypes.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblObjectTypes.Location = new Point(554, 211);
+            lblObjectTypes.Name = "lblObjectTypes";
+            lblObjectTypes.Size = new Size(137, 20);
+            lblObjectTypes.TabIndex = 27;
+            lblObjectTypes.Text = "Tipos de objetos";
+            // 
+            // btnObjectTypes
+            // 
+            btnObjectTypes.BackColor = Color.FromArgb(236, 236, 236);
+            btnObjectTypes.BackgroundImage = (Image)resources.GetObject("btnObjectTypes.BackgroundImage");
+            btnObjectTypes.BackgroundImageLayout = ImageLayout.Center;
+            btnObjectTypes.FlatAppearance.BorderSize = 0;
+            btnObjectTypes.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnObjectTypes.Location = new Point(564, 124);
+            btnObjectTypes.Name = "btnObjectTypes";
+            btnObjectTypes.Size = new Size(116, 80);
+            btnObjectTypes.TabIndex = 26;
+            btnObjectTypes.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnObjectTypes.UseVisualStyleBackColor = false;
+            // 
+            // lblAlternativeFlows
+            // 
+            lblAlternativeFlows.AutoSize = true;
+            lblAlternativeFlows.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAlternativeFlows.Location = new Point(331, 211);
+            lblAlternativeFlows.Name = "lblAlternativeFlows";
+            lblAlternativeFlows.Size = new Size(122, 20);
+            lblAlternativeFlows.TabIndex = 25;
+            lblAlternativeFlows.Text = "Flujos alternos";
+            // 
+            // btnAlternateFlows
+            // 
+            btnAlternateFlows.BackColor = Color.FromArgb(236, 236, 236);
+            btnAlternateFlows.BackgroundImage = Properties.Resources.icons8_flow_48;
+            btnAlternateFlows.BackgroundImageLayout = ImageLayout.Center;
+            btnAlternateFlows.FlatAppearance.BorderSize = 0;
+            btnAlternateFlows.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAlternateFlows.Location = new Point(331, 124);
+            btnAlternateFlows.Name = "btnAlternateFlows";
+            btnAlternateFlows.Size = new Size(116, 80);
+            btnAlternateFlows.TabIndex = 24;
+            btnAlternateFlows.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAlternateFlows.UseVisualStyleBackColor = false;
+            // 
+            // lblBaseFlows
+            // 
+            lblBaseFlows.AutoSize = true;
+            lblBaseFlows.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblBaseFlows.Location = new Point(198, 211);
+            lblBaseFlows.Name = "lblBaseFlows";
+            lblBaseFlows.Size = new Size(97, 20);
+            lblBaseFlows.TabIndex = 23;
+            lblBaseFlows.Text = "Flujos base";
+            // 
+            // btnBaseFlows
+            // 
+            btnBaseFlows.BackColor = Color.FromArgb(236, 236, 236);
+            btnBaseFlows.BackgroundImage = (Image)resources.GetObject("btnBaseFlows.BackgroundImage");
+            btnBaseFlows.BackgroundImageLayout = ImageLayout.Center;
+            btnBaseFlows.FlatAppearance.BorderSize = 0;
+            btnBaseFlows.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBaseFlows.Location = new Point(188, 124);
+            btnBaseFlows.Name = "btnBaseFlows";
+            btnBaseFlows.Size = new Size(116, 80);
+            btnBaseFlows.TabIndex = 22;
+            btnBaseFlows.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBaseFlows.UseVisualStyleBackColor = false;
+            // 
+            // lblCu
+            // 
+            lblCu.Font = new Font("HoloLens MDL2 Assets", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCu.Location = new Point(42, 51);
+            lblCu.Name = "lblCu";
+            lblCu.Size = new Size(170, 46);
+            lblCu.TabIndex = 21;
+            lblCu.Text = "CU, FB y FA";
+            lblCu.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // lblUseCases
+            // 
+            lblUseCases.AutoSize = true;
+            lblUseCases.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUseCases.Location = new Point(42, 211);
+            lblUseCases.Name = "lblUseCases";
+            lblUseCases.Size = new Size(116, 20);
+            lblUseCases.TabIndex = 19;
+            lblUseCases.Text = "Casos de uso";
+            // 
+            // btnCUs
+            // 
+            btnCUs.BackColor = Color.FromArgb(236, 236, 236);
+            btnCUs.BackgroundImage = (Image)resources.GetObject("btnCUs.BackgroundImage");
+            btnCUs.BackgroundImageLayout = ImageLayout.Center;
+            btnCUs.FlatAppearance.BorderSize = 0;
+            btnCUs.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCUs.Location = new Point(42, 124);
+            btnCUs.Name = "btnCUs";
+            btnCUs.Size = new Size(116, 80);
+            btnCUs.TabIndex = 18;
+            btnCUs.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCUs.UseVisualStyleBackColor = false;
             // 
             // SideBar
             // 
@@ -231,6 +542,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 236, 236);
             ClientSize = new Size(1422, 853);
+            Controls.Add(pnlRelationEContainer);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -255,6 +567,9 @@
             pnlExit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             pnlSideBar.ResumeLayout(false);
+            pnlSideBar.PerformLayout();
+            pnlRelationEContainer.ResumeLayout(false);
+            pnlRelationEContainer.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -275,5 +590,29 @@
         private Panel pnlExit;
         private PictureBox pictureBox5;
         private Panel pnlSideBar;
+        private Panel pnlRelationEContainer;
+        private Button btnCUs;
+        private Label lblUseCases;
+        private Label lblBaseFlows;
+        private Button btnBaseFlows;
+        private Label lblCu;
+        private Label lblAlternativeFlows;
+        private Button btnAlternateFlows;
+        private Label label6;
+        private Label lblStateChanges;
+        private Button btnStateChanges;
+        private Label lblStates;
+        private Label lblStatesbtn;
+        private Button btnStates;
+        private Label lblObjects;
+        private Button btnObjects;
+        private Label label4;
+        private Label lblObjectTypes;
+        private Button btnObjectTypes;
+        private Label lblMessages;
+        private Button btnMessages;
+        private Label lblRn;
+        private Button btnBusinessRules;
+        private Label lblRnMs;
     }
 }
