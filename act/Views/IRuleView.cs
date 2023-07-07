@@ -1,11 +1,10 @@
 ﻿namespace act.Views
 {
-    internal interface IRoleView
+    internal interface IRuleView
     {
         string Id { get; set; }
-        string Name { get; set; }
         string Key { get; set; }
-        string Purpose { get; set; }
+        string Description { get; set; }
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
@@ -20,7 +19,7 @@
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
 
-        void SetProjectListBindingSource(BindingSource roleList);
+        void SetProjectListBindingSource(BindingSource ruleList);
         void Show();
     }
 }

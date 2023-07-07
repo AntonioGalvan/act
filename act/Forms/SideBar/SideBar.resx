@@ -191,17 +191,6 @@
         LvBGzH7E6YROdHcPfjKZTH6bZfkEoESCUQz8w1MAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnMessages.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAATZJREFUaEPtmUFKxUAQRHMO5S/Fq+tH8WCifL2AVm+bDpUhr0eEefB2M1UzIYs0
-        2RaLRcmDfJXf8uekkfEs7+UU4vAfsjrMGd/llEvEk68OQPgk2yFemz1vsp1cehY6z0IX0nkWupDOs9CF
-        dJ4lF9K2U5WStlOVkrZTlZK2M72QZl3gr1kXEBf5Iql54k0+ykPkgFHi8B3zxKeMbEveOEo8+ZxBeZWW
-        vGmUznniS1piUbV5z0y1htQSA3i1cc9MtYbUEoN3DODV5spMtYb0EHcyBvAjr1OmWkPaDl1I51noQjrP
-        QhfSeRa6kM6z0IV0noUupPMsdCGdZ6EL6TwLXUjnWehCOs9CF9J5FrqQzrOMzhMjTvlBMjpPjDjlF9Xo
-        PHHUyIzP/CmMzBPOyIisaYdfLP4P2/YLtNCUN/FtTI8AAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="btnBusinessRules.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -211,6 +200,17 @@
         0CO0hOH/8zV6hpY/gjuvAitfoR13P8hiyEh1vWuZvQbV9a5l9hpU17uW2WtQXe9aRn0+bGn5EHNIqbBK
         y9cohxOHlAq8ljUP0BIG4+5ufY1yzTb84MCcjd6SORu9NSpoZkTVdCyjmmRGVE3HMqpJZkTVdCyjmmRG
         VE3HMnf/l3LORh2Ys9FhsGZZ/gBkD2KHKH73yQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnMessages.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAATZJREFUaEPtmUFKxUAQRHMO5S/Fq+tH8WCifL2AVm+bDpUhr0eEefB2M1UzIYs0
+        2RaLRcmDfJXf8uekkfEs7+UU4vAfsjrMGd/llEvEk68OQPgk2yFemz1vsp1cehY6z0IX0nkWupDOs9CF
+        dJ4lF9K2U5WStlOVkrZTlZK2M72QZl3gr1kXEBf5Iql54k0+ykPkgFHi8B3zxKeMbEveOEo8+ZxBeZWW
+        vGmUznniS1piUbV5z0y1htQSA3i1cc9MtYbUEoN3DODV5spMtYb0EHcyBvAjr1OmWkPaDl1I51noQjrP
+        QhfSeRa6kM6z0IV0noUupPMsdCGdZ6EL6TwLXUjnWehCOs9CF9J5FrqQzrOMzhMjTvlBMjpPjDjlF9Xo
+        PHHUyIzP/CmMzBPOyIisaYdfLP4P2/YLtNCUN/FtTI8AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnStateChanges.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

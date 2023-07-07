@@ -3,6 +3,7 @@ using act.Models;
 using act._Repositories;
 using act.Forms.Roles;
 using act.Forms.Messages.Index;
+using act.Forms.Business_Rules.Index;
 
 namespace act.Presenters
 {
@@ -16,11 +17,14 @@ namespace act.Presenters
         {
             this.mainView = pMainView;
             sqlConnectionString = pSqlConnectionString;
+
             this.mainView.ShowRelationElementsView += ShowRelationElementsView;
 
             this.mainView.ShowRoleView += ShowRoleView;
 
             this.mainView.ShowMessageView += ShowMessageView;
+
+            this.mainView.ShowRuleView += ShowRuleView;
 
             this.mainView.Show();
             this.projectId = projectId;
@@ -45,6 +49,13 @@ namespace act.Presenters
             IMessageView view = MessageView.GetInstance((Form)mainView);
             IMessageRepository repository = new MessageRepository(sqlConnectionString, projectId);
             new MessagePresenter(view, repository);
+        }
+
+        private void ShowRuleView(object sender, EventArgs e)
+        {
+            IRuleView view = RuleView.GetInstance((Form)mainView);
+            IRuleRepository repository = new RuleRepository(sqlConnectionString, projectId);
+            new RulePresenter(view, repository);
         }
     }
 }

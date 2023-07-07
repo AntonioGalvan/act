@@ -9,18 +9,14 @@ namespace act.Models
 {
     internal class BusinessRuleModel
     {
-        [MaxLength(8)]
         [Key]
         public int Id { get; set; }
-        [MaxLength(8)]
-        public int ProjectId { get; set; }
-        [MaxLength(2)]
-        public int Key { get; set; }
-        [MaxLength(40)]
-        public string Decription { get; set; }
-        [MaxLength(1)]
+        [MaxLength(6)]
+        public string Key { get; set; }
+        [MaxLength(50)]
+        public string Description { get; set; }
         public int DiagramElementState { get; set; }
-        [MaxLength(1)]
         public int ScreenElementState { get; set; }
+        public int ProjectId { get; set; }
     }
 }
