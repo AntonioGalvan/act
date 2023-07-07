@@ -4,8 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3083766a5cc141cd8eefd9a9f0b92333" Name="Diagram1" >
-        <EntityTypeShape EntityType="Model1.Entity1" Width="1.5" PointX="2.875" PointY="1.25" />
+      <Diagram DiagramId="3083766a5cc141cd8eefd9a9f0b92333" Name="Diagram1" ZoomLevel="99" >
+        <EntityTypeShape EntityType="Model1.Project" Width="1.5" PointX="2.875" PointY="1.25" />
+        <EntityTypeShape EntityType="Model1.Role" Width="1.5" PointX="5.875" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Screen" Width="1.5" PointX="5.75" PointY="3.875" />
+        <AssociationConnector Association="Model1.ProjectScreen" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model1.ElementState" Width="1.5" PointX="2.875" PointY="4" />
+        <EntityTypeShape EntityType="Model1.DiagramState" Width="1.5" PointX="2.875" PointY="5.875" />
+        <AssociationConnector Association="Model1.ElementStateScreen" />
+        <AssociationConnector Association="Model1.DiagramStateScreen" />
+        <AssociationConnector Association="Model1.ProjectRole" />
+        <EntityTypeShape EntityType="Model1.BusinessRule" Width="1.5" PointX="5.75" PointY="7" />
+        <AssociationConnector Association="Model1.ProjectBusinessRule" />
+        <AssociationConnector Association="Model1.DiagramStateBusinessRule" />
+        <AssociationConnector Association="Model1.ElementStateBusinessRule" />
+        <EntityTypeShape EntityType="Model1.Message" Width="1.5" PointX="5.75" PointY="10" />
+        <AssociationConnector Association="Model1.ProjectMessage" />
+        <EntityTypeShape EntityType="Model1.BusinnesRulesMessages" Width="1.5" PointX="8.375" PointY="7.75" />
+        <AssociationConnector Association="Model1.MessageBusinnesRulesMessages" />
+        <AssociationConnector Association="Model1.BusinessRuleBusinnesRulesMessages" />
+        <AssociationConnector Association="Model1.ProjectBusinnesRulesMessages" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
