@@ -1,4 +1,4 @@
-﻿namespace act.Forms.Relation_Elements
+namespace act.Forms.Relation_Elements
 {
     partial class RelationElements
     {
@@ -184,7 +184,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1042, 959);
+            ClientSize = new Size(1068, 1102);
+            Controls.Add(lblSpaced);
             Controls.Add(btnScreens);
             Controls.Add(lblScreens);
             Controls.Add(btnMsj);

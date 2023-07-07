@@ -124,9 +124,9 @@ namespace act.Forms.Roles
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-        public void SetProjectListBindingSource(BindingSource projectList)
+        public void SetProjectListBindingSource(BindingSource roleList)
         {
-            dgvRoles.DataSource = projectList;
+            dgvRoles.DataSource = roleList;
         }
 
         private static RoleView instance;

@@ -26,7 +26,7 @@ namespace act.Views
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
 
-        void SetProjectListBindingSource(BindingSource projectList);
+        void SetProjectListBindingSource(BindingSource roleList);
         void Show();
     }
 }
