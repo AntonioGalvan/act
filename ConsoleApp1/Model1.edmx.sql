@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/08/2023 14:17:49
--- Generated from EDMX file: D:\Repos\ACTProyecto\ConsoleApp1\Model1.edmx
+-- Date Created: 07/08/2023 15:02:30
+-- Generated from EDMX file: D:\Projects\Repo\AntonioGalvan\act\ConsoleApp1\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -391,8 +391,7 @@ CREATE TABLE [dbo].[UseCases] (
     [Name] nvarchar(15)  NOT NULL,
     [FlowChartPath] nvarchar(max)  NOT NULL,
     [DiagramElementStateId] int  NOT NULL,
-    [ScreenElementStateId] int  NOT NULL,
-    [BaseFlow_Id] int  NOT NULL
+    [ScreenElementStateId] int  NOT NULL
 );
 GO
 
@@ -404,7 +403,8 @@ CREATE TABLE [dbo].[BaseFlows] (
     [Name] nvarchar(max)  NOT NULL,
     [FlowChartPath] nvarchar(max)  NOT NULL,
     [DiagramElementStateId] int  NOT NULL,
-    [ScreenElementStateId] int  NOT NULL
+    [ScreenElementStateId] int  NOT NULL,
+    [UseCase_Id] int  NOT NULL
 );
 GO
 
@@ -938,19 +938,19 @@ ON [dbo].[BaseFlows]
     ([ProjectId]);
 GO
 
--- Creating foreign key on [BaseFlow_Id] in table 'UseCases'
-ALTER TABLE [dbo].[UseCases]
+-- Creating foreign key on [UseCase_Id] in table 'BaseFlows'
+ALTER TABLE [dbo].[BaseFlows]
 ADD CONSTRAINT [FK_UseCaseBaseFlow]
-    FOREIGN KEY ([BaseFlow_Id])
-    REFERENCES [dbo].[BaseFlows]
+    FOREIGN KEY ([UseCase_Id])
+    REFERENCES [dbo].[UseCases]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_UseCaseBaseFlow'
 CREATE INDEX [IX_FK_UseCaseBaseFlow]
-ON [dbo].[UseCases]
-    ([BaseFlow_Id]);
+ON [dbo].[BaseFlows]
+    ([UseCase_Id]);
 GO
 
 -- Creating foreign key on [ProjectId] in table 'AlternativeFlows'

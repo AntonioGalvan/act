@@ -1,9 +1,13 @@
 ﻿using act.Views;
-using act.Models;
 using act._Repositories;
 using act.Forms.Roles;
 using act.Forms.Messages.Index;
 using act.Forms.Business_Rules.Index;
+using act.Models.Roles;
+using act.Models.Rules;
+using act.Models.Messages;
+using act.Forms.UseCases.Index;
+using act.Models.UseCases;
 
 namespace act.Presenters
 {
@@ -25,6 +29,8 @@ namespace act.Presenters
             this.mainView.ShowMessageView += ShowMessageView;
 
             this.mainView.ShowRuleView += ShowRuleView;
+
+            this.mainView.ShowUseCaseView += ShowUseCaseView;
 
             this.mainView.Show();
             this.projectId = projectId;
@@ -56,6 +62,13 @@ namespace act.Presenters
             IRuleView view = RuleView.GetInstance((Form)mainView);
             IRuleRepository repository = new RuleRepository(sqlConnectionString, projectId);
             new RulePresenter(view, repository);
+        }
+
+        private void ShowUseCaseView(object sender, EventArgs e)
+        {
+            IUseCaseView view = UseCaseView.GetInstance((Form)mainView);
+            IUseCaseRepository repository = new UseCaseRepository(sqlConnectionString, projectId);
+            new UseCasePresenter(view, repository);
         }
     }
 }

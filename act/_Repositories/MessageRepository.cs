@@ -1,6 +1,6 @@
-﻿using act.Models;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Data;
+using act.Models.Messages;
 
 namespace act._Repositories
 {

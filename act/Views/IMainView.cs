@@ -6,6 +6,7 @@
         event EventHandler ShowRoleView;
         event EventHandler ShowMessageView;
         event EventHandler ShowRuleView;
+        event EventHandler ShowUseCaseView;
 
         void Show();
     }

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using act.Models;
 using System.Data;
+using act.Models.Projects;
 
 namespace act._Repositories
 {

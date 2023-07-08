@@ -376,7 +376,6 @@
     <Property Name="FlowChartPath" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DiagramElementStateId" Type="int" Nullable="false" />
     <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
-    <Property Name="BaseFlow_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="BaseFlows">
     <Key>
@@ -389,6 +388,7 @@
     <Property Name="FlowChartPath" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DiagramElementStateId" Type="int" Nullable="false" />
     <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
+    <Property Name="UseCase_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="AlternativeFlows">
     <Key>
@@ -712,14 +712,14 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="UseCaseBaseFlow">
-    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="*" />
-    <End Role="BaseFlow" Type="Model1.Store.BaseFlows" Multiplicity="1" />
+    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="1" />
+    <End Role="BaseFlow" Type="Model1.Store.BaseFlows" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="BaseFlow">
+      <Principal Role="UseCase">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="UseCase">
-        <PropertyRef Name="BaseFlow_Id" />
+      <Dependent Role="BaseFlow">
+        <PropertyRef Name="UseCase_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1708,7 +1708,7 @@
         </Association>
         <Association Name="UseCaseBaseFlow">
           <End Type="Model1.UseCase" Role="UseCase" Multiplicity="1" />
-          <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="1" />
+          <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="0..1" />
         </Association>
         <Association Name="ProjectAlternativeFlow">
           <End Type="Model1.Project" Role="Project" Multiplicity="1" />
@@ -2171,11 +2171,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="UseCaseBaseFlow" TypeName="Model1.UseCaseBaseFlow" StoreEntitySet="UseCases">
-      <EndProperty Name="BaseFlow">
-        <ScalarProperty Name="Id" ColumnName="BaseFlow_Id" />
-      </EndProperty>
+    <AssociationSetMapping Name="UseCaseBaseFlow" TypeName="Model1.UseCaseBaseFlow" StoreEntitySet="BaseFlows">
       <EndProperty Name="UseCase">
+        <ScalarProperty Name="Id" ColumnName="UseCase_Id" />
+      </EndProperty>
+      <EndProperty Name="BaseFlow">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

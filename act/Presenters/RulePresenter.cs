@@ -1,4 +1,4 @@
-﻿using act.Models;
+﻿using act.Models.Rules;
 using act.Views;
 
 namespace act.Presenters
