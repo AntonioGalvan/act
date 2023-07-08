@@ -91,7 +91,7 @@
             button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.Control;
             button1.Image = Properties.Resources.reportes;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
@@ -112,7 +112,7 @@
             button3.Cursor = Cursors.Hand;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = SystemColors.Control;
             button3.Image = Properties.Resources.venn2;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
@@ -132,7 +132,7 @@
             btnElementosR.Cursor = Cursors.Hand;
             btnElementosR.FlatAppearance.BorderSize = 0;
             btnElementosR.FlatStyle = FlatStyle.Flat;
-            btnElementosR.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnElementosR.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnElementosR.ForeColor = SystemColors.Control;
             btnElementosR.Image = Properties.Resources.docs;
             btnElementosR.ImageAlign = ContentAlignment.MiddleLeft;
@@ -153,7 +153,7 @@
             btnRoles.Cursor = Cursors.Hand;
             btnRoles.FlatAppearance.BorderSize = 0;
             btnRoles.FlatStyle = FlatStyle.Flat;
-            btnRoles.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRoles.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnRoles.ForeColor = SystemColors.Control;
             btnRoles.Image = Properties.Resources.roles;
             btnRoles.ImageAlign = ContentAlignment.MiddleLeft;
@@ -174,7 +174,7 @@
             btnInicio.Cursor = Cursors.Hand;
             btnInicio.FlatAppearance.BorderSize = 0;
             btnInicio.FlatStyle = FlatStyle.Flat;
-            btnInicio.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInicio.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnInicio.ForeColor = SystemColors.Control;
             btnInicio.Image = Properties.Resources.hogar;
             btnInicio.ImageAlign = ContentAlignment.MiddleLeft;
@@ -255,10 +255,10 @@
             // lblRn
             // 
             lblRn.AutoSize = true;
-            lblRn.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblRn.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblRn.Location = new Point(551, 444);
             lblRn.Name = "lblRn";
-            lblRn.Size = new Size(151, 20);
+            lblRn.Size = new Size(150, 21);
             lblRn.TabIndex = 40;
             lblRn.Text = "Reglas de negocio";
             // 
@@ -280,10 +280,10 @@
             // lblMessages
             // 
             lblMessages.AutoSize = true;
-            lblMessages.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblMessages.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblMessages.Location = new Point(760, 444);
             lblMessages.Name = "lblMessages";
-            lblMessages.Size = new Size(81, 20);
+            lblMessages.Size = new Size(81, 21);
             lblMessages.TabIndex = 42;
             lblMessages.Text = "Mensajes";
             // 
@@ -339,7 +339,7 @@
             // 
             // lblPantalla
             // 
-            lblPantalla.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPantalla.Font = new Font("Montserrat", 13.1999989F, FontStyle.Bold, GraphicsUnit.Point);
             lblPantalla.Location = new Point(42, 509);
             lblPantalla.Name = "lblPantalla";
             lblPantalla.Size = new Size(116, 46);
@@ -350,10 +350,10 @@
             // lblscreens
             // 
             lblscreens.AutoSize = true;
-            lblscreens.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblscreens.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblscreens.Location = new Point(60, 662);
             lblscreens.Name = "lblscreens";
-            lblscreens.Size = new Size(77, 18);
+            lblscreens.Size = new Size(80, 21);
             lblscreens.TabIndex = 44;
             lblscreens.Text = "Pantallas";
             // 
@@ -374,7 +374,7 @@
             // 
             // lblRnMs
             // 
-            lblRnMs.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            lblRnMs.Font = new Font("Montserrat", 13.1999989F, FontStyle.Bold, GraphicsUnit.Point);
             lblRnMs.Location = new Point(554, 288);
             lblRnMs.Name = "lblRnMs";
             lblRnMs.Size = new Size(365, 46);
@@ -385,10 +385,10 @@
             // lblStateChanges
             // 
             lblStateChanges.AutoSize = true;
-            lblStateChanges.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStateChanges.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblStateChanges.Location = new Point(193, 443);
             lblStateChanges.Name = "lblStateChanges";
-            lblStateChanges.Size = new Size(154, 18);
+            lblStateChanges.Size = new Size(157, 21);
             lblStateChanges.TabIndex = 37;
             lblStateChanges.Text = "Cambios de estado";
             // 
@@ -409,7 +409,7 @@
             // 
             // lblStates
             // 
-            lblStates.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStates.Font = new Font("Montserrat", 13.1999989F, FontStyle.Bold, GraphicsUnit.Point);
             lblStates.Location = new Point(42, 287);
             lblStates.Name = "lblStates";
             lblStates.Size = new Size(105, 46);
@@ -420,10 +420,10 @@
             // lblStatesbtn
             // 
             lblStatesbtn.AutoSize = true;
-            lblStatesbtn.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStatesbtn.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblStatesbtn.Location = new Point(67, 443);
             lblStatesbtn.Name = "lblStatesbtn";
-            lblStatesbtn.Size = new Size(70, 18);
+            lblStatesbtn.Size = new Size(71, 21);
             lblStatesbtn.TabIndex = 34;
             lblStatesbtn.Text = "Estados";
             // 
@@ -444,10 +444,10 @@
             // 
             // lblObjects
             // 
-            lblObjects.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblObjects.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblObjects.Location = new Point(760, 211);
             lblObjects.Name = "lblObjects";
-            lblObjects.Size = new Size(81, 20);
+            lblObjects.Size = new Size(89, 20);
             lblObjects.TabIndex = 30;
             lblObjects.Text = "Objetos";
             lblObjects.TextAlign = ContentAlignment.MiddleCenter;
@@ -469,7 +469,7 @@
             // 
             // label4
             // 
-            label4.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Font = new Font("Montserrat", 13.1999989F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(564, 64);
             label4.Name = "label4";
             label4.Size = new Size(103, 46);
@@ -479,10 +479,10 @@
             // 
             // lblObjectTypes
             // 
-            lblObjectTypes.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblObjectTypes.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblObjectTypes.Location = new Point(554, 212);
             lblObjectTypes.Name = "lblObjectTypes";
-            lblObjectTypes.Size = new Size(134, 20);
+            lblObjectTypes.Size = new Size(142, 20);
             lblObjectTypes.TabIndex = 27;
             lblObjectTypes.Text = "Tipos de objetos";
             // 
@@ -504,10 +504,10 @@
             // lblAlternativeFlows
             // 
             lblAlternativeFlows.AutoSize = true;
-            lblAlternativeFlows.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAlternativeFlows.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblAlternativeFlows.Location = new Point(331, 211);
             lblAlternativeFlows.Name = "lblAlternativeFlows";
-            lblAlternativeFlows.Size = new Size(120, 18);
+            lblAlternativeFlows.Size = new Size(122, 21);
             lblAlternativeFlows.TabIndex = 25;
             lblAlternativeFlows.Text = "Flujos alternos";
             // 
@@ -529,10 +529,10 @@
             // lblBaseFlows
             // 
             lblBaseFlows.AutoSize = true;
-            lblBaseFlows.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblBaseFlows.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblBaseFlows.Location = new Point(198, 211);
             lblBaseFlows.Name = "lblBaseFlows";
-            lblBaseFlows.Size = new Size(95, 18);
+            lblBaseFlows.Size = new Size(96, 21);
             lblBaseFlows.TabIndex = 23;
             lblBaseFlows.Text = "Flujos base";
             // 
@@ -553,7 +553,7 @@
             // 
             // lblCu
             // 
-            lblCu.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCu.Font = new Font("Montserrat", 13.1999989F, FontStyle.Bold, GraphicsUnit.Point);
             lblCu.Location = new Point(42, 57);
             lblCu.Name = "lblCu";
             lblCu.Size = new Size(170, 46);
@@ -564,10 +564,10 @@
             // lblUseCases
             // 
             lblUseCases.AutoSize = true;
-            lblUseCases.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUseCases.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblUseCases.Location = new Point(42, 211);
             lblUseCases.Name = "lblUseCases";
-            lblUseCases.Size = new Size(113, 18);
+            lblUseCases.Size = new Size(111, 21);
             lblUseCases.TabIndex = 19;
             lblUseCases.Text = "Casos de uso";
             // 

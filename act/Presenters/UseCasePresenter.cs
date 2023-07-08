@@ -122,6 +122,7 @@ namespace act.Presenters
             view.Id = useCase.Id.ToString();
             view.Name = useCase.Name;
             view.Key = useCase.Key;
+            view.FlowChartPath = useCase.FlowChartPath;
             view.IsEdit = true;
         }
 

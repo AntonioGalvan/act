@@ -37,13 +37,11 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Insert into Messages values (@key, @description, @projectId)";
+                command.CommandText = "Insert into Messages values (@projectId, @key, @description)";
 
+                command.Parameters.Add("@projectId", SqlDbType.Int).Value = this.projectId;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = messageModel.Key;
                 command.Parameters.Add("@description", SqlDbType.NVarChar).Value = messageModel.Description;
-
-                command.Parameters.Add("@projectId", SqlDbType.NVarChar).Value = this.projectId;
-
 
                 command.ExecuteNonQuery();
             }
@@ -56,7 +54,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Update Messages set name=keyN=@key, description=@description where id=@id";
+                command.CommandText = "Update Messages set [key]=@key, description=@description where id=@id";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = messageModel.Id;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = messageModel.Key;
@@ -83,9 +81,10 @@ namespace act._Repositories
                     {
                         var messageModel = new MessageModel();
                         messageModel.Id = (int)reader[0];
-                        messageModel.Key = reader[1].ToString();
-                        messageModel.Description = reader[2].ToString();
-                        messageModel.ProjectId = (int)reader[3];
+                        messageModel.ProjectId = (int)reader[1];
+                        messageModel.Key = reader[2].ToString();
+                        messageModel.Description = reader[3].ToString();
+                        
                         messageList.Add(messageModel);
                     }
                 }

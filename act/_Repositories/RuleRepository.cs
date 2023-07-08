@@ -61,7 +61,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Update Rules set name=keyN=@key, description=@description where id=@id";
+                command.CommandText = "Update Rules set keyN=@key, description=@description where id=@id";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = ruleModel.Id;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = ruleModel.Key;

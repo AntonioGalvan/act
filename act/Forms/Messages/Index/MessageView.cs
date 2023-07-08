@@ -1,4 +1,6 @@
-﻿using act.Views;
+﻿using act.Forms.Messages;
+using act.Views;
+using System.Xml.Linq;
 
 namespace act.Forms.Messages.Index
 {
@@ -7,9 +9,9 @@ namespace act.Forms.Messages.Index
         private string message;
         private bool isSuccessful;
         private bool isEdit;
+
         public MessageView()
         {
-            InitializeComponent();
             InitializeComponent();
             AssociateAndRaiseViewEvents();
             tbcMessages.TabPages.Remove(tbpAdd);
@@ -30,7 +32,7 @@ namespace act.Forms.Messages.Index
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 tbcMessages.TabPages.Remove(tbpList);
                 tbcMessages.TabPages.Add(tbpAdd);
-                tbpAdd.Text = "Agregar mensaje";
+                tbpAdd.Text = "Agregar mensajes";
             };
 
             btnEdit.Click += delegate
@@ -38,7 +40,7 @@ namespace act.Forms.Messages.Index
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 tbcMessages.TabPages.Remove(tbpList);
                 tbcMessages.TabPages.Add(tbpAdd);
-                tbpAdd.Text = "Editar mensaje";
+                tbpAdd.Text = "Editar mensajes";
             };
 
             btnSave.Click += delegate
@@ -71,12 +73,12 @@ namespace act.Forms.Messages.Index
             };
         }
 
-        //Sacar del modelo
         public string Id
         {
             get { return tbxId.Text; }
             set { tbxId.Text = value; }
         }
+
         public string Key
         {
             get { return tbxKey.Text; }
@@ -87,7 +89,7 @@ namespace act.Forms.Messages.Index
             get { return tbxDescription.Text; }
             set { tbxDescription.Text = value; }
         }
-        //Necesarios
+        //Necesarios para operaciones de pantalla
         public string SearchValue
         {
             get { return tbxSearch.Text; }
@@ -116,9 +118,9 @@ namespace act.Forms.Messages.Index
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-        public void SetProjectListBindingSource(BindingSource projectList)
+        public void SetProjectListBindingSource(BindingSource messageList)
         {
-            dgvMessages.DataSource = projectList;
+            dgvMessages.DataSource = messageList;
         }
 
         private static MessageView instance;
@@ -146,6 +148,5 @@ namespace act.Forms.Messages.Index
             }
             return instance;
         }
-
     }
 }

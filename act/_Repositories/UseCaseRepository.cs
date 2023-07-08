@@ -37,7 +37,8 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Insert into UseCases values (@projectId, @key, @name, @flowChartPath)";
+                //TODO: Corregir queries o parámetros nose
+                command.CommandText = "Insert into UseCases values (@projectId, @key, @name, @flowChartPath,1,1)";
 
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = useCaseModel.Name;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = useCaseModel.Key;
@@ -57,7 +58,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Update UseCases set name=@name, keyN=@key, flowChartPath=@flowChartPath where id=@id";
+                command.CommandText = "Update UseCases set name=@name, [key]=@key, flowChartPath=@flowChartPath where id=@id";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = useCaseModel.Id;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = useCaseModel.Name;
@@ -76,7 +77,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select * from UseCases where projectId=@projectId";
+                command.CommandText = "Select Id, name, [key], flowchartpath, projectId from UseCases where projectId=@projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())
