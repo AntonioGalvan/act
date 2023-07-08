@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SideBar));
-            pictureBox4 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            pctHome = new PictureBox();
             label1 = new Label();
             button1 = new Button();
             button3 = new Button();
@@ -44,11 +39,13 @@
             pnlExit = new Panel();
             pictureBox5 = new PictureBox();
             pnlSideBar = new Panel();
+            pictureBox1 = new PictureBox();
+            lblRn = new Label();
+            btnBusinessRules = new Button();
+            pictureBox6 = new PictureBox();
             lblMessages = new Label();
             btnMessages = new Button();
             pnlRelationEContainer = new Panel();
-            lblRn = new Label();
-            btnBusinessRules = new Button();
             lblRnMs = new Label();
             lblStateChanges = new Label();
             btnStateChanges = new Button();
@@ -67,142 +64,112 @@
             lblCu = new Label();
             lblUseCases = new Label();
             btnCUs = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pctHome).BeginInit();
             pnlExit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             pnlSideBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             pnlRelationEContainer.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(23, 466);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(50, 49);
-            pictureBox4.TabIndex = 24;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(23, 388);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(50, 49);
-            pictureBox3.TabIndex = 23;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(23, 311);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(50, 49);
-            pictureBox2.TabIndex = 22;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(23, 233);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(50, 49);
-            pictureBox1.TabIndex = 21;
-            pictureBox1.TabStop = false;
-            // 
-            // pctHome
-            // 
-            pctHome.Image = Properties.Resources.icons8_home_481;
-            pctHome.Location = new Point(23, 155);
-            pctHome.Name = "pctHome";
-            pctHome.Size = new Size(50, 49);
-            pctHome.TabIndex = 20;
-            pctHome.TabStop = false;
-            // 
             // label1
             // 
-            label1.Font = new Font("HoloLens MDL2 Assets", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(23, 29);
+            label1.BackColor = Color.FromArgb(24, 40, 54);
+            label1.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(133, 44);
             label1.Name = "label1";
-            label1.Size = new Size(285, 68);
+            label1.Size = new Size(82, 42);
             label1.TabIndex = 19;
-            label1.Text = "Proyecto 1";
+            label1.Text = "ACT";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(24, 40, 54);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
             button1.Location = new Point(79, 443);
             button1.Name = "button1";
+            button1.Padding = new Padding(20, 0, 0, 0);
             button1.RightToLeft = RightToLeft.No;
             button1.Size = new Size(247, 84);
             button1.TabIndex = 18;
             button1.Text = "Informes de la correspondencia";
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
+            button3.BackColor = Color.FromArgb(24, 40, 54);
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
             button3.Location = new Point(79, 366);
             button3.Name = "button3";
+            button3.Padding = new Padding(20, 0, 0, 0);
             button3.Size = new Size(247, 84);
             button3.TabIndex = 17;
             button3.Text = "Tabla de Correspondencia";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             // 
             // btnElementosR
             // 
+            btnElementosR.BackColor = Color.FromArgb(24, 40, 54);
             btnElementosR.FlatAppearance.BorderSize = 0;
             btnElementosR.FlatStyle = FlatStyle.Flat;
-            btnElementosR.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnElementosR.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnElementosR.Location = new Point(79, 289);
             btnElementosR.Name = "btnElementosR";
+            btnElementosR.Padding = new Padding(20, 0, 0, 0);
             btnElementosR.Size = new Size(247, 84);
             btnElementosR.TabIndex = 16;
             btnElementosR.Text = "Elementos a Relacionar";
             btnElementosR.TextAlign = ContentAlignment.MiddleLeft;
             btnElementosR.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnElementosR.UseVisualStyleBackColor = true;
+            btnElementosR.UseVisualStyleBackColor = false;
             // 
             // btnRoles
             // 
+            btnRoles.BackColor = Color.FromArgb(24, 40, 54);
             btnRoles.FlatAppearance.BorderSize = 0;
             btnRoles.FlatStyle = FlatStyle.Flat;
-            btnRoles.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRoles.Location = new Point(79, 212);
+            btnRoles.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRoles.ForeColor = SystemColors.Control;
+            btnRoles.Image = Properties.Resources.roles;
+            btnRoles.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRoles.Location = new Point(0, 207);
             btnRoles.Name = "btnRoles";
-            btnRoles.Size = new Size(247, 84);
+            btnRoles.Padding = new Padding(20, 0, 0, 0);
+            btnRoles.Size = new Size(348, 59);
             btnRoles.TabIndex = 15;
-            btnRoles.Text = "Roles";
+            btnRoles.Text = "  Roles";
             btnRoles.TextAlign = ContentAlignment.MiddleLeft;
             btnRoles.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnRoles.UseVisualStyleBackColor = true;
+            btnRoles.UseVisualStyleBackColor = false;
             // 
             // btnInicio
             // 
+            btnInicio.BackColor = Color.FromArgb(24, 40, 54);
             btnInicio.FlatAppearance.BorderSize = 0;
             btnInicio.FlatStyle = FlatStyle.Flat;
-            btnInicio.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnInicio.Location = new Point(79, 135);
+            btnInicio.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInicio.ForeColor = SystemColors.Control;
+            btnInicio.Image = Properties.Resources.hogar;
+            btnInicio.ImageAlign = ContentAlignment.MiddleLeft;
+            btnInicio.Location = new Point(0, 145);
             btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(247, 84);
+            btnInicio.Padding = new Padding(20, 0, 0, 0);
+            btnInicio.Size = new Size(348, 59);
             btnInicio.TabIndex = 13;
-            btnInicio.Text = "Inicio";
+            btnInicio.Text = "  Inicio";
             btnInicio.TextAlign = ContentAlignment.MiddleLeft;
             btnInicio.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnInicio.UseVisualStyleBackColor = true;
+            btnInicio.UseVisualStyleBackColor = false;
             // 
             // btnSalir
             // 
@@ -242,14 +209,62 @@
             // 
             // pnlSideBar
             // 
+            pnlSideBar.BackColor = Color.FromArgb(24, 40, 54);
+            pnlSideBar.Controls.Add(label1);
+            pnlSideBar.Controls.Add(pictureBox1);
             pnlSideBar.Controls.Add(pnlExit);
             pnlSideBar.Controls.Add(lblRn);
+            pnlSideBar.Controls.Add(btnRoles);
             pnlSideBar.Controls.Add(btnBusinessRules);
+            pnlSideBar.Controls.Add(pictureBox6);
+            pnlSideBar.Controls.Add(btnInicio);
             pnlSideBar.Dock = DockStyle.Left;
             pnlSideBar.Location = new Point(0, 0);
             pnlSideBar.Name = "pnlSideBar";
             pnlSideBar.Size = new Size(348, 853);
             pnlSideBar.TabIndex = 26;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.correcto2;
+            pictureBox1.Location = new Point(162, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(74, 62);
+            pictureBox1.TabIndex = 41;
+            pictureBox1.TabStop = false;
+            // 
+            // lblRn
+            // 
+            lblRn.AutoSize = true;
+            lblRn.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblRn.Location = new Point(92, 636);
+            lblRn.Name = "lblRn";
+            lblRn.Size = new Size(151, 20);
+            lblRn.TabIndex = 40;
+            lblRn.Text = "Reglas de negocio";
+            // 
+            // btnBusinessRules
+            // 
+            btnBusinessRules.BackColor = Color.FromArgb(236, 236, 236);
+            btnBusinessRules.BackgroundImage = (Image)resources.GetObject("btnBusinessRules.BackgroundImage");
+            btnBusinessRules.BackgroundImageLayout = ImageLayout.Center;
+            btnBusinessRules.FlatAppearance.BorderSize = 0;
+            btnBusinessRules.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBusinessRules.Location = new Point(105, 550);
+            btnBusinessRules.Name = "btnBusinessRules";
+            btnBusinessRules.Size = new Size(116, 80);
+            btnBusinessRules.TabIndex = 39;
+            btnBusinessRules.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBusinessRules.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.correcto;
+            pictureBox6.Location = new Point(122, 62);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(72, 62);
+            pictureBox6.TabIndex = 42;
+            pictureBox6.TabStop = false;
             // 
             // lblMessages
             // 
@@ -303,30 +318,6 @@
             pnlRelationEContainer.Name = "pnlRelationEContainer";
             pnlRelationEContainer.Size = new Size(1074, 853);
             pnlRelationEContainer.TabIndex = 28;
-            // 
-            // lblRn
-            // 
-            lblRn.AutoSize = true;
-            lblRn.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblRn.Location = new Point(92, 636);
-            lblRn.Name = "lblRn";
-            lblRn.Size = new Size(151, 20);
-            lblRn.TabIndex = 40;
-            lblRn.Text = "Reglas de negocio";
-            // 
-            // btnBusinessRules
-            // 
-            btnBusinessRules.BackColor = Color.FromArgb(236, 236, 236);
-            btnBusinessRules.BackgroundImage = (Image)resources.GetObject("btnBusinessRules.BackgroundImage");
-            btnBusinessRules.BackgroundImageLayout = ImageLayout.Center;
-            btnBusinessRules.FlatAppearance.BorderSize = 0;
-            btnBusinessRules.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnBusinessRules.Location = new Point(105, 550);
-            btnBusinessRules.Name = "btnBusinessRules";
-            btnBusinessRules.Size = new Size(116, 80);
-            btnBusinessRules.TabIndex = 39;
-            btnBusinessRules.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnBusinessRules.UseVisualStyleBackColor = false;
             // 
             // lblRnMs
             // 
@@ -542,43 +533,26 @@
             BackColor = Color.FromArgb(236, 236, 236);
             ClientSize = new Size(1422, 853);
             Controls.Add(pnlRelationEContainer);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
-            Controls.Add(pctHome);
-            Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(button3);
             Controls.Add(btnElementosR);
-            Controls.Add(btnRoles);
-            Controls.Add(btnInicio);
             Controls.Add(pnlSideBar);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             IsMdiContainer = true;
             Name = "SideBar";
             Text = "ACT";
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pctHome).EndInit();
             pnlExit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             pnlSideBar.ResumeLayout(false);
             pnlSideBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             pnlRelationEContainer.ResumeLayout(false);
             pnlRelationEContainer.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
-        private PictureBox pctHome;
         private Label label1;
         private Button button1;
         private Button button3;
@@ -613,5 +587,7 @@
         private Label lblRn;
         private Button btnBusinessRules;
         private Label lblRnMs;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox6;
     }
 }
