@@ -45,7 +45,6 @@ namespace act.Presenters
             var projectId = project.Id;
             IMainView view = new SideBar();
             new MainPresenter(view, sqlConnectionString, projectId);
-            
 
         }
 

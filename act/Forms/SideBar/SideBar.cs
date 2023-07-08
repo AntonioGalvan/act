@@ -21,7 +21,7 @@ namespace act.Forms.Side_bar
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            //Salir del proyecto actual
+            Application.Exit();
         }
     }
 }

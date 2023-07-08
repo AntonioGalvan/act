@@ -143,5 +143,15 @@ namespace act.Views
         {
             dgbProjects.DataSource = projectList;
         }
+
+        private void btnOut_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

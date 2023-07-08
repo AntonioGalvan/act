@@ -44,12 +44,12 @@
             btnAdd = new Button();
             tbpAdd = new TabPage();
             panel5 = new Panel();
-            tbxKey = new TextBox();
             lblName = new Label();
             panel4 = new Panel();
             tbxPurpose = new TextBox();
             lblType = new Label();
             panel3 = new Panel();
+            tbxKey = new TextBox();
             lblDesc = new Label();
             panel2 = new Panel();
             tbxName = new TextBox();
@@ -86,7 +86,7 @@
             tbcRoles.Controls.Add(tbpAdd);
             tbcRoles.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcRoles.ItemSize = new Size(66, 26);
-            tbcRoles.Location = new Point(6, 79);
+            tbcRoles.Location = new Point(12, 74);
             tbcRoles.Margin = new Padding(5);
             tbcRoles.Multiline = true;
             tbcRoles.Name = "tbcRoles";
@@ -282,16 +282,6 @@
             panel5.Size = new Size(1023, 249);
             panel5.TabIndex = 22;
             // 
-            // tbxKey
-            // 
-            tbxKey.BackColor = Color.Gainsboro;
-            tbxKey.BorderStyle = BorderStyle.None;
-            tbxKey.Location = new Point(12, 3);
-            tbxKey.Multiline = true;
-            tbxKey.Name = "tbxKey";
-            tbxKey.Size = new Size(90, 25);
-            tbxKey.TabIndex = 14;
-            // 
             // lblName
             // 
             lblName.AutoSize = true;
@@ -337,6 +327,16 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(112, 31);
             panel3.TabIndex = 20;
+            // 
+            // tbxKey
+            // 
+            tbxKey.BackColor = Color.Gainsboro;
+            tbxKey.BorderStyle = BorderStyle.None;
+            tbxKey.Location = new Point(12, 3);
+            tbxKey.Multiline = true;
+            tbxKey.Name = "tbxKey";
+            tbxKey.Size = new Size(90, 25);
+            tbxKey.TabIndex = 14;
             // 
             // lblDesc
             // 
