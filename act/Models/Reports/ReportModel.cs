@@ -21,9 +21,7 @@ namespace act.Models.Reports
         public string Name { get; set; }
         [MaxLength(40)]
         public string Description { get; set; }
-        [MaxLength(1)]
         public int DiagramElementState { get; set; }
-        [MaxLength(1)]
         public int ScreenElementState { get; set; }
     }
 }

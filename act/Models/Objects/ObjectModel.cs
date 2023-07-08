@@ -24,9 +24,7 @@ namespace act.Models.Objects
         public int Type { get; set; }
         [MaxLength(70)]
         public string Purpose { get; set; }
-        [MaxLength(1)]
         public int DiagramElementState { get; set; }
-        [MaxLength(1)]
         public int ScreenElementState { get; set; }
     }
 }

@@ -21,9 +21,7 @@ namespace act.Models.AlternativeFlows
         public string Name { get; set; }
 
         public string FlowChartPath { get; set; }
-        [MaxLength(1)]
         public int DiagramElementState { get; set; }
-        [MaxLength(1)]
         public int ScreenElementState { get; set; }
     }
 }

@@ -21,9 +21,7 @@ namespace act.Models.Screens
         public int Key { get; set; }
         [MaxLength(15)]
         public string Name { get; set; }
-        [MaxLength(1)]
         public int DiagramElementState { get; set; }
-        [MaxLength(1)]
         public int ScreenElementState { get; set; }
         [DisplayName("Ubicación de imagen")]
         public string ImagePath { get; set; }

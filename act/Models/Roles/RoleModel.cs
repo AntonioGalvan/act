@@ -19,8 +19,6 @@ namespace act.Models.Roles
         [MaxLength(15)]
         public string Name { get; set; }
         [MaxLength(70)]
-
-        public virtual ProjectModel Project { get; set; }
         public string Purpose { get; set; }
     }
 }

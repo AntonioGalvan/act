@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
-using act.Models.Roles;
 
 namespace act.Models.Projects
 {
@@ -33,20 +32,5 @@ namespace act.Models.Projects
         [Required(ErrorMessage = "La fecha de finalización es requerida")]
         public DateTime EndDate { get; set; }
 
-        public virtual ICollection<RoleModel> Roles { get; set; }
-        //public virtual ICollection<ScreenModel> Screens { get; set; }
-        //public virtual ICollection<BusinessRuleModel> BusinessRules { get; set; }
-        //public virtual ICollection<MessageModel> Messages { get; set; }
-        //public virtual ICollection<BusinessRuleMessageModel> BusinessRuleMessages { get; set; }
-        //public virtual ICollection<ReportModel> Reports { get; set; }
-        //public virtual ICollection<UseCaseModel> UseCases { get; set; }
-        //public virtual ICollection<BaseFlowModel> BaseFlows { get; set; }
-        //public virtual ICollection<AlternativeFlowModel> AlternativeFlows { get; set; }
-        //public virtual ICollection<ObjectStateModel> ObjectStates { get; set; }
-        //public virtual ICollection<ObjectModel> Objects { get; set; }
-        //public virtual ICollection<ObjectsWithStatesModel> ObjectsWithStates { get; set; }
-        //public virtual ICollection<ObjectStatesChangeModel> ObjectStatesChanges { get; set; }
-        //public virtual ICollection<ObjectsForStatesChangeModel> ObjectsForStatesChanges { get; set; }
-        //public virtual ICollection<RolesForStatesChangeModel> RolesForStatesChanges { get; set; }
     }
 }
