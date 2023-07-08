@@ -5,13 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="3083766a5cc141cd8eefd9a9f0b92333" Name="Diagram1" ZoomLevel="93" >
-        <EntityTypeShape EntityType="Model1.Project" Width="1.5" PointX="2.875" PointY="6.375" />
+        <EntityTypeShape EntityType="Model1.Project" Width="1.5" PointX="3" PointY="6.25" />
         <EntityTypeShape EntityType="Model1.Role" Width="1.5" PointX="10.125" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model1.Screen" Width="1.5" PointX="5.75" PointY="9.875" />
         <AssociationConnector Association="Model1.ProjectScreen" ManuallyRouted="false" >
         </AssociationConnector>
         <EntityTypeShape EntityType="Model1.ElementState" Width="1.5" PointX="1.75" PointY="13.125" />
-        <EntityTypeShape EntityType="Model1.UseCaseState" Width="1.5" PointX="2.875" PointY="22.25" />
         <AssociationConnector Association="Model1.ProjectRole" />
         <EntityTypeShape EntityType="Model1.BusinessRule" Width="1.5" PointX="5.75" PointY="13" />
         <AssociationConnector Association="Model1.ProjectBusinessRule" />
@@ -65,12 +64,13 @@
         <AssociationConnector Association="Model1.ScreenElementStateBusinessRule" />
         <AssociationConnector Association="Model1.DiagramElementStateReport" />
         <AssociationConnector Association="Model1.ScreenElementStateReport" />
-        <AssociationConnector Association="Model1.DiagramElementStateUseCase" />
-        <AssociationConnector Association="Model1.ScreenElementStateUseCase" />
         <AssociationConnector Association="Model1.DiagramElementStateBaseFlow" />
         <AssociationConnector Association="Model1.ScreenElementStateBaseFlow" />
         <AssociationConnector Association="Model1.DiagramElementStateAlternativeFlow" />
         <AssociationConnector Association="Model1.ScreenElementStateAlternativeFlow" />
+        <EntityTypeShape EntityType="Model1.UseCaseState" Width="1.5" PointX="2.625" PointY="22.125" />
+        <AssociationConnector Association="Model1.DiagramUseCaseState" />
+        <AssociationConnector Association="Model1.ScreenUseCaseState" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

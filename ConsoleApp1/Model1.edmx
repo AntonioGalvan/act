@@ -10,7 +10,6 @@
     <EntitySet Name="Roles" EntityType="Model1.Store.Roles" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Screens" EntityType="Model1.Store.Screens" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ElementStates" EntityType="Model1.Store.ElementStates" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="UseCaseStates" EntityType="Model1.Store.UseCaseStates" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="BusinessRules" EntityType="Model1.Store.BusinessRules" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Messages" EntityType="Model1.Store.Messages" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="BusinnesRulesMessages" EntityType="Model1.Store.BusinnesRulesMessages" store:Type="Tables" Schema="dbo" />
@@ -27,6 +26,7 @@
     <EntitySet Name="BaseFlows" EntityType="Model1.Store.BaseFlows" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="AlternativeFlows" EntityType="Model1.Store.AlternativeFlows" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="BaseAlternativeFlows" EntityType="Model1.Store.BaseAlternativeFlows" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UseCaseStates" EntityType="Model1.Store.UseCaseStates" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="ProjectScreen" Association="Model1.Store.ProjectScreen">
       <End Role="Project" EntitySet="Projects" />
       <End Role="Screen" EntitySet="Screens" />
@@ -179,14 +179,6 @@
       <End Role="ElementState" EntitySet="ElementStates" />
       <End Role="Report" EntitySet="Reports" />
     </AssociationSet>
-    <AssociationSet Name="DiagramElementStateUseCase" Association="Model1.Store.DiagramElementStateUseCase">
-      <End Role="ElementState" EntitySet="ElementStates" />
-      <End Role="UseCase" EntitySet="UseCases" />
-    </AssociationSet>
-    <AssociationSet Name="ScreenElementStateUseCase" Association="Model1.Store.ScreenElementStateUseCase">
-      <End Role="ElementState" EntitySet="ElementStates" />
-      <End Role="UseCase" EntitySet="UseCases" />
-    </AssociationSet>
     <AssociationSet Name="DiagramElementStateBaseFlow" Association="Model1.Store.DiagramElementStateBaseFlow">
       <End Role="ElementState" EntitySet="ElementStates" />
       <End Role="BaseFlow" EntitySet="BaseFlows" />
@@ -202,6 +194,14 @@
     <AssociationSet Name="ScreenElementStateAlternativeFlow" Association="Model1.Store.ScreenElementStateAlternativeFlow">
       <End Role="ElementState" EntitySet="ElementStates" />
       <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
+    </AssociationSet>
+    <AssociationSet Name="DiagramUseCaseState" Association="Model1.Store.DiagramUseCaseState">
+      <End Role="UseCaseState" EntitySet="UseCaseStates" />
+      <End Role="UseCase" EntitySet="UseCases" />
+    </AssociationSet>
+    <AssociationSet Name="ScreenUseCaseState" Association="Model1.Store.ScreenUseCaseState">
+      <End Role="UseCaseState" EntitySet="UseCaseStates" />
+      <End Role="UseCase" EntitySet="UseCases" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Projects">
@@ -237,13 +237,6 @@
     <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ElementStates">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="UseCaseStates">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -374,8 +367,8 @@
     <Property Name="Key" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="15" />
     <Property Name="FlowChartPath" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DiagramElementStateId" Type="int" Nullable="false" />
-    <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
+    <Property Name="DiagramUseCaseStateId" Type="int" Nullable="false" />
+    <Property Name="ScreenUseCaseStateId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="BaseFlows">
     <Key>
@@ -410,6 +403,13 @@
     <Property Name="ProjectId" Type="int" Nullable="false" />
     <Property Name="BaseFlowId" Type="int" Nullable="false" />
     <Property Name="AlternativeFlowId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UseCaseStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="ProjectScreen">
     <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
@@ -867,30 +867,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="DiagramElementStateUseCase">
-    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
-    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ElementState">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="UseCase">
-        <PropertyRef Name="DiagramElementStateId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ScreenElementStateUseCase">
-    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
-    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ElementState">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="UseCase">
-        <PropertyRef Name="ScreenElementStateId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="DiagramElementStateBaseFlow">
     <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
     <End Role="BaseFlow" Type="Model1.Store.BaseFlows" Multiplicity="*" />
@@ -939,6 +915,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="DiagramUseCaseState">
+    <End Role="UseCaseState" Type="Model1.Store.UseCaseStates" Multiplicity="1" />
+    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UseCaseState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UseCase">
+        <PropertyRef Name="DiagramUseCaseStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScreenUseCaseState">
+    <End Role="UseCaseState" Type="Model1.Store.UseCaseStates" Multiplicity="1" />
+    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UseCaseState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UseCase">
+        <PropertyRef Name="ScreenUseCaseStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -952,7 +952,6 @@
             <End Role="Screen" EntitySet="Screens" />
           </AssociationSet>
           <EntitySet Name="ElementStates" EntityType="Model1.ElementState" />
-          <EntitySet Name="UseCaseStates" EntityType="Model1.UseCaseState" />
           <AssociationSet Name="ProjectRole" Association="Model1.ProjectRole">
             <End Role="Project" EntitySet="Projects" />
             <End Role="Role" EntitySet="Roles" />
@@ -1117,14 +1116,6 @@
             <End Role="ElementState" EntitySet="ElementStates" />
             <End Role="Report" EntitySet="Reports" />
           </AssociationSet>
-          <AssociationSet Name="DiagramElementStateUseCase" Association="Model1.DiagramElementStateUseCase">
-            <End Role="ElementState" EntitySet="ElementStates" />
-            <End Role="UseCase" EntitySet="UseCases" />
-          </AssociationSet>
-          <AssociationSet Name="ScreenElementStateUseCase" Association="Model1.ScreenElementStateUseCase">
-            <End Role="ElementState" EntitySet="ElementStates" />
-            <End Role="UseCase" EntitySet="UseCases" />
-          </AssociationSet>
           <AssociationSet Name="DiagramElementStateBaseFlow" Association="Model1.DiagramElementStateBaseFlow">
             <End Role="ElementState" EntitySet="ElementStates" />
             <End Role="BaseFlow" EntitySet="BaseFlows" />
@@ -1140,6 +1131,15 @@
           <AssociationSet Name="ScreenElementStateAlternativeFlow" Association="Model1.ScreenElementStateAlternativeFlow">
             <End Role="ElementState" EntitySet="ElementStates" />
             <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
+          </AssociationSet>
+          <EntitySet Name="UseCaseStates" EntityType="Model1.UseCaseState" />
+          <AssociationSet Name="DiagramUseCaseState" Association="Model1.DiagramUseCaseState">
+            <End Role="UseCaseState" EntitySet="UseCaseStates" />
+            <End Role="UseCase" EntitySet="UseCases" />
+          </AssociationSet>
+          <AssociationSet Name="ScreenUseCaseState" Association="Model1.ScreenUseCaseState">
+            <End Role="UseCaseState" EntitySet="UseCaseStates" />
+            <End Role="UseCase" EntitySet="UseCases" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Project">
@@ -1207,13 +1207,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityType Name="ElementState">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" />
-        </EntityType>
-        <EntityType Name="UseCaseState">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -1644,10 +1637,10 @@
           <Property Name="Name" Type="String" Nullable="false" MaxLength="15" />
           <Property Name="FlowChartPath" Type="String" Nullable="false" />
           <NavigationProperty Name="BaseFlow" Relationship="Model1.UseCaseBaseFlow" FromRole="UseCase" ToRole="BaseFlow" />
-          <NavigationProperty Name="DiagramElementState" Relationship="Model1.DiagramElementStateUseCase" FromRole="UseCase" ToRole="ElementState" />
-          <Property Name="DiagramElementStateId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ScreenElementState" Relationship="Model1.ScreenElementStateUseCase" FromRole="UseCase" ToRole="ElementState" />
-          <Property Name="ScreenElementStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DiagramUseCaseState" Relationship="Model1.DiagramUseCaseState" FromRole="UseCase" ToRole="UseCaseState" />
+          <Property Name="DiagramUseCaseStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ScreenUseCaseState" Relationship="Model1.ScreenUseCaseState" FromRole="UseCase" ToRole="UseCaseState" />
+          <Property Name="ScreenUseCaseStateId" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="ProjectUseCase">
           <End Type="Model1.Project" Role="Project" Multiplicity="1" />
@@ -1866,30 +1859,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="DiagramElementStateUseCase">
-          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
-          <End Type="Model1.UseCase" Role="UseCase" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ElementState">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="UseCase">
-              <PropertyRef Name="DiagramElementStateId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="ScreenElementStateUseCase">
-          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
-          <End Type="Model1.UseCase" Role="UseCase" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ElementState">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="UseCase">
-              <PropertyRef Name="ScreenElementStateId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="DiagramElementStateBaseFlow">
           <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
           <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="*" />
@@ -1938,6 +1907,37 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="UseCaseState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="DiagramUseCaseState">
+          <End Type="Model1.UseCaseState" Role="UseCaseState" Multiplicity="1" />
+          <End Type="Model1.UseCase" Role="UseCase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UseCaseState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UseCase">
+              <PropertyRef Name="DiagramUseCaseStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ScreenUseCaseState">
+          <End Type="Model1.UseCaseState" Role="UseCaseState" Multiplicity="1" />
+          <End Type="Model1.UseCase" Role="UseCase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UseCaseState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UseCase">
+              <PropertyRef Name="ScreenUseCaseStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1982,14 +1982,6 @@
     <EntitySetMapping Name="ElementStates">
       <EntityTypeMapping TypeName="IsTypeOf(Model1.ElementState)">
         <MappingFragment StoreEntitySet="ElementStates">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="UseCaseStates">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.UseCaseState)">
-        <MappingFragment StoreEntitySet="UseCaseStates">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
@@ -2130,8 +2122,8 @@
           <ScalarProperty Name="Key" ColumnName="Key" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="FlowChartPath" ColumnName="FlowChartPath" />
-          <ScalarProperty Name="DiagramElementStateId" ColumnName="DiagramElementStateId" />
-          <ScalarProperty Name="ScreenElementStateId" ColumnName="ScreenElementStateId" />
+          <ScalarProperty Name="DiagramUseCaseStateId" ColumnName="DiagramUseCaseStateId" />
+          <ScalarProperty Name="ScreenUseCaseStateId" ColumnName="ScreenUseCaseStateId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -2168,6 +2160,14 @@
           <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
           <ScalarProperty Name="BaseFlowId" ColumnName="BaseFlowId" />
           <ScalarProperty Name="AlternativeFlowId" ColumnName="AlternativeFlowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UseCaseStates">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.UseCaseState)">
+        <MappingFragment StoreEntitySet="UseCaseStates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

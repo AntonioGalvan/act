@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/08/2023 15:53:06
+-- Date Created: 07/08/2023 16:31:33
 -- Generated from EDMX file: D:\Repos\ACTProyecto\ConsoleApp1\Model1.edmx
 -- --------------------------------------------------
 
@@ -131,12 +131,6 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ScreenElementStateReport]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Reports] DROP CONSTRAINT [FK_ScreenElementStateReport];
 GO
-IF OBJECT_ID(N'[dbo].[FK_DiagramElementStateUseCase]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UseCases] DROP CONSTRAINT [FK_DiagramElementStateUseCase];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ScreenElementStateUseCase]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UseCases] DROP CONSTRAINT [FK_ScreenElementStateUseCase];
-GO
 IF OBJECT_ID(N'[dbo].[FK_DiagramElementStateBaseFlow]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[BaseFlows] DROP CONSTRAINT [FK_DiagramElementStateBaseFlow];
 GO
@@ -148,6 +142,12 @@ IF OBJECT_ID(N'[dbo].[FK_DiagramElementStateAlternativeFlow]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_ScreenElementStateAlternativeFlow]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[AlternativeFlows] DROP CONSTRAINT [FK_ScreenElementStateAlternativeFlow];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DiagramUseCaseState]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UseCases] DROP CONSTRAINT [FK_DiagramUseCaseState];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ScreenUseCaseState]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UseCases] DROP CONSTRAINT [FK_ScreenUseCaseState];
 GO
 
 -- --------------------------------------------------
@@ -165,9 +165,6 @@ IF OBJECT_ID(N'[dbo].[Screens]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[ElementStates]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ElementStates];
-GO
-IF OBJECT_ID(N'[dbo].[UseCaseStates]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[UseCaseStates];
 GO
 IF OBJECT_ID(N'[dbo].[BusinessRules]', 'U') IS NOT NULL
     DROP TABLE [dbo].[BusinessRules];
@@ -217,6 +214,9 @@ GO
 IF OBJECT_ID(N'[dbo].[BaseAlternativeFlows]', 'U') IS NOT NULL
     DROP TABLE [dbo].[BaseAlternativeFlows];
 GO
+IF OBJECT_ID(N'[dbo].[UseCaseStates]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UseCaseStates];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -256,13 +256,6 @@ GO
 
 -- Creating table 'ElementStates'
 CREATE TABLE [dbo].[ElementStates] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Name] nvarchar(max)  NOT NULL
-);
-GO
-
--- Creating table 'UseCaseStates'
-CREATE TABLE [dbo].[UseCaseStates] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL
 );
@@ -390,8 +383,8 @@ CREATE TABLE [dbo].[UseCases] (
     [Key] nvarchar(max)  NOT NULL,
     [Name] nvarchar(15)  NOT NULL,
     [FlowChartPath] nvarchar(max)  NOT NULL,
-    [DiagramElementStateId] int  NOT NULL,
-    [ScreenElementStateId] int  NOT NULL
+    [DiagramUseCaseStateId] int  NOT NULL,
+    [ScreenUseCaseStateId] int  NOT NULL
 );
 GO
 
@@ -429,6 +422,13 @@ CREATE TABLE [dbo].[BaseAlternativeFlows] (
 );
 GO
 
+-- Creating table 'UseCaseStates'
+CREATE TABLE [dbo].[UseCaseStates] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -454,12 +454,6 @@ GO
 -- Creating primary key on [Id] in table 'ElementStates'
 ALTER TABLE [dbo].[ElementStates]
 ADD CONSTRAINT [PK_ElementStates]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'UseCaseStates'
-ALTER TABLE [dbo].[UseCaseStates]
-ADD CONSTRAINT [PK_UseCaseStates]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -556,6 +550,12 @@ GO
 -- Creating primary key on [Id] in table 'BaseAlternativeFlows'
 ALTER TABLE [dbo].[BaseAlternativeFlows]
 ADD CONSTRAINT [PK_BaseAlternativeFlows]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'UseCaseStates'
+ALTER TABLE [dbo].[UseCaseStates]
+ADD CONSTRAINT [PK_UseCaseStates]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -1133,36 +1133,6 @@ ON [dbo].[Reports]
     ([ScreenElementStateId]);
 GO
 
--- Creating foreign key on [DiagramElementStateId] in table 'UseCases'
-ALTER TABLE [dbo].[UseCases]
-ADD CONSTRAINT [FK_DiagramElementStateUseCase]
-    FOREIGN KEY ([DiagramElementStateId])
-    REFERENCES [dbo].[ElementStates]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_DiagramElementStateUseCase'
-CREATE INDEX [IX_FK_DiagramElementStateUseCase]
-ON [dbo].[UseCases]
-    ([DiagramElementStateId]);
-GO
-
--- Creating foreign key on [ScreenElementStateId] in table 'UseCases'
-ALTER TABLE [dbo].[UseCases]
-ADD CONSTRAINT [FK_ScreenElementStateUseCase]
-    FOREIGN KEY ([ScreenElementStateId])
-    REFERENCES [dbo].[ElementStates]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_ScreenElementStateUseCase'
-CREATE INDEX [IX_FK_ScreenElementStateUseCase]
-ON [dbo].[UseCases]
-    ([ScreenElementStateId]);
-GO
-
 -- Creating foreign key on [DiagramElementStateId] in table 'BaseFlows'
 ALTER TABLE [dbo].[BaseFlows]
 ADD CONSTRAINT [FK_DiagramElementStateBaseFlow]
@@ -1221,6 +1191,36 @@ GO
 CREATE INDEX [IX_FK_ScreenElementStateAlternativeFlow]
 ON [dbo].[AlternativeFlows]
     ([ScreenElementStateId]);
+GO
+
+-- Creating foreign key on [DiagramUseCaseStateId] in table 'UseCases'
+ALTER TABLE [dbo].[UseCases]
+ADD CONSTRAINT [FK_DiagramUseCaseState]
+    FOREIGN KEY ([DiagramUseCaseStateId])
+    REFERENCES [dbo].[UseCaseStates]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DiagramUseCaseState'
+CREATE INDEX [IX_FK_DiagramUseCaseState]
+ON [dbo].[UseCases]
+    ([DiagramUseCaseStateId]);
+GO
+
+-- Creating foreign key on [ScreenUseCaseStateId] in table 'UseCases'
+ALTER TABLE [dbo].[UseCases]
+ADD CONSTRAINT [FK_ScreenUseCaseState]
+    FOREIGN KEY ([ScreenUseCaseStateId])
+    REFERENCES [dbo].[UseCaseStates]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ScreenUseCaseState'
+CREATE INDEX [IX_FK_ScreenUseCaseState]
+ON [dbo].[UseCases]
+    ([ScreenUseCaseStateId]);
 GO
 
 -- --------------------------------------------------
