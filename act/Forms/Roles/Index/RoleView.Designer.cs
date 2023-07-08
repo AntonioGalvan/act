@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             lblRoles = new Label();
             tbcRoles = new TabControl();
             tbpList = new TabPage();
+            panel1 = new Panel();
+            tbxSearch = new TextBox();
             btnDelete = new Button();
             btnEdit = new Button();
             btnSearch = new Button();
-            lblSearch = new Label();
             dgvRoles = new DataGridView();
             btnAdd = new Button();
-            tbxSearch = new TextBox();
             tbpAdd = new TabPage();
             tbxKey = new TextBox();
             btnCancel = new Button();
@@ -49,123 +53,187 @@
             lblType = new Label();
             lblName = new Label();
             lblId = new Label();
-            btnOut = new Button();
+            btnOut = new PictureBox();
             tbcRoles.SuspendLayout();
             tbpList.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRoles).BeginInit();
             tbpAdd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnOut).BeginInit();
             SuspendLayout();
             // 
             // lblRoles
             // 
-            lblRoles.Font = new Font("HoloLens MDL2 Assets", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            lblRoles.Location = new Point(6, 3);
+            lblRoles.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lblRoles.Location = new Point(12, 5);
             lblRoles.Name = "lblRoles";
             lblRoles.Size = new Size(197, 64);
             lblRoles.TabIndex = 1;
             lblRoles.Text = "Roles";
-            lblRoles.TextAlign = ContentAlignment.TopCenter;
+            lblRoles.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // tbcRoles
             // 
             tbcRoles.Controls.Add(tbpList);
             tbcRoles.Controls.Add(tbpAdd);
+            tbcRoles.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tbcRoles.ItemSize = new Size(66, 26);
             tbcRoles.Location = new Point(6, 79);
+            tbcRoles.Margin = new Padding(5);
+            tbcRoles.Multiline = true;
             tbcRoles.Name = "tbcRoles";
             tbcRoles.SelectedIndex = 0;
             tbcRoles.Size = new Size(1061, 773);
+            tbcRoles.SizeMode = TabSizeMode.FillToRight;
             tbcRoles.TabIndex = 7;
             // 
             // tbpList
             // 
+            tbpList.BackColor = Color.WhiteSmoke;
+            tbpList.Controls.Add(panel1);
             tbpList.Controls.Add(btnDelete);
             tbpList.Controls.Add(btnEdit);
             tbpList.Controls.Add(btnSearch);
-            tbpList.Controls.Add(lblSearch);
             tbpList.Controls.Add(dgvRoles);
             tbpList.Controls.Add(btnAdd);
-            tbpList.Controls.Add(tbxSearch);
-            tbpList.Location = new Point(4, 29);
+            tbpList.Location = new Point(4, 30);
             tbpList.Name = "tbpList";
             tbpList.Padding = new Padding(3);
-            tbpList.Size = new Size(1053, 740);
+            tbpList.Size = new Size(1053, 739);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
-            tbpList.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Gainsboro;
+            panel1.Controls.Add(tbxSearch);
+            panel1.Location = new Point(16, 18);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(250, 31);
+            panel1.TabIndex = 15;
+            // 
+            // tbxSearch
+            // 
+            tbxSearch.BackColor = Color.Gainsboro;
+            tbxSearch.BorderStyle = BorderStyle.None;
+            tbxSearch.Location = new Point(12, 3);
+            tbxSearch.Multiline = true;
+            tbxSearch.Name = "tbxSearch";
+            tbxSearch.PlaceholderText = "Clave o nombre";
+            tbxSearch.Size = new Size(227, 25);
+            tbxSearch.TabIndex = 7;
             // 
             // btnDelete
             // 
-            btnDelete.Font = new Font("HoloLens MDL2 Assets", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDelete.Location = new Point(944, 151);
+            btnDelete.BackColor = Color.Firebrick;
+            btnDelete.Cursor = Cursors.Hand;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.ForeColor = SystemColors.Control;
+            btnDelete.Location = new Point(937, 689);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(102, 38);
+            btnDelete.Size = new Size(102, 33);
             btnDelete.TabIndex = 14;
             btnDelete.Text = "Eliminar";
-            btnDelete.TextAlign = ContentAlignment.TopCenter;
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnEdit
             // 
-            btnEdit.Font = new Font("HoloLens MDL2 Assets", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEdit.Location = new Point(944, 107);
+            btnEdit.BackColor = Color.FromArgb(27, 43, 57);
+            btnEdit.Cursor = Cursors.Hand;
+            btnEdit.FlatStyle = FlatStyle.Flat;
+            btnEdit.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEdit.ForeColor = SystemColors.Control;
+            btnEdit.Location = new Point(829, 689);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(102, 38);
+            btnEdit.Size = new Size(102, 33);
             btnEdit.TabIndex = 13;
             btnEdit.Text = "Editar";
-            btnEdit.TextAlign = ContentAlignment.TopCenter;
-            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.UseVisualStyleBackColor = false;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(249, 27);
+            btnSearch.BackColor = Color.FromArgb(27, 43, 57);
+            btnSearch.Cursor = Cursors.Hand;
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSearch.ForeColor = SystemColors.Control;
+            btnSearch.Location = new Point(272, 17);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(94, 29);
+            btnSearch.Size = new Size(94, 33);
             btnSearch.TabIndex = 12;
             btnSearch.Text = "Buscar";
-            btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // lblSearch
-            // 
-            lblSearch.AutoSize = true;
-            lblSearch.Location = new Point(16, 7);
-            lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(53, 20);
-            lblSearch.TabIndex = 11;
-            lblSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = false;
             // 
             // dgvRoles
             // 
             dgvRoles.AllowUserToAddRows = false;
             dgvRoles.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Control;
+            dgvRoles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvRoles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRoles.BackgroundColor = Color.WhiteSmoke;
+            dgvRoles.BorderStyle = BorderStyle.None;
+            dgvRoles.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvRoles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle2.Padding = new Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvRoles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvRoles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRoles.Location = new Point(16, 63);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Gainsboro;
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvRoles.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvRoles.EnableHeadersVisualStyles = false;
+            dgvRoles.GridColor = Color.White;
+            dgvRoles.Location = new Point(16, 65);
+            dgvRoles.MultiSelect = false;
             dgvRoles.Name = "dgvRoles";
+            dgvRoles.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvRoles.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvRoles.RowHeadersWidth = 51;
-            dgvRoles.RowTemplate.Height = 29;
-            dgvRoles.Size = new Size(922, 670);
+            dgvRoles.RowTemplate.Height = 35;
+            dgvRoles.RowTemplate.ReadOnly = true;
+            dgvRoles.Size = new Size(1023, 609);
             dgvRoles.TabIndex = 10;
             // 
             // btnAdd
             // 
-            btnAdd.Font = new Font("HoloLens MDL2 Assets", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.Location = new Point(944, 63);
+            btnAdd.BackColor = Color.FromArgb(27, 43, 57);
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.ForeColor = SystemColors.Control;
+            btnAdd.Location = new Point(937, 18);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(102, 38);
+            btnAdd.Size = new Size(102, 33);
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Agregar";
-            btnAdd.TextAlign = ContentAlignment.TopCenter;
-            btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // tbxSearch
-            // 
-            tbxSearch.Location = new Point(16, 30);
-            tbxSearch.Name = "tbxSearch";
-            tbxSearch.PlaceholderText = "Buscar";
-            tbxSearch.Size = new Size(227, 27);
-            tbxSearch.TabIndex = 7;
+            btnAdd.UseVisualStyleBackColor = false;
             // 
             // tbpAdd
             // 
+            tbpAdd.BackColor = Color.WhiteSmoke;
             tbpAdd.Controls.Add(tbxKey);
             tbpAdd.Controls.Add(btnCancel);
             tbpAdd.Controls.Add(btnSave);
@@ -176,19 +244,18 @@
             tbpAdd.Controls.Add(lblType);
             tbpAdd.Controls.Add(lblName);
             tbpAdd.Controls.Add(lblId);
-            tbpAdd.Location = new Point(4, 29);
+            tbpAdd.Location = new Point(4, 30);
             tbpAdd.Name = "tbpAdd";
             tbpAdd.Padding = new Padding(3);
-            tbpAdd.Size = new Size(1053, 740);
+            tbpAdd.Size = new Size(1053, 739);
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
-            tbpAdd.UseVisualStyleBackColor = true;
             // 
             // tbxKey
             // 
             tbxKey.Location = new Point(13, 107);
             tbxKey.Name = "tbxKey";
-            tbxKey.Size = new Size(90, 27);
+            tbxKey.Size = new Size(90, 26);
             tbxKey.TabIndex = 14;
             // 
             // btnCancel
@@ -213,21 +280,21 @@
             // 
             tbxPurpose.Location = new Point(13, 180);
             tbxPurpose.Name = "tbxPurpose";
-            tbxPurpose.Size = new Size(256, 27);
+            tbxPurpose.Size = new Size(256, 26);
             tbxPurpose.TabIndex = 15;
             // 
             // tbxName
             // 
             tbxName.Location = new Point(16, 44);
             tbxName.Name = "tbxName";
-            tbxName.Size = new Size(256, 27);
+            tbxName.Size = new Size(256, 26);
             tbxName.TabIndex = 13;
             // 
             // tbxId
             // 
             tbxId.Location = new Point(654, 36);
             tbxId.Name = "tbxId";
-            tbxId.Size = new Size(125, 27);
+            tbxId.Size = new Size(125, 26);
             tbxId.TabIndex = 11;
             tbxId.Visible = false;
             // 
@@ -236,7 +303,7 @@
             lblDesc.AutoSize = true;
             lblDesc.Location = new Point(16, 157);
             lblDesc.Name = "lblDesc";
-            lblDesc.Size = new Size(73, 20);
+            lblDesc.Size = new Size(81, 21);
             lblDesc.TabIndex = 15;
             lblDesc.Text = "Propósito";
             // 
@@ -245,7 +312,7 @@
             lblType.AutoSize = true;
             lblType.Location = new Point(16, 84);
             lblType.Name = "lblType";
-            lblType.Size = new Size(45, 20);
+            lblType.Size = new Size(51, 21);
             lblType.TabIndex = 14;
             lblType.Text = "Clave";
             // 
@@ -254,7 +321,7 @@
             lblName.AutoSize = true;
             lblName.Location = new Point(16, 21);
             lblName.Name = "lblName";
-            lblName.Size = new Size(64, 20);
+            lblName.Size = new Size(72, 21);
             lblName.TabIndex = 12;
             lblName.Text = "Nombre";
             // 
@@ -263,21 +330,21 @@
             lblId.AutoSize = true;
             lblId.Location = new Point(657, 16);
             lblId.Name = "lblId";
-            lblId.Size = new Size(22, 20);
+            lblId.Size = new Size(25, 21);
             lblId.TabIndex = 10;
             lblId.Text = "Id";
             lblId.Visible = false;
             // 
             // btnOut
             // 
-            btnOut.Font = new Font("HoloLens MDL2 Assets", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnOut.Location = new Point(954, 12);
+            btnOut.Cursor = Cursors.Hand;
+            btnOut.Image = Properties.Resources.close;
+            btnOut.Location = new Point(1025, 21);
             btnOut.Name = "btnOut";
-            btnOut.Size = new Size(102, 38);
-            btnOut.TabIndex = 9;
-            btnOut.Text = "Cerrar";
-            btnOut.TextAlign = ContentAlignment.TopCenter;
-            btnOut.UseVisualStyleBackColor = true;
+            btnOut.Size = new Size(31, 28);
+            btnOut.SizeMode = PictureBoxSizeMode.Zoom;
+            btnOut.TabIndex = 16;
+            btnOut.TabStop = false;
             // 
             // RoleView
             // 
@@ -293,10 +360,12 @@
             Text = "RoleIndex";
             tbcRoles.ResumeLayout(false);
             tbpList.ResumeLayout(false);
-            tbpList.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRoles).EndInit();
             tbpAdd.ResumeLayout(false);
             tbpAdd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnOut).EndInit();
             ResumeLayout(false);
         }
 
@@ -308,7 +377,6 @@
         private Button btnAdd;
         private TextBox tbxSearch;
         private TabPage tbpAdd;
-        private Label lblSearch;
         private Button btnSearch;
         private Button btnEdit;
         private Button btnCancel;
@@ -322,6 +390,7 @@
         private Label lblId;
         private Button btnDelete;
         private TextBox tbxKey;
-        private Button btnOut;
+        private Panel panel1;
+        private PictureBox btnOut;
     }
 }

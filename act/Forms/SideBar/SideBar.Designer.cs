@@ -37,7 +37,6 @@
             btnInicio = new Button();
             btnSalir = new Button();
             pnlExit = new Panel();
-            pictureBox5 = new PictureBox();
             pnlSideBar = new Panel();
             pictureBox1 = new PictureBox();
             lblRn = new Label();
@@ -65,7 +64,6 @@
             lblUseCases = new Label();
             btnCUs = new Button();
             pnlExit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -87,16 +85,20 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(24, 40, 54);
+            button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(79, 443);
+            button1.ForeColor = SystemColors.Control;
+            button1.Image = Properties.Resources.reportes;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(0, 402);
             button1.Name = "button1";
             button1.Padding = new Padding(20, 0, 0, 0);
             button1.RightToLeft = RightToLeft.No;
-            button1.Size = new Size(247, 84);
+            button1.Size = new Size(348, 59);
             button1.TabIndex = 18;
-            button1.Text = "Informes de la correspondencia";
+            button1.Text = "  Informes de correspondencia";
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = false;
@@ -104,15 +106,19 @@
             // button3
             // 
             button3.BackColor = Color.FromArgb(24, 40, 54);
+            button3.Cursor = Cursors.Hand;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(79, 366);
+            button3.ForeColor = SystemColors.Control;
+            button3.Image = Properties.Resources.venn2;
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(0, 337);
             button3.Name = "button3";
             button3.Padding = new Padding(20, 0, 0, 0);
-            button3.Size = new Size(247, 84);
+            button3.Size = new Size(348, 59);
             button3.TabIndex = 17;
-            button3.Text = "Tabla de Correspondencia";
+            button3.Text = "  Tabla de Correspondencia";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.TextImageRelation = TextImageRelation.ImageBeforeText;
             button3.UseVisualStyleBackColor = false;
@@ -120,15 +126,19 @@
             // btnElementosR
             // 
             btnElementosR.BackColor = Color.FromArgb(24, 40, 54);
+            btnElementosR.Cursor = Cursors.Hand;
             btnElementosR.FlatAppearance.BorderSize = 0;
             btnElementosR.FlatStyle = FlatStyle.Flat;
             btnElementosR.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btnElementosR.Location = new Point(79, 289);
+            btnElementosR.ForeColor = SystemColors.Control;
+            btnElementosR.Image = Properties.Resources.docs;
+            btnElementosR.ImageAlign = ContentAlignment.MiddleLeft;
+            btnElementosR.Location = new Point(0, 272);
             btnElementosR.Name = "btnElementosR";
             btnElementosR.Padding = new Padding(20, 0, 0, 0);
-            btnElementosR.Size = new Size(247, 84);
+            btnElementosR.Size = new Size(348, 59);
             btnElementosR.TabIndex = 16;
-            btnElementosR.Text = "Elementos a Relacionar";
+            btnElementosR.Text = "  Elementos a Relacionar";
             btnElementosR.TextAlign = ContentAlignment.MiddleLeft;
             btnElementosR.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnElementosR.UseVisualStyleBackColor = false;
@@ -136,6 +146,7 @@
             // btnRoles
             // 
             btnRoles.BackColor = Color.FromArgb(24, 40, 54);
+            btnRoles.Cursor = Cursors.Hand;
             btnRoles.FlatAppearance.BorderSize = 0;
             btnRoles.FlatStyle = FlatStyle.Flat;
             btnRoles.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
@@ -155,6 +166,7 @@
             // btnInicio
             // 
             btnInicio.BackColor = Color.FromArgb(24, 40, 54);
+            btnInicio.Cursor = Cursors.Hand;
             btnInicio.FlatAppearance.BorderSize = 0;
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
@@ -173,16 +185,18 @@
             // 
             // btnSalir
             // 
-            btnSalir.BackColor = Color.FromArgb(207, 207, 207);
+            btnSalir.BackColor = Color.FromArgb(27, 43, 57);
+            btnSalir.Cursor = Cursors.Hand;
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Font = new Font("HoloLens MDL2 Assets", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSalir.Location = new Point(198, 23);
+            btnSalir.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSalir.ForeColor = SystemColors.Control;
+            btnSalir.Image = Properties.Resources.logout;
+            btnSalir.Location = new Point(210, 19);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(82, 49);
+            btnSalir.Size = new Size(122, 50);
             btnSalir.TabIndex = 7;
             btnSalir.Text = "Salir";
-            btnSalir.TextAlign = ContentAlignment.MiddleLeft;
             btnSalir.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
@@ -190,29 +204,22 @@
             // pnlExit
             // 
             pnlExit.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            pnlExit.BackColor = Color.FromArgb(207, 207, 207);
-            pnlExit.Controls.Add(pictureBox5);
+            pnlExit.BackColor = Color.FromArgb(20, 35, 50);
             pnlExit.Controls.Add(btnSalir);
             pnlExit.Location = new Point(0, 766);
             pnlExit.Name = "pnlExit";
             pnlExit.Size = new Size(348, 87);
             pnlExit.TabIndex = 14;
             // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(286, 23);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(47, 49);
-            pictureBox5.TabIndex = 13;
-            pictureBox5.TabStop = false;
-            // 
             // pnlSideBar
             // 
             pnlSideBar.BackColor = Color.FromArgb(24, 40, 54);
             pnlSideBar.Controls.Add(label1);
+            pnlSideBar.Controls.Add(button1);
             pnlSideBar.Controls.Add(pictureBox1);
+            pnlSideBar.Controls.Add(button3);
             pnlSideBar.Controls.Add(pnlExit);
+            pnlSideBar.Controls.Add(btnElementosR);
             pnlSideBar.Controls.Add(lblRn);
             pnlSideBar.Controls.Add(btnRoles);
             pnlSideBar.Controls.Add(btnBusinessRules);
@@ -282,6 +289,7 @@
             btnMessages.BackgroundImage = (Image)resources.GetObject("btnMessages.BackgroundImage");
             btnMessages.BackgroundImageLayout = ImageLayout.Center;
             btnMessages.FlatAppearance.BorderSize = 0;
+            btnMessages.FlatStyle = FlatStyle.Flat;
             btnMessages.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnMessages.Location = new Point(741, 357);
             btnMessages.Name = "btnMessages";
@@ -321,21 +329,21 @@
             // 
             // lblRnMs
             // 
-            lblRnMs.Font = new Font("HoloLens MDL2 Assets", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblRnMs.Location = new Point(554, 289);
+            lblRnMs.Font = new Font("Montserrat", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            lblRnMs.Location = new Point(554, 288);
             lblRnMs.Name = "lblRnMs";
             lblRnMs.Size = new Size(365, 46);
             lblRnMs.TabIndex = 38;
             lblRnMs.Text = "Reglas de negocio y Mensajes";
-            lblRnMs.TextAlign = ContentAlignment.TopCenter;
+            lblRnMs.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblStateChanges
             // 
             lblStateChanges.AutoSize = true;
-            lblStateChanges.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStateChanges.Font = new Font("Montserrat", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblStateChanges.Location = new Point(193, 443);
             lblStateChanges.Name = "lblStateChanges";
-            lblStateChanges.Size = new Size(157, 20);
+            lblStateChanges.Size = new Size(159, 21);
             lblStateChanges.TabIndex = 37;
             lblStateChanges.Text = "Cambios de estado";
             // 
@@ -345,6 +353,7 @@
             btnStateChanges.BackgroundImage = (Image)resources.GetObject("btnStateChanges.BackgroundImage");
             btnStateChanges.BackgroundImageLayout = ImageLayout.Center;
             btnStateChanges.FlatAppearance.BorderSize = 0;
+            btnStateChanges.FlatStyle = FlatStyle.Flat;
             btnStateChanges.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnStateChanges.Location = new Point(214, 357);
             btnStateChanges.Name = "btnStateChanges";
@@ -355,21 +364,21 @@
             // 
             // lblStates
             // 
-            lblStates.Font = new Font("HoloLens MDL2 Assets", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblStates.Location = new Point(42, 289);
+            lblStates.Font = new Font("Montserrat", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStates.Location = new Point(42, 287);
             lblStates.Name = "lblStates";
             lblStates.Size = new Size(105, 46);
             lblStates.TabIndex = 35;
             lblStates.Text = "Estados";
-            lblStates.TextAlign = ContentAlignment.TopCenter;
+            lblStates.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblStatesbtn
             // 
             lblStatesbtn.AutoSize = true;
-            lblStatesbtn.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStatesbtn.Font = new Font("Montserrat", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblStatesbtn.Location = new Point(67, 443);
             lblStatesbtn.Name = "lblStatesbtn";
-            lblStatesbtn.Size = new Size(71, 20);
+            lblStatesbtn.Size = new Size(72, 21);
             lblStatesbtn.TabIndex = 34;
             lblStatesbtn.Text = "Estados";
             // 
@@ -379,6 +388,7 @@
             btnStates.BackgroundImage = (Image)resources.GetObject("btnStates.BackgroundImage");
             btnStates.BackgroundImageLayout = ImageLayout.Center;
             btnStates.FlatAppearance.BorderSize = 0;
+            btnStates.FlatStyle = FlatStyle.Flat;
             btnStates.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnStates.Location = new Point(42, 357);
             btnStates.Name = "btnStates";
@@ -389,7 +399,7 @@
             // 
             // lblObjects
             // 
-            lblObjects.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblObjects.Font = new Font("Montserrat", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblObjects.Location = new Point(760, 211);
             lblObjects.Name = "lblObjects";
             lblObjects.Size = new Size(81, 20);
@@ -403,6 +413,7 @@
             btnObjects.BackgroundImage = (Image)resources.GetObject("btnObjects.BackgroundImage");
             btnObjects.BackgroundImageLayout = ImageLayout.Center;
             btnObjects.FlatAppearance.BorderSize = 0;
+            btnObjects.FlatStyle = FlatStyle.Flat;
             btnObjects.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnObjects.Location = new Point(741, 124);
             btnObjects.Name = "btnObjects";
@@ -413,17 +424,17 @@
             // 
             // label4
             // 
-            label4.Font = new Font("HoloLens MDL2 Assets", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Font = new Font("Montserrat", 13F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(564, 64);
             label4.Name = "label4";
             label4.Size = new Size(103, 46);
             label4.TabIndex = 28;
             label4.Text = "Objetos";
-            label4.TextAlign = ContentAlignment.TopCenter;
+            label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblObjectTypes
             // 
-            lblObjectTypes.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblObjectTypes.Font = new Font("Montserrat", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblObjectTypes.Location = new Point(554, 207);
             lblObjectTypes.Name = "lblObjectTypes";
             lblObjectTypes.Size = new Size(148, 20);
@@ -436,6 +447,7 @@
             btnObjectTypes.BackgroundImage = (Image)resources.GetObject("btnObjectTypes.BackgroundImage");
             btnObjectTypes.BackgroundImageLayout = ImageLayout.Center;
             btnObjectTypes.FlatAppearance.BorderSize = 0;
+            btnObjectTypes.FlatStyle = FlatStyle.Flat;
             btnObjectTypes.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnObjectTypes.Location = new Point(564, 124);
             btnObjectTypes.Name = "btnObjectTypes";
@@ -447,10 +459,10 @@
             // lblAlternativeFlows
             // 
             lblAlternativeFlows.AutoSize = true;
-            lblAlternativeFlows.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAlternativeFlows.Font = new Font("Montserrat", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblAlternativeFlows.Location = new Point(331, 211);
             lblAlternativeFlows.Name = "lblAlternativeFlows";
-            lblAlternativeFlows.Size = new Size(122, 20);
+            lblAlternativeFlows.Size = new Size(127, 21);
             lblAlternativeFlows.TabIndex = 25;
             lblAlternativeFlows.Text = "Flujos alternos";
             // 
@@ -460,6 +472,7 @@
             btnAlternateFlows.BackgroundImage = Properties.Resources.icons8_flow_48;
             btnAlternateFlows.BackgroundImageLayout = ImageLayout.Center;
             btnAlternateFlows.FlatAppearance.BorderSize = 0;
+            btnAlternateFlows.FlatStyle = FlatStyle.Flat;
             btnAlternateFlows.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAlternateFlows.Location = new Point(331, 124);
             btnAlternateFlows.Name = "btnAlternateFlows";
@@ -471,10 +484,10 @@
             // lblBaseFlows
             // 
             lblBaseFlows.AutoSize = true;
-            lblBaseFlows.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblBaseFlows.Font = new Font("Montserrat", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblBaseFlows.Location = new Point(198, 211);
             lblBaseFlows.Name = "lblBaseFlows";
-            lblBaseFlows.Size = new Size(97, 20);
+            lblBaseFlows.Size = new Size(98, 21);
             lblBaseFlows.TabIndex = 23;
             lblBaseFlows.Text = "Flujos base";
             // 
@@ -484,6 +497,7 @@
             btnBaseFlows.BackgroundImage = (Image)resources.GetObject("btnBaseFlows.BackgroundImage");
             btnBaseFlows.BackgroundImageLayout = ImageLayout.Center;
             btnBaseFlows.FlatAppearance.BorderSize = 0;
+            btnBaseFlows.FlatStyle = FlatStyle.Flat;
             btnBaseFlows.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnBaseFlows.Location = new Point(188, 124);
             btnBaseFlows.Name = "btnBaseFlows";
@@ -494,21 +508,21 @@
             // 
             // lblCu
             // 
-            lblCu.Font = new Font("HoloLens MDL2 Assets", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCu.Location = new Point(42, 51);
+            lblCu.Font = new Font("Montserrat", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCu.Location = new Point(42, 57);
             lblCu.Name = "lblCu";
             lblCu.Size = new Size(170, 46);
             lblCu.TabIndex = 21;
             lblCu.Text = "CU, FB y FA";
-            lblCu.TextAlign = ContentAlignment.TopCenter;
+            lblCu.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblUseCases
             // 
             lblUseCases.AutoSize = true;
-            lblUseCases.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUseCases.Font = new Font("Montserrat", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblUseCases.Location = new Point(42, 211);
             lblUseCases.Name = "lblUseCases";
-            lblUseCases.Size = new Size(116, 20);
+            lblUseCases.Size = new Size(111, 21);
             lblUseCases.TabIndex = 19;
             lblUseCases.Text = "Casos de uso";
             // 
@@ -518,6 +532,7 @@
             btnCUs.BackgroundImage = (Image)resources.GetObject("btnCUs.BackgroundImage");
             btnCUs.BackgroundImageLayout = ImageLayout.Center;
             btnCUs.FlatAppearance.BorderSize = 0;
+            btnCUs.FlatStyle = FlatStyle.Flat;
             btnCUs.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCUs.Location = new Point(42, 124);
             btnCUs.Name = "btnCUs";
@@ -533,16 +548,12 @@
             BackColor = Color.FromArgb(236, 236, 236);
             ClientSize = new Size(1422, 853);
             Controls.Add(pnlRelationEContainer);
-            Controls.Add(button1);
-            Controls.Add(button3);
-            Controls.Add(btnElementosR);
             Controls.Add(pnlSideBar);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             IsMdiContainer = true;
             Name = "SideBar";
             Text = "ACT";
             pnlExit.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             pnlSideBar.ResumeLayout(false);
             pnlSideBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -561,7 +572,6 @@
         private Button btnInicio;
         private Button btnSalir;
         private Panel pnlExit;
-        private PictureBox pictureBox5;
         private Panel pnlSideBar;
         private Panel pnlRelationEContainer;
         private Button btnCUs;
