@@ -10,20 +10,25 @@
     <EntitySet Name="Roles" EntityType="Model1.Store.Roles" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Screens" EntityType="Model1.Store.Screens" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ElementStates" EntityType="Model1.Store.ElementStates" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="DiagramStates" EntityType="Model1.Store.DiagramStates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UseCaseStates" EntityType="Model1.Store.UseCaseStates" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="BusinessRules" EntityType="Model1.Store.BusinessRules" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Messages" EntityType="Model1.Store.Messages" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="BusinnesRulesMessages" EntityType="Model1.Store.BusinnesRulesMessages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ObjectTypes" EntityType="Model1.Store.ObjectTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ObjectStates" EntityType="Model1.Store.ObjectStates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Prefixes" EntityType="Model1.Store.Prefixes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ObjectWithStates" EntityType="Model1.Store.ObjectWithStates" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Objects" EntityType="Model1.Store.Objects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ObjectStatesChanges" EntityType="Model1.Store.ObjectStatesChanges" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ObjectsForStateChanges" EntityType="Model1.Store.ObjectsForStateChanges" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolesForStateChanges" EntityType="Model1.Store.RolesForStateChanges" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reports" EntityType="Model1.Store.Reports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UseCases" EntityType="Model1.Store.UseCases" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseFlows" EntityType="Model1.Store.BaseFlows" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AlternativeFlows" EntityType="Model1.Store.AlternativeFlows" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseAlternativeFlows" EntityType="Model1.Store.BaseAlternativeFlows" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="ProjectScreen" Association="Model1.Store.ProjectScreen">
       <End Role="Project" EntitySet="Projects" />
-      <End Role="Screen" EntitySet="Screens" />
-    </AssociationSet>
-    <AssociationSet Name="ElementStateScreen" Association="Model1.Store.ElementStateScreen">
-      <End Role="ElementState" EntitySet="ElementStates" />
-      <End Role="Screen" EntitySet="Screens" />
-    </AssociationSet>
-    <AssociationSet Name="DiagramStateScreen" Association="Model1.Store.DiagramStateScreen">
-      <End Role="DiagramState" EntitySet="DiagramStates" />
       <End Role="Screen" EntitySet="Screens" />
     </AssociationSet>
     <AssociationSet Name="ProjectRole" Association="Model1.Store.ProjectRole">
@@ -32,14 +37,6 @@
     </AssociationSet>
     <AssociationSet Name="ProjectBusinessRule" Association="Model1.Store.ProjectBusinessRule">
       <End Role="Project" EntitySet="Projects" />
-      <End Role="BusinessRule" EntitySet="BusinessRules" />
-    </AssociationSet>
-    <AssociationSet Name="DiagramStateBusinessRule" Association="Model1.Store.DiagramStateBusinessRule">
-      <End Role="DiagramState" EntitySet="DiagramStates" />
-      <End Role="BusinessRule" EntitySet="BusinessRules" />
-    </AssociationSet>
-    <AssociationSet Name="ElementStateBusinessRule" Association="Model1.Store.ElementStateBusinessRule">
-      <End Role="ElementState" EntitySet="ElementStates" />
       <End Role="BusinessRule" EntitySet="BusinessRules" />
     </AssociationSet>
     <AssociationSet Name="ProjectMessage" Association="Model1.Store.ProjectMessage">
@@ -58,6 +55,154 @@
       <End Role="Project" EntitySet="Projects" />
       <End Role="BusinnesRulesMessages" EntitySet="BusinnesRulesMessages" />
     </AssociationSet>
+    <AssociationSet Name="ProjectObjectState" Association="Model1.Store.ProjectObjectState">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ObjectState" EntitySet="ObjectStates" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectObjectWithStates" Association="Model1.Store.ProjectObjectWithStates">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ObjectWithStates" EntitySet="ObjectWithStates" />
+    </AssociationSet>
+    <AssociationSet Name="ObjectStateObjectWithStates" Association="Model1.Store.ObjectStateObjectWithStates">
+      <End Role="ObjectState" EntitySet="ObjectStates" />
+      <End Role="ObjectWithStates" EntitySet="ObjectWithStates" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectObject" Association="Model1.Store.ProjectObject">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Object" EntitySet="Objects" />
+    </AssociationSet>
+    <AssociationSet Name="ObjectTypeObject" Association="Model1.Store.ObjectTypeObject">
+      <End Role="ObjectType" EntitySet="ObjectTypes" />
+      <End Role="Object" EntitySet="Objects" />
+    </AssociationSet>
+    <AssociationSet Name="ObjectObjectWithStates" Association="Model1.Store.ObjectObjectWithStates">
+      <End Role="Object" EntitySet="Objects" />
+      <End Role="ObjectWithStates" EntitySet="ObjectWithStates" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectObjectStatesChange" Association="Model1.Store.ProjectObjectStatesChange">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ObjectStatesChange" EntitySet="ObjectStatesChanges" />
+    </AssociationSet>
+    <AssociationSet Name="Predecessor" Association="Model1.Store.Predecessor">
+      <End Role="ObjectState" EntitySet="ObjectStates" />
+      <End Role="ObjectStatesChange" EntitySet="ObjectStatesChanges" />
+    </AssociationSet>
+    <AssociationSet Name="Successor" Association="Model1.Store.Successor">
+      <End Role="ObjectState" EntitySet="ObjectStates" />
+      <End Role="ObjectStatesChange" EntitySet="ObjectStatesChanges" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectObjectsForStateChange" Association="Model1.Store.ProjectObjectsForStateChange">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ObjectsForStateChange" EntitySet="ObjectsForStateChanges" />
+    </AssociationSet>
+    <AssociationSet Name="ObjectStatesChangeObjectsForStateChange" Association="Model1.Store.ObjectStatesChangeObjectsForStateChange">
+      <End Role="ObjectStatesChange" EntitySet="ObjectStatesChanges" />
+      <End Role="ObjectsForStateChange" EntitySet="ObjectsForStateChanges" />
+    </AssociationSet>
+    <AssociationSet Name="ObjectObjectsForStateChange" Association="Model1.Store.ObjectObjectsForStateChange">
+      <End Role="Object" EntitySet="Objects" />
+      <End Role="ObjectsForStateChange" EntitySet="ObjectsForStateChanges" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectRolesForStateChange" Association="Model1.Store.ProjectRolesForStateChange">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="RolesForStateChange" EntitySet="RolesForStateChanges" />
+    </AssociationSet>
+    <AssociationSet Name="ObjectStatesChangeRolesForStateChange" Association="Model1.Store.ObjectStatesChangeRolesForStateChange">
+      <End Role="ObjectStatesChange" EntitySet="ObjectStatesChanges" />
+      <End Role="RolesForStateChange" EntitySet="RolesForStateChanges" />
+    </AssociationSet>
+    <AssociationSet Name="RoleRolesForStateChange" Association="Model1.Store.RoleRolesForStateChange">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="RolesForStateChange" EntitySet="RolesForStateChanges" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectReport" Association="Model1.Store.ProjectReport">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectUseCase" Association="Model1.Store.ProjectUseCase">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="UseCase" EntitySet="UseCases" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectBaseFlow" Association="Model1.Store.ProjectBaseFlow">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="BaseFlow" EntitySet="BaseFlows" />
+    </AssociationSet>
+    <AssociationSet Name="UseCaseBaseFlow" Association="Model1.Store.UseCaseBaseFlow">
+      <End Role="UseCase" EntitySet="UseCases" />
+      <End Role="BaseFlow" EntitySet="BaseFlows" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectAlternativeFlow" Association="Model1.Store.ProjectAlternativeFlow">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectBaseAlternativeFlow" Association="Model1.Store.ProjectBaseAlternativeFlow">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="BaseAlternativeFlow" EntitySet="BaseAlternativeFlows" />
+    </AssociationSet>
+    <AssociationSet Name="BaseFlowBaseAlternativeFlow" Association="Model1.Store.BaseFlowBaseAlternativeFlow">
+      <End Role="BaseFlow" EntitySet="BaseFlows" />
+      <End Role="BaseAlternativeFlow" EntitySet="BaseAlternativeFlows" />
+    </AssociationSet>
+    <AssociationSet Name="AlternativeFlowBaseAlternativeFlow" Association="Model1.Store.AlternativeFlowBaseAlternativeFlow">
+      <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
+      <End Role="BaseAlternativeFlow" EntitySet="BaseAlternativeFlows" />
+    </AssociationSet>
+    <AssociationSet Name="DiagramElementStateObject" Association="Model1.Store.DiagramElementStateObject">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="Object" EntitySet="Objects" />
+    </AssociationSet>
+    <AssociationSet Name="ScreenElementStateObject" Association="Model1.Store.ScreenElementStateObject">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="Object" EntitySet="Objects" />
+    </AssociationSet>
+    <AssociationSet Name="DiagramElementStateScreen" Association="Model1.Store.DiagramElementStateScreen">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="Screen" EntitySet="Screens" />
+    </AssociationSet>
+    <AssociationSet Name="ScreenElementStateScreen" Association="Model1.Store.ScreenElementStateScreen">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="Screen" EntitySet="Screens" />
+    </AssociationSet>
+    <AssociationSet Name="DiagramElementStateBusinessRule" Association="Model1.Store.DiagramElementStateBusinessRule">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="BusinessRule" EntitySet="BusinessRules" />
+    </AssociationSet>
+    <AssociationSet Name="ScreenElementStateBusinessRule" Association="Model1.Store.ScreenElementStateBusinessRule">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="BusinessRule" EntitySet="BusinessRules" />
+    </AssociationSet>
+    <AssociationSet Name="DiagramElementStateReport" Association="Model1.Store.DiagramElementStateReport">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="ScreenElementStateReport" Association="Model1.Store.ScreenElementStateReport">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="DiagramElementStateUseCase" Association="Model1.Store.DiagramElementStateUseCase">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="UseCase" EntitySet="UseCases" />
+    </AssociationSet>
+    <AssociationSet Name="ScreenElementStateUseCase" Association="Model1.Store.ScreenElementStateUseCase">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="UseCase" EntitySet="UseCases" />
+    </AssociationSet>
+    <AssociationSet Name="DiagramElementStateBaseFlow" Association="Model1.Store.DiagramElementStateBaseFlow">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="BaseFlow" EntitySet="BaseFlows" />
+    </AssociationSet>
+    <AssociationSet Name="ScreenElementStateBaseFlow" Association="Model1.Store.ScreenElementStateBaseFlow">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="BaseFlow" EntitySet="BaseFlows" />
+    </AssociationSet>
+    <AssociationSet Name="DiagramElementStateAlternativeFlow" Association="Model1.Store.DiagramElementStateAlternativeFlow">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
+    </AssociationSet>
+    <AssociationSet Name="ScreenElementStateAlternativeFlow" Association="Model1.Store.ScreenElementStateAlternativeFlow">
+      <End Role="ElementState" EntitySet="ElementStates" />
+      <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Projects">
     <Key>
@@ -74,7 +219,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="key" Type="int" Nullable="false" />
+    <Property Name="key" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="15" />
     <Property Name="Purpose" Type="nvarchar" Nullable="false" MaxLength="70" />
     <Property Name="ProjectId" Type="int" Nullable="false" />
@@ -85,11 +230,11 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ProjectId" Type="int" Nullable="false" />
-    <Property Name="Key" Type="int" Nullable="false" />
+    <Property Name="Key" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="15" />
     <Property Name="ImagePath" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ElementStateId" Type="int" Nullable="false" />
-    <Property Name="DiagramStateId" Type="int" Nullable="false" />
+    <Property Name="DiagramElementStateId" Type="int" Nullable="false" />
+    <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ElementStates">
     <Key>
@@ -98,7 +243,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="DiagramStates">
+  <EntityType Name="UseCaseStates">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -111,10 +256,10 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ProjectId" Type="int" Nullable="false" />
-    <Property Name="Key" Type="int" Nullable="false" />
+    <Property Name="Key" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DiagramStateId" Type="int" Nullable="false" />
-    <Property Name="ElementStateId" Type="int" Nullable="false" />
+    <Property Name="DiagramElementStateId" Type="int" Nullable="false" />
+    <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Messages">
     <Key>
@@ -122,7 +267,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ProjectId" Type="int" Nullable="false" />
-    <Property Name="Key" Type="int" Nullable="false" />
+    <Property Name="Key" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="40" />
   </EntityType>
   <EntityType Name="BusinnesRulesMessages">
@@ -134,6 +279,138 @@
     <Property Name="MessageId" Type="int" Nullable="false" />
     <Property Name="BusinessRuleId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="ObjectTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Purpose" Type="nvarchar" Nullable="false" MaxLength="70" />
+  </EntityType>
+  <EntityType Name="ObjectStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Key" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Purpose" Type="nvarchar" Nullable="false" MaxLength="70" />
+  </EntityType>
+  <EntityType Name="Prefixes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="ObjectWithStates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="ObjectStateId" Type="int" Nullable="false" />
+    <Property Name="ObjectId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Objects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="Key" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="ObjectTypeId" Type="int" Nullable="false" />
+    <Property Name="Purpose" Type="nvarchar" Nullable="false" MaxLength="70" />
+    <Property Name="DiagramElementStateId" Type="int" Nullable="false" />
+    <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ObjectStatesChanges">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="PredecessorId" Type="int" Nullable="false" />
+    <Property Name="SuccessorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ObjectsForStateChanges">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="ObjectStatesChangeId" Type="int" Nullable="false" />
+    <Property Name="ObjectId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RolesForStateChanges">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="ObjectStatesChangeId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reports">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="Key" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="DiagramElementStateId" Type="int" Nullable="false" />
+    <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UseCases">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="Key" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="FlowChartPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DiagramElementStateId" Type="int" Nullable="false" />
+    <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
+    <Property Name="BaseFlow_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseFlows">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="Key" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FlowChartPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DiagramElementStateId" Type="int" Nullable="false" />
+    <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AlternativeFlows">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="Key" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FlowChartPath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DiagramElementStateId" Type="int" Nullable="false" />
+    <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseAlternativeFlows">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="BaseFlowId" Type="int" Nullable="false" />
+    <Property Name="AlternativeFlowId" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="ProjectScreen">
     <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
     <End Role="Screen" Type="Model1.Store.Screens" Multiplicity="*" />
@@ -143,30 +420,6 @@
       </Principal>
       <Dependent Role="Screen">
         <PropertyRef Name="ProjectId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ElementStateScreen">
-    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
-    <End Role="Screen" Type="Model1.Store.Screens" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ElementState">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Screen">
-        <PropertyRef Name="ElementStateId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="DiagramStateScreen">
-    <End Role="DiagramState" Type="Model1.Store.DiagramStates" Multiplicity="1" />
-    <End Role="Screen" Type="Model1.Store.Screens" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DiagramState">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Screen">
-        <PropertyRef Name="DiagramStateId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -191,30 +444,6 @@
       </Principal>
       <Dependent Role="BusinessRule">
         <PropertyRef Name="ProjectId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="DiagramStateBusinessRule">
-    <End Role="DiagramState" Type="Model1.Store.DiagramStates" Multiplicity="1" />
-    <End Role="BusinessRule" Type="Model1.Store.BusinessRules" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DiagramState">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="BusinessRule">
-        <PropertyRef Name="DiagramStateId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ElementStateBusinessRule">
-    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
-    <End Role="BusinessRule" Type="Model1.Store.BusinessRules" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ElementState">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="BusinessRule">
-        <PropertyRef Name="ElementStateId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -266,6 +495,450 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ProjectObjectState">
+    <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
+    <End Role="ObjectState" Type="Model1.Store.ObjectStates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjectState">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjectObjectWithStates">
+    <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
+    <End Role="ObjectWithStates" Type="Model1.Store.ObjectWithStates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjectWithStates">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ObjectStateObjectWithStates">
+    <End Role="ObjectState" Type="Model1.Store.ObjectStates" Multiplicity="1" />
+    <End Role="ObjectWithStates" Type="Model1.Store.ObjectWithStates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjectState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjectWithStates">
+        <PropertyRef Name="ObjectStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjectObject">
+    <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
+    <End Role="Object" Type="Model1.Store.Objects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ObjectTypeObject">
+    <End Role="ObjectType" Type="Model1.Store.ObjectTypes" Multiplicity="1" />
+    <End Role="Object" Type="Model1.Store.Objects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjectType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="ObjectTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ObjectObjectWithStates">
+    <End Role="Object" Type="Model1.Store.Objects" Multiplicity="1" />
+    <End Role="ObjectWithStates" Type="Model1.Store.ObjectWithStates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjectWithStates">
+        <PropertyRef Name="ObjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjectObjectStatesChange">
+    <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
+    <End Role="ObjectStatesChange" Type="Model1.Store.ObjectStatesChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjectStatesChange">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Predecessor">
+    <End Role="ObjectState" Type="Model1.Store.ObjectStates" Multiplicity="1" />
+    <End Role="ObjectStatesChange" Type="Model1.Store.ObjectStatesChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjectState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjectStatesChange">
+        <PropertyRef Name="PredecessorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Successor">
+    <End Role="ObjectState" Type="Model1.Store.ObjectStates" Multiplicity="1" />
+    <End Role="ObjectStatesChange" Type="Model1.Store.ObjectStatesChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjectState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjectStatesChange">
+        <PropertyRef Name="SuccessorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjectObjectsForStateChange">
+    <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
+    <End Role="ObjectsForStateChange" Type="Model1.Store.ObjectsForStateChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjectsForStateChange">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ObjectStatesChangeObjectsForStateChange">
+    <End Role="ObjectStatesChange" Type="Model1.Store.ObjectStatesChanges" Multiplicity="1" />
+    <End Role="ObjectsForStateChange" Type="Model1.Store.ObjectsForStateChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjectStatesChange">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjectsForStateChange">
+        <PropertyRef Name="ObjectStatesChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ObjectObjectsForStateChange">
+    <End Role="Object" Type="Model1.Store.Objects" Multiplicity="1" />
+    <End Role="ObjectsForStateChange" Type="Model1.Store.ObjectsForStateChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ObjectsForStateChange">
+        <PropertyRef Name="ObjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjectRolesForStateChange">
+    <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
+    <End Role="RolesForStateChange" Type="Model1.Store.RolesForStateChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolesForStateChange">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ObjectStatesChangeRolesForStateChange">
+    <End Role="ObjectStatesChange" Type="Model1.Store.ObjectStatesChanges" Multiplicity="1" />
+    <End Role="RolesForStateChange" Type="Model1.Store.RolesForStateChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjectStatesChange">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolesForStateChange">
+        <PropertyRef Name="ObjectStatesChangeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleRolesForStateChange">
+    <End Role="Role" Type="Model1.Store.Roles" Multiplicity="1" />
+    <End Role="RolesForStateChange" Type="Model1.Store.RolesForStateChanges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolesForStateChange">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjectReport">
+    <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
+    <End Role="Report" Type="Model1.Store.Reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjectUseCase">
+    <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
+    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UseCase">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjectBaseFlow">
+    <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
+    <End Role="BaseFlow" Type="Model1.Store.BaseFlows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseFlow">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UseCaseBaseFlow">
+    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="*" />
+    <End Role="BaseFlow" Type="Model1.Store.BaseFlows" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="BaseFlow">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UseCase">
+        <PropertyRef Name="BaseFlow_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjectAlternativeFlow">
+    <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
+    <End Role="AlternativeFlow" Type="Model1.Store.AlternativeFlows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlternativeFlow">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProjectBaseAlternativeFlow">
+    <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
+    <End Role="BaseAlternativeFlow" Type="Model1.Store.BaseAlternativeFlows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseAlternativeFlow">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BaseFlowBaseAlternativeFlow">
+    <End Role="BaseFlow" Type="Model1.Store.BaseFlows" Multiplicity="1" />
+    <End Role="BaseAlternativeFlow" Type="Model1.Store.BaseAlternativeFlows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaseFlow">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseAlternativeFlow">
+        <PropertyRef Name="BaseFlowId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AlternativeFlowBaseAlternativeFlow">
+    <End Role="AlternativeFlow" Type="Model1.Store.AlternativeFlows" Multiplicity="1" />
+    <End Role="BaseAlternativeFlow" Type="Model1.Store.BaseAlternativeFlows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AlternativeFlow">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseAlternativeFlow">
+        <PropertyRef Name="AlternativeFlowId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DiagramElementStateObject">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="Object" Type="Model1.Store.Objects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="DiagramElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScreenElementStateObject">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="Object" Type="Model1.Store.Objects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="ScreenElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DiagramElementStateScreen">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="Screen" Type="Model1.Store.Screens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Screen">
+        <PropertyRef Name="DiagramElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScreenElementStateScreen">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="Screen" Type="Model1.Store.Screens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Screen">
+        <PropertyRef Name="ScreenElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DiagramElementStateBusinessRule">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="BusinessRule" Type="Model1.Store.BusinessRules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BusinessRule">
+        <PropertyRef Name="DiagramElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScreenElementStateBusinessRule">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="BusinessRule" Type="Model1.Store.BusinessRules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BusinessRule">
+        <PropertyRef Name="ScreenElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DiagramElementStateReport">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="Report" Type="Model1.Store.Reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="DiagramElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScreenElementStateReport">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="Report" Type="Model1.Store.Reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="ScreenElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DiagramElementStateUseCase">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UseCase">
+        <PropertyRef Name="DiagramElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScreenElementStateUseCase">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UseCase">
+        <PropertyRef Name="ScreenElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DiagramElementStateBaseFlow">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="BaseFlow" Type="Model1.Store.BaseFlows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseFlow">
+        <PropertyRef Name="DiagramElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScreenElementStateBaseFlow">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="BaseFlow" Type="Model1.Store.BaseFlows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseFlow">
+        <PropertyRef Name="ScreenElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DiagramElementStateAlternativeFlow">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="AlternativeFlow" Type="Model1.Store.AlternativeFlows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlternativeFlow">
+        <PropertyRef Name="DiagramElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScreenElementStateAlternativeFlow">
+    <End Role="ElementState" Type="Model1.Store.ElementStates" Multiplicity="1" />
+    <End Role="AlternativeFlow" Type="Model1.Store.AlternativeFlows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ElementState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlternativeFlow">
+        <PropertyRef Name="ScreenElementStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -279,15 +952,7 @@
             <End Role="Screen" EntitySet="Screens" />
           </AssociationSet>
           <EntitySet Name="ElementStates" EntityType="Model1.ElementState" />
-          <EntitySet Name="DiagramStates" EntityType="Model1.DiagramState" />
-          <AssociationSet Name="ElementStateScreen" Association="Model1.ElementStateScreen">
-            <End Role="ElementState" EntitySet="ElementStates" />
-            <End Role="Screen" EntitySet="Screens" />
-          </AssociationSet>
-          <AssociationSet Name="DiagramStateScreen" Association="Model1.DiagramStateScreen">
-            <End Role="DiagramState" EntitySet="DiagramStates" />
-            <End Role="Screen" EntitySet="Screens" />
-          </AssociationSet>
+          <EntitySet Name="UseCaseStates" EntityType="Model1.UseCaseState" />
           <AssociationSet Name="ProjectRole" Association="Model1.ProjectRole">
             <End Role="Project" EntitySet="Projects" />
             <End Role="Role" EntitySet="Roles" />
@@ -295,14 +960,6 @@
           <EntitySet Name="BusinessRules" EntityType="Model1.BusinessRule" />
           <AssociationSet Name="ProjectBusinessRule" Association="Model1.ProjectBusinessRule">
             <End Role="Project" EntitySet="Projects" />
-            <End Role="BusinessRule" EntitySet="BusinessRules" />
-          </AssociationSet>
-          <AssociationSet Name="DiagramStateBusinessRule" Association="Model1.DiagramStateBusinessRule">
-            <End Role="DiagramState" EntitySet="DiagramStates" />
-            <End Role="BusinessRule" EntitySet="BusinessRules" />
-          </AssociationSet>
-          <AssociationSet Name="ElementStateBusinessRule" Association="Model1.ElementStateBusinessRule">
-            <End Role="ElementState" EntitySet="ElementStates" />
             <End Role="BusinessRule" EntitySet="BusinessRules" />
           </AssociationSet>
           <EntitySet Name="Messages" EntityType="Model1.Message" />
@@ -323,6 +980,167 @@
             <End Role="Project" EntitySet="Projects" />
             <End Role="BusinnesRulesMessages" EntitySet="BusinnesRulesMessages" />
           </AssociationSet>
+          <EntitySet Name="ObjectTypes" EntityType="Model1.ObjectType" />
+          <EntitySet Name="ObjectStates" EntityType="Model1.ObjectState" />
+          <AssociationSet Name="ProjectObjectState" Association="Model1.ProjectObjectState">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="ObjectState" EntitySet="ObjectStates" />
+          </AssociationSet>
+          <EntitySet Name="Prefixes" EntityType="Model1.Prefix" />
+          <EntitySet Name="ObjectWithStates" EntityType="Model1.ObjectWithState" />
+          <AssociationSet Name="ProjectObjectWithStates" Association="Model1.ProjectObjectWithStates">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="ObjectWithStates" EntitySet="ObjectWithStates" />
+          </AssociationSet>
+          <AssociationSet Name="ObjectStateObjectWithStates" Association="Model1.ObjectStateObjectWithStates">
+            <End Role="ObjectState" EntitySet="ObjectStates" />
+            <End Role="ObjectWithStates" EntitySet="ObjectWithStates" />
+          </AssociationSet>
+          <EntitySet Name="Objects" EntityType="Model1.Object" />
+          <AssociationSet Name="ProjectObject" Association="Model1.ProjectObject">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Object" EntitySet="Objects" />
+          </AssociationSet>
+          <AssociationSet Name="ObjectTypeObject" Association="Model1.ObjectTypeObject">
+            <End Role="ObjectType" EntitySet="ObjectTypes" />
+            <End Role="Object" EntitySet="Objects" />
+          </AssociationSet>
+          <AssociationSet Name="ObjectObjectWithStates" Association="Model1.ObjectObjectWithStates">
+            <End Role="Object" EntitySet="Objects" />
+            <End Role="ObjectWithStates" EntitySet="ObjectWithStates" />
+          </AssociationSet>
+          <EntitySet Name="ObjectStatesChanges" EntityType="Model1.ObjectStatesChange" />
+          <AssociationSet Name="ProjectObjectStatesChange" Association="Model1.ProjectObjectStatesChange">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="ObjectStatesChange" EntitySet="ObjectStatesChanges" />
+          </AssociationSet>
+          <AssociationSet Name="Predecessor" Association="Model1.Predecessor">
+            <End Role="ObjectState" EntitySet="ObjectStates" />
+            <End Role="ObjectStatesChange" EntitySet="ObjectStatesChanges" />
+          </AssociationSet>
+          <AssociationSet Name="Successor" Association="Model1.Successor">
+            <End Role="ObjectState" EntitySet="ObjectStates" />
+            <End Role="ObjectStatesChange" EntitySet="ObjectStatesChanges" />
+          </AssociationSet>
+          <EntitySet Name="ObjectsForStateChanges" EntityType="Model1.ObjectsForStateChange" />
+          <AssociationSet Name="ProjectObjectsForStateChange" Association="Model1.ProjectObjectsForStateChange">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="ObjectsForStateChange" EntitySet="ObjectsForStateChanges" />
+          </AssociationSet>
+          <AssociationSet Name="ObjectStatesChangeObjectsForStateChange" Association="Model1.ObjectStatesChangeObjectsForStateChange">
+            <End Role="ObjectStatesChange" EntitySet="ObjectStatesChanges" />
+            <End Role="ObjectsForStateChange" EntitySet="ObjectsForStateChanges" />
+          </AssociationSet>
+          <AssociationSet Name="ObjectObjectsForStateChange" Association="Model1.ObjectObjectsForStateChange">
+            <End Role="Object" EntitySet="Objects" />
+            <End Role="ObjectsForStateChange" EntitySet="ObjectsForStateChanges" />
+          </AssociationSet>
+          <EntitySet Name="RolesForStateChanges" EntityType="Model1.RolesForStateChange" />
+          <AssociationSet Name="ProjectRolesForStateChange" Association="Model1.ProjectRolesForStateChange">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="RolesForStateChange" EntitySet="RolesForStateChanges" />
+          </AssociationSet>
+          <AssociationSet Name="ObjectStatesChangeRolesForStateChange" Association="Model1.ObjectStatesChangeRolesForStateChange">
+            <End Role="ObjectStatesChange" EntitySet="ObjectStatesChanges" />
+            <End Role="RolesForStateChange" EntitySet="RolesForStateChanges" />
+          </AssociationSet>
+          <AssociationSet Name="RoleRolesForStateChange" Association="Model1.RoleRolesForStateChange">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="RolesForStateChange" EntitySet="RolesForStateChanges" />
+          </AssociationSet>
+          <EntitySet Name="Reports" EntityType="Model1.Report" />
+          <AssociationSet Name="ProjectReport" Association="Model1.ProjectReport">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Report" EntitySet="Reports" />
+          </AssociationSet>
+          <EntitySet Name="UseCases" EntityType="Model1.UseCase" />
+          <AssociationSet Name="ProjectUseCase" Association="Model1.ProjectUseCase">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="UseCase" EntitySet="UseCases" />
+          </AssociationSet>
+          <EntitySet Name="BaseFlows" EntityType="Model1.BaseFlow" />
+          <EntitySet Name="AlternativeFlows" EntityType="Model1.AlternativeFlow" />
+          <AssociationSet Name="ProjectBaseFlow" Association="Model1.ProjectBaseFlow">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="BaseFlow" EntitySet="BaseFlows" />
+          </AssociationSet>
+          <AssociationSet Name="UseCaseBaseFlow" Association="Model1.UseCaseBaseFlow">
+            <End Role="UseCase" EntitySet="UseCases" />
+            <End Role="BaseFlow" EntitySet="BaseFlows" />
+          </AssociationSet>
+          <AssociationSet Name="ProjectAlternativeFlow" Association="Model1.ProjectAlternativeFlow">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
+          </AssociationSet>
+          <EntitySet Name="BaseAlternativeFlows" EntityType="Model1.BaseAlternativeFlow" />
+          <AssociationSet Name="ProjectBaseAlternativeFlow" Association="Model1.ProjectBaseAlternativeFlow">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="BaseAlternativeFlow" EntitySet="BaseAlternativeFlows" />
+          </AssociationSet>
+          <AssociationSet Name="BaseFlowBaseAlternativeFlow" Association="Model1.BaseFlowBaseAlternativeFlow">
+            <End Role="BaseFlow" EntitySet="BaseFlows" />
+            <End Role="BaseAlternativeFlow" EntitySet="BaseAlternativeFlows" />
+          </AssociationSet>
+          <AssociationSet Name="AlternativeFlowBaseAlternativeFlow" Association="Model1.AlternativeFlowBaseAlternativeFlow">
+            <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
+            <End Role="BaseAlternativeFlow" EntitySet="BaseAlternativeFlows" />
+          </AssociationSet>
+          <AssociationSet Name="DiagramElementStateObject" Association="Model1.DiagramElementStateObject">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="Object" EntitySet="Objects" />
+          </AssociationSet>
+          <AssociationSet Name="ScreenElementStateObject" Association="Model1.ScreenElementStateObject">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="Object" EntitySet="Objects" />
+          </AssociationSet>
+          <AssociationSet Name="DiagramElementStateScreen" Association="Model1.DiagramElementStateScreen">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="Screen" EntitySet="Screens" />
+          </AssociationSet>
+          <AssociationSet Name="ScreenElementStateScreen" Association="Model1.ScreenElementStateScreen">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="Screen" EntitySet="Screens" />
+          </AssociationSet>
+          <AssociationSet Name="DiagramElementStateBusinessRule" Association="Model1.DiagramElementStateBusinessRule">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="BusinessRule" EntitySet="BusinessRules" />
+          </AssociationSet>
+          <AssociationSet Name="ScreenElementStateBusinessRule" Association="Model1.ScreenElementStateBusinessRule">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="BusinessRule" EntitySet="BusinessRules" />
+          </AssociationSet>
+          <AssociationSet Name="DiagramElementStateReport" Association="Model1.DiagramElementStateReport">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="Report" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="ScreenElementStateReport" Association="Model1.ScreenElementStateReport">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="Report" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="DiagramElementStateUseCase" Association="Model1.DiagramElementStateUseCase">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="UseCase" EntitySet="UseCases" />
+          </AssociationSet>
+          <AssociationSet Name="ScreenElementStateUseCase" Association="Model1.ScreenElementStateUseCase">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="UseCase" EntitySet="UseCases" />
+          </AssociationSet>
+          <AssociationSet Name="DiagramElementStateBaseFlow" Association="Model1.DiagramElementStateBaseFlow">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="BaseFlow" EntitySet="BaseFlows" />
+          </AssociationSet>
+          <AssociationSet Name="ScreenElementStateBaseFlow" Association="Model1.ScreenElementStateBaseFlow">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="BaseFlow" EntitySet="BaseFlows" />
+          </AssociationSet>
+          <AssociationSet Name="DiagramElementStateAlternativeFlow" Association="Model1.DiagramElementStateAlternativeFlow">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
+          </AssociationSet>
+          <AssociationSet Name="ScreenElementStateAlternativeFlow" Association="Model1.ScreenElementStateAlternativeFlow">
+            <End Role="ElementState" EntitySet="ElementStates" />
+            <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Project">
           <Key>
@@ -333,22 +1151,33 @@
           <Property Name="Description" Type="String" Nullable="false" MaxLength="40" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" />
           <Property Name="EndDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Screen" Relationship="Model1.ProjectScreen" FromRole="Project" ToRole="Screen" />
-          <NavigationProperty Name="Role" Relationship="Model1.ProjectRole" FromRole="Project" ToRole="Role" />
-          <NavigationProperty Name="BusinessRule" Relationship="Model1.ProjectBusinessRule" FromRole="Project" ToRole="BusinessRule" />
-          <NavigationProperty Name="Message" Relationship="Model1.ProjectMessage" FromRole="Project" ToRole="Message" />
+          <NavigationProperty Name="Screens" Relationship="Model1.ProjectScreen" FromRole="Project" ToRole="Screen" />
+          <NavigationProperty Name="Roles" Relationship="Model1.ProjectRole" FromRole="Project" ToRole="Role" />
+          <NavigationProperty Name="BusinessRules" Relationship="Model1.ProjectBusinessRule" FromRole="Project" ToRole="BusinessRule" />
+          <NavigationProperty Name="Messages" Relationship="Model1.ProjectMessage" FromRole="Project" ToRole="Message" />
           <NavigationProperty Name="BusinnesRulesMessages" Relationship="Model1.ProjectBusinnesRulesMessages" FromRole="Project" ToRole="BusinnesRulesMessages" />
+          <NavigationProperty Name="ObjectStates" Relationship="Model1.ProjectObjectState" FromRole="Project" ToRole="ObjectState" />
+          <NavigationProperty Name="ObjectWithStates" Relationship="Model1.ProjectObjectWithStates" FromRole="Project" ToRole="ObjectWithStates" />
+          <NavigationProperty Name="Objects" Relationship="Model1.ProjectObject" FromRole="Project" ToRole="Object" />
+          <NavigationProperty Name="ObjectStatesChanges" Relationship="Model1.ProjectObjectStatesChange" FromRole="Project" ToRole="ObjectStatesChange" />
+          <NavigationProperty Name="ObjectsForStateChanges" Relationship="Model1.ProjectObjectsForStateChange" FromRole="Project" ToRole="ObjectsForStateChange" />
+          <NavigationProperty Name="Reports" Relationship="Model1.ProjectReport" FromRole="Project" ToRole="Report" />
+          <NavigationProperty Name="UseCases" Relationship="Model1.ProjectUseCase" FromRole="Project" ToRole="UseCase" />
+          <NavigationProperty Name="BaseFlows" Relationship="Model1.ProjectBaseFlow" FromRole="Project" ToRole="BaseFlow" />
+          <NavigationProperty Name="AlternativeFlows" Relationship="Model1.ProjectAlternativeFlow" FromRole="Project" ToRole="AlternativeFlow" />
+          <NavigationProperty Name="BaseAlternativeFlows" Relationship="Model1.ProjectBaseAlternativeFlow" FromRole="Project" ToRole="BaseAlternativeFlow" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="key" Type="Int32" Nullable="false" />
+          <Property Name="key" Type="String" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="15" />
           <Property Name="Purpose" Type="String" Nullable="false" MaxLength="70" />
           <NavigationProperty Name="Project" Relationship="Model1.ProjectRole" FromRole="Role" ToRole="Project" />
           <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RolesForStateChanges" Relationship="Model1.RoleRolesForStateChange" FromRole="Role" ToRole="RolesForStateChange" />
         </EntityType>
         <EntityType Name="Screen">
           <Key>
@@ -357,13 +1186,13 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Project" Relationship="Model1.ProjectScreen" FromRole="Screen" ToRole="Project" />
           <Property Name="ProjectId" Type="Int32" Nullable="false" />
-          <Property Name="Key" Type="Int32" Nullable="false" />
+          <Property Name="Key" Type="String" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="15" />
           <Property Name="ImagePath" Type="String" Nullable="false" />
-          <NavigationProperty Name="ElementState" Relationship="Model1.ElementStateScreen" FromRole="Screen" ToRole="ElementState" />
-          <Property Name="ElementStateId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DiagramState" Relationship="Model1.DiagramStateScreen" FromRole="Screen" ToRole="DiagramState" />
-          <Property Name="DiagramStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DiagramElementState" Relationship="Model1.DiagramElementStateScreen" FromRole="Screen" ToRole="ElementState" />
+          <Property Name="DiagramElementStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ScreenElementState" Relationship="Model1.ScreenElementStateScreen" FromRole="Screen" ToRole="ElementState" />
+          <Property Name="ScreenElementStateId" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="ProjectScreen">
           <End Type="Model1.Project" Role="Project" Multiplicity="1" />
@@ -383,42 +1212,14 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <NavigationProperty Name="Screen" Relationship="Model1.ElementStateScreen" FromRole="ElementState" ToRole="Screen" />
-          <NavigationProperty Name="BusinessRule" Relationship="Model1.ElementStateBusinessRule" FromRole="ElementState" ToRole="BusinessRule" />
         </EntityType>
-        <EntityType Name="DiagramState">
+        <EntityType Name="UseCaseState">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <NavigationProperty Name="Screen" Relationship="Model1.DiagramStateScreen" FromRole="DiagramState" ToRole="Screen" />
-          <NavigationProperty Name="BusinessRule" Relationship="Model1.DiagramStateBusinessRule" FromRole="DiagramState" ToRole="BusinessRule" />
         </EntityType>
-        <Association Name="ElementStateScreen">
-          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
-          <End Type="Model1.Screen" Role="Screen" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ElementState">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Screen">
-              <PropertyRef Name="ElementStateId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="DiagramStateScreen">
-          <End Type="Model1.DiagramState" Role="DiagramState" Multiplicity="1" />
-          <End Type="Model1.Screen" Role="Screen" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DiagramState">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Screen">
-              <PropertyRef Name="DiagramStateId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="ProjectRole">
           <End Type="Model1.Project" Role="Project" Multiplicity="1" />
           <End Type="Model1.Role" Role="Role" Multiplicity="*" />
@@ -438,13 +1239,13 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Project" Relationship="Model1.ProjectBusinessRule" FromRole="BusinessRule" ToRole="Project" />
           <Property Name="ProjectId" Type="Int32" Nullable="false" />
-          <Property Name="Key" Type="Int32" Nullable="false" />
+          <Property Name="Key" Type="String" Nullable="false" />
           <Property Name="Description" Type="String" Nullable="false" />
-          <NavigationProperty Name="DiagramState" Relationship="Model1.DiagramStateBusinessRule" FromRole="BusinessRule" ToRole="DiagramState" />
-          <Property Name="DiagramStateId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ElementState" Relationship="Model1.ElementStateBusinessRule" FromRole="BusinessRule" ToRole="ElementState" />
-          <Property Name="ElementStateId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="BusinnesRulesMessages" Relationship="Model1.BusinessRuleBusinnesRulesMessages" FromRole="BusinessRule" ToRole="BusinnesRulesMessages" />
+          <NavigationProperty Name="DiagramElementState" Relationship="Model1.DiagramElementStateBusinessRule" FromRole="BusinessRule" ToRole="ElementState" />
+          <Property Name="DiagramElementStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ScreenElementState" Relationship="Model1.ScreenElementStateBusinessRule" FromRole="BusinessRule" ToRole="ElementState" />
+          <Property Name="ScreenElementStateId" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="ProjectBusinessRule">
           <End Type="Model1.Project" Role="Project" Multiplicity="1" />
@@ -458,30 +1259,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="DiagramStateBusinessRule">
-          <End Type="Model1.DiagramState" Role="DiagramState" Multiplicity="1" />
-          <End Type="Model1.BusinessRule" Role="BusinessRule" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DiagramState">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="BusinessRule">
-              <PropertyRef Name="DiagramStateId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="ElementStateBusinessRule">
-          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
-          <End Type="Model1.BusinessRule" Role="BusinessRule" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ElementState">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="BusinessRule">
-              <PropertyRef Name="ElementStateId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Message">
           <Key>
             <PropertyRef Name="Id" />
@@ -489,7 +1266,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Project" Relationship="Model1.ProjectMessage" FromRole="Message" ToRole="Project" />
           <Property Name="ProjectId" Type="Int32" Nullable="false" />
-          <Property Name="Key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Key" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="40" />
           <NavigationProperty Name="BusinnesRulesMessages" Relationship="Model1.MessageBusinnesRulesMessages" FromRole="Message" ToRole="BusinnesRulesMessages" />
         </EntityType>
@@ -553,6 +1330,614 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ObjectType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="15" />
+          <Property Name="Purpose" Type="String" Nullable="false" MaxLength="70" />
+          <NavigationProperty Name="Objects" Relationship="Model1.ObjectTypeObject" FromRole="ObjectType" ToRole="Object" />
+        </EntityType>
+        <EntityType Name="ObjectState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Key" Type="String" Nullable="false" />
+          <NavigationProperty Name="Project" Relationship="Model1.ProjectObjectState" FromRole="ObjectState" ToRole="Project" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="15" />
+          <Property Name="Purpose" Type="String" Nullable="false" MaxLength="70" />
+          <NavigationProperty Name="ObjectWithStates" Relationship="Model1.ObjectStateObjectWithStates" FromRole="ObjectState" ToRole="ObjectWithStates" />
+        </EntityType>
+        <Association Name="ProjectObjectState">
+          <End Type="Model1.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model1.ObjectState" Role="ObjectState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObjectState">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Prefix">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="ObjectWithState">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Project" Relationship="Model1.ProjectObjectWithStates" FromRole="ObjectWithStates" ToRole="Project" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ObjectState" Relationship="Model1.ObjectStateObjectWithStates" FromRole="ObjectWithStates" ToRole="ObjectState" />
+          <Property Name="ObjectStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Object" Relationship="Model1.ObjectObjectWithStates" FromRole="ObjectWithStates" ToRole="Object" />
+          <Property Name="ObjectId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ProjectObjectWithStates">
+          <End Type="Model1.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model1.ObjectWithState" Role="ObjectWithStates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObjectWithStates">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ObjectStateObjectWithStates">
+          <End Type="Model1.ObjectState" Role="ObjectState" Multiplicity="1" />
+          <End Type="Model1.ObjectWithState" Role="ObjectWithStates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ObjectState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObjectWithStates">
+              <PropertyRef Name="ObjectStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Object">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Project" Relationship="Model1.ProjectObject" FromRole="Object" ToRole="Project" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="Key" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="15" />
+          <NavigationProperty Name="ObjectType" Relationship="Model1.ObjectTypeObject" FromRole="Object" ToRole="ObjectType" />
+          <Property Name="ObjectTypeId" Type="Int32" Nullable="false" />
+          <Property Name="Purpose" Type="String" Nullable="false" MaxLength="70" />
+          <NavigationProperty Name="ObjectWithStates" Relationship="Model1.ObjectObjectWithStates" FromRole="Object" ToRole="ObjectWithStates" />
+          <NavigationProperty Name="DiagramElementState" Relationship="Model1.DiagramElementStateObject" FromRole="Object" ToRole="ElementState" />
+          <Property Name="DiagramElementStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ScreenElementState" Relationship="Model1.ScreenElementStateObject" FromRole="Object" ToRole="ElementState" />
+          <Property Name="ScreenElementStateId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ProjectObject">
+          <End Type="Model1.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model1.Object" Role="Object" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Object">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ObjectTypeObject">
+          <End Type="Model1.ObjectType" Role="ObjectType" Multiplicity="1" />
+          <End Type="Model1.Object" Role="Object" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ObjectType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Object">
+              <PropertyRef Name="ObjectTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ObjectObjectWithStates">
+          <End Type="Model1.Object" Role="Object" Multiplicity="1" />
+          <End Type="Model1.ObjectWithState" Role="ObjectWithStates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Object">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObjectWithStates">
+              <PropertyRef Name="ObjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ObjectStatesChange">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Project" Relationship="Model1.ProjectObjectStatesChange" FromRole="ObjectStatesChange" ToRole="Project" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Predecessor" Relationship="Model1.Predecessor" FromRole="ObjectStatesChange" ToRole="ObjectState" />
+          <Property Name="PredecessorId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Succesor" Relationship="Model1.Successor" FromRole="ObjectStatesChange" ToRole="ObjectState" />
+          <Property Name="SuccessorId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ObjectsForStateChanges" Relationship="Model1.ObjectStatesChangeObjectsForStateChange" FromRole="ObjectStatesChange" ToRole="ObjectsForStateChange" />
+          <NavigationProperty Name="RolesForStateChanges" Relationship="Model1.ObjectStatesChangeRolesForStateChange" FromRole="ObjectStatesChange" ToRole="RolesForStateChange" />
+        </EntityType>
+        <Association Name="ProjectObjectStatesChange">
+          <End Type="Model1.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model1.ObjectStatesChange" Role="ObjectStatesChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObjectStatesChange">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Predecessor">
+          <End Type="Model1.ObjectState" Role="ObjectState" Multiplicity="1" />
+          <End Type="Model1.ObjectStatesChange" Role="ObjectStatesChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ObjectState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObjectStatesChange">
+              <PropertyRef Name="PredecessorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Successor">
+          <End Type="Model1.ObjectState" Role="ObjectState" Multiplicity="1" />
+          <End Type="Model1.ObjectStatesChange" Role="ObjectStatesChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ObjectState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObjectStatesChange">
+              <PropertyRef Name="SuccessorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ObjectsForStateChange">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Project" Relationship="Model1.ProjectObjectsForStateChange" FromRole="ObjectsForStateChange" ToRole="Project" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ObjectStatesChange" Relationship="Model1.ObjectStatesChangeObjectsForStateChange" FromRole="ObjectsForStateChange" ToRole="ObjectStatesChange" />
+          <Property Name="ObjectStatesChangeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Object" Relationship="Model1.ObjectObjectsForStateChange" FromRole="ObjectsForStateChange" ToRole="Object" />
+          <Property Name="ObjectId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ProjectObjectsForStateChange">
+          <End Type="Model1.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model1.ObjectsForStateChange" Role="ObjectsForStateChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObjectsForStateChange">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ObjectStatesChangeObjectsForStateChange">
+          <End Type="Model1.ObjectStatesChange" Role="ObjectStatesChange" Multiplicity="1" />
+          <End Type="Model1.ObjectsForStateChange" Role="ObjectsForStateChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ObjectStatesChange">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObjectsForStateChange">
+              <PropertyRef Name="ObjectStatesChangeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ObjectObjectsForStateChange">
+          <End Type="Model1.Object" Role="Object" Multiplicity="1" />
+          <End Type="Model1.ObjectsForStateChange" Role="ObjectsForStateChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Object">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObjectsForStateChange">
+              <PropertyRef Name="ObjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RolesForStateChange">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Project" Relationship="Model1.ProjectRolesForStateChange" FromRole="RolesForStateChange" ToRole="Project" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ObjectStatesChange" Relationship="Model1.ObjectStatesChangeRolesForStateChange" FromRole="RolesForStateChange" ToRole="ObjectStatesChange" />
+          <Property Name="ObjectStatesChangeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="Model1.RoleRolesForStateChange" FromRole="RolesForStateChange" ToRole="Role" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ProjectRolesForStateChange">
+          <End Type="Model1.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model1.RolesForStateChange" Role="RolesForStateChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolesForStateChange">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ObjectStatesChangeRolesForStateChange">
+          <End Type="Model1.ObjectStatesChange" Role="ObjectStatesChange" Multiplicity="1" />
+          <End Type="Model1.RolesForStateChange" Role="RolesForStateChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ObjectStatesChange">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolesForStateChange">
+              <PropertyRef Name="ObjectStatesChangeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RoleRolesForStateChange">
+          <End Type="Model1.Role" Role="Role" Multiplicity="1" />
+          <End Type="Model1.RolesForStateChange" Role="RolesForStateChange" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RolesForStateChange">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Project" Relationship="Model1.ProjectReport" FromRole="Report" ToRole="Project" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="Key" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="15" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="40" />
+          <NavigationProperty Name="DiagramElementState" Relationship="Model1.DiagramElementStateReport" FromRole="Report" ToRole="ElementState" />
+          <Property Name="DiagramElementStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ScreenElementState" Relationship="Model1.ScreenElementStateReport" FromRole="Report" ToRole="ElementState" />
+          <Property Name="ScreenElementStateId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ProjectReport">
+          <End Type="Model1.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model1.Report" Role="Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UseCase">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Project" Relationship="Model1.ProjectUseCase" FromRole="UseCase" ToRole="Project" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="Key" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="15" />
+          <Property Name="FlowChartPath" Type="String" Nullable="false" />
+          <NavigationProperty Name="BaseFlow" Relationship="Model1.UseCaseBaseFlow" FromRole="UseCase" ToRole="BaseFlow" />
+          <NavigationProperty Name="DiagramElementState" Relationship="Model1.DiagramElementStateUseCase" FromRole="UseCase" ToRole="ElementState" />
+          <Property Name="DiagramElementStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ScreenElementState" Relationship="Model1.ScreenElementStateUseCase" FromRole="UseCase" ToRole="ElementState" />
+          <Property Name="ScreenElementStateId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ProjectUseCase">
+          <End Type="Model1.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model1.UseCase" Role="UseCase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UseCase">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BaseFlow">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Project" Relationship="Model1.ProjectBaseFlow" FromRole="BaseFlow" ToRole="Project" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="Key" Type="String" Nullable="false" />
+          <NavigationProperty Name="UseCase" Relationship="Model1.UseCaseBaseFlow" FromRole="BaseFlow" ToRole="UseCase" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="FlowChartPath" Type="String" Nullable="false" />
+          <NavigationProperty Name="BaseAlternativeFlows" Relationship="Model1.BaseFlowBaseAlternativeFlow" FromRole="BaseFlow" ToRole="BaseAlternativeFlow" />
+          <NavigationProperty Name="DiagramElementState" Relationship="Model1.DiagramElementStateBaseFlow" FromRole="BaseFlow" ToRole="ElementState" />
+          <Property Name="DiagramElementStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ScreenElementState" Relationship="Model1.ScreenElementStateBaseFlow" FromRole="BaseFlow" ToRole="ElementState" />
+          <Property Name="ScreenElementStateId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AlternativeFlow">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Project" Relationship="Model1.ProjectAlternativeFlow" FromRole="AlternativeFlow" ToRole="Project" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="Key" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="FlowChartPath" Type="String" Nullable="false" />
+          <NavigationProperty Name="BaseAlternativeFlows" Relationship="Model1.AlternativeFlowBaseAlternativeFlow" FromRole="AlternativeFlow" ToRole="BaseAlternativeFlow" />
+          <NavigationProperty Name="DiagramElementState" Relationship="Model1.DiagramElementStateAlternativeFlow" FromRole="AlternativeFlow" ToRole="ElementState" />
+          <Property Name="DiagramElementStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ScreenElementState" Relationship="Model1.ScreenElementStateAlternativeFlow" FromRole="AlternativeFlow" ToRole="ElementState" />
+          <Property Name="ScreenElementStateId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ProjectBaseFlow">
+          <End Type="Model1.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BaseFlow">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UseCaseBaseFlow">
+          <End Type="Model1.UseCase" Role="UseCase" Multiplicity="1" />
+          <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="1" />
+        </Association>
+        <Association Name="ProjectAlternativeFlow">
+          <End Type="Model1.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model1.AlternativeFlow" Role="AlternativeFlow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AlternativeFlow">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BaseAlternativeFlow">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Project" Relationship="Model1.ProjectBaseAlternativeFlow" FromRole="BaseAlternativeFlow" ToRole="Project" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BaseFlow" Relationship="Model1.BaseFlowBaseAlternativeFlow" FromRole="BaseAlternativeFlow" ToRole="BaseFlow" />
+          <Property Name="BaseFlowId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AlternativeFlow" Relationship="Model1.AlternativeFlowBaseAlternativeFlow" FromRole="BaseAlternativeFlow" ToRole="AlternativeFlow" />
+          <Property Name="AlternativeFlowId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ProjectBaseAlternativeFlow">
+          <End Type="Model1.Project" Role="Project" Multiplicity="1" />
+          <End Type="Model1.BaseAlternativeFlow" Role="BaseAlternativeFlow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BaseAlternativeFlow">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BaseFlowBaseAlternativeFlow">
+          <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="1" />
+          <End Type="Model1.BaseAlternativeFlow" Role="BaseAlternativeFlow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BaseFlow">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BaseAlternativeFlow">
+              <PropertyRef Name="BaseFlowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AlternativeFlowBaseAlternativeFlow">
+          <End Type="Model1.AlternativeFlow" Role="AlternativeFlow" Multiplicity="1" />
+          <End Type="Model1.BaseAlternativeFlow" Role="BaseAlternativeFlow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AlternativeFlow">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BaseAlternativeFlow">
+              <PropertyRef Name="AlternativeFlowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DiagramElementStateObject">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.Object" Role="Object" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Object">
+              <PropertyRef Name="DiagramElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ScreenElementStateObject">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.Object" Role="Object" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Object">
+              <PropertyRef Name="ScreenElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DiagramElementStateScreen">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.Screen" Role="Screen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Screen">
+              <PropertyRef Name="DiagramElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ScreenElementStateScreen">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.Screen" Role="Screen" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Screen">
+              <PropertyRef Name="ScreenElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DiagramElementStateBusinessRule">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.BusinessRule" Role="BusinessRule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusinessRule">
+              <PropertyRef Name="DiagramElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ScreenElementStateBusinessRule">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.BusinessRule" Role="BusinessRule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BusinessRule">
+              <PropertyRef Name="ScreenElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DiagramElementStateReport">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.Report" Role="Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="DiagramElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ScreenElementStateReport">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.Report" Role="Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="ScreenElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DiagramElementStateUseCase">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.UseCase" Role="UseCase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UseCase">
+              <PropertyRef Name="DiagramElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ScreenElementStateUseCase">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.UseCase" Role="UseCase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UseCase">
+              <PropertyRef Name="ScreenElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DiagramElementStateBaseFlow">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BaseFlow">
+              <PropertyRef Name="DiagramElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ScreenElementStateBaseFlow">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BaseFlow">
+              <PropertyRef Name="ScreenElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DiagramElementStateAlternativeFlow">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.AlternativeFlow" Role="AlternativeFlow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AlternativeFlow">
+              <PropertyRef Name="DiagramElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ScreenElementStateAlternativeFlow">
+          <End Type="Model1.ElementState" Role="ElementState" Multiplicity="1" />
+          <End Type="Model1.AlternativeFlow" Role="AlternativeFlow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElementState">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AlternativeFlow">
+              <PropertyRef Name="ScreenElementStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -589,8 +1974,8 @@
           <ScalarProperty Name="Key" ColumnName="Key" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-          <ScalarProperty Name="ElementStateId" ColumnName="ElementStateId" />
-          <ScalarProperty Name="DiagramStateId" ColumnName="DiagramStateId" />
+          <ScalarProperty Name="DiagramElementStateId" ColumnName="DiagramElementStateId" />
+          <ScalarProperty Name="ScreenElementStateId" ColumnName="ScreenElementStateId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -602,9 +1987,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DiagramStates">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.DiagramState)">
-        <MappingFragment StoreEntitySet="DiagramStates">
+    <EntitySetMapping Name="UseCaseStates">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.UseCaseState)">
+        <MappingFragment StoreEntitySet="UseCaseStates">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
@@ -617,8 +2002,8 @@
           <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
           <ScalarProperty Name="Key" ColumnName="Key" />
           <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="DiagramStateId" ColumnName="DiagramStateId" />
-          <ScalarProperty Name="ElementStateId" ColumnName="ElementStateId" />
+          <ScalarProperty Name="DiagramElementStateId" ColumnName="DiagramElementStateId" />
+          <ScalarProperty Name="ScreenElementStateId" ColumnName="ScreenElementStateId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -642,6 +2027,158 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ObjectTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.ObjectType)">
+        <MappingFragment StoreEntitySet="ObjectTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjectStates">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.ObjectState)">
+        <MappingFragment StoreEntitySet="ObjectStates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prefixes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Prefix)">
+        <MappingFragment StoreEntitySet="Prefixes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjectWithStates">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.ObjectWithState)">
+        <MappingFragment StoreEntitySet="ObjectWithStates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ObjectStateId" ColumnName="ObjectStateId" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Objects">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Object)">
+        <MappingFragment StoreEntitySet="Objects">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ObjectTypeId" ColumnName="ObjectTypeId" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="DiagramElementStateId" ColumnName="DiagramElementStateId" />
+          <ScalarProperty Name="ScreenElementStateId" ColumnName="ScreenElementStateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjectStatesChanges">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.ObjectStatesChange)">
+        <MappingFragment StoreEntitySet="ObjectStatesChanges">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="PredecessorId" ColumnName="PredecessorId" />
+          <ScalarProperty Name="SuccessorId" ColumnName="SuccessorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjectsForStateChanges">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.ObjectsForStateChange)">
+        <MappingFragment StoreEntitySet="ObjectsForStateChanges">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ObjectStatesChangeId" ColumnName="ObjectStatesChangeId" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolesForStateChanges">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.RolesForStateChange)">
+        <MappingFragment StoreEntitySet="RolesForStateChanges">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ObjectStatesChangeId" ColumnName="ObjectStatesChangeId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Report)">
+        <MappingFragment StoreEntitySet="Reports">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DiagramElementStateId" ColumnName="DiagramElementStateId" />
+          <ScalarProperty Name="ScreenElementStateId" ColumnName="ScreenElementStateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UseCases">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.UseCase)">
+        <MappingFragment StoreEntitySet="UseCases">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FlowChartPath" ColumnName="FlowChartPath" />
+          <ScalarProperty Name="DiagramElementStateId" ColumnName="DiagramElementStateId" />
+          <ScalarProperty Name="ScreenElementStateId" ColumnName="ScreenElementStateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaseFlows">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.BaseFlow)">
+        <MappingFragment StoreEntitySet="BaseFlows">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FlowChartPath" ColumnName="FlowChartPath" />
+          <ScalarProperty Name="DiagramElementStateId" ColumnName="DiagramElementStateId" />
+          <ScalarProperty Name="ScreenElementStateId" ColumnName="ScreenElementStateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlternativeFlows">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.AlternativeFlow)">
+        <MappingFragment StoreEntitySet="AlternativeFlows">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FlowChartPath" ColumnName="FlowChartPath" />
+          <ScalarProperty Name="DiagramElementStateId" ColumnName="DiagramElementStateId" />
+          <ScalarProperty Name="ScreenElementStateId" ColumnName="ScreenElementStateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaseAlternativeFlows">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.BaseAlternativeFlow)">
+        <MappingFragment StoreEntitySet="BaseAlternativeFlows">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="BaseFlowId" ColumnName="BaseFlowId" />
+          <ScalarProperty Name="AlternativeFlowId" ColumnName="AlternativeFlowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UseCaseBaseFlow" TypeName="Model1.UseCaseBaseFlow" StoreEntitySet="UseCases">
+      <EndProperty Name="BaseFlow">
+        <ScalarProperty Name="Id" ColumnName="BaseFlow_Id" />
+      </EndProperty>
+      <EndProperty Name="UseCase">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

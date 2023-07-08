@@ -4,27 +4,73 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3083766a5cc141cd8eefd9a9f0b92333" Name="Diagram1" ZoomLevel="99" >
-        <EntityTypeShape EntityType="Model1.Project" Width="1.5" PointX="2.875" PointY="1.25" />
-        <EntityTypeShape EntityType="Model1.Role" Width="1.5" PointX="5.875" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model1.Screen" Width="1.5" PointX="5.75" PointY="3.875" />
+      <Diagram DiagramId="3083766a5cc141cd8eefd9a9f0b92333" Name="Diagram1" ZoomLevel="93" >
+        <EntityTypeShape EntityType="Model1.Project" Width="1.5" PointX="2.875" PointY="6.375" />
+        <EntityTypeShape EntityType="Model1.Role" Width="1.5" PointX="10.125" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.Screen" Width="1.5" PointX="5.75" PointY="9.875" />
         <AssociationConnector Association="Model1.ProjectScreen" ManuallyRouted="false" >
         </AssociationConnector>
-        <EntityTypeShape EntityType="Model1.ElementState" Width="1.5" PointX="2.875" PointY="4" />
-        <EntityTypeShape EntityType="Model1.DiagramState" Width="1.5" PointX="2.875" PointY="5.875" />
-        <AssociationConnector Association="Model1.ElementStateScreen" />
-        <AssociationConnector Association="Model1.DiagramStateScreen" />
+        <EntityTypeShape EntityType="Model1.ElementState" Width="1.5" PointX="1.75" PointY="13.125" />
+        <EntityTypeShape EntityType="Model1.UseCaseState" Width="1.5" PointX="2.875" PointY="22.25" />
         <AssociationConnector Association="Model1.ProjectRole" />
-        <EntityTypeShape EntityType="Model1.BusinessRule" Width="1.5" PointX="5.75" PointY="7" />
+        <EntityTypeShape EntityType="Model1.BusinessRule" Width="1.5" PointX="5.75" PointY="13" />
         <AssociationConnector Association="Model1.ProjectBusinessRule" />
-        <AssociationConnector Association="Model1.DiagramStateBusinessRule" />
-        <AssociationConnector Association="Model1.ElementStateBusinessRule" />
-        <EntityTypeShape EntityType="Model1.Message" Width="1.5" PointX="5.75" PointY="10" />
+        <EntityTypeShape EntityType="Model1.Message" Width="1.5" PointX="5.75" PointY="16.125" />
         <AssociationConnector Association="Model1.ProjectMessage" />
-        <EntityTypeShape EntityType="Model1.BusinnesRulesMessages" Width="1.5" PointX="8.375" PointY="7.75" />
+        <EntityTypeShape EntityType="Model1.BusinnesRulesMessages" Width="1.5" PointX="8.375" PointY="12.875" />
         <AssociationConnector Association="Model1.MessageBusinnesRulesMessages" />
         <AssociationConnector Association="Model1.BusinessRuleBusinnesRulesMessages" />
         <AssociationConnector Association="Model1.ProjectBusinnesRulesMessages" />
+        <EntityTypeShape EntityType="Model1.ObjectType" Width="1.5" PointX="5" PointY="4.875" />
+        <EntityTypeShape EntityType="Model1.ObjectState" Width="1.5" PointX="5" PointY="2.375" />
+        <AssociationConnector Association="Model1.ProjectObjectState" />
+        <EntityTypeShape EntityType="Model1.Prefix" Width="1.5" PointX="1.125" PointY="9.25" />
+        <EntityTypeShape EntityType="Model1.ObjectWithState" Width="1.5" PointX="8.125" PointY="1.375" />
+        <AssociationConnector Association="Model1.ProjectObjectWithStates" />
+        <AssociationConnector Association="Model1.ObjectStateObjectWithStates" />
+        <EntityTypeShape EntityType="Model1.Object" Width="1.5" PointX="7.875" PointY="4.125" />
+        <AssociationConnector Association="Model1.ProjectObject" />
+        <AssociationConnector Association="Model1.ObjectTypeObject" />
+        <AssociationConnector Association="Model1.ObjectObjectWithStates" />
+        <EntityTypeShape EntityType="Model1.ObjectStatesChange" Width="1.5" PointX="11.625" PointY="1.75" />
+        <AssociationConnector Association="Model1.ProjectObjectStatesChange" />
+        <AssociationConnector Association="Model1.Predecessor" />
+        <AssociationConnector Association="Model1.Successor" />
+        <EntityTypeShape EntityType="Model1.ObjectsForStateChange" Width="1.5" PointX="14.25" PointY="2" />
+        <AssociationConnector Association="Model1.ProjectObjectsForStateChange" />
+        <AssociationConnector Association="Model1.ObjectStatesChangeObjectsForStateChange" />
+        <AssociationConnector Association="Model1.ObjectObjectsForStateChange" />
+        <EntityTypeShape EntityType="Model1.RolesForStateChange" Width="1.5" PointX="14.25" PointY="5.25" />
+        <AssociationConnector Association="Model1.ProjectRolesForStateChange" />
+        <AssociationConnector Association="Model1.ObjectStatesChangeRolesForStateChange" />
+        <AssociationConnector Association="Model1.RoleRolesForStateChange" />
+        <EntityTypeShape EntityType="Model1.Report" Width="1.5" PointX="5.75" PointY="18.375" />
+        <AssociationConnector Association="Model1.ProjectReport" />
+        <EntityTypeShape EntityType="Model1.UseCase" Width="1.5" PointX="5.75" PointY="21.5" />
+        <AssociationConnector Association="Model1.ProjectUseCase" />
+        <EntityTypeShape EntityType="Model1.BaseFlow" Width="1.5" PointX="5.75" PointY="25.25" />
+        <EntityTypeShape EntityType="Model1.AlternativeFlow" Width="1.5" PointX="5.75" PointY="28.875" />
+        <AssociationConnector Association="Model1.ProjectBaseFlow" />
+        <AssociationConnector Association="Model1.UseCaseBaseFlow" />
+        <AssociationConnector Association="Model1.ProjectAlternativeFlow" />
+        <EntityTypeShape EntityType="Model1.BaseAlternativeFlow" Width="1.5" PointX="7.875" PointY="26.125" />
+        <AssociationConnector Association="Model1.ProjectBaseAlternativeFlow" />
+        <AssociationConnector Association="Model1.BaseFlowBaseAlternativeFlow" />
+        <AssociationConnector Association="Model1.AlternativeFlowBaseAlternativeFlow" />
+        <AssociationConnector Association="Model1.DiagramElementStateObject" />
+        <AssociationConnector Association="Model1.ScreenElementStateObject" />
+        <AssociationConnector Association="Model1.DiagramElementStateScreen" />
+        <AssociationConnector Association="Model1.ScreenElementStateScreen" />
+        <AssociationConnector Association="Model1.DiagramElementStateBusinessRule" />
+        <AssociationConnector Association="Model1.ScreenElementStateBusinessRule" />
+        <AssociationConnector Association="Model1.DiagramElementStateReport" />
+        <AssociationConnector Association="Model1.ScreenElementStateReport" />
+        <AssociationConnector Association="Model1.DiagramElementStateUseCase" />
+        <AssociationConnector Association="Model1.ScreenElementStateUseCase" />
+        <AssociationConnector Association="Model1.DiagramElementStateBaseFlow" />
+        <AssociationConnector Association="Model1.ScreenElementStateBaseFlow" />
+        <AssociationConnector Association="Model1.DiagramElementStateAlternativeFlow" />
+        <AssociationConnector Association="Model1.ScreenElementStateAlternativeFlow" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
