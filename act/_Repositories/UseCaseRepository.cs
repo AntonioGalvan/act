@@ -37,13 +37,13 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Insert into UseCases values (@name, @key, @flowChartPath, @projectId)";
+                command.CommandText = "Insert into UseCases values (@projectId, @key, @name, @flowChartPath)";
 
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = useCaseModel.Name;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = useCaseModel.Key;
                 command.Parameters.Add("@flowChartPath", SqlDbType.NVarChar).Value = useCaseModel.FlowChartPath;
 
-                command.Parameters.Add("@projectId", SqlDbType.NVarChar).Value = this.projectId;
+                command.Parameters.Add("@projectId", SqlDbType.Int).Value = this.projectId;
 
 
                 command.ExecuteNonQuery();
