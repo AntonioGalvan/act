@@ -43,15 +43,19 @@
             dgvRoles = new DataGridView();
             btnAdd = new Button();
             tbpAdd = new TabPage();
+            panel5 = new Panel();
             tbxKey = new TextBox();
+            lblName = new Label();
+            panel4 = new Panel();
+            tbxPurpose = new TextBox();
+            lblType = new Label();
+            panel3 = new Panel();
+            lblDesc = new Label();
+            panel2 = new Panel();
+            tbxName = new TextBox();
             btnCancel = new Button();
             btnSave = new Button();
-            tbxPurpose = new TextBox();
-            tbxName = new TextBox();
             tbxId = new TextBox();
-            lblDesc = new Label();
-            lblType = new Label();
-            lblName = new Label();
             lblId = new Label();
             btnOut = new PictureBox();
             tbcRoles.SuspendLayout();
@@ -59,6 +63,10 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRoles).BeginInit();
             tbpAdd.SuspendLayout();
+            panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnOut).BeginInit();
             SuspendLayout();
             // 
@@ -248,15 +256,10 @@
             // tbpAdd
             // 
             tbpAdd.BackColor = Color.WhiteSmoke;
-            tbpAdd.Controls.Add(tbxKey);
+            tbpAdd.Controls.Add(panel5);
             tbpAdd.Controls.Add(btnCancel);
             tbpAdd.Controls.Add(btnSave);
-            tbpAdd.Controls.Add(tbxPurpose);
-            tbpAdd.Controls.Add(tbxName);
             tbpAdd.Controls.Add(tbxId);
-            tbpAdd.Controls.Add(lblDesc);
-            tbpAdd.Controls.Add(lblType);
-            tbpAdd.Controls.Add(lblName);
             tbpAdd.Controls.Add(lblId);
             tbpAdd.Location = new Point(4, 30);
             tbpAdd.Name = "tbpAdd";
@@ -265,84 +268,151 @@
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
             // 
+            // panel5
+            // 
+            panel5.BackColor = SystemColors.Control;
+            panel5.Controls.Add(lblName);
+            panel5.Controls.Add(panel4);
+            panel5.Controls.Add(lblType);
+            panel5.Controls.Add(panel3);
+            panel5.Controls.Add(lblDesc);
+            panel5.Controls.Add(panel2);
+            panel5.Location = new Point(16, 16);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(1023, 249);
+            panel5.TabIndex = 22;
+            // 
             // tbxKey
             // 
-            tbxKey.Location = new Point(13, 107);
+            tbxKey.BackColor = Color.Gainsboro;
+            tbxKey.BorderStyle = BorderStyle.None;
+            tbxKey.Location = new Point(12, 3);
+            tbxKey.Multiline = true;
             tbxKey.Name = "tbxKey";
-            tbxKey.Size = new Size(90, 26);
+            tbxKey.Size = new Size(90, 25);
             tbxKey.TabIndex = 14;
-            // 
-            // btnCancel
-            // 
-            btnCancel.Location = new Point(144, 254);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(125, 29);
-            btnCancel.TabIndex = 18;
-            btnCancel.Text = "Cancelar";
-            btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            btnSave.Location = new Point(13, 254);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(125, 29);
-            btnSave.TabIndex = 17;
-            btnSave.Text = "Guardar";
-            btnSave.UseVisualStyleBackColor = true;
-            // 
-            // tbxPurpose
-            // 
-            tbxPurpose.Location = new Point(13, 180);
-            tbxPurpose.Name = "tbxPurpose";
-            tbxPurpose.Size = new Size(256, 26);
-            tbxPurpose.TabIndex = 15;
-            // 
-            // tbxName
-            // 
-            tbxName.Location = new Point(16, 44);
-            tbxName.Name = "tbxName";
-            tbxName.Size = new Size(256, 26);
-            tbxName.TabIndex = 13;
-            // 
-            // tbxId
-            // 
-            tbxId.Location = new Point(654, 36);
-            tbxId.Name = "tbxId";
-            tbxId.Size = new Size(125, 26);
-            tbxId.TabIndex = 11;
-            tbxId.Visible = false;
-            // 
-            // lblDesc
-            // 
-            lblDesc.AutoSize = true;
-            lblDesc.Location = new Point(16, 157);
-            lblDesc.Name = "lblDesc";
-            lblDesc.Size = new Size(81, 21);
-            lblDesc.TabIndex = 15;
-            lblDesc.Text = "Propósito";
-            // 
-            // lblType
-            // 
-            lblType.AutoSize = true;
-            lblType.Location = new Point(16, 84);
-            lblType.Name = "lblType";
-            lblType.Size = new Size(51, 21);
-            lblType.TabIndex = 14;
-            lblType.Text = "Clave";
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(16, 21);
+            lblName.Location = new Point(14, 15);
             lblName.Name = "lblName";
             lblName.Size = new Size(72, 21);
             lblName.TabIndex = 12;
             lblName.Text = "Nombre";
             // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Gainsboro;
+            panel4.Controls.Add(tbxPurpose);
+            panel4.Location = new Point(14, 187);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(273, 31);
+            panel4.TabIndex = 21;
+            // 
+            // tbxPurpose
+            // 
+            tbxPurpose.BackColor = Color.Gainsboro;
+            tbxPurpose.BorderStyle = BorderStyle.None;
+            tbxPurpose.Location = new Point(8, 3);
+            tbxPurpose.Multiline = true;
+            tbxPurpose.Name = "tbxPurpose";
+            tbxPurpose.Size = new Size(256, 28);
+            tbxPurpose.TabIndex = 15;
+            // 
+            // lblType
+            // 
+            lblType.AutoSize = true;
+            lblType.Location = new Point(14, 90);
+            lblType.Name = "lblType";
+            lblType.Size = new Size(51, 21);
+            lblType.TabIndex = 14;
+            lblType.Text = "Clave";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Gainsboro;
+            panel3.Controls.Add(tbxKey);
+            panel3.Location = new Point(14, 114);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(112, 31);
+            panel3.TabIndex = 20;
+            // 
+            // lblDesc
+            // 
+            lblDesc.AutoSize = true;
+            lblDesc.Location = new Point(14, 163);
+            lblDesc.Name = "lblDesc";
+            lblDesc.Size = new Size(81, 21);
+            lblDesc.TabIndex = 15;
+            lblDesc.Text = "Propósito";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Gainsboro;
+            panel2.Controls.Add(tbxName);
+            panel2.Location = new Point(14, 44);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(273, 31);
+            panel2.TabIndex = 19;
+            // 
+            // tbxName
+            // 
+            tbxName.BackColor = Color.Gainsboro;
+            tbxName.BorderStyle = BorderStyle.None;
+            tbxName.Location = new Point(8, 3);
+            tbxName.Multiline = true;
+            tbxName.Name = "tbxName";
+            tbxName.Size = new Size(256, 25);
+            tbxName.TabIndex = 13;
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.Firebrick;
+            btnCancel.Cursor = Cursors.Hand;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.ForeColor = SystemColors.Control;
+            btnCancel.Image = Properties.Resources.cancelar;
+            btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCancel.Location = new Point(934, 689);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(105, 33);
+            btnCancel.TabIndex = 18;
+            btnCancel.Text = "Cancelar";
+            btnCancel.TextAlign = ContentAlignment.MiddleLeft;
+            btnCancel.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.FromArgb(27, 43, 57);
+            btnSave.Cursor = Cursors.Hand;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.ForeColor = SystemColors.Control;
+            btnSave.Image = Properties.Resources.save;
+            btnSave.Location = new Point(823, 689);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(105, 33);
+            btnSave.TabIndex = 17;
+            btnSave.Text = "Guardar";
+            btnSave.TextAlign = ContentAlignment.MiddleLeft;
+            btnSave.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnSave.UseVisualStyleBackColor = false;
+            // 
+            // tbxId
+            // 
+            tbxId.Location = new Point(914, 298);
+            tbxId.Name = "tbxId";
+            tbxId.Size = new Size(125, 26);
+            tbxId.TabIndex = 11;
+            tbxId.Visible = false;
+            // 
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(657, 16);
+            lblId.Location = new Point(1014, 274);
             lblId.Name = "lblId";
             lblId.Size = new Size(25, 21);
             lblId.TabIndex = 10;
@@ -379,6 +449,14 @@
             ((System.ComponentModel.ISupportInitialize)dgvRoles).EndInit();
             tbpAdd.ResumeLayout(false);
             tbpAdd.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnOut).EndInit();
             ResumeLayout(false);
         }
@@ -406,5 +484,9 @@
         private TextBox tbxKey;
         private Panel panel1;
         private PictureBox btnOut;
+        private Panel panel4;
+        private Panel panel3;
+        private Panel panel2;
+        private Panel panel5;
     }
 }
