@@ -549,9 +549,10 @@
             ClientSize = new Size(1422, 853);
             Controls.Add(pnlRelationEContainer);
             Controls.Add(pnlSideBar);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
             Name = "SideBar";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ACT";
             pnlExit.ResumeLayout(false);
             pnlSideBar.ResumeLayout(false);

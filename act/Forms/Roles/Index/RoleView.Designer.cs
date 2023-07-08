@@ -130,11 +130,14 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnDelete.ForeColor = SystemColors.Control;
-            btnDelete.Location = new Point(937, 689);
+            btnDelete.Image = Properties.Resources.delete;
+            btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDelete.Location = new Point(934, 689);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(102, 33);
+            btnDelete.Size = new Size(105, 33);
             btnDelete.TabIndex = 14;
             btnDelete.Text = "Eliminar";
+            btnDelete.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnEdit
@@ -144,11 +147,14 @@
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnEdit.ForeColor = SystemColors.Control;
-            btnEdit.Location = new Point(829, 689);
+            btnEdit.Image = Properties.Resources.edit;
+            btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEdit.Location = new Point(823, 689);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(102, 33);
+            btnEdit.Size = new Size(105, 33);
             btnEdit.TabIndex = 13;
             btnEdit.Text = "Editar";
+            btnEdit.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnEdit.UseVisualStyleBackColor = false;
             // 
             // btnSearch
@@ -158,11 +164,14 @@
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSearch.ForeColor = SystemColors.Control;
+            btnSearch.Image = Properties.Resources.search;
+            btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
             btnSearch.Location = new Point(272, 17);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(94, 33);
+            btnSearch.Size = new Size(105, 33);
             btnSearch.TabIndex = 12;
             btnSearch.Text = "Buscar";
+            btnSearch.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnSearch.UseVisualStyleBackColor = false;
             // 
             // dgvRoles
@@ -203,15 +212,17 @@
             dgvRoles.Location = new Point(16, 65);
             dgvRoles.MultiSelect = false;
             dgvRoles.Name = "dgvRoles";
-            dgvRoles.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dgvRoles.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.WhiteSmoke;
             dataGridViewCellStyle4.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Desktop;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             dgvRoles.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dgvRoles.RowHeadersWidth = 51;
+            dgvRoles.RowHeadersVisible = false;
+            dgvRoles.RowHeadersWidth = 20;
             dgvRoles.RowTemplate.Height = 35;
             dgvRoles.RowTemplate.ReadOnly = true;
             dgvRoles.Size = new Size(1023, 609);
@@ -224,11 +235,14 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = SystemColors.Control;
-            btnAdd.Location = new Point(937, 18);
+            btnAdd.Image = Properties.Resources.add;
+            btnAdd.Location = new Point(934, 18);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(102, 33);
+            btnAdd.Size = new Size(105, 33);
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Agregar";
+            btnAdd.TextAlign = ContentAlignment.MiddleLeft;
+            btnAdd.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnAdd.UseVisualStyleBackColor = false;
             // 
             // tbpAdd
