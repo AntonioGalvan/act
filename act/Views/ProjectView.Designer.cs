@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             contextMenuStrip1 = new ContextMenuStrip(components);
             sqliteCommand1 = new Microsoft.Data.Sqlite.SqliteCommand();
             btnOut = new PictureBox();
@@ -63,6 +63,11 @@
             tbxId = new TextBox();
             lblId = new Label();
             lblProjects = new Label();
+            pnlSideBar = new Panel();
+            label2 = new Label();
+            pictureBox1 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)btnOut).BeginInit();
             tbcProjects.SuspendLayout();
             tbpList.SuspendLayout();
@@ -72,6 +77,9 @@
             panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
+            pnlSideBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // contextMenuStrip1
@@ -91,7 +99,7 @@
             // 
             btnOut.Cursor = Cursors.Hand;
             btnOut.Image = Properties.Resources.close;
-            btnOut.Location = new Point(1017, 21);
+            btnOut.Location = new Point(1367, 25);
             btnOut.Name = "btnOut";
             btnOut.Size = new Size(31, 28);
             btnOut.SizeMode = PictureBoxSizeMode.Zoom;
@@ -105,7 +113,7 @@
             tbcProjects.Controls.Add(tbpAdd);
             tbcProjects.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcProjects.ItemSize = new Size(66, 26);
-            tbcProjects.Location = new Point(4, 74);
+            tbcProjects.Location = new Point(354, 78);
             tbcProjects.Margin = new Padding(5);
             tbcProjects.Multiline = true;
             tbcProjects.Name = "tbcProjects";
@@ -224,49 +232,49 @@
             // 
             dgbProjects.AllowUserToAddRows = false;
             dgbProjects.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.Padding = new Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.Control;
-            dgbProjects.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle9.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.Padding = new Padding(2);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.Control;
+            dgbProjects.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             dgbProjects.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgbProjects.BackgroundColor = Color.WhiteSmoke;
             dgbProjects.BorderStyle = BorderStyle.None;
             dgbProjects.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgbProjects.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle6.Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle6.Padding = new Padding(2);
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Desktop;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgbProjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle10.Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle10.Padding = new Padding(2);
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dgbProjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             dgbProjects.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.Gainsboro;
-            dataGridViewCellStyle7.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dgbProjects.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.Gainsboro;
+            dataGridViewCellStyle11.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            dgbProjects.DefaultCellStyle = dataGridViewCellStyle11;
             dgbProjects.EnableHeadersVisualStyles = false;
             dgbProjects.GridColor = Color.White;
             dgbProjects.Location = new Point(16, 65);
             dgbProjects.MultiSelect = false;
             dgbProjects.Name = "dgbProjects";
             dgbProjects.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle8.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Desktop;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dgbProjects.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle12.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            dgbProjects.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             dgbProjects.RowHeadersVisible = false;
             dgbProjects.RowHeadersWidth = 20;
             dgbProjects.RowTemplate.Height = 35;
@@ -476,18 +484,75 @@
             // lblProjects
             // 
             lblProjects.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProjects.Location = new Point(4, 5);
+            lblProjects.Location = new Point(354, 9);
             lblProjects.Name = "lblProjects";
             lblProjects.Size = new Size(197, 64);
             lblProjects.TabIndex = 17;
             lblProjects.Text = "Proyectos";
             lblProjects.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // pnlSideBar
+            // 
+            pnlSideBar.BackColor = Color.FromArgb(24, 40, 54);
+            pnlSideBar.Controls.Add(label2);
+            pnlSideBar.Controls.Add(pictureBox1);
+            pnlSideBar.Controls.Add(pictureBox6);
+            pnlSideBar.Controls.Add(label3);
+            pnlSideBar.Dock = DockStyle.Left;
+            pnlSideBar.Location = new Point(0, 0);
+            pnlSideBar.Name = "pnlSideBar";
+            pnlSideBar.Size = new Size(348, 853);
+            pnlSideBar.TabIndex = 27;
+            pnlSideBar.Paint += pnlSideBar_Paint;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.FromArgb(24, 40, 54);
+            label2.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(123, 360);
+            label2.Name = "label2";
+            label2.Size = new Size(82, 42);
+            label2.TabIndex = 19;
+            label2.Text = "ACT";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.correcto2;
+            pictureBox1.Location = new Point(152, 320);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(74, 62);
+            pictureBox1.TabIndex = 41;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.correcto;
+            pictureBox6.Location = new Point(112, 378);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(72, 62);
+            pictureBox6.TabIndex = 42;
+            pictureBox6.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Montserrat", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(68, 430);
+            label3.Name = "label3";
+            label3.Size = new Size(197, 110);
+            label3.TabIndex = 43;
+            label3.Text = "Nombre de aplicación";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            label3.Click += label3_Click;
+            // 
             // ProjectView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1068, 853);
+            ClientSize = new Size(1416, 853);
+            Controls.Add(pnlSideBar);
             Controls.Add(btnOut);
             Controls.Add(tbcProjects);
             Controls.Add(lblProjects);
@@ -509,6 +574,9 @@
             panel4.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            pnlSideBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
@@ -543,5 +611,10 @@
         private DateTimePicker dtpStart;
         private DateTimePicker dtpEnd;
         private Label label1;
+        private Panel pnlSideBar;
+        private Label label2;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox6;
+        private Label label3;
     }
 }

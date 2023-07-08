@@ -153,5 +153,15 @@ namespace act.Views
         {
             this.Hide();
         }
+
+        private void pnlSideBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
