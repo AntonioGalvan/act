@@ -1708,7 +1708,7 @@
         </Association>
         <Association Name="UseCaseBaseFlow">
           <End Type="Model1.UseCase" Role="UseCase" Multiplicity="1" />
-          <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="0..1" />
+          <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="*" />
         </Association>
         <Association Name="ProjectAlternativeFlow">
           <End Type="Model1.Project" Role="Project" Multiplicity="1" />

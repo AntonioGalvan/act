@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/08/2023 15:02:30
--- Generated from EDMX file: D:\Projects\Repo\AntonioGalvan\act\ConsoleApp1\Model1.edmx
+-- Date Created: 07/08/2023 15:53:06
+-- Generated from EDMX file: D:\Repos\ACTProyecto\ConsoleApp1\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -93,7 +93,7 @@ IF OBJECT_ID(N'[dbo].[FK_ProjectBaseFlow]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[BaseFlows] DROP CONSTRAINT [FK_ProjectBaseFlow];
 GO
 IF OBJECT_ID(N'[dbo].[FK_UseCaseBaseFlow]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UseCases] DROP CONSTRAINT [FK_UseCaseBaseFlow];
+    ALTER TABLE [dbo].[BaseFlows] DROP CONSTRAINT [FK_UseCaseBaseFlow];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ProjectAlternativeFlow]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[AlternativeFlows] DROP CONSTRAINT [FK_ProjectAlternativeFlow];
