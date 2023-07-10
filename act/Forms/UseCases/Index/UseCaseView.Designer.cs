@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             lblUseCases = new Label();
             btnAdd = new Button();
             tbpList = new TabPage();
@@ -72,10 +72,10 @@
             // 
             // lblUseCases
             // 
-            lblUseCases.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUseCases.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lblUseCases.Location = new Point(4, 5);
             lblUseCases.Name = "lblUseCases";
-            lblUseCases.Size = new Size(223, 64);
+            lblUseCases.Size = new Size(381, 64);
             lblUseCases.TabIndex = 20;
             lblUseCases.Text = "Casos de uso";
             lblUseCases.TextAlign = ContentAlignment.MiddleLeft;
@@ -85,7 +85,7 @@
             btnAdd.BackColor = Color.FromArgb(27, 43, 57);
             btnAdd.Cursor = Cursors.Hand;
             btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = SystemColors.Control;
             btnAdd.Image = Properties.Resources.add;
             btnAdd.Location = new Point(934, 18);
@@ -138,7 +138,7 @@
             btnDelete.BackColor = Color.Firebrick;
             btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnDelete.ForeColor = SystemColors.Control;
             btnDelete.Image = Properties.Resources.delete;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
@@ -155,7 +155,7 @@
             btnEdit.BackColor = Color.FromArgb(27, 43, 57);
             btnEdit.Cursor = Cursors.Hand;
             btnEdit.FlatStyle = FlatStyle.Flat;
-            btnEdit.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEdit.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnEdit.ForeColor = SystemColors.Control;
             btnEdit.Image = Properties.Resources.edit;
             btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
@@ -172,7 +172,7 @@
             btnSearch.BackColor = Color.FromArgb(27, 43, 57);
             btnSearch.Cursor = Cursors.Hand;
             btnSearch.FlatStyle = FlatStyle.Flat;
-            btnSearch.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSearch.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSearch.ForeColor = SystemColors.Control;
             btnSearch.Image = Properties.Resources.search;
             btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
@@ -188,49 +188,49 @@
             // 
             dgvRoles.AllowUserToAddRows = false;
             dgvRoles.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.Padding = new Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.Control;
-            dgvRoles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Control;
+            dgvRoles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvRoles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRoles.BackgroundColor = Color.WhiteSmoke;
             dgvRoles.BorderStyle = BorderStyle.None;
             dgvRoles.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvRoles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle6.Padding = new Padding(2);
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Desktop;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvRoles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle2.Padding = new Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvRoles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvRoles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.Gainsboro;
-            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dgvRoles.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Gainsboro;
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvRoles.DefaultCellStyle = dataGridViewCellStyle3;
             dgvRoles.EnableHeadersVisualStyles = false;
             dgvRoles.GridColor = Color.White;
             dgvRoles.Location = new Point(16, 65);
             dgvRoles.MultiSelect = false;
             dgvRoles.Name = "dgvRoles";
             dgvRoles.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Desktop;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dgvRoles.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvRoles.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvRoles.RowHeadersVisible = false;
             dgvRoles.RowHeadersWidth = 20;
             dgvRoles.RowTemplate.Height = 35;
@@ -243,7 +243,7 @@
             lblName.AutoSize = true;
             lblName.Location = new Point(14, 15);
             lblName.Name = "lblName";
-            lblName.Size = new Size(62, 18);
+            lblName.Size = new Size(72, 21);
             lblName.TabIndex = 12;
             lblName.Text = "Nombre";
             // 
@@ -252,7 +252,7 @@
             lblType.AutoSize = true;
             lblType.Location = new Point(14, 90);
             lblType.Name = "lblType";
-            lblType.Size = new Size(45, 18);
+            lblType.Size = new Size(51, 21);
             lblType.TabIndex = 14;
             lblType.Text = "Clave";
             // 
@@ -328,7 +328,7 @@
             lblUseCaseP.AutoSize = true;
             lblUseCaseP.Location = new Point(14, 158);
             lblUseCaseP.Name = "lblUseCaseP";
-            lblUseCaseP.Size = new Size(96, 18);
+            lblUseCaseP.Size = new Size(101, 21);
             lblUseCaseP.TabIndex = 21;
             lblUseCaseP.Text = "Caso de Uso";
             // 
@@ -356,7 +356,7 @@
             btnCancel.BackColor = Color.Firebrick;
             btnCancel.Cursor = Cursors.Hand;
             btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancel.ForeColor = SystemColors.Control;
             btnCancel.Image = Properties.Resources.cancelar;
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
@@ -374,7 +374,7 @@
             btnSave.BackColor = Color.FromArgb(27, 43, 57);
             btnSave.Cursor = Cursors.Hand;
             btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = SystemColors.Control;
             btnSave.Image = Properties.Resources.save;
             btnSave.Location = new Point(823, 689);
@@ -390,7 +390,7 @@
             // 
             tbxId.Location = new Point(914, 298);
             tbxId.Name = "tbxId";
-            tbxId.Size = new Size(125, 24);
+            tbxId.Size = new Size(125, 26);
             tbxId.TabIndex = 11;
             tbxId.Visible = false;
             // 
@@ -399,7 +399,7 @@
             lblId.AutoSize = true;
             lblId.Location = new Point(1020, 280);
             lblId.Name = "lblId";
-            lblId.Size = new Size(19, 18);
+            lblId.Size = new Size(25, 21);
             lblId.TabIndex = 10;
             lblId.Text = "Id";
             lblId.Visible = false;
@@ -408,7 +408,7 @@
             // 
             tbcUseCases.Controls.Add(tbpList);
             tbcUseCases.Controls.Add(tbpAdd);
-            tbcUseCases.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tbcUseCases.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcUseCases.ItemSize = new Size(66, 26);
             tbcUseCases.Location = new Point(4, 74);
             tbcUseCases.Margin = new Padding(5);
