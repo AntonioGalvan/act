@@ -15,7 +15,7 @@ namespace act.Models.BaseFlows
         [MaxLength(8)]
         public int ProjectId { get; set; }
         [MaxLength(2)]
-        public int Key { get; set; }
+        public string Key { get; set; }
 
         [MaxLength(15)]
         public string Name { get; set; }

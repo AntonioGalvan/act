@@ -48,7 +48,7 @@ namespace act._Repositories
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = roleModel.Key;
                 command.Parameters.Add("@purpose", SqlDbType.NVarChar).Value = roleModel.Purpose;
 
-                command.Parameters.Add("@projectId", SqlDbType.NVarChar).Value = this.projectId;
+                command.Parameters.Add("@projectId", SqlDbType.Int).Value = this.projectId;
 
 
                 command.ExecuteNonQuery();
@@ -62,7 +62,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Update Roles set name=@name, keyN=@key, purpose=@purpose where id=@id";
+                command.CommandText = "Update Roles set name=@name, [Key]=@key, purpose=@purpose where id=@id";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = roleModel.Id;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = roleModel.Name;
