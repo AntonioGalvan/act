@@ -1,4 +1,9 @@
-﻿using act.Models.UseCases;
+﻿using act._Repositories;
+using act.Forms.BaseFlows.Index;
+using act.Forms.Side_bar;
+using act.Models.BaseFlows;
+using act.Models.Projects;
+using act.Models.UseCases;
 using act.Views;
 
 namespace act.Presenters
@@ -10,7 +15,11 @@ namespace act.Presenters
         private BindingSource useCasesBindingSource;
         private IEnumerable<UseCaseModel> useCaseList;
 
-        public UseCasePresenter(IUseCaseView pView, IUseCaseRepository pRepository)
+        private readonly string sqlConnectionString;
+        int projectId;
+        private IMainView mainView;
+
+        public UseCasePresenter(IUseCaseView pView, IUseCaseRepository pRepository, string pSqlConnectionString, int pProjectId, IMainView pMainView)
         {
             this.useCasesBindingSource = new BindingSource();
             view = pView;
@@ -22,12 +31,27 @@ namespace act.Presenters
             this.view.DeleteEvent += DeleteSelectedUseCase;
             this.view.SaveEvent += SaveUseCase;
             this.view.CancelEvent += CancelAction;
+            this.view.OpenbFlowEvent += OpenBFlow;
 
             this.view.SetProjectListBindingSource(useCasesBindingSource);
 
             LoadAllUseCaseList();
 
             this.view.Show();
+            this.sqlConnectionString = pSqlConnectionString;
+            this.projectId = pProjectId;
+            this.mainView = pMainView;
+        }
+
+        private void OpenBFlow(object? sender, EventArgs e)
+        {
+            var useCase = (UseCaseModel)useCasesBindingSource.Current;
+            var useCasetId = useCase.Id;
+
+            IBaseFlowsRView view = BaseFlowsR.GetInstance((Form)mainView);
+            IBaseFlowsRRepository repository = new BaseFlowsRRepository(sqlConnectionString, projectId, useCasetId);
+            new BaseFlowsPresenter(view, repository);
+
         }
 
         private void LoadAllUseCaseList()

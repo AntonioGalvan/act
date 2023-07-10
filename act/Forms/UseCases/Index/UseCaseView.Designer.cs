@@ -58,6 +58,7 @@
             lblId = new Label();
             tbcUseCases = new TabControl();
             btnOut = new PictureBox();
+            btnBaseFlow = new Button();
             tbpList.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRoles).BeginInit();
@@ -100,6 +101,7 @@
             // tbpList
             // 
             tbpList.BackColor = Color.WhiteSmoke;
+            tbpList.Controls.Add(btnBaseFlow);
             tbpList.Controls.Add(panel1);
             tbpList.Controls.Add(btnDelete);
             tbpList.Controls.Add(btnEdit);
@@ -430,6 +432,22 @@
             btnOut.TabIndex = 22;
             btnOut.TabStop = false;
             // 
+            // btnBaseFlow
+            // 
+            btnBaseFlow.BackColor = Color.FromArgb(27, 43, 57);
+            btnBaseFlow.Cursor = Cursors.Hand;
+            btnBaseFlow.FlatStyle = FlatStyle.Flat;
+            btnBaseFlow.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBaseFlow.ForeColor = SystemColors.Control;
+            btnBaseFlow.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBaseFlow.Location = new Point(712, 689);
+            btnBaseFlow.Name = "btnBaseFlow";
+            btnBaseFlow.Size = new Size(105, 33);
+            btnBaseFlow.TabIndex = 16;
+            btnBaseFlow.Text = "Flujo Base";
+            btnBaseFlow.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnBaseFlow.UseVisualStyleBackColor = false;
+            // 
             // UseCaseView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -488,5 +506,6 @@
         private Label lblUseCaseP;
         private Panel panel4;
         private TextBox tbxFlowChartPath;
+        private Button btnBaseFlow;
     }
 }

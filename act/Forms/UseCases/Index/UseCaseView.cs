@@ -69,6 +69,11 @@ namespace act.Forms.UseCases.Index
                     MessageBox.Show(Message);
                 }
             };
+
+            btnBaseFlow.Click += delegate
+            {
+                OpenbFlowEvent?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         public string Id
@@ -124,6 +129,7 @@ namespace act.Forms.UseCases.Index
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler OpenbFlowEvent;
 
         public void SetProjectListBindingSource(BindingSource roleList)
         {

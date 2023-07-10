@@ -16,6 +16,7 @@ namespace act.Presenters
         private BindingSource bFlowBindingSource;
         private IEnumerable<BaseFlowModel> bFlowList;
 
+
         public BaseFlowsPresenter(IBaseFlowsRView pView, IBaseFlowsRRepository pRepository)
         {
             this.bFlowBindingSource = new BindingSource();

@@ -15,11 +15,13 @@ namespace act._Repositories
     {
         private object sqlDbType;
         private int projectId;
+        private int UseCaseId;
 
-        public BaseFlowsRRepository(string connectionString, int pProjectId)
+        public BaseFlowsRRepository(string connectionString, int pProjectId, int pUseCaseId)
         {
             this.connectionString = connectionString;
             this.projectId = pProjectId;
+            UseCaseId = pUseCaseId;
         }
 
         public void Delete(int id)
@@ -83,7 +85,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select Key, Name, FlowChartPath from Roles where projectId=@projectId";
+                command.CommandText = "Select [Key], Name, FlowChartPath from BaseFlows where projectId=@projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())

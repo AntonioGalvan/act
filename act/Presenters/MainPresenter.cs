@@ -68,7 +68,7 @@ namespace act.Presenters
         {
             IUseCaseView view = UseCaseView.GetInstance((Form)mainView);
             IUseCaseRepository repository = new UseCaseRepository(sqlConnectionString, projectId);
-            new UseCasePresenter(view, repository);
+            new UseCasePresenter(view, repository, sqlConnectionString, projectId,mainView);
         }
     }
 }
