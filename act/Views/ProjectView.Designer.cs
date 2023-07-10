@@ -99,7 +99,7 @@
             // 
             btnOut.Cursor = Cursors.Hand;
             btnOut.Image = Properties.Resources.close;
-            btnOut.Location = new Point(1367, 25);
+            btnOut.Location = new Point(1143, 30);
             btnOut.Name = "btnOut";
             btnOut.Size = new Size(31, 28);
             btnOut.SizeMode = PictureBoxSizeMode.Zoom;
@@ -118,7 +118,7 @@
             tbcProjects.Multiline = true;
             tbcProjects.Name = "tbcProjects";
             tbcProjects.SelectedIndex = 0;
-            tbcProjects.Size = new Size(1061, 773);
+            tbcProjects.Size = new Size(838, 773);
             tbcProjects.SizeMode = TabSizeMode.FillToRight;
             tbcProjects.TabIndex = 18;
             // 
@@ -135,7 +135,7 @@
             tbpList.Location = new Point(4, 30);
             tbpList.Name = "tbpList";
             tbpList.Padding = new Padding(3);
-            tbpList.Size = new Size(1053, 739);
+            tbpList.Size = new Size(830, 739);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
             // 
@@ -148,7 +148,7 @@
             btnOpen.ForeColor = SystemColors.Control;
             btnOpen.Image = Properties.Resources._2open2;
             btnOpen.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOpen.Location = new Point(712, 689);
+            btnOpen.Location = new Point(489, 688);
             btnOpen.Name = "btnOpen";
             btnOpen.Size = new Size(105, 33);
             btnOpen.TabIndex = 16;
@@ -186,7 +186,7 @@
             btnDelete.ForeColor = SystemColors.Control;
             btnDelete.Image = Properties.Resources.delete;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(934, 689);
+            btnDelete.Location = new Point(711, 688);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(105, 33);
             btnDelete.TabIndex = 14;
@@ -203,7 +203,7 @@
             btnEdit.ForeColor = SystemColors.Control;
             btnEdit.Image = Properties.Resources.edit;
             btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEdit.Location = new Point(823, 689);
+            btnEdit.Location = new Point(600, 688);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(105, 33);
             btnEdit.TabIndex = 13;
@@ -263,7 +263,7 @@
             dgbProjects.DefaultCellStyle = dataGridViewCellStyle3;
             dgbProjects.EnableHeadersVisualStyles = false;
             dgbProjects.GridColor = Color.White;
-            dgbProjects.Location = new Point(16, 65);
+            dgbProjects.Location = new Point(16, 75);
             dgbProjects.MultiSelect = false;
             dgbProjects.Name = "dgbProjects";
             dgbProjects.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -279,7 +279,7 @@
             dgbProjects.RowHeadersWidth = 20;
             dgbProjects.RowTemplate.Height = 35;
             dgbProjects.RowTemplate.ReadOnly = true;
-            dgbProjects.Size = new Size(1023, 609);
+            dgbProjects.Size = new Size(800, 595);
             dgbProjects.TabIndex = 10;
             // 
             // btnAdd
@@ -290,7 +290,7 @@
             btnAdd.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = SystemColors.Control;
             btnAdd.Image = Properties.Resources.add;
-            btnAdd.Location = new Point(934, 18);
+            btnAdd.Location = new Point(711, 21);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(105, 33);
             btnAdd.TabIndex = 8;
@@ -551,7 +551,7 @@
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1416, 853);
+            ClientSize = new Size(1200, 853);
             Controls.Add(pnlSideBar);
             Controls.Add(btnOut);
             Controls.Add(tbcProjects);
