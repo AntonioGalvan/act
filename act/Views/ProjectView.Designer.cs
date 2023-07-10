@@ -118,7 +118,7 @@
             tbcProjects.Multiline = true;
             tbcProjects.Name = "tbcProjects";
             tbcProjects.SelectedIndex = 0;
-            tbcProjects.Size = new Size(838, 706);
+            tbcProjects.Size = new Size(838, 685);
             tbcProjects.SizeMode = TabSizeMode.FillToRight;
             tbcProjects.TabIndex = 18;
             // 
@@ -135,7 +135,7 @@
             tbpList.Location = new Point(4, 30);
             tbpList.Name = "tbpList";
             tbpList.Padding = new Padding(3);
-            tbpList.Size = new Size(830, 672);
+            tbpList.Size = new Size(830, 651);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
             // 
@@ -148,7 +148,7 @@
             btnOpen.ForeColor = SystemColors.Control;
             btnOpen.Image = Properties.Resources._2open2;
             btnOpen.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOpen.Location = new Point(489, 623);
+            btnOpen.Location = new Point(489, 600);
             btnOpen.Name = "btnOpen";
             btnOpen.Size = new Size(105, 33);
             btnOpen.TabIndex = 16;
@@ -186,7 +186,7 @@
             btnDelete.ForeColor = SystemColors.Control;
             btnDelete.Image = Properties.Resources.delete;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(711, 623);
+            btnDelete.Location = new Point(711, 600);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(105, 33);
             btnDelete.TabIndex = 14;
@@ -203,7 +203,7 @@
             btnEdit.ForeColor = SystemColors.Control;
             btnEdit.Image = Properties.Resources.edit;
             btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEdit.Location = new Point(600, 623);
+            btnEdit.Location = new Point(600, 600);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(105, 33);
             btnEdit.TabIndex = 13;
@@ -263,7 +263,7 @@
             dgbProjects.DefaultCellStyle = dataGridViewCellStyle3;
             dgbProjects.EnableHeadersVisualStyles = false;
             dgbProjects.GridColor = Color.White;
-            dgbProjects.Location = new Point(16, 75);
+            dgbProjects.Location = new Point(16, 71);
             dgbProjects.MultiSelect = false;
             dgbProjects.Name = "dgbProjects";
             dgbProjects.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -279,7 +279,7 @@
             dgbProjects.RowHeadersWidth = 20;
             dgbProjects.RowTemplate.Height = 35;
             dgbProjects.RowTemplate.ReadOnly = true;
-            dgbProjects.Size = new Size(800, 530);
+            dgbProjects.Size = new Size(800, 512);
             dgbProjects.TabIndex = 10;
             // 
             // btnAdd
@@ -310,7 +310,7 @@
             tbpAdd.Location = new Point(4, 30);
             tbpAdd.Name = "tbpAdd";
             tbpAdd.Padding = new Padding(3);
-            tbpAdd.Size = new Size(1053, 739);
+            tbpAdd.Size = new Size(830, 672);
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
             // 
@@ -501,7 +501,7 @@
             pnlSideBar.Dock = DockStyle.Left;
             pnlSideBar.Location = new Point(0, 0);
             pnlSideBar.Name = "pnlSideBar";
-            pnlSideBar.Size = new Size(348, 793);
+            pnlSideBar.Size = new Size(348, 772);
             pnlSideBar.TabIndex = 27;
             pnlSideBar.Paint += pnlSideBar_Paint;
             // 
@@ -551,7 +551,7 @@
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1200, 793);
+            ClientSize = new Size(1200, 772);
             Controls.Add(pnlSideBar);
             Controls.Add(btnOut);
             Controls.Add(tbcProjects);
