@@ -310,7 +310,7 @@
             tbpAdd.Location = new Point(4, 30);
             tbpAdd.Name = "tbpAdd";
             tbpAdd.Padding = new Padding(3);
-            tbpAdd.Size = new Size(830, 672);
+            tbpAdd.Size = new Size(830, 651);
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
             // 
@@ -327,7 +327,7 @@
             panel5.Controls.Add(panel2);
             panel5.Location = new Point(16, 16);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1023, 246);
+            panel5.Size = new Size(800, 246);
             panel5.TabIndex = 22;
             // 
             // label1
@@ -437,7 +437,7 @@
             btnCancel.ForeColor = SystemColors.Control;
             btnCancel.Image = Properties.Resources.cancelar;
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancel.Location = new Point(934, 689);
+            btnCancel.Location = new Point(711, 601);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(105, 33);
             btnCancel.TabIndex = 18;
@@ -454,7 +454,7 @@
             btnSave.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = SystemColors.Control;
             btnSave.Image = Properties.Resources.save;
-            btnSave.Location = new Point(823, 689);
+            btnSave.Location = new Point(600, 601);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(105, 33);
             btnSave.TabIndex = 17;
