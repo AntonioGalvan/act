@@ -118,7 +118,7 @@
             tbcProjects.Multiline = true;
             tbcProjects.Name = "tbcProjects";
             tbcProjects.SelectedIndex = 0;
-            tbcProjects.Size = new Size(838, 773);
+            tbcProjects.Size = new Size(838, 706);
             tbcProjects.SizeMode = TabSizeMode.FillToRight;
             tbcProjects.TabIndex = 18;
             // 
@@ -135,7 +135,7 @@
             tbpList.Location = new Point(4, 30);
             tbpList.Name = "tbpList";
             tbpList.Padding = new Padding(3);
-            tbpList.Size = new Size(830, 739);
+            tbpList.Size = new Size(830, 672);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
             // 
@@ -148,7 +148,7 @@
             btnOpen.ForeColor = SystemColors.Control;
             btnOpen.Image = Properties.Resources._2open2;
             btnOpen.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOpen.Location = new Point(489, 688);
+            btnOpen.Location = new Point(489, 623);
             btnOpen.Name = "btnOpen";
             btnOpen.Size = new Size(105, 33);
             btnOpen.TabIndex = 16;
@@ -186,7 +186,7 @@
             btnDelete.ForeColor = SystemColors.Control;
             btnDelete.Image = Properties.Resources.delete;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(711, 688);
+            btnDelete.Location = new Point(711, 623);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(105, 33);
             btnDelete.TabIndex = 14;
@@ -203,7 +203,7 @@
             btnEdit.ForeColor = SystemColors.Control;
             btnEdit.Image = Properties.Resources.edit;
             btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEdit.Location = new Point(600, 688);
+            btnEdit.Location = new Point(600, 623);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(105, 33);
             btnEdit.TabIndex = 13;
@@ -279,7 +279,7 @@
             dgbProjects.RowHeadersWidth = 20;
             dgbProjects.RowTemplate.Height = 35;
             dgbProjects.RowTemplate.ReadOnly = true;
-            dgbProjects.Size = new Size(800, 595);
+            dgbProjects.Size = new Size(800, 530);
             dgbProjects.TabIndex = 10;
             // 
             // btnAdd
@@ -501,7 +501,7 @@
             pnlSideBar.Dock = DockStyle.Left;
             pnlSideBar.Location = new Point(0, 0);
             pnlSideBar.Name = "pnlSideBar";
-            pnlSideBar.Size = new Size(348, 853);
+            pnlSideBar.Size = new Size(348, 793);
             pnlSideBar.TabIndex = 27;
             pnlSideBar.Paint += pnlSideBar_Paint;
             // 
@@ -510,7 +510,7 @@
             label2.BackColor = Color.FromArgb(24, 40, 54);
             label2.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(123, 360);
+            label2.Location = new Point(123, 307);
             label2.Name = "label2";
             label2.Size = new Size(82, 42);
             label2.TabIndex = 19;
@@ -520,7 +520,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.correcto2;
-            pictureBox1.Location = new Point(152, 320);
+            pictureBox1.Location = new Point(152, 267);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(74, 62);
             pictureBox1.TabIndex = 41;
@@ -529,7 +529,7 @@
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.correcto;
-            pictureBox6.Location = new Point(112, 378);
+            pictureBox6.Location = new Point(112, 325);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(72, 62);
             pictureBox6.TabIndex = 42;
@@ -539,7 +539,7 @@
             // 
             label3.Font = new Font("Montserrat", 15F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(68, 430);
+            label3.Location = new Point(68, 377);
             label3.Name = "label3";
             label3.Size = new Size(197, 110);
             label3.TabIndex = 43;
@@ -551,7 +551,7 @@
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1200, 853);
+            ClientSize = new Size(1200, 793);
             Controls.Add(pnlSideBar);
             Controls.Add(btnOut);
             Controls.Add(tbcProjects);
