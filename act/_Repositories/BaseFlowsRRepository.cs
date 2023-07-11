@@ -46,12 +46,13 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Insert into BaseFlows values (@projectId, @key, @name, @flowChartPath,1,1,1 )";
+                command.CommandText = "Insert into BaseFlows values (@projectId, @key, @name, @flowChartPath,1,1,@useCaseId )";
 
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = bFlowModel.Name;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = bFlowModel.Key;
                 command.Parameters.Add("@flowChartPath", SqlDbType.NVarChar).Value = bFlowModel.FlowChartPath;
 
+                command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = this.UseCaseId;
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = this.projectId;
 
 
@@ -85,9 +86,10 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select [Key], Name, FlowChartPath from BaseFlows where projectId=@projectId";
+                command.CommandText = "Select [Key], Name, FlowChartPath from BaseFlows where projectId=@projectId and where UseCase_Id=@useCaseId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
+                command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = this.UseCaseId;
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
