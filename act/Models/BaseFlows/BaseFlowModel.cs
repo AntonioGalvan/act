@@ -9,12 +9,11 @@ namespace act.Models.BaseFlows
 {
     internal class BaseFlowModel
     {
-        [MaxLength(8)]
         [Key]
         public int Id { get; set; }
-        [MaxLength(8)]
+
         public int ProjectId { get; set; }
-        [MaxLength(2)]
+        [MaxLength(6)]
         public string Key { get; set; }
 
         [MaxLength(15)]
@@ -23,5 +22,6 @@ namespace act.Models.BaseFlows
         public string FlowChartPath { get; set; }
         public int DiagramElementState { get; set; }
         public int ScreenElementState { get; set; }
+        public int useCaseId { get; set; }
     }
 }
