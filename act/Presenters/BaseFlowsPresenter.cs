@@ -65,7 +65,7 @@ namespace act.Presenters
                 if (view.IsEdit)
                 {
                     repository.Edit(model);
-                    view.Message = "Flujo basse editado correctamente";
+                    view.Message = "Flujo base editado correctamente";
                 }
                 else
                 {
