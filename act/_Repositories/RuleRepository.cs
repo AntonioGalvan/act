@@ -27,7 +27,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Delete from Rules where id = @id and projectId=@projectId";
+                command.CommandText = "Delete from BusinessRules where id = @id and projectId=@projectId";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
@@ -42,7 +42,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Insert into Rules values (@key, @description, @projectId)";
+                command.CommandText = "Insert into BusinessRules values (@projectId, @key, @description,1,1)";
 
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = ruleModel.Key;
                 command.Parameters.Add("@description", SqlDbType.NVarChar).Value = ruleModel.Description;
@@ -61,7 +61,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Update Rules set keyN=@key, description=@description where id=@id";
+                command.CommandText = "Update BusinessRules set [key]=@key, description=@description where id=@id";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = ruleModel.Id;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = ruleModel.Key;
@@ -79,7 +79,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select * from Rules where projectId=@projectId";
+                command.CommandText = "Select * from BusinessRules where projectId=@projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())
@@ -108,8 +108,8 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"Select * from Rules
-                                        where keyN=@key or description like @description+'%'
+                command.CommandText = @"Select * from BusinessRules
+                                        where [key]=@key or description like @description+'%'
                                         order by id desc";
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = key;
                 command.Parameters.Add("@description", SqlDbType.NVarChar).Value = name;
