@@ -8,6 +8,8 @@ using act.Models.Rules;
 using act.Models.Messages;
 using act.Forms.UseCases.Index;
 using act.Models.UseCases;
+using act.Forms.States;
+using act.Models.States;
 
 namespace act.Presenters
 {
@@ -31,6 +33,8 @@ namespace act.Presenters
             this.mainView.ShowRuleView += ShowRuleView;
 
             this.mainView.ShowUseCaseView += ShowUseCaseView;
+
+            this.mainView.ShowStateView += ShowStateView;
 
             this.mainView.Show();
             this.projectId = projectId;
@@ -69,6 +73,13 @@ namespace act.Presenters
             IUseCaseView view = UseCaseView.GetInstance((Form)mainView);
             IUseCaseRepository repository = new UseCaseRepository(sqlConnectionString, projectId);
             new UseCasePresenter(view, repository, sqlConnectionString, projectId,mainView);
+        }
+
+        private void ShowStateView(object sender, EventArgs e)
+        {
+            IStateView view = StateView.GetInstance((Form)mainView);
+            IStateRepository repository = new StateRepository(sqlConnectionString, projectId);
+            new StatePresenter(view, repository);
         }
     }
 }

@@ -7,6 +7,7 @@
         event EventHandler ShowMessageView;
         event EventHandler ShowRuleView;
         event EventHandler ShowUseCaseView;
+        event EventHandler ShowStateView;
 
         void Show();
     }

@@ -7,16 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace act.Models.RelationsBetweenTables
+namespace act.Models.States
 {
     internal class ObjectStateModel
     {
         [Key]
-        [MaxLength(8)]
         public int Id { get; set; }
-        [MaxLength(2)]
-        public int Key { get; set; }
-        [MaxLength(8)]
+        public string Key { get; set; }
         public int ProyectId { get; set; }
         [MaxLength(15)]
         public string Name { get; set; }

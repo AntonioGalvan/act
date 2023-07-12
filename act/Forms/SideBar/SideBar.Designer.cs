@@ -458,6 +458,7 @@
             btnStates.TabIndex = 33;
             btnStates.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnStates.UseVisualStyleBackColor = false;
+            btnStates.Click += btnStates_Click;
             // 
             // lblObjects
             // 
