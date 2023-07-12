@@ -127,10 +127,6 @@
       <End Role="Project" EntitySet="Projects" />
       <End Role="BaseFlow" EntitySet="BaseFlows" />
     </AssociationSet>
-    <AssociationSet Name="UseCaseBaseFlow" Association="Model1.Store.UseCaseBaseFlow">
-      <End Role="UseCase" EntitySet="UseCases" />
-      <End Role="BaseFlow" EntitySet="BaseFlows" />
-    </AssociationSet>
     <AssociationSet Name="ProjectAlternativeFlow" Association="Model1.Store.ProjectAlternativeFlow">
       <End Role="Project" EntitySet="Projects" />
       <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
@@ -202,6 +198,10 @@
     <AssociationSet Name="ScreenUseCaseState" Association="Model1.Store.ScreenUseCaseState">
       <End Role="UseCaseState" EntitySet="UseCaseStates" />
       <End Role="UseCase" EntitySet="UseCases" />
+    </AssociationSet>
+    <AssociationSet Name="UseCaseBaseFlow" Association="Model1.Store.UseCaseBaseFlow">
+      <End Role="UseCase" EntitySet="UseCases" />
+      <End Role="BaseFlow" EntitySet="BaseFlows" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Projects">
@@ -381,7 +381,7 @@
     <Property Name="FlowChartPath" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DiagramElementStateId" Type="int" Nullable="false" />
     <Property Name="ScreenElementStateId" Type="int" Nullable="false" />
-    <Property Name="UseCase_Id" Type="int" Nullable="false" />
+    <Property Name="UseCaseId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="AlternativeFlows">
     <Key>
@@ -711,18 +711,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="UseCaseBaseFlow">
-    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="1" />
-    <End Role="BaseFlow" Type="Model1.Store.BaseFlows" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="UseCase">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="BaseFlow">
-        <PropertyRef Name="UseCase_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="ProjectAlternativeFlow">
     <End Role="Project" Type="Model1.Store.Projects" Multiplicity="1" />
     <End Role="AlternativeFlow" Type="Model1.Store.AlternativeFlows" Multiplicity="*" />
@@ -939,6 +927,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="UseCaseBaseFlow">
+    <End Role="UseCase" Type="Model1.Store.UseCases" Multiplicity="1" />
+    <End Role="BaseFlow" Type="Model1.Store.BaseFlows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UseCase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseFlow">
+        <PropertyRef Name="UseCaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -1063,10 +1063,6 @@
             <End Role="Project" EntitySet="Projects" />
             <End Role="BaseFlow" EntitySet="BaseFlows" />
           </AssociationSet>
-          <AssociationSet Name="UseCaseBaseFlow" Association="Model1.UseCaseBaseFlow">
-            <End Role="UseCase" EntitySet="UseCases" />
-            <End Role="BaseFlow" EntitySet="BaseFlows" />
-          </AssociationSet>
           <AssociationSet Name="ProjectAlternativeFlow" Association="Model1.ProjectAlternativeFlow">
             <End Role="Project" EntitySet="Projects" />
             <End Role="AlternativeFlow" EntitySet="AlternativeFlows" />
@@ -1140,6 +1136,10 @@
           <AssociationSet Name="ScreenUseCaseState" Association="Model1.ScreenUseCaseState">
             <End Role="UseCaseState" EntitySet="UseCaseStates" />
             <End Role="UseCase" EntitySet="UseCases" />
+          </AssociationSet>
+          <AssociationSet Name="UseCaseBaseFlow" Association="Model1.UseCaseBaseFlow">
+            <End Role="UseCase" EntitySet="UseCases" />
+            <End Role="BaseFlow" EntitySet="BaseFlows" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Project">
@@ -1636,11 +1636,11 @@
           <Property Name="Key" Type="String" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="15" />
           <Property Name="FlowChartPath" Type="String" Nullable="false" />
-          <NavigationProperty Name="BaseFlow" Relationship="Model1.UseCaseBaseFlow" FromRole="UseCase" ToRole="BaseFlow" />
           <NavigationProperty Name="DiagramUseCaseState" Relationship="Model1.DiagramUseCaseState" FromRole="UseCase" ToRole="UseCaseState" />
           <Property Name="DiagramUseCaseStateId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ScreenUseCaseState" Relationship="Model1.ScreenUseCaseState" FromRole="UseCase" ToRole="UseCaseState" />
           <Property Name="ScreenUseCaseStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BaseFlow" Relationship="Model1.UseCaseBaseFlow" FromRole="UseCase" ToRole="BaseFlow" />
         </EntityType>
         <Association Name="ProjectUseCase">
           <End Type="Model1.Project" Role="Project" Multiplicity="1" />
@@ -1662,7 +1662,6 @@
           <NavigationProperty Name="Project" Relationship="Model1.ProjectBaseFlow" FromRole="BaseFlow" ToRole="Project" />
           <Property Name="ProjectId" Type="Int32" Nullable="false" />
           <Property Name="Key" Type="String" Nullable="false" />
-          <NavigationProperty Name="UseCase" Relationship="Model1.UseCaseBaseFlow" FromRole="BaseFlow" ToRole="UseCase" />
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="FlowChartPath" Type="String" Nullable="false" />
           <NavigationProperty Name="BaseAlternativeFlows" Relationship="Model1.BaseFlowBaseAlternativeFlow" FromRole="BaseFlow" ToRole="BaseAlternativeFlow" />
@@ -1670,6 +1669,8 @@
           <Property Name="DiagramElementStateId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ScreenElementState" Relationship="Model1.ScreenElementStateBaseFlow" FromRole="BaseFlow" ToRole="ElementState" />
           <Property Name="ScreenElementStateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UseCase" Relationship="Model1.UseCaseBaseFlow" FromRole="BaseFlow" ToRole="UseCase" />
+          <Property Name="UseCaseId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="AlternativeFlow">
           <Key>
@@ -1698,10 +1699,6 @@
               <PropertyRef Name="ProjectId" />
             </Dependent>
           </ReferentialConstraint>
-        </Association>
-        <Association Name="UseCaseBaseFlow">
-          <End Type="Model1.UseCase" Role="UseCase" Multiplicity="1" />
-          <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="*" />
         </Association>
         <Association Name="ProjectAlternativeFlow">
           <End Type="Model1.Project" Role="Project" Multiplicity="1" />
@@ -1938,6 +1935,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="UseCaseBaseFlow">
+          <End Type="Model1.UseCase" Role="UseCase" Multiplicity="1" />
+          <End Type="Model1.BaseFlow" Role="BaseFlow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UseCase">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BaseFlow">
+              <PropertyRef Name="UseCaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2137,6 +2146,7 @@
           <ScalarProperty Name="FlowChartPath" ColumnName="FlowChartPath" />
           <ScalarProperty Name="DiagramElementStateId" ColumnName="DiagramElementStateId" />
           <ScalarProperty Name="ScreenElementStateId" ColumnName="ScreenElementStateId" />
+          <ScalarProperty Name="UseCaseId" ColumnName="UseCaseId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -2171,14 +2181,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="UseCaseBaseFlow" TypeName="Model1.UseCaseBaseFlow" StoreEntitySet="BaseFlows">
-      <EndProperty Name="UseCase">
-        <ScalarProperty Name="Id" ColumnName="UseCase_Id" />
-      </EndProperty>
-      <EndProperty Name="BaseFlow">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

@@ -50,7 +50,6 @@
         <EntityTypeShape EntityType="Model1.BaseFlow" Width="1.5" PointX="5.75" PointY="25.25" />
         <EntityTypeShape EntityType="Model1.AlternativeFlow" Width="1.5" PointX="5.75" PointY="28.875" />
         <AssociationConnector Association="Model1.ProjectBaseFlow" />
-        <AssociationConnector Association="Model1.UseCaseBaseFlow" />
         <AssociationConnector Association="Model1.ProjectAlternativeFlow" />
         <EntityTypeShape EntityType="Model1.BaseAlternativeFlow" Width="1.5" PointX="7.875" PointY="26.125" />
         <AssociationConnector Association="Model1.ProjectBaseAlternativeFlow" />
@@ -71,6 +70,7 @@
         <EntityTypeShape EntityType="Model1.UseCaseState" Width="1.5" PointX="2.625" PointY="22.125" />
         <AssociationConnector Association="Model1.DiagramUseCaseState" />
         <AssociationConnector Association="Model1.ScreenUseCaseState" />
+        <AssociationConnector Association="Model1.UseCaseBaseFlow" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
