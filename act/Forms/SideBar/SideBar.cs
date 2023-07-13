@@ -26,6 +26,16 @@ namespace act.Forms.Side_bar
         public event EventHandler ShowStateView;
         public event EventHandler ShowObjectTypeView;
 
+        private void CloseAll()
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+
+            pnlRelationEContainer.Visible = false;
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -36,37 +46,38 @@ namespace act.Forms.Side_bar
         //El panel se va a ocultar al dar click al que se desee acceder
         private void btnMessages_Click(object sender, EventArgs e)
         {
-            pnlRelationEContainer.Visible = false;
+            CloseAll();
         }
 
         private void btnBusinessRules_Click(object sender, EventArgs e)
         {
-            pnlRelationEContainer.Visible = false;
+            CloseAll();
         }
 
         private void btnElementosR_Click(object sender, EventArgs e)
         {
+            CloseAll();
             pnlRelationEContainer.Visible = true;
         }
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
-            pnlRelationEContainer.Visible = false;
+            CloseAll();
         }
 
         private void btnCUs_Click(object sender, EventArgs e)
         {
-            pnlRelationEContainer.Visible = false;
+            CloseAll();
         }
 
         private void btnStates_Click(object sender, EventArgs e)
         {
-            pnlRelationEContainer.Visible = false;
+            CloseAll();
         }
 
         private void btnObjectTypes_Click(object sender, EventArgs e)
         {
-            pnlRelationEContainer.Visible = false;
+            CloseAll();
         }
     }
 }

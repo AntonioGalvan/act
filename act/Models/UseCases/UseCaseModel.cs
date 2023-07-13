@@ -11,7 +11,6 @@ namespace act.Models.UseCases
     {
         [Key]
         public int Id { get; set; }
-        [MaxLength(6)]
         public string Key { get; set; }
 
         [MaxLength(15)]

@@ -108,7 +108,7 @@ namespace act._Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"Select * from UseCases
-                                        where keyN=@key or name like @name+'%'
+                                        where [key]=@key or name like @name+'%'
                                         order by id desc";
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = key;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;

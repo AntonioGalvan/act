@@ -86,7 +86,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select id, [Key], Name, FlowChartPath from BaseFlows where projectId=@projectId and UseCase_Id=@useCaseId";
+                command.CommandText = "Select id, [Key], Name, FlowChartPath from BaseFlows where projectId=@projectId and UseCaseId=@useCaseId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = this.UseCaseId;

@@ -72,6 +72,7 @@ namespace act.Forms.UseCases.Index
 
             btnBaseFlow.Click += delegate
             {
+                this.Close();
                 OpenbFlowEvent?.Invoke(this, EventArgs.Empty);
             };
         }

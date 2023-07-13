@@ -17,3 +17,8 @@ insert into ObjectTypes values('Reporte','Listado de folios como reporte de gast
 insert into ObjectTypes values('Formato','Diseño de un formato que muestra el alta, modificación o baja de un gasto')
 insert into ObjectTypes values('Estadística','Muestra indicadores de manera gráfica')
 insert into ObjectTypes values('Dashboard','Muestra indicadores a manera de objetos visuales')
+
+
+Insert into UseCases values (1, '12', 'Caso0', 'Hola',1,1)
+insert into BaseFlows values (1,'hola','Flujito','Hola',1,1,1)
+Insert into UseCases values (1, '112', 'Caso1', 'Hola12',1,1)
