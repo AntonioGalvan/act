@@ -10,6 +10,8 @@ using act.Forms.UseCases.Index;
 using act.Models.UseCases;
 using act.Forms.States;
 using act.Models.States;
+using act.Models.Objects;
+using act.Forms.Object;
 
 namespace act.Presenters
 {
@@ -35,6 +37,8 @@ namespace act.Presenters
             this.mainView.ShowUseCaseView += ShowUseCaseView;
 
             this.mainView.ShowStateView += ShowStateView;
+
+            this.mainView.ShowObjectTypeView += ShowObjectTypeView;
 
             this.mainView.Show();
             this.projectId = projectId;
@@ -80,6 +84,13 @@ namespace act.Presenters
             IStateView view = StateView.GetInstance((Form)mainView);
             IStateRepository repository = new StateRepository(sqlConnectionString, projectId);
             new StatePresenter(view, repository);
+        }
+
+        private void ShowObjectTypeView(object sender, EventArgs e)
+        {
+            IObjectTypeView view = ObjectTypeView.GetInstance((Form)mainView);
+            IObjectTypeRepository repository = new ObjectTypeRepository(sqlConnectionString);
+            new ObjectTypePresenter(view, repository);
         }
     }
 }

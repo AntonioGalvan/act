@@ -27,6 +27,9 @@
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Forms\Object\ObjectTypes\Index\ObjectTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\States\Index\StateView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +72,9 @@
       <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Object\Objects\" />
   </ItemGroup>
   <PropertyGroup>
     <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>

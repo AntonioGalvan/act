@@ -520,6 +520,7 @@
             btnObjectTypes.TabIndex = 26;
             btnObjectTypes.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnObjectTypes.UseVisualStyleBackColor = false;
+            btnObjectTypes.Click += btnObjectTypes_Click;
             // 
             // lblAlternativeFlows
             // 

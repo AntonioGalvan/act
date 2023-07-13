@@ -8,6 +8,7 @@
         event EventHandler ShowRuleView;
         event EventHandler ShowUseCaseView;
         event EventHandler ShowStateView;
+        event EventHandler ShowObjectTypeView;
 
         void Show();
     }

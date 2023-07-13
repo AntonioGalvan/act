@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/12/2023 16:02:05
+-- Date Created: 07/13/2023 14:09:27
 -- Generated from EDMX file: D:\Repos\ACTProyecto\ConsoleApp1\Model1.edmx
 -- --------------------------------------------------
 
@@ -92,9 +92,6 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ProjectBaseFlow]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[BaseFlows] DROP CONSTRAINT [FK_ProjectBaseFlow];
 GO
-IF OBJECT_ID(N'[dbo].[FK_UseCaseBaseFlow]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[BaseFlows] DROP CONSTRAINT [FK_UseCaseBaseFlow];
-GO
 IF OBJECT_ID(N'[dbo].[FK_ProjectAlternativeFlow]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[AlternativeFlows] DROP CONSTRAINT [FK_ProjectAlternativeFlow];
 GO
@@ -148,6 +145,9 @@ IF OBJECT_ID(N'[dbo].[FK_DiagramUseCaseState]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_ScreenUseCaseState]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[UseCases] DROP CONSTRAINT [FK_ScreenUseCaseState];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UseCaseBaseFlow]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[BaseFlows] DROP CONSTRAINT [FK_UseCaseBaseFlow];
 GO
 
 -- --------------------------------------------------
@@ -294,7 +294,7 @@ GO
 CREATE TABLE [dbo].[ObjectTypes] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(15)  NOT NULL,
-    [Purpose] nvarchar(70)  NOT NULL
+    [Purpose] nvarchar(100)  NOT NULL
 );
 GO
 

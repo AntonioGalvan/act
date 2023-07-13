@@ -6,11 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace act.Models.RelationsBetweenTables
+namespace act.Models.Objects
 {
     internal class ObjectTypeModel
     {
-        [MaxLength(8)]
         [Key]
         public int Id { get; set; }
 

@@ -278,7 +278,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="15" />
-    <Property Name="Purpose" Type="nvarchar" Nullable="false" MaxLength="70" />
+    <Property Name="Purpose" Type="nvarchar" Nullable="false" MaxLength="100" />
   </EntityType>
   <EntityType Name="ObjectStates">
     <Key>
@@ -1329,7 +1329,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="15" />
-          <Property Name="Purpose" Type="String" Nullable="false" MaxLength="70" />
+          <Property Name="Purpose" Type="String" Nullable="false" MaxLength="100" />
           <NavigationProperty Name="Objects" Relationship="Model1.ObjectTypeObject" FromRole="ObjectType" ToRole="Object" />
         </EntityType>
         <EntityType Name="ObjectState">

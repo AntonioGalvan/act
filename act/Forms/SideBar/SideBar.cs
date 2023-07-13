@@ -14,6 +14,8 @@ namespace act.Forms.Side_bar
             btnBusinessRules.Click += delegate { ShowRuleView?.Invoke(this, EventArgs.Empty); };
             btnCUs.Click += delegate { ShowUseCaseView?.Invoke(this, EventArgs.Empty); };
             btnStates.Click += delegate { ShowStateView?.Invoke(this, EventArgs.Empty); };
+            btnObjectTypes.Click += delegate { ShowObjectTypeView?.Invoke(this, EventArgs.Empty); };
+
         }
 
         public event EventHandler ShowRelationElementsView;
@@ -22,6 +24,7 @@ namespace act.Forms.Side_bar
         public event EventHandler ShowRuleView;
         public event EventHandler ShowUseCaseView;
         public event EventHandler ShowStateView;
+        public event EventHandler ShowObjectTypeView;
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -57,6 +60,11 @@ namespace act.Forms.Side_bar
         }
 
         private void btnStates_Click(object sender, EventArgs e)
+        {
+            pnlRelationEContainer.Visible = false;
+        }
+
+        private void btnObjectTypes_Click(object sender, EventArgs e)
         {
             pnlRelationEContainer.Visible = false;
         }
