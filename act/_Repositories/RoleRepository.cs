@@ -42,7 +42,8 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Insert into Roles values (@name, @key, @purpose, @projectId)";
+                command.CommandText = "Insert into Roles([Key],Name,Purpose,projectId) values (@key, @name, @purpose, @projectId)";
+
 
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = roleModel.Name;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = roleModel.Key;
@@ -81,7 +82,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select * from Roles where projectId=@projectId";
+                command.CommandText = "Select r.Id as Id, r.[Key] as keyN, r.Name as name, r.Purpose as purpose, p.Name as projectName from Roles r, Projects p where r.projectId=@projectId and p.Id=r.projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())
@@ -89,11 +90,11 @@ namespace act._Repositories
                     while (reader.Read())
                     {
                         var roleModel = new RoleModel();
-                        roleModel.Id = (int)reader[0];
-                        roleModel.Name = reader[1].ToString();
-                        roleModel.Key = reader[2].ToString();
-                        roleModel.Purpose = reader[3].ToString();
-                        roleModel.ProjectId = (int)reader[4];
+                        roleModel.Id = (int)reader["Id"];
+                        roleModel.Key = reader["keyN"].ToString();
+                        roleModel.Name = reader["name"].ToString();
+                        roleModel.Purpose = reader["purpose"].ToString();
+                        roleModel.Project = reader["projectName"].ToString();
                         roleList.Add(roleModel);
                     }
                 }
@@ -104,15 +105,15 @@ namespace act._Repositories
         IEnumerable<RoleModel> IRoleRepository.GetByValue(string value)
         {
             var roleList = new List<RoleModel>();
-            int key = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
+            string key = value;
             string name = value;
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"Select * from Roles
-                                        where keyN=@key or name like @name+'%'
+                command.CommandText = @"Select r.Id as Id, r.[Key] as keyN, r.Name as name, r.Purpose as purpose, p.Name as projectName from Roles r, Projects p 
+                    where p.Id=r.projectId and (r.[Key] like '%'+@key+'%' or r.name like '%'+@name+'%')
                                         order by id desc";
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = key;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
@@ -122,10 +123,11 @@ namespace act._Repositories
                     while (reader.Read())
                     {
                         var roleModel = new RoleModel();
-                        roleModel.Id = (int)reader[0];
-                        roleModel.Name = reader[1].ToString();
-                        roleModel.Key = reader[2].ToString();
-                        roleModel.Purpose = reader[3].ToString();
+                        roleModel.Id = (int)reader["Id"];
+                        roleModel.Key = reader["keyN"].ToString();
+                        roleModel.Name = reader["name"].ToString();
+                        roleModel.Purpose = reader["purpose"].ToString();
+                        roleModel.Project = reader["projectName"].ToString();
                         roleList.Add(roleModel);
                     }
                 }

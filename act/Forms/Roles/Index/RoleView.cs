@@ -24,6 +24,8 @@ namespace act.Forms.Roles
             {
                 if (e.KeyCode == Keys.Enter)
                     SearchEvent?.Invoke(this, EventArgs.Empty);
+
+                SearchValue = "";
             };
 
             btnAdd.Click += delegate
@@ -153,6 +155,14 @@ namespace act.Forms.Roles
                 instance.BringToFront();
             }
             return instance;
+        }
+
+        private void RoleView_Load(object sender, EventArgs e)
+        {
+            dgvRoles.Columns["Id"].Visible = false;
+            dgvRoles.Columns["ProjectId"].Visible = false;
+
+
         }
     }
 }
