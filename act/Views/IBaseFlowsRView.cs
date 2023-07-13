@@ -23,6 +23,7 @@ namespace act.Views
         event EventHandler DeleteEvent;
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
+        event EventHandler ReturnUseCaseView;
 
         void SetProjectListBindingSource(BindingSource roleList);
         void Show();

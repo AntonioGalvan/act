@@ -50,7 +50,7 @@ namespace act.Presenters
 
             IBaseFlowsRView view = BaseFlowsR.GetInstance((Form)mainView);
             IBaseFlowsRRepository repository = new BaseFlowsRRepository(sqlConnectionString, projectId, useCasetId);
-            new BaseFlowsPresenter(view, repository);
+            new BaseFlowsPresenter(view, repository, sqlConnectionString, projectId, mainView);
 
         }
 

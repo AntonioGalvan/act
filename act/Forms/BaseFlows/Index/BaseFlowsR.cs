@@ -73,6 +73,12 @@ namespace act.Forms.BaseFlows.Index
                     MessageBox.Show(Message);
                 }
             };
+
+            btnReturn.Click += delegate
+            {
+                this.Close();
+                ReturnUseCaseView?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         public string Id
@@ -120,6 +126,7 @@ namespace act.Forms.BaseFlows.Index
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler ReturnUseCaseView;
 
         public void SetProjectListBindingSource(BindingSource baseFlowsRList)
         {
