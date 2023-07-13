@@ -134,7 +134,7 @@ namespace act.Forms.UseCases.Index
 
         public void SetProjectListBindingSource(BindingSource roleList)
         {
-            dgvRoles.DataSource = roleList;
+            dgvUseCases.DataSource = roleList;
         }
 
         private static UseCaseView instance;
@@ -161,6 +161,14 @@ namespace act.Forms.UseCases.Index
                 instance.BringToFront();
             }
             return instance;
+        }
+
+        private void UseCaseView_Load(object sender, EventArgs e)
+        {
+            dgvUseCases.Columns["Id"].Visible = false;
+            dgvUseCases.Columns["DiagramElementState"].Visible = false;
+            dgvUseCases.Columns["ScreenElementState"].Visible = false;
+            dgvUseCases.Columns["ProjectId"].Visible = false;
         }
     }
 }

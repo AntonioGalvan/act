@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             lblUseCases = new Label();
             btnAdd = new Button();
             tbpList = new TabPage();
@@ -41,7 +41,7 @@
             btnDelete = new Button();
             btnEdit = new Button();
             btnSearch = new Button();
-            dgvRoles = new DataGridView();
+            dgvUseCases = new DataGridView();
             lblName = new Label();
             lblType = new Label();
             panel3 = new Panel();
@@ -61,7 +61,7 @@
             btnOut = new PictureBox();
             tbpList.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRoles).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUseCases).BeginInit();
             panel3.SuspendLayout();
             tbpAdd.SuspendLayout();
             panel5.SuspendLayout();
@@ -107,7 +107,7 @@
             tbpList.Controls.Add(btnDelete);
             tbpList.Controls.Add(btnEdit);
             tbpList.Controls.Add(btnSearch);
-            tbpList.Controls.Add(dgvRoles);
+            tbpList.Controls.Add(dgvUseCases);
             tbpList.Controls.Add(btnAdd);
             tbpList.Location = new Point(4, 30);
             tbpList.Margin = new Padding(3, 2, 3, 2);
@@ -210,60 +210,60 @@
             btnSearch.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnSearch.UseVisualStyleBackColor = false;
             // 
-            // dgvRoles
+            // dgvUseCases
             // 
-            dgvRoles.AllowUserToAddRows = false;
-            dgvRoles.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Control;
-            dgvRoles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvRoles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvRoles.BackgroundColor = Color.WhiteSmoke;
-            dgvRoles.BorderStyle = BorderStyle.None;
-            dgvRoles.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dgvRoles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle2.Padding = new Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Desktop;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvRoles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvRoles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.Gainsboro;
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvRoles.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvRoles.EnableHeadersVisualStyles = false;
-            dgvRoles.GridColor = Color.White;
-            dgvRoles.Location = new Point(14, 49);
-            dgvRoles.Margin = new Padding(3, 2, 3, 2);
-            dgvRoles.MultiSelect = false;
-            dgvRoles.Name = "dgvRoles";
-            dgvRoles.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Desktop;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvRoles.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dgvRoles.RowHeadersVisible = false;
-            dgvRoles.RowHeadersWidth = 20;
-            dgvRoles.RowTemplate.Height = 35;
-            dgvRoles.RowTemplate.ReadOnly = true;
-            dgvRoles.Size = new Size(895, 457);
-            dgvRoles.TabIndex = 10;
+            dgvUseCases.AllowUserToAddRows = false;
+            dgvUseCases.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.Padding = new Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.Control;
+            dgvUseCases.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dgvUseCases.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUseCases.BackgroundColor = Color.WhiteSmoke;
+            dgvUseCases.BorderStyle = BorderStyle.None;
+            dgvUseCases.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvUseCases.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle6.Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle6.Padding = new Padding(2);
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvUseCases.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dgvUseCases.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.Gainsboro;
+            dataGridViewCellStyle7.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dgvUseCases.DefaultCellStyle = dataGridViewCellStyle7;
+            dgvUseCases.EnableHeadersVisualStyles = false;
+            dgvUseCases.GridColor = Color.White;
+            dgvUseCases.Location = new Point(14, 49);
+            dgvUseCases.Margin = new Padding(3, 2, 3, 2);
+            dgvUseCases.MultiSelect = false;
+            dgvUseCases.Name = "dgvUseCases";
+            dgvUseCases.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle8.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dgvUseCases.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dgvUseCases.RowHeadersVisible = false;
+            dgvUseCases.RowHeadersWidth = 20;
+            dgvUseCases.RowTemplate.Height = 35;
+            dgvUseCases.RowTemplate.ReadOnly = true;
+            dgvUseCases.Size = new Size(895, 457);
+            dgvUseCases.TabIndex = 10;
             // 
             // lblName
             // 
@@ -481,10 +481,11 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "UseCaseView";
             Text = "UseCaseView";
+            Load += UseCaseView_Load;
             tbpList.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRoles).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUseCases).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             tbpAdd.ResumeLayout(false);
@@ -510,7 +511,7 @@
         private Button btnDelete;
         private Button btnEdit;
         private Button btnSearch;
-        private DataGridView dgvRoles;
+        private DataGridView dgvUseCases;
         private Label lblName;
         private Label lblType;
         private Panel panel3;

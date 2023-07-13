@@ -77,7 +77,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select Id, name, [key], flowchartpath, projectId from UseCases where projectId=@projectId";
+                command.CommandText = "Select uc.Id, uc.name, uc.[key], uc.flowchartpath, p.name pname from UseCases uc, projects p where uc.projectId=@projectId and p.id = uc.projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())
@@ -89,7 +89,7 @@ namespace act._Repositories
                         useCaseModel.Name = reader[1].ToString();
                         useCaseModel.Key = reader[2].ToString();
                         useCaseModel.FlowChartPath = reader[3].ToString();
-                        useCaseModel.ProjectId = (int)reader[4];
+                        useCaseModel.ProjectName = reader[4].ToString();
                         useCaseList.Add(useCaseModel);
                     }
                 }

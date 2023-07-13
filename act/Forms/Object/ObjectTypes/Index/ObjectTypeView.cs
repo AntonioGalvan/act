@@ -63,5 +63,11 @@ namespace act.Forms.Object
             }
             return instance;
         }
+
+        private void ObjectTypeView_Load(object sender, EventArgs e)
+        {
+            int columns = dgvObjectTypes.Columns.Count;
+            dgvObjectTypes.Columns[columns-1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
     }
 }
