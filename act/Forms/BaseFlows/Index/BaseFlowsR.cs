@@ -174,5 +174,14 @@ namespace act.Forms.BaseFlows.Index
             }
             return instance;
         }
+
+        private void BaseFlowsR_Load(object sender, EventArgs e)
+        {
+            dgvBFlows.Columns["Id"].Visible = false;
+            dgvBFlows.Columns["DiagramElementState"].Visible = false;
+            dgvBFlows.Columns["ScreenElementState"].Visible = false;
+            dgvBFlows.Columns["ProjectId"].Visible = false;
+            dgvBFlows.Columns["useCaseId"].Visible = false;
+        }
     }
 }

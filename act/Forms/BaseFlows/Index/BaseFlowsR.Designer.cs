@@ -444,6 +444,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "BaseFlowsR";
             Text = "BaseFlowsR";
+            Load += BaseFlowsR_Load;
             ((System.ComponentModel.ISupportInitialize)btnOut).EndInit();
             tbcBFlows.ResumeLayout(false);
             tbpList.ResumeLayout(false);

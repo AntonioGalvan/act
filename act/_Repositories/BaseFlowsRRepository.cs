@@ -40,7 +40,7 @@ namespace act._Repositories
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
-                    {
+                    { 
                         var bUseCaseModel = new BaseFlowModel();
                         bUseCaseModel.Id = (int)reader[0];
 
@@ -76,7 +76,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Insert into BaseFlows values (@projectId, @key, @name, @flowChartPath,1,1,@useCaseId )";
+                command.CommandText = "Insert into BaseFlows(projectId, [Key], Name, FlowChartPath, DiagramElementStateId, ScreenElementStateId, UseCaseId) values (@projectId, @key, @name, @flowChartPath,1,1,@useCaseId )";
 
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = bFlowModel.Name;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = bFlowModel.Key;
@@ -116,7 +116,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select id, [Key], Name, FlowChartPath from BaseFlows where projectId=@projectId and UseCaseId=@useCaseId";
+                command.CommandText = "Select bf.id as id, bf.[Key] as keyN, bf.Name as name, bf.FlowChartPath as flowChart, uc.Name as useCaseName, p.Name as projectName from BaseFlows bf, UseCases uc, Projects p where (bf.projectId=@projectId and bf.UseCaseId=@useCaseId) and uc.Id=bf.UseCaseId and p.Id=bf.projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = this.UseCaseId;
@@ -125,10 +125,12 @@ namespace act._Repositories
                     while (reader.Read())
                     {
                         var bFlowModel = new BaseFlowModel();
-                        bFlowModel.Id = (int)reader[0];
-                        bFlowModel.Key = reader[1].ToString();
-                        bFlowModel.Name = reader[2].ToString();
-                        bFlowModel.FlowChartPath = reader[3].ToString();
+                        bFlowModel.Id = (int)reader["id"];
+                        bFlowModel.Key = reader["keyN"].ToString();
+                        bFlowModel.Name = reader["name"].ToString();
+                        bFlowModel.FlowChartPath = reader["flowChart"].ToString();
+                        bFlowModel.useCaseName = reader["useCaseName"].ToString();
+                        bFlowModel.projectName = reader["projectName"].ToString();
                         bFlowList.Add(bFlowModel);
                     }
                 }
