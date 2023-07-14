@@ -12,13 +12,17 @@ namespace act.Models.Rules
     {
         [Key]
         public int Id { get; set; }
+        public int ProjectId { get; set; }
         [MaxLength(6)]
+        [DisplayName("Clave")]
+        [Required(ErrorMessage = "La clave es requerida")]
         public string Key { get; set; }
         [MaxLength(50)]
+        [DisplayName("Descripción")]
+        [Required(ErrorMessage = "La descripción es requerida")]
         public string Description { get; set; }
         public int DiagramElementState { get; set; }
         public int ScreenElementState { get; set; }
-        public int ProjectId { get; set; }
 
         [DisplayName("Proyecto")]
         public string Project { get; set; }

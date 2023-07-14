@@ -82,7 +82,8 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select r.Id as Id, r.[Key] as keyN, r.Name as name, r.Purpose as purpose, p.Name as projectName from Roles r, Projects p where r.projectId=@projectId and p.Id=r.projectId";
+                command.CommandText = "Select r.Id as Id, r.[Key] as keyN, r.Name as name, r.Purpose as purpose," +
+                    " p.Name as projectName from Roles r, Projects p where r.projectId=@projectId and p.Id=r.projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())

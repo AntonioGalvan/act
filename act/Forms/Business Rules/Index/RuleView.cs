@@ -148,5 +148,13 @@ namespace act.Forms.Business_Rules.Index
             }
             return instance;
         }
+
+        private void RuleView_Load(object sender, EventArgs e)
+        {
+            dgvRules.Columns["Id"].Visible = false;
+            dgvRules.Columns["ProjectId"].Visible = false;
+            dgvRules.Columns["DiagramElementState"].Visible = false;
+            dgvRules.Columns["ScreenElementState"].Visible = false;
+        }
     }
 }

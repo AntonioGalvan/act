@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using act.Models.Rules;
+using act.Models.Roles;
 
 namespace act._Repositories
 {
@@ -42,12 +43,12 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Insert into BusinessRules values (@projectId, @key, @description,1,1)";
+                command.CommandText = "Insert into BusinessRules([Key],Description,projectId,DiagramElementStateId,ScreenElementStateId) values (@key, @description, @projectId,1,1)";
 
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = ruleModel.Key;
                 command.Parameters.Add("@description", SqlDbType.NVarChar).Value = ruleModel.Description;
 
-                command.Parameters.Add("@projectId", SqlDbType.NVarChar).Value = this.projectId;
+                command.Parameters.Add("@projectId", SqlDbType.Int).Value = this.projectId;
 
 
                 command.ExecuteNonQuery();
@@ -79,7 +80,8 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select * from BusinessRules where projectId=@projectId";
+                command.CommandText = "Select r.Id as Id, r.[Key] as keyN, r.Description as description, " +
+                    "p.Name as projectName from BusinessRules r, Projects p where r.projectId=@projectId and p.Id=r.projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())
@@ -87,10 +89,10 @@ namespace act._Repositories
                     while (reader.Read())
                     {
                         var ruleModel = new BusinessRuleModel();
-                        ruleModel.Id = (int)reader[0];
-                        ruleModel.Key = reader[1].ToString();
-                        ruleModel.Description = reader[2].ToString();
-                        ruleModel.ProjectId = (int)reader[3];
+                        ruleModel.Id = (int)reader["Id"];
+                        ruleModel.Key = reader["keyN"].ToString();
+                        ruleModel.Description = reader["description"].ToString();
+                        ruleModel.Project = reader["projectName"].ToString();
                         ruleList.Add(ruleModel);
                     }
                 }
@@ -108,9 +110,9 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"Select * from BusinessRules
-                                        where [key]=@key or description like @description+'%'
-                                        order by id desc";
+                command.CommandText = @"Select r.Id as Id, r.[Key] as keyN, 
+                r.Description as description, p.Name as projectName from BusinessRules r, Projects p where p.Id=r.projectId 
+                and (r.[Key] like '%'+@key+'%' or r.Description like '%'+@description+'%') order by id desc";
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = key;
                 command.Parameters.Add("@description", SqlDbType.NVarChar).Value = name;
 
@@ -119,9 +121,10 @@ namespace act._Repositories
                     while (reader.Read())
                     {
                         var ruleModel = new BusinessRuleModel();
-                        ruleModel.Id = (int)reader[0];
-                        ruleModel.Key = reader[1].ToString();
-                        ruleModel.Description = reader[2].ToString();
+                        ruleModel.Id = (int)reader["Id"];
+                        ruleModel.Key = reader["keyN"].ToString();
+                        ruleModel.Description = reader["description"].ToString();
+                        ruleModel.Project = reader["projectName"].ToString();
                         ruleList.Add(ruleModel);
                     }
                 }

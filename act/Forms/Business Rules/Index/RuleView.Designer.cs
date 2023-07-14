@@ -342,7 +342,7 @@
             tbpList.Controls.Add(btnAdd);
             tbpList.Location = new Point(4, 30);
             tbpList.Name = "tbpList";
-            tbpList.Padding = new Padding(3, 3, 3, 3);
+            tbpList.Padding = new Padding(3);
             tbpList.Size = new Size(1053, 739);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
@@ -378,7 +378,7 @@
             tbpAdd.Controls.Add(lblId);
             tbpAdd.Location = new Point(4, 30);
             tbpAdd.Name = "tbpAdd";
-            tbpAdd.Padding = new Padding(3, 3, 3, 3);
+            tbpAdd.Padding = new Padding(3);
             tbpAdd.Size = new Size(1053, 739);
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
@@ -390,7 +390,7 @@
             tbcRules.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcRules.ItemSize = new Size(66, 26);
             tbcRules.Location = new Point(5, 75);
-            tbcRules.Margin = new Padding(5, 5, 5, 5);
+            tbcRules.Margin = new Padding(5);
             tbcRules.Multiline = true;
             tbcRules.Name = "tbcRules";
             tbcRules.SelectedIndex = 0;
@@ -409,6 +409,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "RuleView";
             Text = "RuleIndex";
+            Load += RuleView_Load;
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel4.ResumeLayout(false);
