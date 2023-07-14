@@ -15,6 +15,7 @@ namespace act.Forms.Side_bar
             btnCUs.Click += delegate { ShowUseCaseView?.Invoke(this, EventArgs.Empty); };
             btnStates.Click += delegate { ShowStateView?.Invoke(this, EventArgs.Empty); };
             btnObjectTypes.Click += delegate { ShowObjectTypeView?.Invoke(this, EventArgs.Empty); };
+            btnObjects.Click += delegate { ShowObjectView?.Invoke(this, EventArgs.Empty); };
 
         }
 
@@ -25,6 +26,7 @@ namespace act.Forms.Side_bar
         public event EventHandler ShowUseCaseView;
         public event EventHandler ShowStateView;
         public event EventHandler ShowObjectTypeView;
+        public event EventHandler ShowObjectView;
 
         private void CloseAll()
         {
@@ -76,6 +78,11 @@ namespace act.Forms.Side_bar
         }
 
         private void btnObjectTypes_Click(object sender, EventArgs e)
+        {
+            CloseAll();
+        }
+
+        private void btnObjects_Click(object sender, EventArgs e)
         {
             CloseAll();
         }

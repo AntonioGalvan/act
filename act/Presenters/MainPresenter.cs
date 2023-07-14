@@ -40,6 +40,8 @@ namespace act.Presenters
 
             this.mainView.ShowObjectTypeView += ShowObjectTypeView;
 
+            this.mainView.ShowObjectView += ShowObjectView;
+
             this.mainView.Show();
             this.projectId = projectId;
         }
@@ -91,6 +93,12 @@ namespace act.Presenters
             IObjectTypeView view = ObjectTypeView.GetInstance((Form)mainView);
             IObjectTypeRepository repository = new ObjectTypeRepository(sqlConnectionString);
             new ObjectTypePresenter(view, repository);
+        }
+        private void ShowObjectView(object sender, EventArgs e)
+        {
+            IObjectView view = ObjectView.GetInstance((Form)mainView);
+            IObjectRepository repository = new ObjectRepository(sqlConnectionString, projectId);
+            new ObjectPresenter(view, repository);
         }
     }
 }

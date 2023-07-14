@@ -485,6 +485,7 @@
             btnObjects.TabIndex = 29;
             btnObjects.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnObjects.UseVisualStyleBackColor = false;
+            btnObjects.Click += btnObjects_Click;
             // 
             // label4
             // 
