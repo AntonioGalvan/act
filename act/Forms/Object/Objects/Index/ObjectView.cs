@@ -10,6 +10,7 @@ namespace act.Forms.Object
         private string message;
         private bool isSuccessful;
         private bool isEdit;
+        private int idType;
 
         public ObjectView()
         {
@@ -41,8 +42,10 @@ namespace act.Forms.Object
             btnEdit.Click += delegate
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
+                
                 tbcRoles.TabPages.Remove(tbpList);
                 tbcRoles.TabPages.Add(tbpAdd);
+                cmbObjectType.SelectedValue = idType;
                 tbpAdd.Text = "Editar rol";
             };
 
@@ -123,8 +126,9 @@ namespace act.Forms.Object
         public int ObjectTypeId
         {
             get { return Convert.ToInt32(cmbObjectType.SelectedValue.ToString()); }
-            set { cmbObjectType.SelectedIndex = 4; }
+            set { idType = value; }
         }
+
 
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
