@@ -42,7 +42,7 @@ namespace act.Forms.Object
             btnEdit.Click += delegate
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
-                
+
                 tbcRoles.TabPages.Remove(tbpList);
                 tbcRoles.TabPages.Add(tbpAdd);
                 cmbObjectType.SelectedValue = idType;

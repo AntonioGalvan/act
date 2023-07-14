@@ -161,15 +161,16 @@
             dgvBFlows.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvBFlows.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.BackColor = SystemColors.Desktop;
+            dataGridViewCellStyle2.Font = new Font("Montserrat SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = SystemColors.Control;
             dataGridViewCellStyle2.Padding = new Padding(2);
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Desktop;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvBFlows.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvBFlows.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBFlows.ColumnHeadersHeight = 40;
+            dgvBFlows.Cursor = Cursors.Hand;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.Gainsboro;
             dataGridViewCellStyle3.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -194,8 +195,9 @@
             dgvBFlows.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvBFlows.RowHeadersVisible = false;
             dgvBFlows.RowHeadersWidth = 20;
-            dgvBFlows.RowTemplate.Height = 35;
+            dgvBFlows.RowTemplate.Height = 40;
             dgvBFlows.RowTemplate.ReadOnly = true;
+            dgvBFlows.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvBFlows.Size = new Size(1023, 609);
             dgvBFlows.TabIndex = 10;
             // 

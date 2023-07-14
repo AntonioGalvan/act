@@ -33,7 +33,7 @@ namespace act.Forms.BaseFlows.Index
             btnAdd.Click += delegate
             {
                 CheckBaseFlow?.Invoke(this, EventArgs.Empty);
-                if(!HaveBaseFlow)
+                if (!HaveBaseFlow)
                 {
                     AddNewEvent?.Invoke(this, EventArgs.Empty);
                     tbcBFlows.TabPages.Remove(tbpList);

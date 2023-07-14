@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             lblObjectTypes = new Label();
             tbcRoles = new TabControl();
             tbpList = new TabPage();
@@ -63,9 +63,9 @@
             // lblObjectTypes
             // 
             lblObjectTypes.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblObjectTypes.Location = new Point(10, 4);
+            lblObjectTypes.Location = new Point(11, 5);
             lblObjectTypes.Name = "lblObjectTypes";
-            lblObjectTypes.Size = new Size(271, 48);
+            lblObjectTypes.Size = new Size(310, 64);
             lblObjectTypes.TabIndex = 1;
             lblObjectTypes.Text = "Tipos de objetos";
             lblObjectTypes.TextAlign = ContentAlignment.MiddleLeft;
@@ -75,12 +75,12 @@
             tbcRoles.Controls.Add(tbpList);
             tbcRoles.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcRoles.ItemSize = new Size(66, 26);
-            tbcRoles.Location = new Point(10, 56);
-            tbcRoles.Margin = new Padding(4);
+            tbcRoles.Location = new Point(11, 75);
+            tbcRoles.Margin = new Padding(5, 5, 5, 5);
             tbcRoles.Multiline = true;
             tbcRoles.Name = "tbcRoles";
             tbcRoles.SelectedIndex = 0;
-            tbcRoles.Size = new Size(927, 580);
+            tbcRoles.Size = new Size(1059, 773);
             tbcRoles.SizeMode = TabSizeMode.FillToRight;
             tbcRoles.TabIndex = 7;
             // 
@@ -89,10 +89,9 @@
             tbpList.BackColor = Color.WhiteSmoke;
             tbpList.Controls.Add(dgvObjectTypes);
             tbpList.Location = new Point(4, 30);
-            tbpList.Margin = new Padding(3, 2, 3, 2);
             tbpList.Name = "tbpList";
-            tbpList.Padding = new Padding(3, 2, 3, 2);
-            tbpList.Size = new Size(919, 546);
+            tbpList.Padding = new Padding(3, 3, 3, 3);
+            tbpList.Size = new Size(1051, 739);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
             // 
@@ -100,55 +99,55 @@
             // 
             dgvObjectTypes.AllowUserToAddRows = false;
             dgvObjectTypes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.Padding = new Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.Control;
-            dgvObjectTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
+            dgvObjectTypes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvObjectTypes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvObjectTypes.BackgroundColor = Color.WhiteSmoke;
             dgvObjectTypes.BorderStyle = BorderStyle.None;
             dgvObjectTypes.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvObjectTypes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle6.Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle6.Padding = new Padding(2);
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Desktop;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvObjectTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dgvObjectTypes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.Gainsboro;
-            dataGridViewCellStyle7.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dgvObjectTypes.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Desktop;
+            dataGridViewCellStyle2.Font = new Font("Montserrat SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle2.Padding = new Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvObjectTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvObjectTypes.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Gainsboro;
+            dataGridViewCellStyle3.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Gainsboro;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvObjectTypes.DefaultCellStyle = dataGridViewCellStyle3;
             dgvObjectTypes.EnableHeadersVisualStyles = false;
             dgvObjectTypes.GridColor = Color.White;
-            dgvObjectTypes.Location = new Point(14, 18);
-            dgvObjectTypes.Margin = new Padding(3, 2, 3, 2);
+            dgvObjectTypes.Location = new Point(16, 24);
             dgvObjectTypes.MultiSelect = false;
             dgvObjectTypes.Name = "dgvObjectTypes";
             dgvObjectTypes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle8.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Desktop;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dgvObjectTypes.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvObjectTypes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvObjectTypes.RowHeadersVisible = false;
             dgvObjectTypes.RowHeadersWidth = 20;
-            dgvObjectTypes.RowTemplate.Height = 35;
+            dgvObjectTypes.RowTemplate.Height = 40;
             dgvObjectTypes.RowTemplate.ReadOnly = true;
-            dgvObjectTypes.Size = new Size(895, 488);
+            dgvObjectTypes.Size = new Size(1023, 651);
             dgvObjectTypes.TabIndex = 10;
             // 
             // panel5
@@ -290,7 +289,7 @@
             tbxId.Location = new Point(800, 224);
             tbxId.Margin = new Padding(3, 2, 3, 2);
             tbxId.Name = "tbxId";
-            tbxId.Size = new Size(110, 23);
+            tbxId.Size = new Size(110, 27);
             tbxId.TabIndex = 11;
             tbxId.Visible = false;
             // 
@@ -308,26 +307,24 @@
             // 
             btnOut.Cursor = Cursors.Hand;
             btnOut.Image = Properties.Resources.close;
-            btnOut.Location = new Point(897, 16);
-            btnOut.Margin = new Padding(3, 2, 3, 2);
+            btnOut.Location = new Point(1025, 21);
             btnOut.Name = "btnOut";
-            btnOut.Size = new Size(27, 21);
+            btnOut.Size = new Size(31, 28);
             btnOut.SizeMode = PictureBoxSizeMode.Zoom;
             btnOut.TabIndex = 16;
             btnOut.TabStop = false;
             // 
             // ObjectTypeView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.White;
-            ClientSize = new Size(940, 639);
+            ClientSize = new Size(1074, 852);
             Controls.Add(btnOut);
             Controls.Add(tbcRoles);
             Controls.Add(lblObjectTypes);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "ObjectTypeView";
             Text = "RoleIndex";
             Load += ObjectTypeView_Load;

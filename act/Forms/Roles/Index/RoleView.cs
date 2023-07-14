@@ -52,7 +52,7 @@ namespace act.Forms.Roles
                     tbcRoles.TabPages.Remove(tbpAdd);
                     tbcRoles.TabPages.Add(tbpList);
                 }
-                MessageBox.Show(Message);
+                MessageBox.Show(Message, "Información", MessageBoxButtons.OK,MessageBoxIcon.Information);
             };
 
             btnCancel.Click += delegate
@@ -69,7 +69,7 @@ namespace act.Forms.Roles
                 if (result == DialogResult.Yes)
                 {
                     DeleteEvent?.Invoke(this, EventArgs.Empty);
-                    MessageBox.Show(Message);
+                    MessageBox.Show(Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             };
         }

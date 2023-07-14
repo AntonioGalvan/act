@@ -76,7 +76,7 @@
             // label1
             // 
             label1.BackColor = Color.FromArgb(24, 40, 54);
-            label1.Font = new Font("Montserrat Medium", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Montserrat SemiBold", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(133, 44);
             label1.Name = "label1";

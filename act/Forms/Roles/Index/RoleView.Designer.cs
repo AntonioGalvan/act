@@ -86,7 +86,7 @@
             tbcRoles.Controls.Add(tbpAdd);
             tbcRoles.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcRoles.ItemSize = new Size(66, 26);
-            tbcRoles.Location = new Point(11, 75);
+            tbcRoles.Location = new Point(11, 74);
             tbcRoles.Margin = new Padding(5);
             tbcRoles.Multiline = true;
             tbcRoles.Name = "tbcRoles";
@@ -199,7 +199,7 @@
             dgvRoles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Desktop;
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = SystemColors.Control;
             dataGridViewCellStyle2.Padding = new Padding(2);
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Desktop;
