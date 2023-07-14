@@ -23,9 +23,11 @@ namespace act.Forms.Roles
             tbxSearch.KeyDown += (s, e) =>
             {
                 if (e.KeyCode == Keys.Enter)
+                {
                     SearchEvent?.Invoke(this, EventArgs.Empty);
-
-                SearchValue = "";
+                    SearchValue = "";
+                }
+                   
             };
 
             btnAdd.Click += delegate

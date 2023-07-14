@@ -38,7 +38,7 @@ namespace act._Repositories
                 connection.Open();
                 command.Connection = connection;
                 //TODO: Corregir queries o parámetros nose
-                command.CommandText = "Insert into UseCases values (@projectId, @key, @name, @flowChartPath,1,1)";
+                command.CommandText = "Insert into UseCases(ProjectId, [Key], Name, FlowChartPath, DiagramUseCaseStateId, ScreenUseCaseStateId) values (@projectId, @key, @name, @flowChartPath,1,1)";
 
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = useCaseModel.Name;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = useCaseModel.Key;
@@ -77,7 +77,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select uc.Id, uc.name, uc.[key], uc.flowchartpath, p.name pname from UseCases uc, projects p where uc.projectId=@projectId and p.id = uc.projectId";
+                command.CommandText = "Select uc.Id as id, uc.name as name, uc.[key] as keyN, uc.flowchartpath as flowchart, p.name as projectName from UseCases uc, projects p where uc.projectId=@projectId and p.id = uc.projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())
@@ -85,11 +85,11 @@ namespace act._Repositories
                     while (reader.Read())
                     {
                         var useCaseModel = new UseCaseModel();
-                        useCaseModel.Id = (int)reader[0];
-                        useCaseModel.Name = reader[1].ToString();
-                        useCaseModel.Key = reader[2].ToString();
-                        useCaseModel.FlowChartPath = reader[3].ToString();
-                        useCaseModel.ProjectName = reader[4].ToString();
+                        useCaseModel.Id = (int)reader["id"];
+                        useCaseModel.Name = reader["name"].ToString();
+                        useCaseModel.Key = reader["keyN"].ToString();
+                        useCaseModel.FlowChartPath = reader["flowchart"].ToString();
+                        useCaseModel.ProjectName = reader["projectName"].ToString();
                         useCaseList.Add(useCaseModel);
                     }
                 }
@@ -107,21 +107,22 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"Select * from UseCases
-                                        where [key]=@key or name like @name+'%'
-                                        order by id desc";
+                command.CommandText = @"Select uc.Id as id, uc.name as name, uc.[key] as keyN, uc.flowchartpath as flowchart, p.name as projectName from UseCases uc, projects p where (uc.projectId=@projectId and p.id = uc.projectId) and (uc.[key] like '%'+@key+'%' or uc.name like '%'+@name+'%') order by id desc";
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = key;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+
+                command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
 
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         var useCaseModel = new UseCaseModel();
-                        useCaseModel.Id = (int)reader[0];
-                        useCaseModel.Name = reader[1].ToString();
-                        useCaseModel.Key = reader[2].ToString();
-                        useCaseModel.FlowChartPath = reader[3].ToString();
+                        useCaseModel.Id = (int)reader["id"];
+                        useCaseModel.Name = reader["name"].ToString();
+                        useCaseModel.Key = reader["keyN"].ToString();
+                        useCaseModel.FlowChartPath = reader["flowchart"].ToString();
+                        useCaseModel.ProjectName = reader["projectName"].ToString();
                         useCaseList.Add(useCaseModel);
                     }
                 }
