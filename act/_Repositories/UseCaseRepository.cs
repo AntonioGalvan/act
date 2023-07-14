@@ -100,7 +100,7 @@ namespace act._Repositories
         IEnumerable<UseCaseModel> IUseCaseRepository.GetByValue(string value)
         {
             var useCaseList = new List<UseCaseModel>();
-            int key = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
+            string key = value;
             string name = value;
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())

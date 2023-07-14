@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -18,5 +19,8 @@ namespace act.Models.Rules
         public int DiagramElementState { get; set; }
         public int ScreenElementState { get; set; }
         public int ProjectId { get; set; }
+
+        [DisplayName("Proyecto")]
+        public string Project { get; set; }
     }
 }
