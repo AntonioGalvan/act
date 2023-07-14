@@ -17,6 +17,7 @@ namespace act.Forms.BaseFlows.Index
         private string message;
         private bool isSuccessful;
         private bool isEdit;
+        private bool haveBaseFlow;
 
         public BaseFlowsR()
         {
@@ -31,10 +32,18 @@ namespace act.Forms.BaseFlows.Index
 
             btnAdd.Click += delegate
             {
-                AddNewEvent?.Invoke(this, EventArgs.Empty);
-                tbcBFlows.TabPages.Remove(tbpList);
-                tbcBFlows.TabPages.Add(tbpAdd);
-                tbpAdd.Text = "Agregar flujo base";
+                CheckBaseFlow?.Invoke(this, EventArgs.Empty);
+                if(!HaveBaseFlow)
+                {
+                    AddNewEvent?.Invoke(this, EventArgs.Empty);
+                    tbcBFlows.TabPages.Remove(tbpList);
+                    tbcBFlows.TabPages.Add(tbpAdd);
+                    tbpAdd.Text = "Agregar flujo base";
+                }
+                else
+                {
+                    MessageBox.Show(Message);
+                }
             };
 
             btnEdit.Click += delegate
@@ -121,12 +130,19 @@ namespace act.Forms.BaseFlows.Index
             set { message = value; }
         }
 
+        public bool HaveBaseFlow
+        {
+            get { return haveBaseFlow; }
+            set { haveBaseFlow = value; }
+        }
+
         public event EventHandler AddNewEvent;
         public event EventHandler EditEvent;
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
         public event EventHandler ReturnUseCaseView;
+        public event EventHandler CheckBaseFlow;
 
         public void SetProjectListBindingSource(BindingSource baseFlowsRList)
         {

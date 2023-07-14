@@ -36,6 +36,7 @@ namespace act.Presenters
             this.view.SaveEvent += SaveBFlow;
             this.view.CancelEvent += CancelAction;
             this.view.ReturnUseCaseView += ReturnUseCase;
+            this.view.CheckBaseFlow += CheckBaseF;
 
             this.view.SetProjectListBindingSource(bFlowBindingSource);
 
@@ -45,6 +46,17 @@ namespace act.Presenters
             this.sqlConnectionString = pSqlConnectionString;
             this.projectId = pProjectId;
             this.mainView = pMainView;
+        }
+
+        private void CheckBaseF(object? sender, EventArgs e)
+        {
+            if(repository.Check())
+            {
+                view.HaveBaseFlow = true;
+                view.Message = "El caso de uso ya cuenta con un flujo base";
+            }  
+            else
+                view.HaveBaseFlow = false;
         }
 
         public void ReturnUseCase(object? sender, EventArgs e)

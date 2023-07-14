@@ -13,6 +13,8 @@ namespace act.Models.BaseFlows
         void Edit(BaseFlowModel bFlowModel);
         void Delete(int id);
 
+        bool Check();
+
         //Listados
         IEnumerable<BaseFlowModel> GetAll();
 

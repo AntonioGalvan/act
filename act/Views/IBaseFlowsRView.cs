@@ -17,6 +17,8 @@ namespace act.Views
         bool IsSuccessful { get; set; }
         string Message { get; set; }
 
+        bool HaveBaseFlow { get; set; }
+
         //Events
         event EventHandler AddNewEvent;
         event EventHandler EditEvent;
@@ -24,6 +26,7 @@ namespace act.Views
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
         event EventHandler ReturnUseCaseView;
+        event EventHandler CheckBaseFlow;
 
         void SetProjectListBindingSource(BindingSource roleList);
         void Show();
