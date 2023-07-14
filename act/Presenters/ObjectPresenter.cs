@@ -76,12 +76,12 @@ namespace act.Presenters
                 if (view.IsEdit)
                 {
                     repository.Edit(model);
-                    view.Message = "Rol editado correctamente";
+                    view.Message = "Objeto editado correctamente";
                 }
                 else
                 {
                     repository.Add(model);
-                    view.Message = "Rol agregado correctamente";
+                    view.Message = "Objeto agregado correctamente";
                 }
 
                 view.IsSuccessful = true;
@@ -114,14 +114,14 @@ namespace act.Presenters
                 var obj = (ObjectModel)objectsBindingSource.Current;
                 repository.Delete(obj.Id);
                 view.IsSuccessful = true;
-                view.Message = "Rol eliminado correctamente";
+                view.Message = "Objeto eliminado correctamente";
                 LoadAllObjectList();
             }
             catch (Exception ex)
             {
 
                 view.IsSuccessful = false;
-                view.Message = "Ha ocurrido un error, se pudo eliminar el rol";
+                view.Message = "Ha ocurrido un error, se pudo eliminar el objeto";
             }
         }
 

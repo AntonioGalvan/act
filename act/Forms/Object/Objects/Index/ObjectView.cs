@@ -36,7 +36,7 @@ namespace act.Forms.Object
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 tbcRoles.TabPages.Remove(tbpList);
                 tbcRoles.TabPages.Add(tbpAdd);
-                tbpAdd.Text = "Agregar rol";
+                tbpAdd.Text = "Agregar objeto";
             };
 
             btnEdit.Click += delegate
@@ -46,7 +46,7 @@ namespace act.Forms.Object
                 tbcRoles.TabPages.Remove(tbpList);
                 tbcRoles.TabPages.Add(tbpAdd);
                 cmbObjectType.SelectedValue = idType;
-                tbpAdd.Text = "Editar rol";
+                tbpAdd.Text = "Editar objeto";
             };
 
             btnSave.Click += delegate
