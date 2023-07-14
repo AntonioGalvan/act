@@ -198,15 +198,16 @@
             dgvRoles.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvRoles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle2.Font = new Font("Montserrat", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.BackColor = SystemColors.Desktop;
+            dataGridViewCellStyle2.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = SystemColors.Control;
             dataGridViewCellStyle2.Padding = new Padding(2);
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Desktop;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvRoles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvRoles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRoles.ColumnHeadersHeight = 40;
+            dgvRoles.Cursor = Cursors.Hand;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.Gainsboro;
             dataGridViewCellStyle3.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -231,8 +232,9 @@
             dgvRoles.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvRoles.RowHeadersVisible = false;
             dgvRoles.RowHeadersWidth = 20;
-            dgvRoles.RowTemplate.Height = 35;
+            dgvRoles.RowTemplate.Height = 40;
             dgvRoles.RowTemplate.ReadOnly = true;
+            dgvRoles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRoles.Size = new Size(1023, 609);
             dgvRoles.TabIndex = 10;
             // 

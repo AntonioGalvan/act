@@ -76,11 +76,11 @@
             // label1
             // 
             label1.BackColor = Color.FromArgb(24, 40, 54);
-            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Montserrat Medium", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(133, 44);
             label1.Name = "label1";
-            label1.Size = new Size(82, 43);
+            label1.Size = new Size(83, 43);
             label1.TabIndex = 19;
             label1.Text = "ACT";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -194,7 +194,7 @@
             btnSalir.Cursor = Cursors.Hand;
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSalir.Font = new Font("Montserrat", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnSalir.ForeColor = SystemColors.Control;
             btnSalir.Image = Properties.Resources.logout;
             btnSalir.Location = new Point(210, 19);
@@ -238,7 +238,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.correcto2;
-            pictureBox1.Location = new Point(162, 4);
+            pictureBox1.Location = new Point(167, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(74, 61);
             pictureBox1.TabIndex = 41;
