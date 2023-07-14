@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using act.Views;
 using act.Models.BaseFlows;
+using act.Models.UseCases;
 
 namespace act._Repositories
 {
@@ -22,6 +23,35 @@ namespace act._Repositories
             this.connectionString = connectionString;
             this.projectId = pProjectId;
             UseCaseId = pUseCaseId;
+        }
+
+        public bool Check()
+        {
+            var bFlowList = new List<BaseFlowModel>();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "Select id from BaseFlows where projectId=@projectId and UseCaseId=@useCaseId";
+
+                command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
+                command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = this.UseCaseId;
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var bUseCaseModel = new BaseFlowModel();
+                        bUseCaseModel.Id = (int)reader[0];
+
+                        bFlowList.Add(bUseCaseModel);
+                    }
+                }
+            }
+            if(bFlowList.Count >= 1)
+                return true;
+            else
+                return false;
         }
 
         public void Delete(int id)
