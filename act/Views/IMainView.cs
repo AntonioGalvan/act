@@ -10,6 +10,7 @@
         event EventHandler ShowStateView;
         event EventHandler ShowObjectTypeView;
         event EventHandler ShowObjectView;
+        event EventHandler ShowScreenView;
 
         void Show();
     }

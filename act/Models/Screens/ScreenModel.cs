@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using act.Models.Projects;
 
 namespace act.Models.Screens
@@ -16,14 +10,18 @@ namespace act.Models.Screens
         public int Id { get; set; }
         public int ProjectId { get; set; }
         [MaxLength(6)]
+        [DisplayName("Clave")]
+        [Required(ErrorMessage = "La clave es requerida")]
         public string Key { get; set; }
         [MaxLength(15)]
+        [DisplayName("Nombre")]
+        [Required(ErrorMessage = "El nombre es requerido")]
         public string Name { get; set; }
-        public int DiagramElementState { get; set; }
-        public int ScreenElementState { get; set; }
         [DisplayName("Ubicación de imagen")]
         public string ImagePath { get; set; }
-
-        public virtual ProjectModel Project { get; set; }
+        public int DiagramElementState { get; set; }
+        public int ScreenElementState { get; set; }
+        [DisplayName("Proyecto")]
+        public string Project { get; set; }
     }
 }

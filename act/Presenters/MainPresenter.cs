@@ -12,6 +12,8 @@ using act.Forms.States;
 using act.Models.States;
 using act.Models.Objects;
 using act.Forms.Object;
+using act.Forms.Screens.Index;
+using act.Models.Screens;
 
 namespace act.Presenters
 {
@@ -41,6 +43,8 @@ namespace act.Presenters
             this.mainView.ShowObjectTypeView += ShowObjectTypeView;
 
             this.mainView.ShowObjectView += ShowObjectView;
+
+            this.mainView.ShowScreenView += ShowScreenView;
 
             this.mainView.Show();
             this.projectId = projectId;
@@ -99,6 +103,12 @@ namespace act.Presenters
             IObjectView view = ObjectView.GetInstance((Form)mainView);
             IObjectRepository repository = new ObjectRepository(sqlConnectionString, projectId);
             new ObjectPresenter(view, repository);
+        }
+        private void ShowScreenView(object sender, EventArgs e)
+        {
+            IScreenView view = ScreenView.GetInstance((Form)mainView);
+            IScreenRepository repository = new ScreenRepository(sqlConnectionString, projectId);
+            new ScreenPresenter(view, repository);
         }
     }
 }

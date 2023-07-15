@@ -47,7 +47,7 @@
             pnlRelationEContainer = new Panel();
             lblPantalla = new Label();
             lblscreens = new Label();
-            button2 = new Button();
+            btnScreens = new Button();
             lblRnMs = new Label();
             lblStateChanges = new Label();
             btnStateChanges = new Button();
@@ -312,7 +312,7 @@
             pnlRelationEContainer.BackColor = Color.White;
             pnlRelationEContainer.Controls.Add(lblPantalla);
             pnlRelationEContainer.Controls.Add(lblscreens);
-            pnlRelationEContainer.Controls.Add(button2);
+            pnlRelationEContainer.Controls.Add(btnScreens);
             pnlRelationEContainer.Controls.Add(lblMessages);
             pnlRelationEContainer.Controls.Add(btnMessages);
             pnlRelationEContainer.Controls.Add(lblRnMs);
@@ -361,21 +361,22 @@
             lblscreens.TabIndex = 44;
             lblscreens.Text = "Pantallas";
             // 
-            // button2
+            // btnScreens
             // 
-            button2.BackColor = Color.FromArgb(236, 236, 236);
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Center;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(42, 579);
-            button2.Name = "button2";
-            button2.Size = new Size(117, 80);
-            button2.TabIndex = 43;
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = false;
+            btnScreens.BackColor = Color.FromArgb(236, 236, 236);
+            btnScreens.BackgroundImage = (Image)resources.GetObject("btnScreens.BackgroundImage");
+            btnScreens.BackgroundImageLayout = ImageLayout.Center;
+            btnScreens.Cursor = Cursors.Hand;
+            btnScreens.FlatAppearance.BorderSize = 0;
+            btnScreens.FlatStyle = FlatStyle.Flat;
+            btnScreens.Font = new Font("HoloLens MDL2 Assets", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnScreens.Location = new Point(42, 579);
+            btnScreens.Name = "btnScreens";
+            btnScreens.Size = new Size(117, 80);
+            btnScreens.TabIndex = 43;
+            btnScreens.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnScreens.UseVisualStyleBackColor = false;
+            btnScreens.Click += btnScreens_Click;
             // 
             // lblRnMs
             // 
@@ -662,6 +663,6 @@
         private PictureBox pictureBox6;
         private Label lblPantalla;
         private Label lblscreens;
-        private Button button2;
+        private Button btnScreens;
     }
 }

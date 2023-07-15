@@ -16,7 +16,7 @@ namespace act.Forms.Side_bar
             btnStates.Click += delegate { ShowStateView?.Invoke(this, EventArgs.Empty); };
             btnObjectTypes.Click += delegate { ShowObjectTypeView?.Invoke(this, EventArgs.Empty); };
             btnObjects.Click += delegate { ShowObjectView?.Invoke(this, EventArgs.Empty); };
-
+            btnScreens.Click += delegate { ShowScreenView?.Invoke(this, EventArgs.Empty); };
         }
 
         public event EventHandler ShowRelationElementsView;
@@ -27,6 +27,7 @@ namespace act.Forms.Side_bar
         public event EventHandler ShowStateView;
         public event EventHandler ShowObjectTypeView;
         public event EventHandler ShowObjectView;
+        public event EventHandler ShowScreenView;
 
         private void CloseAll()
         {
@@ -83,6 +84,11 @@ namespace act.Forms.Side_bar
         }
 
         private void btnObjects_Click(object sender, EventArgs e)
+        {
+            CloseAll();
+        }
+
+        private void btnScreens_Click(object sender, EventArgs e)
         {
             CloseAll();
         }
