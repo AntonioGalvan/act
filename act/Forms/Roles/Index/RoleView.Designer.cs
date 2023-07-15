@@ -393,7 +393,7 @@
             btnCancel.ForeColor = SystemColors.Control;
             btnCancel.Image = Properties.Resources.cancelar;
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancel.Location = new Point(817, 517);
+            btnCancel.Location = new Point(817, 480);
             btnCancel.Margin = new Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(92, 25);
@@ -411,7 +411,7 @@
             btnSave.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = SystemColors.Control;
             btnSave.Image = Properties.Resources.save;
-            btnSave.Location = new Point(720, 517);
+            btnSave.Location = new Point(720, 480);
             btnSave.Margin = new Padding(3, 2, 3, 2);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(92, 25);
