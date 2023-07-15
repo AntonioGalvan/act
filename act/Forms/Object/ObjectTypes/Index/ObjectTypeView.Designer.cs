@@ -63,9 +63,9 @@
             // lblObjectTypes
             // 
             lblObjectTypes.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblObjectTypes.Location = new Point(11, 5);
+            lblObjectTypes.Location = new Point(10, 4);
             lblObjectTypes.Name = "lblObjectTypes";
-            lblObjectTypes.Size = new Size(310, 64);
+            lblObjectTypes.Size = new Size(271, 48);
             lblObjectTypes.TabIndex = 1;
             lblObjectTypes.Text = "Tipos de objetos";
             lblObjectTypes.TextAlign = ContentAlignment.MiddleLeft;
@@ -75,12 +75,12 @@
             tbcRoles.Controls.Add(tbpList);
             tbcRoles.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcRoles.ItemSize = new Size(66, 26);
-            tbcRoles.Location = new Point(11, 75);
-            tbcRoles.Margin = new Padding(5, 5, 5, 5);
+            tbcRoles.Location = new Point(10, 56);
+            tbcRoles.Margin = new Padding(4, 4, 4, 4);
             tbcRoles.Multiline = true;
             tbcRoles.Name = "tbcRoles";
             tbcRoles.SelectedIndex = 0;
-            tbcRoles.Size = new Size(1059, 773);
+            tbcRoles.Size = new Size(914, 552);
             tbcRoles.SizeMode = TabSizeMode.FillToRight;
             tbcRoles.TabIndex = 7;
             // 
@@ -89,9 +89,10 @@
             tbpList.BackColor = Color.WhiteSmoke;
             tbpList.Controls.Add(dgvObjectTypes);
             tbpList.Location = new Point(4, 30);
+            tbpList.Margin = new Padding(3, 2, 3, 2);
             tbpList.Name = "tbpList";
-            tbpList.Padding = new Padding(3, 3, 3, 3);
-            tbpList.Size = new Size(1051, 739);
+            tbpList.Padding = new Padding(3, 2, 3, 2);
+            tbpList.Size = new Size(906, 518);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
             // 
@@ -131,7 +132,8 @@
             dgvObjectTypes.DefaultCellStyle = dataGridViewCellStyle3;
             dgvObjectTypes.EnableHeadersVisualStyles = false;
             dgvObjectTypes.GridColor = Color.White;
-            dgvObjectTypes.Location = new Point(16, 24);
+            dgvObjectTypes.Location = new Point(14, 18);
+            dgvObjectTypes.Margin = new Padding(3, 2, 3, 2);
             dgvObjectTypes.MultiSelect = false;
             dgvObjectTypes.Name = "dgvObjectTypes";
             dgvObjectTypes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -147,7 +149,7 @@
             dgvObjectTypes.RowHeadersWidth = 20;
             dgvObjectTypes.RowTemplate.Height = 40;
             dgvObjectTypes.RowTemplate.ReadOnly = true;
-            dgvObjectTypes.Size = new Size(1023, 651);
+            dgvObjectTypes.Size = new Size(875, 433);
             dgvObjectTypes.TabIndex = 10;
             // 
             // panel5
@@ -289,7 +291,7 @@
             tbxId.Location = new Point(800, 224);
             tbxId.Margin = new Padding(3, 2, 3, 2);
             tbxId.Name = "tbxId";
-            tbxId.Size = new Size(110, 27);
+            tbxId.Size = new Size(110, 23);
             tbxId.TabIndex = 11;
             tbxId.Visible = false;
             // 
@@ -307,24 +309,26 @@
             // 
             btnOut.Cursor = Cursors.Hand;
             btnOut.Image = Properties.Resources.close;
-            btnOut.Location = new Point(1025, 21);
+            btnOut.Location = new Point(897, 16);
+            btnOut.Margin = new Padding(3, 2, 3, 2);
             btnOut.Name = "btnOut";
-            btnOut.Size = new Size(31, 28);
+            btnOut.Size = new Size(27, 21);
             btnOut.SizeMode = PictureBoxSizeMode.Zoom;
             btnOut.TabIndex = 16;
             btnOut.TabStop = false;
             // 
             // ObjectTypeView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.White;
-            ClientSize = new Size(1074, 852);
+            ClientSize = new Size(931, 600);
             Controls.Add(btnOut);
             Controls.Add(tbcRoles);
             Controls.Add(lblObjectTypes);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ObjectTypeView";
             Text = "RoleIndex";
             Load += ObjectTypeView_Load;

@@ -70,9 +70,10 @@
             // 
             btnOut.Cursor = Cursors.Hand;
             btnOut.Image = Properties.Resources.close;
-            btnOut.Location = new Point(1017, 21);
+            btnOut.Location = new Point(890, 16);
+            btnOut.Margin = new Padding(3, 2, 3, 2);
             btnOut.Name = "btnOut";
-            btnOut.Size = new Size(31, 28);
+            btnOut.Size = new Size(27, 21);
             btnOut.SizeMode = PictureBoxSizeMode.Zoom;
             btnOut.TabIndex = 19;
             btnOut.TabStop = false;
@@ -86,9 +87,10 @@
             btnCancel.ForeColor = SystemColors.Control;
             btnCancel.Image = Properties.Resources.cancelar;
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancel.Location = new Point(934, 689);
+            btnCancel.Location = new Point(818, 478);
+            btnCancel.Margin = new Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(105, 33);
+            btnCancel.Size = new Size(92, 25);
             btnCancel.TabIndex = 18;
             btnCancel.Text = "Cancelar";
             btnCancel.TextAlign = ContentAlignment.MiddleLeft;
@@ -103,9 +105,10 @@
             btnSave.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = SystemColors.Control;
             btnSave.Image = Properties.Resources.save;
-            btnSave.Location = new Point(823, 689);
+            btnSave.Location = new Point(720, 478);
+            btnSave.Margin = new Padding(3, 2, 3, 2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(105, 33);
+            btnSave.Size = new Size(92, 25);
             btnSave.TabIndex = 17;
             btnSave.Text = "Guardar";
             btnSave.TextAlign = ContentAlignment.MiddleLeft;
@@ -114,9 +117,10 @@
             // 
             // tbxId
             // 
-            tbxId.Location = new Point(914, 299);
+            tbxId.Location = new Point(800, 224);
+            tbxId.Margin = new Padding(3, 2, 3, 2);
             tbxId.Name = "tbxId";
-            tbxId.Size = new Size(125, 26);
+            tbxId.Size = new Size(110, 22);
             tbxId.TabIndex = 11;
             tbxId.Visible = false;
             // 
@@ -124,20 +128,22 @@
             // 
             tbxKey.BackColor = Color.Gainsboro;
             tbxKey.BorderStyle = BorderStyle.None;
-            tbxKey.Location = new Point(11, 3);
+            tbxKey.Location = new Point(10, 2);
+            tbxKey.Margin = new Padding(3, 2, 3, 2);
             tbxKey.Multiline = true;
             tbxKey.Name = "tbxKey";
-            tbxKey.Size = new Size(90, 25);
+            tbxKey.Size = new Size(79, 19);
             tbxKey.TabIndex = 14;
             // 
             // tbxDescription
             // 
             tbxDescription.BackColor = Color.Gainsboro;
             tbxDescription.BorderStyle = BorderStyle.None;
-            tbxDescription.Location = new Point(8, 3);
+            tbxDescription.Location = new Point(7, 2);
+            tbxDescription.Margin = new Padding(3, 2, 3, 2);
             tbxDescription.Multiline = true;
             tbxDescription.Name = "tbxDescription";
-            tbxDescription.Size = new Size(256, 28);
+            tbxDescription.Size = new Size(224, 21);
             tbxDescription.TabIndex = 15;
             // 
             // panel5
@@ -147,26 +153,28 @@
             panel5.Controls.Add(lblType);
             panel5.Controls.Add(panel3);
             panel5.Controls.Add(lblDesc);
-            panel5.Location = new Point(16, 16);
+            panel5.Location = new Point(14, 12);
+            panel5.Margin = new Padding(3, 2, 3, 2);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1023, 249);
+            panel5.Size = new Size(895, 187);
             panel5.TabIndex = 22;
             // 
             // panel4
             // 
             panel4.BackColor = Color.Gainsboro;
             panel4.Controls.Add(tbxDescription);
-            panel4.Location = new Point(18, 116);
+            panel4.Location = new Point(16, 87);
+            panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(273, 31);
+            panel4.Size = new Size(239, 23);
             panel4.TabIndex = 21;
             // 
             // lblType
             // 
             lblType.AutoSize = true;
-            lblType.Location = new Point(18, 19);
+            lblType.Location = new Point(16, 14);
             lblType.Name = "lblType";
-            lblType.Size = new Size(51, 21);
+            lblType.Size = new Size(40, 16);
             lblType.TabIndex = 14;
             lblType.Text = "Clave";
             // 
@@ -174,26 +182,27 @@
             // 
             panel3.BackColor = Color.Gainsboro;
             panel3.Controls.Add(tbxKey);
-            panel3.Location = new Point(18, 43);
+            panel3.Location = new Point(16, 32);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(112, 31);
+            panel3.Size = new Size(98, 23);
             panel3.TabIndex = 20;
             // 
             // lblDesc
             // 
             lblDesc.AutoSize = true;
-            lblDesc.Location = new Point(18, 92);
+            lblDesc.Location = new Point(16, 69);
             lblDesc.Name = "lblDesc";
-            lblDesc.Size = new Size(97, 21);
+            lblDesc.Size = new Size(79, 16);
             lblDesc.TabIndex = 15;
             lblDesc.Text = "Descripción";
             // 
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(1017, 277);
+            lblId.Location = new Point(890, 208);
             lblId.Name = "lblId";
-            lblId.Size = new Size(25, 21);
+            lblId.Size = new Size(19, 16);
             lblId.TabIndex = 10;
             lblId.Text = "Id";
             lblId.Visible = false;
@@ -207,9 +216,10 @@
             tbpAdd.Controls.Add(tbxId);
             tbpAdd.Controls.Add(lblId);
             tbpAdd.Location = new Point(4, 30);
+            tbpAdd.Margin = new Padding(3, 2, 3, 2);
             tbpAdd.Name = "tbpAdd";
-            tbpAdd.Padding = new Padding(3, 3, 3, 3);
-            tbpAdd.Size = new Size(1053, 739);
+            tbpAdd.Padding = new Padding(3, 2, 3, 2);
+            tbpAdd.Size = new Size(920, 512);
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
             // 
@@ -222,9 +232,10 @@
             btnSearch.ForeColor = SystemColors.Control;
             btnSearch.Image = Properties.Resources.search;
             btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSearch.Location = new Point(272, 17);
+            btnSearch.Location = new Point(238, 13);
+            btnSearch.Margin = new Padding(3, 2, 3, 2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(105, 33);
+            btnSearch.Size = new Size(92, 25);
             btnSearch.TabIndex = 12;
             btnSearch.Text = "Buscar";
             btnSearch.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -266,7 +277,8 @@
             dgvMessages.DefaultCellStyle = dataGridViewCellStyle3;
             dgvMessages.EnableHeadersVisualStyles = false;
             dgvMessages.GridColor = Color.White;
-            dgvMessages.Location = new Point(16, 65);
+            dgvMessages.Location = new Point(14, 49);
+            dgvMessages.Margin = new Padding(3, 2, 3, 2);
             dgvMessages.MultiSelect = false;
             dgvMessages.Name = "dgvMessages";
             dgvMessages.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -283,7 +295,7 @@
             dgvMessages.RowTemplate.Height = 40;
             dgvMessages.RowTemplate.ReadOnly = true;
             dgvMessages.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMessages.Size = new Size(1023, 609);
+            dgvMessages.Size = new Size(895, 457);
             dgvMessages.TabIndex = 10;
             // 
             // btnEdit
@@ -295,9 +307,10 @@
             btnEdit.ForeColor = SystemColors.Control;
             btnEdit.Image = Properties.Resources.edit;
             btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEdit.Location = new Point(823, 689);
+            btnEdit.Location = new Point(720, 478);
+            btnEdit.Margin = new Padding(3, 2, 3, 2);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(105, 33);
+            btnEdit.Size = new Size(92, 25);
             btnEdit.TabIndex = 13;
             btnEdit.Text = "Editar";
             btnEdit.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -312,9 +325,10 @@
             btnDelete.ForeColor = SystemColors.Control;
             btnDelete.Image = Properties.Resources.delete;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(934, 689);
+            btnDelete.Location = new Point(817, 478);
+            btnDelete.Margin = new Padding(3, 2, 3, 2);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(105, 33);
+            btnDelete.Size = new Size(92, 25);
             btnDelete.TabIndex = 14;
             btnDelete.Text = "Eliminar";
             btnDelete.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -324,20 +338,22 @@
             // 
             tbxSearch.BackColor = Color.Gainsboro;
             tbxSearch.BorderStyle = BorderStyle.None;
-            tbxSearch.Location = new Point(11, 3);
+            tbxSearch.Location = new Point(10, 2);
+            tbxSearch.Margin = new Padding(3, 2, 3, 2);
             tbxSearch.Multiline = true;
             tbxSearch.Name = "tbxSearch";
             tbxSearch.PlaceholderText = "Clave o nombre";
-            tbxSearch.Size = new Size(227, 25);
+            tbxSearch.Size = new Size(199, 19);
             tbxSearch.TabIndex = 7;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Gainsboro;
             panel1.Controls.Add(tbxSearch);
-            panel1.Location = new Point(16, 19);
+            panel1.Location = new Point(14, 14);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 31);
+            panel1.Size = new Size(219, 23);
             panel1.TabIndex = 15;
             // 
             // tbpList
@@ -350,9 +366,10 @@
             tbpList.Controls.Add(dgvMessages);
             tbpList.Controls.Add(btnAdd);
             tbpList.Location = new Point(4, 30);
+            tbpList.Margin = new Padding(3, 2, 3, 2);
             tbpList.Name = "tbpList";
-            tbpList.Padding = new Padding(3, 3, 3, 3);
-            tbpList.Size = new Size(1053, 739);
+            tbpList.Padding = new Padding(3, 2, 3, 2);
+            tbpList.Size = new Size(920, 512);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
             // 
@@ -364,9 +381,10 @@
             btnAdd.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = SystemColors.Control;
             btnAdd.Image = Properties.Resources.add;
-            btnAdd.Location = new Point(934, 19);
+            btnAdd.Location = new Point(817, 14);
+            btnAdd.Margin = new Padding(3, 2, 3, 2);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(105, 33);
+            btnAdd.Size = new Size(92, 25);
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Agregar";
             btnAdd.TextAlign = ContentAlignment.MiddleLeft;
@@ -379,34 +397,35 @@
             tbcMessages.Controls.Add(tbpAdd);
             tbcMessages.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcMessages.ItemSize = new Size(66, 26);
-            tbcMessages.Location = new Point(5, 75);
-            tbcMessages.Margin = new Padding(5, 5, 5, 5);
+            tbcMessages.Location = new Point(4, 56);
+            tbcMessages.Margin = new Padding(4);
             tbcMessages.Multiline = true;
             tbcMessages.Name = "tbcMessages";
             tbcMessages.SelectedIndex = 0;
-            tbcMessages.Size = new Size(1061, 773);
+            tbcMessages.Size = new Size(928, 546);
             tbcMessages.SizeMode = TabSizeMode.FillToRight;
             tbcMessages.TabIndex = 18;
             // 
             // lblMessages
             // 
             lblMessages.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMessages.Location = new Point(5, 5);
+            lblMessages.Location = new Point(4, 4);
             lblMessages.Name = "lblMessages";
-            lblMessages.Size = new Size(197, 64);
+            lblMessages.Size = new Size(172, 48);
             lblMessages.TabIndex = 17;
             lblMessages.Text = "Mensajes";
             lblMessages.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // MessageView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1067, 852);
+            ClientSize = new Size(934, 607);
             Controls.Add(btnOut);
             Controls.Add(tbcMessages);
             Controls.Add(lblMessages);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MessageView";
             Text = "MessageView";
             ((System.ComponentModel.ISupportInitialize)btnOut).EndInit();

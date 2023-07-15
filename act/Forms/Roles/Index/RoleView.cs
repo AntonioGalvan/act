@@ -27,7 +27,7 @@ namespace act.Forms.Roles
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                     SearchValue = "";
                 }
-                   
+
             };
 
             btnAdd.Click += delegate
@@ -54,7 +54,7 @@ namespace act.Forms.Roles
                     tbcRoles.TabPages.Remove(tbpAdd);
                     tbcRoles.TabPages.Add(tbpList);
                 }
-                MessageBox.Show(Message, "Información", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show(Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             };
 
             btnCancel.Click += delegate
