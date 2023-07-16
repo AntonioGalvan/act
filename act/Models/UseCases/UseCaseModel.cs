@@ -13,10 +13,12 @@ namespace act.Models.UseCases
         [Key]
         public int Id { get; set; }
         [DisplayName("Clave")]
+        [Required(ErrorMessage = "La clave es requerida")]
         public string Key { get; set; }
 
         [MaxLength(15)]
         [DisplayName("Nombre")]
+        [Required(ErrorMessage = "El nombre es requerido")]
         public string Name { get; set; }
         [DisplayName("Imagen de Flujo")]
         public string FlowChartPath { get; set; }

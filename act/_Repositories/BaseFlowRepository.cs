@@ -22,7 +22,7 @@ namespace act._Repositories
             this.projectId = pProjectId;
         }
 
-        public bool Check(int useCaseId)
+        public bool Check(int id, int useCaseId)
         {
             var bFlowList = new List<BaseFlowModel>();
             using (var connection = new SqlConnection(connectionString))
@@ -30,10 +30,11 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select id from BaseFlows where projectId=@projectId and UseCaseId=@useCaseId";
+                command.CommandText = "Select id from BaseFlows where projectId=@projectId and UseCaseId=@useCaseId and id!=@id";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = useCaseId;
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -114,7 +115,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select bf.Id as id, bf.name as name, bf.[key] as keyN, bf.flowchartpath as flowchart, p.name as projectName, uc.name as useCaseName from UseCases uc, projects p, BaseFlows bf where bf.projectId=@projectId and (p.id = bf.projectId and uc.id = bf.useCaseId)";
+                command.CommandText = "Select bf.Id as id, bf.name as name, bf.[key] as keyN, bf.flowchartpath as flowchart, p.name as projectName, uc.name as useCaseName, bf.useCaseId as useCaseId from UseCases uc, projects p, BaseFlows bf where bf.projectId=@projectId and (p.id = bf.projectId and uc.id = bf.useCaseId)";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())
@@ -129,21 +130,36 @@ namespace act._Repositories
                         bFlowModel.projectName = reader["projectName"].ToString();
                         bFlowModel.useCaseName = reader["useCaseName"].ToString();
                         bFLowList.Add(bFlowModel);
+                        bFlowModel.useCaseId = (int)reader["useCaseId"];
                     }
                 }
             }
             return bFLowList;
         }
 
-        IEnumerable<UseCaseModel> IBaseFlowRepository.GetAllUseCases()
+        IEnumerable<UseCaseModel> IBaseFlowRepository.GetAllUseCases(bool exclude, int useCaseId)
         {
+
             var useCaseList = new List<UseCaseModel>();
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select id,name from UseCases";
+                
+
+                if(!exclude)
+                {
+                    command.CommandText = "Select id,name from UseCases where id NOT IN " +
+                    "(select useCaseId from BaseFlows)";
+                }
+                else
+                {
+                    command.CommandText = "Select id,name from UseCases where id NOT IN " +
+                    "(select useCaseId from BaseFlows where useCaseId!=@useCaseId)";
+
+                    command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = useCaseId;
+                }
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -169,7 +185,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"Select bf.Id as id, bf.name as name, bf.[key] as keyN, bf.flowchartpath as flowchart, p.name as projectName, uc.name as useCaseName from UseCases uc, projects p, BaseFlows bf where bf.projectId=@projectId and (p.id = bf.projectId and uc.id = bf.useCaseId) and (bf.[key] like '%'+@key+'%' or bf.name like '%'+@name+'%') order by id desc";
+                command.CommandText = @"Select bf.Id as id, bf.name as name, bf.[key] as keyN, bf.flowchartpath as flowchart, p.name as projectName, uc.name as useCaseName, bf.useCaseId as useCaseId from UseCases uc, projects p, BaseFlows bf where bf.projectId=@projectId and (p.id = bf.projectId and uc.id = bf.useCaseId) and (bf.[key] like '%'+@key+'%' or bf.name like '%'+@name+'%') order by id desc";
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = key;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
 
@@ -185,8 +201,9 @@ namespace act._Repositories
                         bFlowModel.Key = reader["keyN"].ToString();
                         bFlowModel.FlowChartPath = reader["flowchart"].ToString();
                         bFlowModel.projectName = reader["projectName"].ToString();
-                        bFlowModel.useCaseName = reader["useCaseName"].ToString();
+                        bFlowModel.useCaseName = reader["useCaseName"].ToString(    );
                         bflowList.Add(bFlowModel);
+                        bFlowModel.useCaseId = (int)reader["useCaseId"];
                     }
                 }
             }

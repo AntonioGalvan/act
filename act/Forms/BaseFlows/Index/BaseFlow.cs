@@ -116,7 +116,7 @@ namespace act.Forms.BaseFlows.Index
 
         public int UseCaseId
         {
-            get { return Convert.ToInt32(cmbUseCases.SelectedValue.ToString()); }
+            get {  return Convert.ToInt32(cmbUseCases.SelectedValue.ToString()); }
             set { idUseCase = value; }
         }
 

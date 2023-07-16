@@ -14,11 +14,11 @@ namespace act.Models.BaseFlows
         void Edit(BaseFlowModel bFlowModel);
         void Delete(int id);
 
-        bool Check(int useCaseId);
+        bool Check(int id, int useCaseId);
 
         //Listados
         IEnumerable<BaseFlowModel> GetAll();
-        IEnumerable<UseCaseModel> GetAllUseCases();
+        IEnumerable<UseCaseModel> GetAllUseCases(bool exclude, int useCaseId);
 
         IEnumerable<BaseFlowModel> GetByValue(string value);
     }

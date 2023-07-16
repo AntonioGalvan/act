@@ -60,7 +60,7 @@ namespace act.Presenters
 
         private void LoadAllUseCaseList()
         {
-            useCaseList = repository.GetAllUseCases();
+            useCaseList = repository.GetAllUseCases(false, 0);
             useCaseBindingSource.DataSource = useCaseList;
         }
 
@@ -91,11 +91,12 @@ namespace act.Presenters
             model.FlowChartPath = this.view.FlowChartPath;
             model.useCaseId = this.view.UseCaseId;
 
+
             try
             {
                 new Common.ModelDataValidation().Validate(model);
 
-                if(!repository.Check(model.useCaseId))
+                if(!repository.Check(model.Id, model.useCaseId))
                 {
                     if (view.IsEdit)
                     {
@@ -109,6 +110,7 @@ namespace act.Presenters
                     }
 
                     view.IsSuccessful = true;
+                    view.HaveUseCase = false;
                     LoadAllBaseFlowList();
                     CleanViewFields();
                 }
@@ -162,12 +164,16 @@ namespace act.Presenters
             view.Key = baseFlow.Key;
             view.FlowChartPath = baseFlow.FlowChartPath;
             view.UseCaseId = baseFlow.useCaseId;
+            useCaseList = repository.GetAllUseCases(true, baseFlow.useCaseId);
+            useCaseBindingSource.DataSource = useCaseList;
             view.IsEdit = true;
         }
 
         private void AddNewBaseFlow(object? sender, EventArgs e)
         {
             view.Name = "";
+            useCaseList = repository.GetAllUseCases(false, 0);
+            useCaseBindingSource.DataSource = useCaseList;
             view.IsEdit = false;
         }
     }
