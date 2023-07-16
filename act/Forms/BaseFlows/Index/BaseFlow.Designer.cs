@@ -35,7 +35,7 @@
             lblUseCases = new Label();
             tbcBaseFlows = new TabControl();
             tbpList = new TabPage();
-            btnBaseFlow = new Button();
+            btnAlternatingFlow = new Button();
             panel1 = new Panel();
             tbxSearch = new TextBox();
             btnDelete = new Button();
@@ -45,6 +45,8 @@
             btnAdd = new Button();
             tbpAdd = new TabPage();
             panel5 = new Panel();
+            cmbUseCases = new ComboBox();
+            label1 = new Label();
             panel4 = new Panel();
             tbxFlowChartPath = new TextBox();
             lblUseCaseP = new Label();
@@ -99,7 +101,7 @@
             // tbpList
             // 
             tbpList.BackColor = Color.WhiteSmoke;
-            tbpList.Controls.Add(btnBaseFlow);
+            tbpList.Controls.Add(btnAlternatingFlow);
             tbpList.Controls.Add(panel1);
             tbpList.Controls.Add(btnDelete);
             tbpList.Controls.Add(btnEdit);
@@ -113,21 +115,21 @@
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
             // 
-            // btnBaseFlow
+            // btnAlternatingFlow
             // 
-            btnBaseFlow.BackColor = Color.FromArgb(27, 43, 57);
-            btnBaseFlow.Cursor = Cursors.Hand;
-            btnBaseFlow.FlatStyle = FlatStyle.Flat;
-            btnBaseFlow.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBaseFlow.ForeColor = SystemColors.Control;
-            btnBaseFlow.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBaseFlow.Location = new Point(674, 637);
-            btnBaseFlow.Name = "btnBaseFlow";
-            btnBaseFlow.Size = new Size(142, 33);
-            btnBaseFlow.TabIndex = 16;
-            btnBaseFlow.Text = "Flujos Alternos";
-            btnBaseFlow.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnBaseFlow.UseVisualStyleBackColor = false;
+            btnAlternatingFlow.BackColor = Color.FromArgb(27, 43, 57);
+            btnAlternatingFlow.Cursor = Cursors.Hand;
+            btnAlternatingFlow.FlatStyle = FlatStyle.Flat;
+            btnAlternatingFlow.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAlternatingFlow.ForeColor = SystemColors.Control;
+            btnAlternatingFlow.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAlternatingFlow.Location = new Point(674, 637);
+            btnAlternatingFlow.Name = "btnAlternatingFlow";
+            btnAlternatingFlow.Size = new Size(142, 33);
+            btnAlternatingFlow.TabIndex = 16;
+            btnAlternatingFlow.Text = "Flujos Alternos";
+            btnAlternatingFlow.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnAlternatingFlow.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -291,6 +293,8 @@
             // panel5
             // 
             panel5.BackColor = SystemColors.Control;
+            panel5.Controls.Add(cmbUseCases);
+            panel5.Controls.Add(label1);
             panel5.Controls.Add(panel4);
             panel5.Controls.Add(lblUseCaseP);
             panel5.Controls.Add(lblName);
@@ -301,6 +305,24 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(1023, 249);
             panel5.TabIndex = 22;
+            // 
+            // cmbUseCases
+            // 
+            cmbUseCases.BackColor = Color.Gainsboro;
+            cmbUseCases.FormattingEnabled = true;
+            cmbUseCases.Location = new Point(319, 45);
+            cmbUseCases.Name = "cmbUseCases";
+            cmbUseCases.Size = new Size(273, 29);
+            cmbUseCases.TabIndex = 23;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(319, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(99, 21);
+            label1.TabIndex = 22;
+            label1.Text = "Caso de uso";
             // 
             // panel4
             // 
@@ -461,6 +483,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "BaseFlow";
             Text = "BaseFlow";
+            Load += BaseFlow_Load;
             tbcBaseFlows.ResumeLayout(false);
             tbpList.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -485,7 +508,7 @@
         private Label lblUseCases;
         private TabControl tbcBaseFlows;
         private TabPage tbpList;
-        private Button btnBaseFlow;
+        private Button btnAlternatingFlow;
         private Panel panel1;
         private TextBox tbxSearch;
         private Button btnDelete;
@@ -509,5 +532,7 @@
         private TextBox tbxId;
         private Label lblId;
         private PictureBox btnOut;
+        private ComboBox cmbUseCases;
+        private Label label1;
     }
 }
