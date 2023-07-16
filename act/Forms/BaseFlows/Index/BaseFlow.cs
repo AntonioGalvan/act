@@ -26,7 +26,7 @@ namespace act.Forms.BaseFlows.Index
         private bool isSuccessful;
         private bool isEdit;
         private bool haveUseCase;
-        private int idUseCase;
+        private int? idUseCase;
 
         private void AssociateAndRaiseViewEvents()
         {
@@ -114,9 +114,21 @@ namespace act.Forms.BaseFlows.Index
             set { tbxName.Text = value; }
         }
 
-        public int UseCaseId
+        public int? UseCaseId
         {
-            get {  return Convert.ToInt32(cmbUseCases.SelectedValue.ToString()); }
+            get 
+            {
+                if(cmbUseCases.SelectedValue != null)
+                {
+                    return Convert.ToInt32(cmbUseCases.SelectedValue.ToString());
+                }
+                else
+                {
+
+                    return 0;
+                }
+                 
+            }
             set { idUseCase = value; }
         }
 

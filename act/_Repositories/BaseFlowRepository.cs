@@ -22,7 +22,7 @@ namespace act._Repositories
             this.projectId = pProjectId;
         }
 
-        public bool Check(int id, int useCaseId)
+        public bool Check(int id, int? useCaseId)
         {
             var bFlowList = new List<BaseFlowModel>();
             using (var connection = new SqlConnection(connectionString))
@@ -137,7 +137,7 @@ namespace act._Repositories
             return bFLowList;
         }
 
-        IEnumerable<UseCaseModel> IBaseFlowRepository.GetAllUseCases(bool exclude, int useCaseId)
+        IEnumerable<UseCaseModel> IBaseFlowRepository.GetAllUseCases(bool exclude, int? useCaseId)
         {
 
             var useCaseList = new List<UseCaseModel>();

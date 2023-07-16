@@ -12,7 +12,7 @@ namespace act.Views
         string Key { get; set; }
         string Name { get; set; }
         string FlowChartPath { get; set; }
-        int UseCaseId { get; set; }
+        int? UseCaseId { get; set; }
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }
