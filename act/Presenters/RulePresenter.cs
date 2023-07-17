@@ -118,7 +118,7 @@ namespace act.Presenters
         {
             var rule = (BusinessRuleModel)rulesBindingSource.Current;
             view.Id = rule.Id.ToString();
-            view.Key = rule.Key;
+            view.Key = rule.Key.Remove(0,3);
             view.Description = rule.Description;
             view.IsEdit = true;
         }

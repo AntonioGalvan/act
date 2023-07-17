@@ -44,6 +44,8 @@
             btnAdd = new Button();
             tbpAdd = new TabPage();
             panel5 = new Panel();
+            panel6 = new Panel();
+            textBox1 = new TextBox();
             cmbObjectType = new ComboBox();
             lblName = new Label();
             lblObjectType = new Label();
@@ -60,19 +62,17 @@
             tbxId = new TextBox();
             lblId = new Label();
             btnOut = new PictureBox();
-            panel6 = new Panel();
-            textBox1 = new TextBox();
             tbcRoles.SuspendLayout();
             tbpList.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRoles).BeginInit();
             tbpAdd.SuspendLayout();
             panel5.SuspendLayout();
+            panel6.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnOut).BeginInit();
-            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // lblObjects
@@ -92,7 +92,7 @@
             tbcRoles.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcRoles.ItemSize = new Size(66, 26);
             tbcRoles.Location = new Point(11, 75);
-            tbcRoles.Margin = new Padding(5, 5, 5, 5);
+            tbcRoles.Margin = new Padding(5);
             tbcRoles.Multiline = true;
             tbcRoles.Name = "tbcRoles";
             tbcRoles.SelectedIndex = 0;
@@ -111,7 +111,7 @@
             tbpList.Controls.Add(btnAdd);
             tbpList.Location = new Point(4, 30);
             tbpList.Name = "tbpList";
-            tbpList.Padding = new Padding(3, 3, 3, 3);
+            tbpList.Padding = new Padding(3);
             tbpList.Size = new Size(1051, 739);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
@@ -270,7 +270,7 @@
             tbpAdd.Controls.Add(lblId);
             tbpAdd.Location = new Point(4, 30);
             tbpAdd.Name = "tbpAdd";
-            tbpAdd.Padding = new Padding(3, 3, 3, 3);
+            tbpAdd.Padding = new Padding(3);
             tbpAdd.Size = new Size(1051, 739);
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
@@ -291,6 +291,27 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(1023, 340);
             panel5.TabIndex = 22;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Gainsboro;
+            panel6.Controls.Add(textBox1);
+            panel6.Location = new Point(14, 115);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(58, 31);
+            panel6.TabIndex = 26;   
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Gainsboro;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(8, 3);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(50, 25);
+            textBox1.TabIndex = 14;
+            textBox1.Text = "OB -";
             // 
             // cmbObjectType
             // 
@@ -461,27 +482,6 @@
             btnOut.TabIndex = 16;
             btnOut.TabStop = false;
             // 
-            // panel6
-            // 
-            panel6.BackColor = Color.Gainsboro;
-            panel6.Controls.Add(textBox1);
-            panel6.Location = new Point(14, 115);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(58, 31);
-            panel6.TabIndex = 26;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.Gainsboro;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(8, 3);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(50, 25);
-            textBox1.TabIndex = 14;
-            textBox1.Text = "OB -";
-            // 
             // ObjectView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -503,6 +503,8 @@
             tbpAdd.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
@@ -510,8 +512,6 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnOut).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
             ResumeLayout(false);
         }
 

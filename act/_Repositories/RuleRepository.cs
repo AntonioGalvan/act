@@ -90,7 +90,7 @@ namespace act._Repositories
                     {
                         var ruleModel = new BusinessRuleModel();
                         ruleModel.Id = (int)reader["Id"];
-                        ruleModel.Key = reader["keyN"].ToString();
+                        ruleModel.Key = "RN-" + reader["keyN"].ToString();
                         ruleModel.Description = reader["description"].ToString();
                         ruleModel.Project = reader["projectName"].ToString();
                         ruleList.Add(ruleModel);
@@ -122,7 +122,7 @@ namespace act._Repositories
                     {
                         var ruleModel = new BusinessRuleModel();
                         ruleModel.Id = (int)reader["Id"];
-                        ruleModel.Key = reader["keyN"].ToString();
+                        ruleModel.Key = "RN-" + reader["keyN"].ToString();
                         ruleModel.Description = reader["description"].ToString();
                         ruleModel.Project = reader["projectName"].ToString();
                         ruleList.Add(ruleModel);

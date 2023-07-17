@@ -148,7 +148,7 @@ namespace act.Presenters
             var bFlow = (BaseFlowModel)bFlowBindingSource.Current;
             view.Id = bFlow.Id.ToString();
             view.Name = bFlow.Name;
-            view.Key = bFlow.Key;
+            view.Key = bFlow.Key.Remove(0, 3);
             view.FlowChartPath = bFlow.FlowChartPath;
             view.IsEdit = true;
         }

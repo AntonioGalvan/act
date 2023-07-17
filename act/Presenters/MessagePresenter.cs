@@ -119,7 +119,7 @@ namespace act.Presenters
         {
             var message = (MessageModel)messagesBindingSource.Current;
             view.Id = message.Id.ToString();
-            view.Key = message.Key;
+            view.Key = message.Key.Remove(0,3);
             view.Description = message.Description;
             view.IsEdit = true;
         }

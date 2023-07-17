@@ -61,6 +61,8 @@
             tbxId = new TextBox();
             lblId = new Label();
             btnOut = new PictureBox();
+            panel6 = new Panel();
+            textBox1 = new TextBox();
             tbcBaseFlows.SuspendLayout();
             tbpList.SuspendLayout();
             panel1.SuspendLayout();
@@ -71,6 +73,7 @@
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnOut).BeginInit();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // lblUseCases
@@ -293,6 +296,7 @@
             // panel5
             // 
             panel5.BackColor = SystemColors.Control;
+            panel5.Controls.Add(panel6);
             panel5.Controls.Add(cmbUseCases);
             panel5.Controls.Add(label1);
             panel5.Controls.Add(panel4);
@@ -374,7 +378,7 @@
             // 
             panel3.BackColor = Color.Gainsboro;
             panel3.Controls.Add(tbxKey);
-            panel3.Location = new Point(14, 115);
+            panel3.Location = new Point(78, 115);
             panel3.Name = "panel3";
             panel3.Size = new Size(112, 31);
             panel3.TabIndex = 20;
@@ -472,6 +476,27 @@
             btnOut.TabIndex = 25;
             btnOut.TabStop = false;
             // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Gainsboro;
+            panel6.Controls.Add(textBox1);
+            panel6.Location = new Point(14, 115);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(58, 31);
+            panel6.TabIndex = 30;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Gainsboro;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(8, 3);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(50, 25);
+            textBox1.TabIndex = 14;
+            textBox1.Text = "FB -";
+            // 
             // BaseFlow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -500,6 +525,8 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnOut).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -534,5 +561,7 @@
         private PictureBox btnOut;
         private ComboBox cmbUseCases;
         private Label label1;
+        private Panel panel6;
+        private TextBox textBox1;
     }
 }

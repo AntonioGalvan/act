@@ -58,6 +58,8 @@
             lblId = new Label();
             lblRoles = new Label();
             btnReturn = new PictureBox();
+            panel6 = new Panel();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)btnOut).BeginInit();
             tbcBFlows.SuspendLayout();
             tbpList.SuspendLayout();
@@ -69,6 +71,7 @@
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnReturn).BeginInit();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // btnOut
@@ -89,7 +92,7 @@
             tbcBFlows.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcBFlows.ItemSize = new Size(66, 26);
             tbcBFlows.Location = new Point(5, 75);
-            tbcBFlows.Margin = new Padding(5, 5, 5, 5);
+            tbcBFlows.Margin = new Padding(5);
             tbcBFlows.Multiline = true;
             tbcBFlows.Name = "tbcBFlows";
             tbcBFlows.SelectedIndex = 0;
@@ -106,7 +109,7 @@
             tbpList.Controls.Add(btnAdd);
             tbpList.Location = new Point(4, 30);
             tbpList.Name = "tbpList";
-            tbpList.Padding = new Padding(3, 3, 3, 3);
+            tbpList.Padding = new Padding(3);
             tbpList.Size = new Size(1053, 691);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
@@ -228,7 +231,7 @@
             tbpAdd.Controls.Add(lblId);
             tbpAdd.Location = new Point(4, 30);
             tbpAdd.Name = "tbpAdd";
-            tbpAdd.Padding = new Padding(3, 3, 3, 3);
+            tbpAdd.Padding = new Padding(3);
             tbpAdd.Size = new Size(1053, 691);
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
@@ -236,6 +239,7 @@
             // panel5
             // 
             panel5.BackColor = SystemColors.Control;
+            panel5.Controls.Add(panel6);
             panel5.Controls.Add(btnAddImage);
             panel5.Controls.Add(pbxImage);
             panel5.Controls.Add(lblName);
@@ -315,7 +319,7 @@
             // 
             panel3.BackColor = Color.Gainsboro;
             panel3.Controls.Add(tbxKey);
-            panel3.Location = new Point(14, 115);
+            panel3.Location = new Point(78, 115);
             panel3.Name = "panel3";
             panel3.Size = new Size(112, 31);
             panel3.TabIndex = 20;
@@ -432,6 +436,27 @@
             btnReturn.TabIndex = 20;
             btnReturn.TabStop = false;
             // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Gainsboro;
+            panel6.Controls.Add(textBox1);
+            panel6.Location = new Point(14, 115);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(58, 31);
+            panel6.TabIndex = 29;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Gainsboro;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(8, 3);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(50, 25);
+            textBox1.TabIndex = 14;
+            textBox1.Text = "FB -";
+            // 
             // BaseFlowsR
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -461,6 +486,8 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnReturn).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -492,5 +519,7 @@
         private Button btnAddImage;
         private PictureBox pbxImage;
         private PictureBox btnReturn;
+        private Panel panel6;
+        private TextBox textBox1;
     }
 }

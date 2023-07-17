@@ -30,7 +30,7 @@ namespace act.Models.BaseFlows
         public int DiagramElementState { get; set; }
         public int ScreenElementState { get; set; }
 
-        [Required(ErrorMessage = "El caso de uso es requerido")]
+        
         public int? useCaseId { get; set; }
 
         [DisplayName("Caso de uso")]

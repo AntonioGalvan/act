@@ -82,7 +82,7 @@ namespace act._Repositories
                         var messageModel = new MessageModel();
                         messageModel.Id = (int)reader[0];
                         messageModel.ProjectId = (int)reader[1];
-                        messageModel.Key = reader[2].ToString();
+                        messageModel.Key = "MS-" + reader[2].ToString();
                         messageModel.Description = reader[3].ToString();
                         
                         messageList.Add(messageModel);
@@ -114,7 +114,7 @@ namespace act._Repositories
                     {
                         var messageModel = new MessageModel();
                         messageModel.Id = (int)reader[0];
-                        messageModel.Key = reader[1].ToString();
+                        messageModel.Key = "MS-" + reader[1].ToString();
                         messageModel.Description = reader[2].ToString();
                         messageList.Add(messageModel);
                     }

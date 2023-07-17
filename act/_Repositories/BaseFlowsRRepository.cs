@@ -126,7 +126,7 @@ namespace act._Repositories
                     {
                         var bFlowModel = new BaseFlowModel();
                         bFlowModel.Id = (int)reader["id"];
-                        bFlowModel.Key = reader["keyN"].ToString();
+                        bFlowModel.Key = "FB-" + reader["keyN"].ToString();
                         bFlowModel.Name = reader["name"].ToString();
                         bFlowModel.FlowChartPath = reader["flowChart"].ToString();
                         bFlowModel.useCaseName = reader["useCaseName"].ToString();

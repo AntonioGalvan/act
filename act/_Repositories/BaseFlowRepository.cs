@@ -125,7 +125,7 @@ namespace act._Repositories
                         var bFlowModel = new BaseFlowModel();
                         bFlowModel.Id = (int)reader["id"];
                         bFlowModel.Name = reader["name"].ToString();
-                        bFlowModel.Key = reader["keyN"].ToString();
+                        bFlowModel.Key = "FB-" + reader["keyN"].ToString();
                         bFlowModel.FlowChartPath = reader["flowchart"].ToString();
                         bFlowModel.projectName = reader["projectName"].ToString();
                         bFlowModel.useCaseName = reader["useCaseName"].ToString();
@@ -198,7 +198,7 @@ namespace act._Repositories
                         var bFlowModel = new BaseFlowModel();
                         bFlowModel.Id = (int)reader["id"];
                         bFlowModel.Name = reader["name"].ToString();
-                        bFlowModel.Key = reader["keyN"].ToString();
+                        bFlowModel.Key = "FB-" + reader["keyN"].ToString();
                         bFlowModel.FlowChartPath = reader["flowchart"].ToString();
                         bFlowModel.projectName = reader["projectName"].ToString();
                         bFlowModel.useCaseName = reader["useCaseName"].ToString(    );
