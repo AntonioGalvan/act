@@ -87,7 +87,7 @@ namespace act._Repositories
                     {
                         var screenModel = new ScreenModel();
                         screenModel.Id = (int)reader["Id"];
-                        screenModel.Key = reader["keyN"].ToString();
+                        screenModel.Key = "PA-" + reader["keyN"].ToString();
                         screenModel.Name = reader["name"].ToString();
                         screenModel.ImagePath = reader["imagePath"].ToString();
                         screenModel.Project = reader["projectName"].ToString();
@@ -120,7 +120,7 @@ namespace act._Repositories
                     {
                         var screenModel = new ScreenModel();
                         screenModel.Id = (int)reader["Id"];
-                        screenModel.Key = reader["keyN"].ToString();
+                        screenModel.Key = "PA-" + reader["keyN"].ToString();
                         screenModel.Name = reader["name"].ToString();
                         screenModel.ImagePath = reader["imagePath"].ToString();
                         screenModel.Project = reader["projectName"].ToString();

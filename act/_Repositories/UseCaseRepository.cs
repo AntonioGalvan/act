@@ -87,7 +87,7 @@ namespace act._Repositories
                         var useCaseModel = new UseCaseModel();
                         useCaseModel.Id = (int)reader["id"];
                         useCaseModel.Name = reader["name"].ToString();
-                        useCaseModel.Key = reader["keyN"].ToString();
+                        useCaseModel.Key = "CU-" + reader["keyN"].ToString();
                         useCaseModel.FlowChartPath = reader["flowchart"].ToString();
                         useCaseModel.ProjectName = reader["projectName"].ToString();
                         useCaseList.Add(useCaseModel);
@@ -120,7 +120,7 @@ namespace act._Repositories
                         var useCaseModel = new UseCaseModel();
                         useCaseModel.Id = (int)reader["id"];
                         useCaseModel.Name = reader["name"].ToString();
-                        useCaseModel.Key = reader["keyN"].ToString();
+                        useCaseModel.Key = "CU-" + reader["keyN"].ToString();
                         useCaseModel.FlowChartPath = reader["flowchart"].ToString();
                         useCaseModel.ProjectName = reader["projectName"].ToString();
                         useCaseList.Add(useCaseModel);

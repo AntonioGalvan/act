@@ -58,6 +58,8 @@
             tbxId = new TextBox();
             lblId = new Label();
             btnOut = new PictureBox();
+            panel6 = new Panel();
+            textBox1 = new TextBox();
             tbcStates.SuspendLayout();
             tbpList.SuspendLayout();
             panel1.SuspendLayout();
@@ -68,14 +70,15 @@
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnOut).BeginInit();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // lblStates
             // 
             lblStates.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblStates.Location = new Point(10, 4);
+            lblStates.Location = new Point(11, 5);
             lblStates.Name = "lblStates";
-            lblStates.Size = new Size(172, 48);
+            lblStates.Size = new Size(197, 64);
             lblStates.TabIndex = 1;
             lblStates.Text = "Estados";
             lblStates.TextAlign = ContentAlignment.MiddleLeft;
@@ -86,12 +89,12 @@
             tbcStates.Controls.Add(tbpAdd);
             tbcStates.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcStates.ItemSize = new Size(66, 26);
-            tbcStates.Location = new Point(10, 56);
-            tbcStates.Margin = new Padding(4, 4, 4, 4);
+            tbcStates.Location = new Point(11, 75);
+            tbcStates.Margin = new Padding(5, 5, 5, 5);
             tbcStates.Multiline = true;
             tbcStates.Name = "tbcStates";
             tbcStates.SelectedIndex = 0;
-            tbcStates.Size = new Size(927, 580);
+            tbcStates.Size = new Size(1059, 773);
             tbcStates.SizeMode = TabSizeMode.FillToRight;
             tbcStates.TabIndex = 7;
             // 
@@ -105,10 +108,9 @@
             tbpList.Controls.Add(dgvStates);
             tbpList.Controls.Add(btnAdd);
             tbpList.Location = new Point(4, 30);
-            tbpList.Margin = new Padding(3, 2, 3, 2);
             tbpList.Name = "tbpList";
-            tbpList.Padding = new Padding(3, 2, 3, 2);
-            tbpList.Size = new Size(919, 546);
+            tbpList.Padding = new Padding(3, 3, 3, 3);
+            tbpList.Size = new Size(1051, 739);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
             // 
@@ -116,22 +118,20 @@
             // 
             panel1.BackColor = Color.Gainsboro;
             panel1.Controls.Add(tbxSearch);
-            panel1.Location = new Point(14, 14);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(16, 19);
             panel1.Name = "panel1";
-            panel1.Size = new Size(219, 23);
+            panel1.Size = new Size(250, 31);
             panel1.TabIndex = 15;
             // 
             // tbxSearch
             // 
             tbxSearch.BackColor = Color.Gainsboro;
             tbxSearch.BorderStyle = BorderStyle.None;
-            tbxSearch.Location = new Point(10, 2);
-            tbxSearch.Margin = new Padding(3, 2, 3, 2);
+            tbxSearch.Location = new Point(11, 3);
             tbxSearch.Multiline = true;
             tbxSearch.Name = "tbxSearch";
             tbxSearch.PlaceholderText = "Clave o nombre";
-            tbxSearch.Size = new Size(199, 19);
+            tbxSearch.Size = new Size(227, 25);
             tbxSearch.TabIndex = 7;
             // 
             // btnDelete
@@ -143,10 +143,9 @@
             btnDelete.ForeColor = SystemColors.Control;
             btnDelete.Image = Properties.Resources.delete;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(817, 478);
-            btnDelete.Margin = new Padding(3, 2, 3, 2);
+            btnDelete.Location = new Point(934, 637);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(92, 25);
+            btnDelete.Size = new Size(105, 33);
             btnDelete.TabIndex = 14;
             btnDelete.Text = "Eliminar";
             btnDelete.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -161,10 +160,9 @@
             btnEdit.ForeColor = SystemColors.Control;
             btnEdit.Image = Properties.Resources.edit;
             btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEdit.Location = new Point(720, 478);
-            btnEdit.Margin = new Padding(3, 2, 3, 2);
+            btnEdit.Location = new Point(823, 637);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(92, 25);
+            btnEdit.Size = new Size(105, 33);
             btnEdit.TabIndex = 13;
             btnEdit.Text = "Editar";
             btnEdit.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -179,10 +177,9 @@
             btnSearch.ForeColor = SystemColors.Control;
             btnSearch.Image = Properties.Resources.search;
             btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSearch.Location = new Point(238, 13);
-            btnSearch.Margin = new Padding(3, 2, 3, 2);
+            btnSearch.Location = new Point(272, 17);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(92, 25);
+            btnSearch.Size = new Size(105, 33);
             btnSearch.TabIndex = 12;
             btnSearch.Text = "Buscar";
             btnSearch.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -224,8 +221,7 @@
             dgvStates.DefaultCellStyle = dataGridViewCellStyle3;
             dgvStates.EnableHeadersVisualStyles = false;
             dgvStates.GridColor = Color.White;
-            dgvStates.Location = new Point(14, 49);
-            dgvStates.Margin = new Padding(3, 2, 3, 2);
+            dgvStates.Location = new Point(16, 65);
             dgvStates.MultiSelect = false;
             dgvStates.Name = "dgvStates";
             dgvStates.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -242,7 +238,7 @@
             dgvStates.RowTemplate.Height = 40;
             dgvStates.RowTemplate.ReadOnly = true;
             dgvStates.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvStates.Size = new Size(895, 457);
+            dgvStates.Size = new Size(1023, 609);
             dgvStates.TabIndex = 10;
             // 
             // btnAdd
@@ -253,10 +249,9 @@
             btnAdd.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = SystemColors.Control;
             btnAdd.Image = Properties.Resources.add;
-            btnAdd.Location = new Point(817, 14);
-            btnAdd.Margin = new Padding(3, 2, 3, 2);
+            btnAdd.Location = new Point(934, 19);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(92, 25);
+            btnAdd.Size = new Size(105, 33);
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Agregar";
             btnAdd.TextAlign = ContentAlignment.MiddleLeft;
@@ -272,34 +267,33 @@
             tbpAdd.Controls.Add(tbxId);
             tbpAdd.Controls.Add(lblId);
             tbpAdd.Location = new Point(4, 30);
-            tbpAdd.Margin = new Padding(3, 2, 3, 2);
             tbpAdd.Name = "tbpAdd";
-            tbpAdd.Padding = new Padding(3, 2, 3, 2);
-            tbpAdd.Size = new Size(919, 546);
+            tbpAdd.Padding = new Padding(3, 3, 3, 3);
+            tbpAdd.Size = new Size(1051, 739);
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
             // 
             // panel5
             // 
             panel5.BackColor = SystemColors.Control;
+            panel5.Controls.Add(panel6);
             panel5.Controls.Add(lblName);
             panel5.Controls.Add(panel4);
             panel5.Controls.Add(lblType);
             panel5.Controls.Add(panel3);
             panel5.Controls.Add(lblDesc);
             panel5.Controls.Add(panel2);
-            panel5.Location = new Point(14, 12);
-            panel5.Margin = new Padding(3, 2, 3, 2);
+            panel5.Location = new Point(16, 16);
             panel5.Name = "panel5";
-            panel5.Size = new Size(895, 187);
+            panel5.Size = new Size(1023, 249);
             panel5.TabIndex = 22;
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(12, 11);
+            lblName.Location = new Point(14, 15);
             lblName.Name = "lblName";
-            lblName.Size = new Size(58, 16);
+            lblName.Size = new Size(72, 21);
             lblName.TabIndex = 12;
             lblName.Text = "Nombre";
             // 
@@ -307,29 +301,27 @@
             // 
             panel4.BackColor = Color.Gainsboro;
             panel4.Controls.Add(tbxPurpose);
-            panel4.Location = new Point(12, 140);
-            panel4.Margin = new Padding(3, 2, 3, 2);
+            panel4.Location = new Point(14, 187);
             panel4.Name = "panel4";
-            panel4.Size = new Size(239, 23);
+            panel4.Size = new Size(273, 31);
             panel4.TabIndex = 21;
             // 
             // tbxPurpose
             // 
             tbxPurpose.BackColor = Color.Gainsboro;
             tbxPurpose.BorderStyle = BorderStyle.None;
-            tbxPurpose.Location = new Point(7, 2);
-            tbxPurpose.Margin = new Padding(3, 2, 3, 2);
+            tbxPurpose.Location = new Point(8, 3);
             tbxPurpose.Multiline = true;
             tbxPurpose.Name = "tbxPurpose";
-            tbxPurpose.Size = new Size(224, 21);
+            tbxPurpose.Size = new Size(256, 28);
             tbxPurpose.TabIndex = 15;
             // 
             // lblType
             // 
             lblType.AutoSize = true;
-            lblType.Location = new Point(12, 68);
+            lblType.Location = new Point(14, 91);
             lblType.Name = "lblType";
-            lblType.Size = new Size(40, 16);
+            lblType.Size = new Size(51, 21);
             lblType.TabIndex = 14;
             lblType.Text = "Clave";
             // 
@@ -337,29 +329,27 @@
             // 
             panel3.BackColor = Color.Gainsboro;
             panel3.Controls.Add(tbxKey);
-            panel3.Location = new Point(12, 86);
-            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Location = new Point(78, 115);
             panel3.Name = "panel3";
-            panel3.Size = new Size(98, 23);
+            panel3.Size = new Size(112, 31);
             panel3.TabIndex = 20;
             // 
             // tbxKey
             // 
             tbxKey.BackColor = Color.Gainsboro;
             tbxKey.BorderStyle = BorderStyle.None;
-            tbxKey.Location = new Point(10, 2);
-            tbxKey.Margin = new Padding(3, 2, 3, 2);
+            tbxKey.Location = new Point(11, 3);
             tbxKey.Multiline = true;
             tbxKey.Name = "tbxKey";
-            tbxKey.Size = new Size(79, 19);
+            tbxKey.Size = new Size(90, 25);
             tbxKey.TabIndex = 14;
             // 
             // lblDesc
             // 
             lblDesc.AutoSize = true;
-            lblDesc.Location = new Point(12, 122);
+            lblDesc.Location = new Point(14, 163);
             lblDesc.Name = "lblDesc";
-            lblDesc.Size = new Size(67, 16);
+            lblDesc.Size = new Size(81, 21);
             lblDesc.TabIndex = 15;
             lblDesc.Text = "Propósito";
             // 
@@ -367,21 +357,19 @@
             // 
             panel2.BackColor = Color.Gainsboro;
             panel2.Controls.Add(tbxName);
-            panel2.Location = new Point(12, 33);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(14, 44);
             panel2.Name = "panel2";
-            panel2.Size = new Size(239, 23);
+            panel2.Size = new Size(273, 31);
             panel2.TabIndex = 19;
             // 
             // tbxName
             // 
             tbxName.BackColor = Color.Gainsboro;
             tbxName.BorderStyle = BorderStyle.None;
-            tbxName.Location = new Point(7, 2);
-            tbxName.Margin = new Padding(3, 2, 3, 2);
+            tbxName.Location = new Point(8, 3);
             tbxName.Multiline = true;
             tbxName.Name = "tbxName";
-            tbxName.Size = new Size(224, 19);
+            tbxName.Size = new Size(256, 25);
             tbxName.TabIndex = 13;
             // 
             // btnCancel
@@ -393,10 +381,9 @@
             btnCancel.ForeColor = SystemColors.Control;
             btnCancel.Image = Properties.Resources.cancelar;
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancel.Location = new Point(817, 480);
-            btnCancel.Margin = new Padding(3, 2, 3, 2);
+            btnCancel.Location = new Point(934, 640);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(92, 25);
+            btnCancel.Size = new Size(105, 33);
             btnCancel.TabIndex = 18;
             btnCancel.Text = "Cancelar";
             btnCancel.TextAlign = ContentAlignment.MiddleLeft;
@@ -411,10 +398,9 @@
             btnSave.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = SystemColors.Control;
             btnSave.Image = Properties.Resources.save;
-            btnSave.Location = new Point(720, 480);
-            btnSave.Margin = new Padding(3, 2, 3, 2);
+            btnSave.Location = new Point(823, 640);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(92, 25);
+            btnSave.Size = new Size(105, 33);
             btnSave.TabIndex = 17;
             btnSave.Text = "Guardar";
             btnSave.TextAlign = ContentAlignment.MiddleLeft;
@@ -423,19 +409,18 @@
             // 
             // tbxId
             // 
-            tbxId.Location = new Point(800, 224);
-            tbxId.Margin = new Padding(3, 2, 3, 2);
+            tbxId.Location = new Point(914, 299);
             tbxId.Name = "tbxId";
-            tbxId.Size = new Size(110, 22);
+            tbxId.Size = new Size(125, 26);
             tbxId.TabIndex = 11;
             tbxId.Visible = false;
             // 
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(887, 206);
+            lblId.Location = new Point(1014, 275);
             lblId.Name = "lblId";
-            lblId.Size = new Size(19, 16);
+            lblId.Size = new Size(25, 21);
             lblId.TabIndex = 10;
             lblId.Text = "Id";
             lblId.Visible = false;
@@ -444,25 +429,44 @@
             // 
             btnOut.Cursor = Cursors.Hand;
             btnOut.Image = Properties.Resources.close;
-            btnOut.Location = new Point(897, 16);
-            btnOut.Margin = new Padding(3, 2, 3, 2);
+            btnOut.Location = new Point(1025, 21);
             btnOut.Name = "btnOut";
-            btnOut.Size = new Size(27, 21);
+            btnOut.Size = new Size(31, 28);
             btnOut.SizeMode = PictureBoxSizeMode.Zoom;
             btnOut.TabIndex = 16;
             btnOut.TabStop = false;
             // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Gainsboro;
+            panel6.Controls.Add(textBox1);
+            panel6.Location = new Point(14, 115);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(58, 31);
+            panel6.TabIndex = 24;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Gainsboro;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(8, 3);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(50, 25);
+            textBox1.TabIndex = 14;
+            textBox1.Text = "ES -";
+            // 
             // StateView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(940, 591);
+            ClientSize = new Size(1074, 788);
             Controls.Add(btnOut);
             Controls.Add(tbcStates);
             Controls.Add(lblStates);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "StateView";
             Text = "RoleIndex";
             tbcStates.ResumeLayout(false);
@@ -481,6 +485,8 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnOut).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -511,5 +517,7 @@
         private Panel panel3;
         private Panel panel2;
         private Panel panel5;
+        private Panel panel6;
+        private TextBox textBox1;
     }
 }

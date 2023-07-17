@@ -91,7 +91,7 @@ namespace act._Repositories
                         var stateModel = new ObjectStateModel();
                         stateModel.Id = (int)reader[0];
                         stateModel.Name = reader[1].ToString();
-                        stateModel.Key = reader[2].ToString();
+                        stateModel.Key = "ES-" + reader[2].ToString();
                         stateModel.Purpose = reader[3].ToString();
                         stateList.Add(stateModel);
                     }
@@ -124,7 +124,7 @@ namespace act._Repositories
                         var stateModel = new ObjectStateModel();
                         stateModel.Id = (int)reader[0];
                         stateModel.Name = reader[1].ToString();
-                        stateModel.Key = reader[2].ToString();
+                        stateModel.Key = "ES-" + reader[2].ToString();
                         stateModel.Purpose = reader[3].ToString();
                         stateList.Add(stateModel);
                     }

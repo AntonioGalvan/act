@@ -130,7 +130,7 @@ namespace act.Presenters
             var obj = (ObjectModel)objectsBindingSource.Current;
             view.Id = obj.Id.ToString();
             view.Name = obj.Name;
-            view.Key = obj.Key;
+            view.Key = obj.Key.Remove(0, 3);
             view.Purpose = obj.Purpose;
             view.ObjectTypeId = obj.ObjectTypeId;
             view.IsEdit = true;

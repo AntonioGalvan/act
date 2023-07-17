@@ -93,7 +93,7 @@ namespace act._Repositories
                     {
                         var objectModel = new ObjectModel();
                         objectModel.Id = (int)reader["Id"];
-                        objectModel.Key = reader["keyN"].ToString();
+                        objectModel.Key = "OB-" + reader["keyN"].ToString();
                         objectModel.Name = reader["name"].ToString();
                         objectModel.Purpose = reader["purpose"].ToString();
                         objectModel.ObjectTypeName = reader["type"].ToString();
@@ -155,7 +155,7 @@ namespace act._Repositories
                     {
                         var objectModel = new ObjectModel();
                         objectModel.Id = (int)reader["Id"];
-                        objectModel.Key = reader["keyN"].ToString();
+                        objectModel.Key = "OB-" + reader["keyN"].ToString();
                         objectModel.Name = reader["name"].ToString();
                         objectModel.Purpose = reader["purpose"].ToString();
                         objectModel.ObjectTypeName = reader["type"].ToString();

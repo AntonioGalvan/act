@@ -145,7 +145,7 @@ namespace act.Presenters
             var useCase = (UseCaseModel)useCasesBindingSource.Current;
             view.Id = useCase.Id.ToString();
             view.Name = useCase.Name;
-            view.Key = useCase.Key;
+            view.Key = useCase.Key.Remove(0,3);
             view.FlowChartPath = useCase.FlowChartPath;
             view.IsEdit = true;
         }

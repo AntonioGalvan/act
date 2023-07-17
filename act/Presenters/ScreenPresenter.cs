@@ -121,7 +121,7 @@ namespace act.Presenters
             var role = (ScreenModel)screensBindingSource.Current;
             view.Id = role.Id.ToString();
             view.Name = role.Name;
-            view.Key = role.Key;
+            view.Key = role.Key.Remove(0,3);
             view.ImagePath = role.ImagePath;
             view.IsEdit = true;
         }

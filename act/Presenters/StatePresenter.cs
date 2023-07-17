@@ -121,7 +121,7 @@ namespace act.Presenters
             var state = (ObjectStateModel)stateBindingSource.Current;
             view.Id = state.Id.ToString();
             view.Name = state.Name;
-            view.Key = state.Key;
+            view.Key = state.Key.Remove(0,3);
             view.Purpose = state.Purpose;
             view.IsEdit = true;
         }

@@ -59,6 +59,8 @@
             lblId = new Label();
             tbcUseCases = new TabControl();
             btnOut = new PictureBox();
+            textBox1 = new TextBox();
+            panel6 = new Panel();
             tbpList.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUseCases).BeginInit();
@@ -69,6 +71,7 @@
             panel2.SuspendLayout();
             tbcUseCases.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnOut).BeginInit();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // lblUseCases
@@ -110,7 +113,7 @@
             tbpList.Controls.Add(btnAdd);
             tbpList.Location = new Point(4, 30);
             tbpList.Name = "tbpList";
-            tbpList.Padding = new Padding(3, 3, 3, 3);
+            tbpList.Padding = new Padding(3);
             tbpList.Size = new Size(1053, 739);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
@@ -280,7 +283,7 @@
             // 
             panel3.BackColor = Color.Gainsboro;
             panel3.Controls.Add(tbxKey);
-            panel3.Location = new Point(14, 115);
+            panel3.Location = new Point(78, 115);
             panel3.Name = "panel3";
             panel3.Size = new Size(112, 31);
             panel3.TabIndex = 20;
@@ -305,7 +308,7 @@
             tbpAdd.Controls.Add(lblId);
             tbpAdd.Location = new Point(4, 30);
             tbpAdd.Name = "tbpAdd";
-            tbpAdd.Padding = new Padding(3, 3, 3, 3);
+            tbpAdd.Padding = new Padding(3);
             tbpAdd.Size = new Size(1053, 739);
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
@@ -313,6 +316,7 @@
             // panel5
             // 
             panel5.BackColor = SystemColors.Control;
+            panel5.Controls.Add(panel6);
             panel5.Controls.Add(panel4);
             panel5.Controls.Add(lblUseCaseP);
             panel5.Controls.Add(lblName);
@@ -431,7 +435,7 @@
             tbcUseCases.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcUseCases.ItemSize = new Size(66, 26);
             tbcUseCases.Location = new Point(5, 75);
-            tbcUseCases.Margin = new Padding(5, 5, 5, 5);
+            tbcUseCases.Margin = new Padding(5);
             tbcUseCases.Multiline = true;
             tbcUseCases.Name = "tbcUseCases";
             tbcUseCases.SelectedIndex = 0;
@@ -449,6 +453,27 @@
             btnOut.SizeMode = PictureBoxSizeMode.Zoom;
             btnOut.TabIndex = 22;
             btnOut.TabStop = false;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Gainsboro;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(8, 3);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(50, 25);
+            textBox1.TabIndex = 14;
+            textBox1.Text = "CU -";
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Gainsboro;
+            panel6.Controls.Add(textBox1);
+            panel6.Location = new Point(14, 115);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(58, 31);
+            panel6.TabIndex = 23;
             // 
             // UseCaseView
             // 
@@ -478,6 +503,8 @@
             panel2.PerformLayout();
             tbcUseCases.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnOut).EndInit();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -510,5 +537,7 @@
         private Panel panel4;
         private TextBox tbxFlowChartPath;
         private Button btnBaseFlow;
+        private Panel panel6;
+        private TextBox textBox1;
     }
 }
