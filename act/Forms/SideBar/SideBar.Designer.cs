@@ -351,7 +351,7 @@
             pnlRelationEContainer.Location = new Point(304, 0);
             pnlRelationEContainer.Margin = new Padding(3, 2, 3, 2);
             pnlRelationEContainer.Name = "pnlRelationEContainer";
-            pnlRelationEContainer.Size = new Size(909, 591);
+            pnlRelationEContainer.Size = new Size(940, 591);
             pnlRelationEContainer.TabIndex = 28;
             // 
             // lblPantalla
@@ -629,7 +629,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 236, 236);
-            ClientSize = new Size(1213, 591);
+            ClientSize = new Size(1244, 591);
             Controls.Add(pnlRelationEContainer);
             Controls.Add(pnlSideBar);
             FormBorderStyle = FormBorderStyle.None;
