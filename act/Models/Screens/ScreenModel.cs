@@ -23,5 +23,6 @@ namespace act.Models.Screens
         public int ScreenElementState { get; set; }
         [DisplayName("Proyecto")]
         public string Project { get; set; }
+        //public Image Picture { get; set; }
     }
 }

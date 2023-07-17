@@ -40,6 +40,8 @@
             tbxKey = new TextBox();
             tbxImagePath = new TextBox();
             panel5 = new Panel();
+            btnAddImage = new Button();
+            pbxImage = new PictureBox();
             lblName = new Label();
             panel4 = new Panel();
             lblType = new Label();
@@ -57,9 +59,10 @@
             tbpList = new TabPage();
             btnAdd = new Button();
             tbcScreens = new TabControl();
-            lblPantallas = new Label();
+            lblScreens = new Label();
             ((System.ComponentModel.ISupportInitialize)btnOut).BeginInit();
             panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbxImage).BeginInit();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -74,7 +77,7 @@
             // 
             btnOut.Cursor = Cursors.Hand;
             btnOut.Image = Properties.Resources.close;
-            btnOut.Location = new Point(1022, 21);
+            btnOut.Location = new Point(1022, 7);
             btnOut.Name = "btnOut";
             btnOut.Size = new Size(31, 28);
             btnOut.SizeMode = PictureBoxSizeMode.Zoom;
@@ -90,7 +93,7 @@
             btnCancel.ForeColor = SystemColors.Control;
             btnCancel.Image = Properties.Resources.cancelar;
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancel.Location = new Point(934, 689);
+            btnCancel.Location = new Point(934, 658);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(105, 33);
             btnCancel.TabIndex = 18;
@@ -107,7 +110,7 @@
             btnSave.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = SystemColors.Control;
             btnSave.Image = Properties.Resources.save;
-            btnSave.Location = new Point(823, 689);
+            btnSave.Location = new Point(823, 658);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(105, 33);
             btnSave.TabIndex = 17;
@@ -118,7 +121,7 @@
             // 
             // tbxId
             // 
-            tbxId.Location = new Point(914, 299);
+            tbxId.Location = new Point(914, 317);
             tbxId.Name = "tbxId";
             tbxId.Size = new Size(125, 26);
             tbxId.TabIndex = 11;
@@ -138,7 +141,7 @@
             // 
             tbxKey.BackColor = Color.Gainsboro;
             tbxKey.BorderStyle = BorderStyle.None;
-            tbxKey.Location = new Point(11, 3);
+            tbxKey.Location = new Point(8, 3);
             tbxKey.Multiline = true;
             tbxKey.Name = "tbxKey";
             tbxKey.Size = new Size(90, 25);
@@ -157,21 +160,50 @@
             // panel5
             // 
             panel5.BackColor = SystemColors.Control;
+            panel5.Controls.Add(btnAddImage);
+            panel5.Controls.Add(pbxImage);
             panel5.Controls.Add(lblName);
             panel5.Controls.Add(panel4);
             panel5.Controls.Add(lblType);
             panel5.Controls.Add(panel3);
             panel5.Controls.Add(lblDesc);
             panel5.Controls.Add(panel2);
-            panel5.Location = new Point(16, 16);
+            panel5.Location = new Point(16, 34);
             panel5.Name = "panel5";
             panel5.Size = new Size(1023, 249);
             panel5.TabIndex = 22;
             // 
+            // btnAddImage
+            // 
+            btnAddImage.BackColor = Color.FromArgb(27, 43, 57);
+            btnAddImage.Cursor = Cursors.Hand;
+            btnAddImage.FlatStyle = FlatStyle.Flat;
+            btnAddImage.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddImage.ForeColor = SystemColors.Control;
+            btnAddImage.Image = Properties.Resources.image;
+            btnAddImage.Location = new Point(293, 202);
+            btnAddImage.Name = "btnAddImage";
+            btnAddImage.Size = new Size(105, 33);
+            btnAddImage.TabIndex = 29;
+            btnAddImage.Text = "Agregar";
+            btnAddImage.TextAlign = ContentAlignment.MiddleLeft;
+            btnAddImage.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnAddImage.UseVisualStyleBackColor = false;
+            btnAddImage.Click += btnAddImage_Click;
+            // 
+            // pbxImage
+            // 
+            pbxImage.Location = new Point(699, 3);
+            pbxImage.Name = "pbxImage";
+            pbxImage.Size = new Size(310, 240);
+            pbxImage.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxImage.TabIndex = 28;
+            pbxImage.TabStop = false;
+            // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(14, 15);
+            lblName.Location = new Point(14, 33);
             lblName.Name = "lblName";
             lblName.Size = new Size(72, 21);
             lblName.TabIndex = 12;
@@ -181,7 +213,7 @@
             // 
             panel4.BackColor = Color.Gainsboro;
             panel4.Controls.Add(tbxImagePath);
-            panel4.Location = new Point(14, 187);
+            panel4.Location = new Point(14, 205);
             panel4.Name = "panel4";
             panel4.Size = new Size(273, 31);
             panel4.TabIndex = 21;
@@ -189,7 +221,7 @@
             // lblType
             // 
             lblType.AutoSize = true;
-            lblType.Location = new Point(14, 91);
+            lblType.Location = new Point(14, 109);
             lblType.Name = "lblType";
             lblType.Size = new Size(51, 21);
             lblType.TabIndex = 14;
@@ -199,7 +231,7 @@
             // 
             panel3.BackColor = Color.Gainsboro;
             panel3.Controls.Add(tbxKey);
-            panel3.Location = new Point(14, 115);
+            panel3.Location = new Point(14, 133);
             panel3.Name = "panel3";
             panel3.Size = new Size(112, 31);
             panel3.TabIndex = 20;
@@ -207,17 +239,17 @@
             // lblDesc
             // 
             lblDesc.AutoSize = true;
-            lblDesc.Location = new Point(14, 163);
+            lblDesc.Location = new Point(14, 181);
             lblDesc.Name = "lblDesc";
             lblDesc.Size = new Size(69, 21);
             lblDesc.TabIndex = 15;
-            lblDesc.Text = "Imágen";
+            lblDesc.Text = "Imagen";
             // 
             // panel2
             // 
             panel2.BackColor = Color.Gainsboro;
             panel2.Controls.Add(tbxName);
-            panel2.Location = new Point(14, 44);
+            panel2.Location = new Point(14, 62);
             panel2.Name = "panel2";
             panel2.Size = new Size(273, 31);
             panel2.TabIndex = 19;
@@ -225,7 +257,7 @@
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(1017, 278);
+            lblId.Location = new Point(1017, 296);
             lblId.Name = "lblId";
             lblId.Size = new Size(25, 21);
             lblId.TabIndex = 10;
@@ -256,7 +288,7 @@
             btnSearch.ForeColor = SystemColors.Control;
             btnSearch.Image = Properties.Resources.search;
             btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSearch.Location = new Point(272, 17);
+            btnSearch.Location = new Point(272, 35);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(105, 33);
             btnSearch.TabIndex = 12;
@@ -300,7 +332,7 @@
             dgvScreens.DefaultCellStyle = dataGridViewCellStyle3;
             dgvScreens.EnableHeadersVisualStyles = false;
             dgvScreens.GridColor = Color.White;
-            dgvScreens.Location = new Point(16, 65);
+            dgvScreens.Location = new Point(16, 83);
             dgvScreens.MultiSelect = false;
             dgvScreens.Name = "dgvScreens";
             dgvScreens.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -329,7 +361,7 @@
             btnEdit.ForeColor = SystemColors.Control;
             btnEdit.Image = Properties.Resources.edit;
             btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEdit.Location = new Point(823, 680);
+            btnEdit.Location = new Point(823, 655);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(105, 33);
             btnEdit.TabIndex = 13;
@@ -346,7 +378,7 @@
             btnDelete.ForeColor = SystemColors.Control;
             btnDelete.Image = Properties.Resources.delete;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(934, 680);
+            btnDelete.Location = new Point(934, 655);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(105, 33);
             btnDelete.TabIndex = 14;
@@ -358,7 +390,7 @@
             // 
             tbxSearch.BackColor = Color.Gainsboro;
             tbxSearch.BorderStyle = BorderStyle.None;
-            tbxSearch.Location = new Point(11, 3);
+            tbxSearch.Location = new Point(3, 4);
             tbxSearch.Multiline = true;
             tbxSearch.Name = "tbxSearch";
             tbxSearch.PlaceholderText = "Clave o nombre";
@@ -369,7 +401,7 @@
             // 
             panel1.BackColor = Color.Gainsboro;
             panel1.Controls.Add(tbxSearch);
-            panel1.Location = new Point(16, 19);
+            panel1.Location = new Point(16, 37);
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 31);
             panel1.TabIndex = 15;
@@ -398,7 +430,7 @@
             btnAdd.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = SystemColors.Control;
             btnAdd.Image = Properties.Resources.add;
-            btnAdd.Location = new Point(934, 19);
+            btnAdd.Location = new Point(934, 37);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(105, 33);
             btnAdd.TabIndex = 8;
@@ -413,7 +445,7 @@
             tbcScreens.Controls.Add(tbpAdd);
             tbcScreens.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcScreens.ItemSize = new Size(66, 26);
-            tbcScreens.Location = new Point(8, 74);
+            tbcScreens.Location = new Point(8, 61);
             tbcScreens.Margin = new Padding(5);
             tbcScreens.Multiline = true;
             tbcScreens.Name = "tbcScreens";
@@ -422,24 +454,25 @@
             tbcScreens.SizeMode = TabSizeMode.FillToRight;
             tbcScreens.TabIndex = 18;
             // 
-            // lblPantallas
+            // lblScreens
             // 
-            lblPantallas.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPantallas.Location = new Point(8, 5);
-            lblPantallas.Name = "lblPantallas";
-            lblPantallas.Size = new Size(197, 64);
-            lblPantallas.TabIndex = 17;
-            lblPantallas.Text = "Pantallas";
-            lblPantallas.TextAlign = ContentAlignment.MiddleLeft;
+            lblScreens.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lblScreens.Location = new Point(8, 7);
+            lblScreens.Name = "lblScreens";
+            lblScreens.Size = new Size(197, 48);
+            lblScreens.TabIndex = 17;
+            lblScreens.Text = "Screens";
+            lblScreens.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // ScreenView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1074, 852);
+            BackColor = Color.White;
+            ClientSize = new Size(1074, 788);
             Controls.Add(btnOut);
             Controls.Add(tbcScreens);
-            Controls.Add(lblPantallas);
+            Controls.Add(lblScreens);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ScreenView";
             Text = "ScreenView";
@@ -447,6 +480,7 @@
             ((System.ComponentModel.ISupportInitialize)btnOut).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbxImage).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
@@ -490,6 +524,8 @@
         private TabPage tbpList;
         private Button btnAdd;
         private TabControl tbcScreens;
-        private Label lblPantallas;
+        private Label lblScreens;
+        private Button btnAddImage;
+        private PictureBox pbxImage;
     }
 }
