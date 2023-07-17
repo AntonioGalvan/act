@@ -75,12 +75,21 @@ namespace act._Repositories
                 connection.Open();
                 command.Connection = connection;
                 //TODO: Corregir queries o parámetros nose
-                command.CommandText = "Insert into BaseFlows(ProjectId, [Key], Name, FlowChartPath, DiagramElementStateId, ScreenElementStateId, UseCaseId) values (@projectId, @key, @name, @flowChartPath,1,1, @useCaseId)";
+                
 
+                if(bFlowModel.useCaseId != null)
+                {
+                    command.CommandText = "Insert into BaseFlows(ProjectId, [Key], Name, FlowChartPath, DiagramElementStateId, ScreenElementStateId, UseCaseId) values (@projectId, @key, @name, @flowChartPath,1,1, @useCaseId)";
+                    command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = bFlowModel.useCaseId;
+                }
+                else
+                {
+                    command.CommandText = "Insert into BaseFlows(ProjectId, [Key], Name, FlowChartPath, DiagramElementStateId, ScreenElementStateId) values (@projectId, @key, @name, @flowChartPath,1,1)";
+                }
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = bFlowModel.Name;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = bFlowModel.Key;
                 command.Parameters.Add("@flowChartPath", SqlDbType.NVarChar).Value = bFlowModel.FlowChartPath;
-                command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = bFlowModel.useCaseId;
+                
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = this.projectId;
 
@@ -151,18 +160,22 @@ namespace act._Repositories
                 if(!exclude)
                 {
                     command.CommandText = "Select id,name from UseCases where id NOT IN " +
-                    "(select useCaseId from BaseFlows)";
+                    "(select useCaseId from BaseFlows where useCaseId NOT IN (select useCaseId from Baseflows where useCaseId != null))";
                 }
                 else
                 {
                     command.CommandText = "Select id,name from UseCases where id NOT IN " +
-                    "(select useCaseId from BaseFlows where useCaseId!=@useCaseId)";
+                    "(select useCaseId from BaseFlows where useCaseId!=@useCaseId and useCaseId NOT IN (select useCaseId from Baseflows where useCaseId != null))";
 
                     command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = useCaseId;
                 }
 
                 using (var reader = command.ExecuteReader())
                 {
+                    var empty = new UseCaseModel();
+                    empty.Id = 0;
+                    empty.Name = "Ninguno";
+                    useCaseList.Add(empty);
                     while (reader.Read())
                     {
                         var useCaseModel = new UseCaseModel();

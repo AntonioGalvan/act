@@ -91,16 +91,17 @@ namespace act.Presenters
             model.FlowChartPath = this.view.FlowChartPath;
             model.useCaseId = this.view.UseCaseId;
 
-            if(model.useCaseId == 0)
-            {
-                model.useCaseId = null;
-            }
+            
             try
             {
                 new Common.ModelDataValidation().Validate(model);
 
                 if(!repository.Check(model.Id, model.useCaseId))
                 {
+                    if (model.useCaseId == 0)
+                    {
+                        model.useCaseId = null;
+                    }
                     if (view.IsEdit)
                     {
                         repository.Edit(model);
