@@ -87,7 +87,7 @@ namespace act._Repositories
                     {
                         var roleModel = new RoleModel();
                         roleModel.Id = (int)reader["Id"];
-                        roleModel.Key = reader["keyN"].ToString();
+                        roleModel.Key = "RO-" + reader["keyN"].ToString();
                         roleModel.Name = reader["name"].ToString();
                         roleModel.Purpose = reader["purpose"].ToString();
                         roleModel.Project = reader["projectName"].ToString();
@@ -120,7 +120,7 @@ namespace act._Repositories
                     {
                         var roleModel = new RoleModel();
                         roleModel.Id = (int)reader["Id"];
-                        roleModel.Key = reader["keyN"].ToString();
+                        roleModel.Key = "RO-" + reader["keyN"].ToString();
                         roleModel.Name = reader["name"].ToString();
                         roleModel.Purpose = reader["purpose"].ToString();
                         roleModel.Project = reader["projectName"].ToString();

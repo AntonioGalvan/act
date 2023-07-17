@@ -121,7 +121,7 @@ namespace act.Presenters
             var role = (RoleModel)rolesBindingSource.Current;
             view.Id = role.Id.ToString();
             view.Name = role.Name;
-            view.Key = role.Key;
+            view.Key = role.Key.Remove(0,3);
             view.Purpose = role.Purpose;
             view.IsEdit = true;
         }

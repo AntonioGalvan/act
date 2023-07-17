@@ -164,7 +164,7 @@ namespace act.Presenters
             var baseFlow = (BaseFlowModel)bFlowsBindingSource.Current;
             view.Id = baseFlow.Id.ToString();
             view.Name = baseFlow.Name;
-            view.Key = baseFlow.Key;
+            view.Key = baseFlow.Key.Remove(1,3);
             view.FlowChartPath = baseFlow.FlowChartPath;
             view.UseCaseId = baseFlow.useCaseId;
             useCaseList = repository.GetAllUseCases(true, baseFlow.useCaseId);
