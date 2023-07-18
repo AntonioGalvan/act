@@ -124,7 +124,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select bf.Id as id, bf.name as name, bf.[key] as keyN, bf.flowchartpath as flowchart, p.name as projectName, uc.name as useCaseName, bf.useCaseId as useCaseId from UseCases uc, projects p, BaseFlows bf where bf.projectId=@projectId and (p.id = bf.projectId and uc.id = bf.useCaseId)";
+                command.CommandText = "Select bf.Id as id, bf.name as name, bf.[key] as keyN, bf.flowchartpath as flowchart, p.name as projectName, uc.name as useCaseName, bf.useCaseId as useCaseId from BaseFlows bf LEFT JOIN projects p ON p.id = bf.projectId LEFT JOIN UseCases uc ON uc.id = bf.useCaseId where bf.projectId=@projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())
@@ -139,7 +139,7 @@ namespace act._Repositories
                         bFlowModel.projectName = reader["projectName"].ToString();
                         bFlowModel.useCaseName = reader["useCaseName"].ToString();
                         bFLowList.Add(bFlowModel);
-                        bFlowModel.useCaseId = (int)reader["useCaseId"];
+                        bFlowModel.useCaseId = Convert.IsDBNull(reader["useCaseId"]) ? null : (int?)reader["useCaseId"];
                     }
                 }
             }
