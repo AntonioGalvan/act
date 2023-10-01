@@ -56,6 +56,7 @@ namespace act.Presenters
 
         private void ShowRelationElementsView(object sender, EventArgs e)
         {
+       
             //IMessageView view = MessageView.GetInstance((Form)mainView);
             //IMessageRepository repository = new MessageRepository(sqlConnectionString, projectId);
             //new MessagePresenter(view, repository);

@@ -36,7 +36,5 @@ namespace act.Models.BaseFlows
         [DisplayName("Caso de uso")]
         public string useCaseName { get; set; }
 
-        [DisplayName("Proyecto")]
-        public string projectName { get; set; }
     }
 }

@@ -116,7 +116,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select bf.id as id, bf.[Key] as keyN, bf.Name as name, bf.FlowChartPath as flowChart, uc.Name as useCaseName, p.Name as projectName from BaseFlows bf, UseCases uc, Projects p where (bf.projectId=@projectId and bf.UseCaseId=@useCaseId) and uc.Id=bf.UseCaseId and p.Id=bf.projectId";
+                command.CommandText = "Select bf.id as id, bf.[Key] as keyN, bf.Name as name, bf.FlowChartPath as flowChart, uc.Name as useCaseName from BaseFlows bf, UseCases uc, Projects p where (bf.projectId=@projectId and bf.UseCaseId=@useCaseId) and uc.Id=bf.UseCaseId and p.Id=bf.projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = this.UseCaseId;
@@ -128,9 +128,8 @@ namespace act._Repositories
                         bFlowModel.Id = (int)reader["id"];
                         bFlowModel.Key = "FB-" + reader["keyN"].ToString();
                         bFlowModel.Name = reader["name"].ToString();
-                        bFlowModel.FlowChartPath = reader["flowChart"].ToString();
                         bFlowModel.useCaseName = reader["useCaseName"].ToString();
-                        bFlowModel.projectName = reader["projectName"].ToString();
+                        bFlowModel.FlowChartPath = reader["flowChart"].ToString();
                         bFlowList.Add(bFlowModel);
                     }
                 }

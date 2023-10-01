@@ -124,7 +124,10 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select bf.Id as id, bf.name as name, bf.[key] as keyN, bf.flowchartpath as flowchart, p.name as projectName, uc.name as useCaseName, bf.useCaseId as useCaseId from BaseFlows bf LEFT JOIN projects p ON p.id = bf.projectId LEFT JOIN UseCases uc ON uc.id = bf.useCaseId where bf.projectId=@projectId";
+                command.CommandText = "Select bf.Id as id, bf.name as name, " +
+                    "bf.[key] as keyN, bf.flowchartpath as flowchart, uc.name as useCaseName, " +
+                    "bf.useCaseId as useCaseId from BaseFlows bf LEFT JOIN UseCases uc ON uc.id = bf.useCaseId " +
+                    "where bf.projectId=@projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())
@@ -135,9 +138,8 @@ namespace act._Repositories
                         bFlowModel.Id = (int)reader["id"];
                         bFlowModel.Name = reader["name"].ToString();
                         bFlowModel.Key = "FB-" + reader["keyN"].ToString();
-                        bFlowModel.FlowChartPath = reader["flowchart"].ToString();
-                        bFlowModel.projectName = reader["projectName"].ToString();
                         bFlowModel.useCaseName = reader["useCaseName"].ToString();
+                        bFlowModel.FlowChartPath = reader["flowchart"].ToString();
                         bFLowList.Add(bFlowModel);
                         bFlowModel.useCaseId = Convert.IsDBNull(reader["useCaseId"]) ? null : (int?)reader["useCaseId"];
                     }
@@ -198,7 +200,12 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"Select bf.Id as id, bf.name as name, bf.[key] as keyN, bf.flowchartpath as flowchart, p.name as projectName, uc.name as useCaseName, bf.useCaseId as useCaseId from UseCases uc, projects p, BaseFlows bf where bf.projectId=@projectId and (p.id = bf.projectId and uc.id = bf.useCaseId) and (bf.[key] like '%'+@key+'%' or bf.name like '%'+@name+'%') order by id desc";
+                command.CommandText = @"Select bf.Id as id, bf.name as name, 
+                    bf.[key] as keyN, bf.flowchartpath as flowchart, 
+                    uc.name as useCaseName, bf.useCaseId as useCaseId from BaseFlows bf
+                    LEFT JOIN UseCases uc ON uc.id = bf.useCaseId where
+                    bf.projectId=@projectId and 
+                    (bf.[key] like '%'+@key+'%' or bf.name like '%'+@name+'%')";
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = key;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
 
@@ -212,11 +219,10 @@ namespace act._Repositories
                         bFlowModel.Id = (int)reader["id"];
                         bFlowModel.Name = reader["name"].ToString();
                         bFlowModel.Key = "FB-" + reader["keyN"].ToString();
+                        bFlowModel.useCaseName = reader["useCaseName"].ToString();
                         bFlowModel.FlowChartPath = reader["flowchart"].ToString();
-                        bFlowModel.projectName = reader["projectName"].ToString();
-                        bFlowModel.useCaseName = reader["useCaseName"].ToString(    );
                         bflowList.Add(bFlowModel);
-                        bFlowModel.useCaseId = (int)reader["useCaseId"];
+                        //bFlowModel.useCaseId = (int)reader["useCaseId"];
                     }
                 }
             }
