@@ -88,12 +88,12 @@ namespace act.Presenters
                 if(view.IsEdit)
                 {
                     repository.Edit(model);
-                    view.Message = "Projecto editado correctamente";
+                    view.Message = "Proyecto editado correctamente";
                 }
                 else
                 {
                     repository.Add(model);
-                    view.Message = "Projecto agregado correctamente";
+                    view.Message = "Proyecto agregado correctamente";
                 }
 
                 view.IsSuccessful = true;

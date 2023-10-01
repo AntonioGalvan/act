@@ -20,13 +20,11 @@ namespace act.Models.UseCases
         [DisplayName("Nombre")]
         [Required(ErrorMessage = "El nombre es requerido")]
         public string Name { get; set; }
-        [DisplayName("Imagen de Flujo")]
+
+        [DisplayName("Descripción")]
         public string FlowChartPath { get; set; }
         public int DiagramElementState { get; set; }
         public int ScreenElementState { get; set; }
         public int ProjectId { get; set; }
-
-        [DisplayName("Nombre de proyecto")]
-        public string ProjectName { get; set; }
     }
 }

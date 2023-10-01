@@ -30,7 +30,7 @@ namespace act.Forms.UseCases.Index
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 tbcUseCases.TabPages.Remove(tbpList);
                 tbcUseCases.TabPages.Add(tbpAdd);
-                tbpAdd.Text = "Agregar caso de uso";
+                tbpAdd.Text = "Agregar";
             };
 
             btnEdit.Click += delegate
@@ -38,7 +38,7 @@ namespace act.Forms.UseCases.Index
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 tbcUseCases.TabPages.Remove(tbpList);
                 tbcUseCases.TabPages.Add(tbpAdd);
-                tbpAdd.Text = "Editar rol";
+                tbpAdd.Text = "Editar";
             };
 
             btnSave.Click += delegate
@@ -49,7 +49,7 @@ namespace act.Forms.UseCases.Index
                     tbcUseCases.TabPages.Remove(tbpAdd);
                     tbcUseCases.TabPages.Add(tbpList);
                 }
-                MessageBox.Show(Message);
+                MessageBox.Show(Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             };
 
             btnCancel.Click += delegate
@@ -66,7 +66,15 @@ namespace act.Forms.UseCases.Index
                 if (result == DialogResult.Yes)
                 {
                     DeleteEvent?.Invoke(this, EventArgs.Empty);
-                    MessageBox.Show(Message);
+                    if (IsSuccessful)
+                    {
+                        MessageBox.Show(Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
                 }
             };
 

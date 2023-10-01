@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             lblUseCases = new Label();
             btnAdd = new Button();
             tbpList = new TabPage();
@@ -48,6 +48,8 @@
             tbxKey = new TextBox();
             tbpAdd = new TabPage();
             panel5 = new Panel();
+            panel6 = new Panel();
+            textBox1 = new TextBox();
             panel4 = new Panel();
             tbxFlowChartPath = new TextBox();
             lblUseCaseP = new Label();
@@ -59,19 +61,17 @@
             lblId = new Label();
             tbcUseCases = new TabControl();
             btnOut = new PictureBox();
-            textBox1 = new TextBox();
-            panel6 = new Panel();
             tbpList.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUseCases).BeginInit();
             panel3.SuspendLayout();
             tbpAdd.SuspendLayout();
             panel5.SuspendLayout();
+            panel6.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             tbcUseCases.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnOut).BeginInit();
-            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // lblUseCases
@@ -209,50 +209,50 @@
             // 
             dgvUseCases.AllowUserToAddRows = false;
             dgvUseCases.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Control;
-            dgvUseCases.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.Padding = new Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.Control;
+            dgvUseCases.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvUseCases.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvUseCases.BackgroundColor = Color.WhiteSmoke;
             dgvUseCases.BorderStyle = BorderStyle.None;
             dgvUseCases.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvUseCases.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Desktop;
-            dataGridViewCellStyle2.Font = new Font("Montserrat SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle2.Padding = new Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Desktop;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvUseCases.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Desktop;
+            dataGridViewCellStyle6.Font = new Font("Montserrat SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle6.Padding = new Padding(2);
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvUseCases.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvUseCases.ColumnHeadersHeight = 40;
             dgvUseCases.Cursor = Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.Gainsboro;
-            dataGridViewCellStyle3.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(27, 43, 57);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvUseCases.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.Gainsboro;
+            dataGridViewCellStyle7.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(27, 43, 57);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dgvUseCases.DefaultCellStyle = dataGridViewCellStyle7;
             dgvUseCases.EnableHeadersVisualStyles = false;
             dgvUseCases.GridColor = Color.White;
             dgvUseCases.Location = new Point(16, 65);
             dgvUseCases.MultiSelect = false;
             dgvUseCases.Name = "dgvUseCases";
             dgvUseCases.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Desktop;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvUseCases.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle8.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dgvUseCases.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dgvUseCases.RowHeadersVisible = false;
             dgvUseCases.RowHeadersWidth = 20;
             dgvUseCases.RowTemplate.Height = 40;
@@ -325,8 +325,29 @@
             panel5.Controls.Add(panel2);
             panel5.Location = new Point(16, 16);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1023, 249);
+            panel5.Size = new Size(1023, 284);
             panel5.TabIndex = 22;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Gainsboro;
+            panel6.Controls.Add(textBox1);
+            panel6.Location = new Point(14, 115);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(58, 31);
+            panel6.TabIndex = 23;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Gainsboro;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(8, 3);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(50, 25);
+            textBox1.TabIndex = 14;
+            textBox1.Text = "CU -";
             // 
             // panel4
             // 
@@ -334,7 +355,7 @@
             panel4.Controls.Add(tbxFlowChartPath);
             panel4.Location = new Point(14, 189);
             panel4.Name = "panel4";
-            panel4.Size = new Size(273, 31);
+            panel4.Size = new Size(273, 82);
             panel4.TabIndex = 20;
             // 
             // tbxFlowChartPath
@@ -344,7 +365,8 @@
             tbxFlowChartPath.Location = new Point(8, 3);
             tbxFlowChartPath.Multiline = true;
             tbxFlowChartPath.Name = "tbxFlowChartPath";
-            tbxFlowChartPath.Size = new Size(256, 25);
+            tbxFlowChartPath.ScrollBars = ScrollBars.Horizontal;
+            tbxFlowChartPath.Size = new Size(256, 65);
             tbxFlowChartPath.TabIndex = 13;
             // 
             // lblUseCaseP
@@ -352,9 +374,9 @@
             lblUseCaseP.AutoSize = true;
             lblUseCaseP.Location = new Point(14, 157);
             lblUseCaseP.Name = "lblUseCaseP";
-            lblUseCaseP.Size = new Size(101, 21);
+            lblUseCaseP.Size = new Size(97, 21);
             lblUseCaseP.TabIndex = 21;
-            lblUseCaseP.Text = "Caso de Uso";
+            lblUseCaseP.Text = "Descripción";
             // 
             // panel2
             // 
@@ -412,7 +434,7 @@
             // 
             // tbxId
             // 
-            tbxId.Location = new Point(914, 299);
+            tbxId.Location = new Point(914, 322);
             tbxId.Name = "tbxId";
             tbxId.Size = new Size(125, 26);
             tbxId.TabIndex = 11;
@@ -421,7 +443,7 @@
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(1019, 280);
+            lblId.Location = new Point(1019, 303);
             lblId.Name = "lblId";
             lblId.Size = new Size(25, 21);
             lblId.TabIndex = 10;
@@ -454,27 +476,6 @@
             btnOut.TabIndex = 22;
             btnOut.TabStop = false;
             // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.Gainsboro;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(8, 3);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(50, 25);
-            textBox1.TabIndex = 14;
-            textBox1.Text = "CU -";
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.Gainsboro;
-            panel6.Controls.Add(textBox1);
-            panel6.Location = new Point(14, 115);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(58, 31);
-            panel6.TabIndex = 23;
-            // 
             // UseCaseView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -497,14 +498,14 @@
             tbpAdd.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             tbcUseCases.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnOut).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
             ResumeLayout(false);
         }
 

@@ -38,11 +38,11 @@ namespace act.Forms.BaseFlows.Index
                     AddNewEvent?.Invoke(this, EventArgs.Empty);
                     tbcBFlows.TabPages.Remove(tbpList);
                     tbcBFlows.TabPages.Add(tbpAdd);
-                    tbpAdd.Text = "Agregar flujo base";
+                    tbpAdd.Text = "Agregar";
                 }
                 else
                 {
-                    MessageBox.Show(Message);
+                    MessageBox.Show(Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             };
 
@@ -51,7 +51,7 @@ namespace act.Forms.BaseFlows.Index
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 tbcBFlows.TabPages.Remove(tbpList);
                 tbcBFlows.TabPages.Add(tbpAdd);
-                tbpAdd.Text = "Editar flujo base";
+                tbpAdd.Text = "Editar";
             };
 
             btnSave.Click += delegate
@@ -85,8 +85,17 @@ namespace act.Forms.BaseFlows.Index
 
             btnReturn.Click += delegate
             {
-                this.Close();
-                ReturnUseCaseView?.Invoke(this, EventArgs.Empty);
+                if (tbcBFlows.TabPages.Contains(tbpAdd))
+                {
+                    CancelEvent?.Invoke(this, EventArgs.Empty);
+                    tbcBFlows.TabPages.Remove(tbpAdd);
+                    tbcBFlows.TabPages.Add(tbpList);
+                }
+                else
+                {
+                    this.Close();
+                    ReturnUseCaseView?.Invoke(this, EventArgs.Empty);
+                }
             };
         }
 

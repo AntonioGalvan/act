@@ -108,7 +108,7 @@ namespace act._Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"Select * from Projects
-                                        where id=@id or name like @name+'%'
+                                        where id=@id or name like '%'+@name+'%'
                                         order by id desc";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;

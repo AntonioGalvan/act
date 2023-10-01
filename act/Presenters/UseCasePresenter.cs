@@ -136,7 +136,7 @@ namespace act.Presenters
             {
 
                 view.IsSuccessful = false;
-                view.Message = "Ha ocurrido un error, se pudo eliminar el rol";
+                view.Message = "Ha ocurrido un error, se pudo eliminar el caso de uso";
             }
         }
 

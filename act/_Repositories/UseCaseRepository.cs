@@ -77,7 +77,10 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "Select uc.Id as id, uc.name as name, uc.[key] as keyN, uc.flowchartpath as flowchart, p.name as projectName from UseCases uc, projects p where uc.projectId=@projectId and p.id = uc.projectId";
+                command.CommandText = "Select uc.Id as id, uc.name as name, " +
+                    "uc.[key] as keyN, uc.flowchartpath as flowchart " +
+                    "from UseCases uc, projects p where " +
+                    "uc.projectId=@projectId and p.id = uc.projectId";
 
                 command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
                 using (var reader = command.ExecuteReader())
@@ -89,7 +92,6 @@ namespace act._Repositories
                         useCaseModel.Name = reader["name"].ToString();
                         useCaseModel.Key = "CU-" + reader["keyN"].ToString();
                         useCaseModel.FlowChartPath = reader["flowchart"].ToString();
-                        useCaseModel.ProjectName = reader["projectName"].ToString();
                         useCaseList.Add(useCaseModel);
                     }
                 }
@@ -107,7 +109,7 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"Select uc.Id as id, uc.name as name, uc.[key] as keyN, uc.flowchartpath as flowchart, p.name as projectName from UseCases uc, projects p where (uc.projectId=@projectId and p.id = uc.projectId) and (uc.[key] like '%'+@key+'%' or uc.name like '%'+@name+'%') order by id desc";
+                command.CommandText = @"Select uc.Id as id, uc.name as name, uc.[key] as keyN, uc.flowchartpath as flowchart from UseCases uc, projects p where (uc.projectId=@projectId and p.id = uc.projectId) and (uc.[key] like '%'+@key+'%' or uc.name like '%'+@name+'%') order by id desc";
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = key;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
 
@@ -122,7 +124,6 @@ namespace act._Repositories
                         useCaseModel.Name = reader["name"].ToString();
                         useCaseModel.Key = "CU-" + reader["keyN"].ToString();
                         useCaseModel.FlowChartPath = reader["flowchart"].ToString();
-                        useCaseModel.ProjectName = reader["projectName"].ToString();
                         useCaseList.Add(useCaseModel);
                     }
                 }

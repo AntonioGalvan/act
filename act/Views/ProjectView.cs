@@ -56,7 +56,7 @@ namespace act.Views
                     tbcProjects.TabPages.Remove(tbpAdd);
                     tbcProjects.TabPages.Add(tbpList);
                 }
-                MessageBox.Show(Message);
+                MessageBox.Show(Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             };
 
             btnCancel.Click += delegate
@@ -73,7 +73,14 @@ namespace act.Views
                 if (result == DialogResult.Yes)
                 {
                     DeleteEvent?.Invoke(this, EventArgs.Empty);
-                    MessageBox.Show(Message);
+                    if (IsSuccessful)
+                    {
+                        MessageBox.Show(Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             };
 
