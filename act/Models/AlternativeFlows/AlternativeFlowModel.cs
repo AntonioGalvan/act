@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -9,17 +10,23 @@ namespace act.Models.AlternativeFlows
 {
     internal class AlternativeFlowModel
     {
-        [MaxLength(8)]
+
         [Key]
         public int Id { get; set; }
-        [MaxLength(8)]
+
         public int ProjectId { get; set; }
-        [MaxLength(2)]
-        public int Key { get; set; }
+        [MaxLength(6)]
+
+        [DisplayName("Clave")]
+        [Required(ErrorMessage = "La clave es requerida")]
+        public string Key { get; set; }
 
         [MaxLength(15)]
+        [DisplayName("Nombre")]
+        [Required(ErrorMessage = "El nombre es requerido")]
         public string Name { get; set; }
 
+        [DisplayName("Imagen")]
         public string FlowChartPath { get; set; }
         public int DiagramElementState { get; set; }
         public int ScreenElementState { get; set; }

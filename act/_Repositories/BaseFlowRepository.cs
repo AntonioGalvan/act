@@ -159,10 +159,10 @@ namespace act._Repositories
                 command.Connection = connection;
                 
 
-                if(!exclude)
+                if(useCaseId == null)
                 {
                     command.CommandText = "Select id,name from UseCases where id NOT IN " +
-                    "(select useCaseId from BaseFlows where useCaseId NOT IN (select useCaseId from Baseflows where useCaseId != null))";
+                    "(select UseCaseId from Baseflows where not useCaseId IS NULL)";
                 }
                 else
                 {

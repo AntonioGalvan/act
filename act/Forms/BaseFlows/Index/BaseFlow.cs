@@ -50,7 +50,8 @@ namespace act.Forms.BaseFlows.Index
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 tbcBaseFlows.TabPages.Remove(tbpList);
                 tbcBaseFlows.TabPages.Add(tbpAdd);
-                cmbUseCases.SelectedValue = idUseCase;
+                if(idUseCase != null)
+                    cmbUseCases.SelectedValue = idUseCase;
                 tbpAdd.Text = "Editar";
             };
 
