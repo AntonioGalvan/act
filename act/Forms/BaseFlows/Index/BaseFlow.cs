@@ -13,6 +13,8 @@ using System.Windows.Forms;
 
 namespace act.Forms.BaseFlows.Index
 {
+    //Código referente a la interfaz gráfica
+    //Implementamos interfaz de la vista
     public partial class BaseFlow : Form, IBaseFlowView
     {
         public BaseFlow()
@@ -28,6 +30,8 @@ namespace act.Forms.BaseFlows.Index
         private bool haveUseCase;
         private int? idUseCase;
 
+
+        //Asociamos los eventos con los métodos
         private void AssociateAndRaiseViewEvents()
         {
             btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
@@ -58,6 +62,7 @@ namespace act.Forms.BaseFlows.Index
             btnSave.Click += delegate
             {
                 SaveEvent?.Invoke(this, EventArgs.Empty);
+                //realizamos acciones si el guardado fue exitoso
                 if (IsSuccessful && !HaveUseCase)
                 {
                     tbcBaseFlows.TabPages.Remove(tbpAdd);
@@ -91,6 +96,7 @@ namespace act.Forms.BaseFlows.Index
             };
         }
 
+        //Asociamos propiedades a campos disponibles en pantalla
         public string Id
         {
             get { return tbxId.Text; }
@@ -133,8 +139,7 @@ namespace act.Forms.BaseFlows.Index
             set { idUseCase = value; }
         }
 
-        //Necesarios para operaciones de pantalla
-
+        //Varaible de control para operaciones de pantalla
         public string SearchValue
         {
             get { return tbxSearch.Text; }
@@ -156,12 +161,14 @@ namespace act.Forms.BaseFlows.Index
             set { message = value; }
         }
 
+        //Propiedad que indica si se cuenta con caso de uso
         public bool HaveUseCase
         {
             get { return haveUseCase; }
             set { haveUseCase = value; }
         }
 
+        //Declaramos los handlers para los eventos disparados en la vista
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
         public event EventHandler EditEvent;
@@ -169,11 +176,13 @@ namespace act.Forms.BaseFlows.Index
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
+        //Asociamos al grid de datos la lista de flujos base
         public void SetProjectListBindingSource(BindingSource baseFlowsList)
         {
             dgvBaseFlows.DataSource = baseFlowsList;
         }
 
+        //Asociamos a lista la lista de casos de uso
         public void SetObjectTypeListBindingSource(BindingSource typeList)
         {
 
@@ -184,6 +193,7 @@ namespace act.Forms.BaseFlows.Index
 
         private static BaseFlow instance;
 
+        //Obtenemos la instancia de la pantalla
         public static BaseFlow GetInstance(Form parent)
         {
             if (instance == null || instance.IsDisposed)
@@ -208,6 +218,7 @@ namespace act.Forms.BaseFlows.Index
             return instance;
         }
 
+        //Ocultamos columnas innecesarias
         private void BaseFlow_Load(object sender, EventArgs e)
         {
             dgvBaseFlows.Columns["Id"].Visible = false;

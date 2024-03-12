@@ -18,7 +18,7 @@ namespace act.Models.BaseFlows
 
         //Listados
         IEnumerable<BaseFlowModel> GetAll();
-        IEnumerable<UseCaseModel> GetAllUseCases(bool exclude, int? useCaseId);
+        IEnumerable<UseCaseModel> GetAllUseCases(int? useCaseId);
 
         IEnumerable<BaseFlowModel> GetByValue(string value);
     }

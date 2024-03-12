@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace act.Presenters
 {
+    //Esta clase funciona como intermediario entre la vista (BaseFlow) y el repositorio (BaseFlowRepository)
     internal class BaseFlowPresenter
     {
         private IBaseFlowView view;
@@ -25,6 +26,7 @@ namespace act.Presenters
         int projectId;
         private IMainView mainView;
 
+        //Pasamos como parámetros al constructor la vista, el repositorio, la cadena de conexión, el proyecto actual y la vista principal
         public BaseFlowPresenter(IBaseFlowView pView, IBaseFlowRepository pRepository, string pSqlConnectionString, int pProjectId, IMainView pMainView)
         {
             this.bFlowsBindingSource = new BindingSource();
@@ -32,6 +34,7 @@ namespace act.Presenters
             view = pView;
             repository = pRepository;
 
+            //Asignamos los handlers de la vista a metódos en esta clase
             this.view.SearchEvent += SearchBaseFlow;
             this.view.AddNewEvent += AddNewBaseFlow;
             this.view.EditEvent += LoadSelectedBaseFlowToEdit;
@@ -52,18 +55,21 @@ namespace act.Presenters
             this.mainView = pMainView;
         }
 
+        //Cargamos la lista de flujos base
         private void LoadAllBaseFlowList()
         {
             bFlowList = repository.GetAll();
             bFlowsBindingSource.DataSource = bFlowList;
         }
 
+        //Cargamos la lista de casos de uso
         private void LoadAllUseCaseList()
         {
-            useCaseList = repository.GetAllUseCases(false, 0);
+            useCaseList = repository.GetAllUseCases(0);
             useCaseBindingSource.DataSource = useCaseList;
         }
 
+        //Método de búsqueda
         private void SearchBaseFlow(object? sender, EventArgs e)
         {
             bool emptyValue = string.IsNullOrWhiteSpace(this.view.SearchValue);
@@ -74,13 +80,16 @@ namespace act.Presenters
         }
 
 
+        //Limpiamos campos en vista
         private void CancelAction(object? sender, EventArgs e)
         {
             CleanViewFields();
         }
 
+        //Guardamos flujo base
         private void SaveBaseFlow(object? sender, EventArgs e)
         {
+            //Guardamos en un objeto de tipo flujo base la información de los campos en la vista
             var model = new BaseFlowModel();
             if (view.IsEdit)
             {
@@ -96,17 +105,22 @@ namespace act.Presenters
             {
                 new Common.ModelDataValidation().Validate(model);
 
+                //Validamos que el flujo base no use un caso de uso que ya cuente con otro flujo base
                 if(!repository.Check(model.Id, model.useCaseId))
                 {
+                    //Si elejimos "Ninguno" en la pantalla se guardará como 0
                     if (model.useCaseId == 0)
                     {
+                        //En caso de ser 0 será considerado como nulo
                         model.useCaseId = null;
                     }
+                    //Si estamos en vista de edición solo actualizaremos la información
                     if (view.IsEdit)
                     {
                         repository.Edit(model);
                         view.Message = "Flujo base editado correctamente";
                     }
+                    //Si estamos agregando un registro haremos un insert
                     else
                     {
                         repository.Add(model);
@@ -133,6 +147,7 @@ namespace act.Presenters
             }
         }
 
+        //Limpiamos campos en vista
         private void CleanViewFields()
         {
             view.Id = "0";
@@ -142,6 +157,7 @@ namespace act.Presenters
             view.UseCaseId = 0;
         }
 
+        //Borramos el flujo base seleccionado
         private void DeleteSelectedBaseFlow(object? sender, EventArgs e)
         {
             try
@@ -160,6 +176,7 @@ namespace act.Presenters
             }
         }
 
+        //Cargamos información para editar un flujo base
         private void LoadSelectedBaseFlowToEdit(object? sender, EventArgs e)
         {
             var baseFlow = (BaseFlowModel)bFlowsBindingSource.Current;
@@ -168,15 +185,16 @@ namespace act.Presenters
             view.Key = baseFlow.Key.Remove(0,3);
             view.FlowChartPath = baseFlow.FlowChartPath;
             view.UseCaseId = baseFlow.useCaseId;
-            useCaseList = repository.GetAllUseCases(true, baseFlow.useCaseId);
+            useCaseList = repository.GetAllUseCases(baseFlow.useCaseId);
             useCaseBindingSource.DataSource = useCaseList;
             view.IsEdit = true;
         }
 
+        //Cargamos información para agregar nuevo flujo base
         private void AddNewBaseFlow(object? sender, EventArgs e)
         {
             view.Name = "";
-            useCaseList = repository.GetAllUseCases(false, 0);
+            useCaseList = repository.GetAllUseCases(0);
             useCaseBindingSource.DataSource = useCaseList;
             view.IsEdit = false;
         }
