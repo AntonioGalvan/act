@@ -122,13 +122,14 @@ namespace act._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
+               
                 command.CommandText = "Update BaseFlows set name=@name, [key]=@key, useCaseId=@useCaseId, flowChartPath=@flowChartPath where id=@id";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = bFlowModel.Id;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = bFlowModel.Name;
                 command.Parameters.Add("@key", SqlDbType.NVarChar).Value = bFlowModel.Key;
                 command.Parameters.Add("@flowChartPath", SqlDbType.NVarChar).Value = bFlowModel.FlowChartPath;
-                command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = bFlowModel.useCaseId;
+                command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = (object)bFlowModel.useCaseId ?? DBNull.Value;
 
                 command.ExecuteNonQuery();
             }

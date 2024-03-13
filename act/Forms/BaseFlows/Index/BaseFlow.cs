@@ -68,7 +68,7 @@ namespace act.Forms.BaseFlows.Index
                     tbcBaseFlows.TabPages.Remove(tbpAdd);
                     tbcBaseFlows.TabPages.Add(tbpList);
                 }
-                MessageBox.Show(Message);
+                MessageBox.Show(Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             };
 
             btnCancel.Click += delegate
@@ -85,7 +85,14 @@ namespace act.Forms.BaseFlows.Index
                 if (result == DialogResult.Yes)
                 {
                     DeleteEvent?.Invoke(this, EventArgs.Empty);
-                    MessageBox.Show(Message);
+                    if (IsSuccessful)
+                    {
+                        MessageBox.Show(Message, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             };
 

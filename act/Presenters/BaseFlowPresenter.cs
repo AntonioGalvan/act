@@ -29,8 +29,11 @@ namespace act.Presenters
         //Pasamos como parámetros al constructor la vista, el repositorio, la cadena de conexión, el proyecto actual y la vista principal
         public BaseFlowPresenter(IBaseFlowView pView, IBaseFlowRepository pRepository, string pSqlConnectionString, int pProjectId, IMainView pMainView)
         {
+            //Generamos los binding sources
             this.bFlowsBindingSource = new BindingSource();
             this.useCaseBindingSource = new BindingSource();
+
+            //Asignamos la vista y el repositorio
             view = pView;
             repository = pRepository;
 
@@ -42,10 +45,11 @@ namespace act.Presenters
             this.view.SaveEvent += SaveBaseFlow;
             this.view.CancelEvent += CancelAction;
 
+            //Asginamos a la vista los binding sources
             this.view.SetProjectListBindingSource(bFlowsBindingSource);
-
             this.view.SetObjectTypeListBindingSource(useCaseBindingSource);
 
+            //Cargamos con la información los binding sources
             LoadAllBaseFlowList();
             LoadAllUseCaseList();
 
@@ -55,14 +59,14 @@ namespace act.Presenters
             this.mainView = pMainView;
         }
 
-        //Cargamos la lista de flujos base
+        //Cargamos información a la lista de flujos base
         private void LoadAllBaseFlowList()
         {
             bFlowList = repository.GetAll();
             bFlowsBindingSource.DataSource = bFlowList;
         }
 
-        //Cargamos la lista de casos de uso
+        //Cargamos información a la lista de casos de uso
         private void LoadAllUseCaseList()
         {
             useCaseList = repository.GetAllUseCases(0);
