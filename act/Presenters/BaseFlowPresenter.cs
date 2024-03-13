@@ -1,14 +1,6 @@
-﻿using act._Repositories;
-using act.Forms.BaseFlows.Index;
-using act.Models.BaseFlows;
+﻿using act.Models.BaseFlows;
 using act.Models.UseCases;
 using act.Views;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace act.Presenters
 {
@@ -104,13 +96,13 @@ namespace act.Presenters
             model.FlowChartPath = this.view.FlowChartPath;
             model.useCaseId = this.view.UseCaseId;
 
-            
+
             try
             {
                 new Common.ModelDataValidation().Validate(model);
 
                 //Validamos que el flujo base no use un caso de uso que ya cuente con otro flujo base
-                if(!repository.Check(model.Id, model.useCaseId))
+                if (!repository.Check(model.Id, model.useCaseId))
                 {
                     //Si elejimos "Ninguno" en la pantalla se guardará como 0
                     if (model.useCaseId == 0)
@@ -186,7 +178,7 @@ namespace act.Presenters
             var baseFlow = (BaseFlowModel)bFlowsBindingSource.Current;
             view.Id = baseFlow.Id.ToString();
             view.Name = baseFlow.Name;
-            view.Key = baseFlow.Key.Remove(0,3);
+            view.Key = baseFlow.Key.Remove(0, 3);
             view.FlowChartPath = baseFlow.FlowChartPath;
             view.UseCaseId = baseFlow.useCaseId;
             useCaseList = repository.GetAllUseCases(baseFlow.useCaseId);

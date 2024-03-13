@@ -18,6 +18,8 @@ namespace act.Forms.Side_bar
             btnObjects.Click += delegate { ShowObjectView?.Invoke(this, EventArgs.Empty); };
             btnScreens.Click += delegate { ShowScreenView?.Invoke(this, EventArgs.Empty); };
             btnBaseFlows.Click += delegate { ShowBaseFlowsView?.Invoke(this, EventArgs.Empty); };
+            btnAlternateFlows.Click += delegate { ShowAlternativeFlowsView?.Invoke(this, EventArgs.Empty); };
+
         }
 
         public event EventHandler ShowRelationElementsView;
@@ -30,6 +32,7 @@ namespace act.Forms.Side_bar
         public event EventHandler ShowObjectView;
         public event EventHandler ShowScreenView;
         public event EventHandler ShowBaseFlowsView;
+        public event EventHandler ShowAlternativeFlowsView;
 
         private void CloseAll()
         {
@@ -96,6 +99,11 @@ namespace act.Forms.Side_bar
         }
 
         private void btnBaseFlows_Click(object sender, EventArgs e)
+        {
+            CloseAll();
+        }
+
+        private void btnAlternateFlows_Click(object sender, EventArgs e)
         {
             CloseAll();
         }

@@ -16,6 +16,8 @@ using act.Forms.Screens.Index;
 using act.Models.Screens;
 using act.Forms.BaseFlows.Index;
 using act.Models.BaseFlows;
+using act.Forms.AlternativeFlows.Index;
+using act.Models.AlternativeFlows;
 
 namespace act.Presenters
 {
@@ -49,6 +51,8 @@ namespace act.Presenters
             this.mainView.ShowScreenView += ShowScreenView;
 
             this.mainView.ShowBaseFlowsView += ShowBFlowView;
+
+            this.mainView.ShowAlternativeFlowsView += ShowAFlowView;
 
             this.mainView.Show();
             this.projectId = projectId;
@@ -122,6 +126,13 @@ namespace act.Presenters
             IBaseFlowRepository repository = new BaseFlowRepository(sqlConnectionString, projectId);
             new BaseFlowPresenter(view, repository, sqlConnectionString, projectId, mainView);
 
+        }
+
+        private void ShowAFlowView(object sender, EventArgs e)
+        {
+            IAlternativeFlowView view = AlternativeFlow.GetInstance((Form)mainView);
+            IAlternativeFlowRepository repository = new AlternativeFlowRepository(sqlConnectionString, projectId);
+            new AlternativeFlowPresenter(view, repository, sqlConnectionString, projectId, mainView);
         }
     }
 }

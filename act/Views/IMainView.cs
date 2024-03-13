@@ -12,6 +12,7 @@
         event EventHandler ShowObjectView;
         event EventHandler ShowScreenView;
         event EventHandler ShowBaseFlowsView;
+        event EventHandler ShowAlternativeFlowsView;
         void Show();
     }
 }
