@@ -11,7 +11,7 @@ namespace act.Models.BaseAlternativeFlows
 {
     internal interface IBaseAlternativeRepository
     {
-        void Add(BaseAlternativeModel bFlowModel);
+        void Add(BaseAlternativeModel baFlowModel);
         void Delete(int id);
 
         //Listados

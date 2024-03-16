@@ -184,17 +184,19 @@ namespace act._Repositories
                 if (useCaseId == null)
                 {
                     //Seleccionamos los casos de uso en los que no están incluido en los flujos base donde el id del caso de uso no es nulo
-                    command.CommandText = "Select id,name from UseCases where id NOT IN " +
+                    command.CommandText = "Select id,name from UseCases where ProjectId = @projectId and id NOT IN " +
                     "(select UseCaseId from Baseflows where not useCaseId IS NULL)";
                 }
                 //Si el flujo base seleccionado para editar tiene un caso de uso no nulo se usará el siguiente comando
                 else
                 {
-                    command.CommandText = "Select id,name from UseCases where id NOT IN " +
+                    command.CommandText = "Select id,name from UseCases where ProjectId = @projectId and id NOT IN " +
                     "(select useCaseId from BaseFlows where useCaseId!=@useCaseId and useCaseId NOT IN (select useCaseId from Baseflows where useCaseId != null))";
 
                     command.Parameters.Add("@useCaseId", SqlDbType.Int).Value = useCaseId;
                 }
+
+                command.Parameters.Add("@projectId", SqlDbType.Int).Value = projectId;
 
                 using (var reader = command.ExecuteReader())
                 {

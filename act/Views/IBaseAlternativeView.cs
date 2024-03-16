@@ -9,7 +9,7 @@ namespace act.Views
     internal interface IBaseAlternativeView
     {
         string Id { get; set; }
-        int BaseFlowId { get; set; }
+        string BaseFlowId { get; set; }
         int AlternativeFlowId { get; set; }
 
         string SearchValue { get; set; }

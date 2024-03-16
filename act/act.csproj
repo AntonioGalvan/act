@@ -30,6 +30,9 @@
     <Compile Update="Forms\AlternativeFlows\Index\AlternativeFlow.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\BaseAlternativeFlows\Index\BaseAlternativeFlow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Object\Objects\Index\ObjectView.cs">
       <SubType>Form</SubType>
     </Compile>
