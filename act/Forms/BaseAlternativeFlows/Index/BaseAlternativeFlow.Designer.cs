@@ -64,10 +64,9 @@
             // lblUseCases
             // 
             lblUseCases.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUseCases.Location = new Point(3, 11);
-            lblUseCases.Margin = new Padding(5, 0, 5, 0);
+            lblUseCases.Location = new Point(2, 7);
             lblUseCases.Name = "lblUseCases";
-            lblUseCases.Size = new Size(817, 102);
+            lblUseCases.Size = new Size(503, 64);
             lblUseCases.TabIndex = 23;
             lblUseCases.Text = "Flujos alternos vinculados";
             lblUseCases.TextAlign = ContentAlignment.MiddleLeft;
@@ -78,12 +77,12 @@
             tbcBaseAlternativeFlows.Controls.Add(tbpAdd);
             tbcBaseAlternativeFlows.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbcBaseAlternativeFlows.ItemSize = new Size(66, 26);
-            tbcBaseAlternativeFlows.Location = new Point(3, 117);
-            tbcBaseAlternativeFlows.Margin = new Padding(8, 8, 8, 8);
+            tbcBaseAlternativeFlows.Location = new Point(2, 73);
+            tbcBaseAlternativeFlows.Margin = new Padding(5, 5, 5, 5);
             tbcBaseAlternativeFlows.Multiline = true;
             tbcBaseAlternativeFlows.Name = "tbcBaseAlternativeFlows";
             tbcBaseAlternativeFlows.SelectedIndex = 0;
-            tbcBaseAlternativeFlows.Size = new Size(1724, 1237);
+            tbcBaseAlternativeFlows.Size = new Size(1061, 773);
             tbcBaseAlternativeFlows.SizeMode = TabSizeMode.FillToRight;
             tbcBaseAlternativeFlows.TabIndex = 24;
             // 
@@ -97,11 +96,10 @@
             tbpList.Controls.Add(btnSearch);
             tbpList.Controls.Add(dgvBaseAlternativeFlows);
             tbpList.Controls.Add(btnAdd);
-            tbpList.Location = new Point(8, 34);
-            tbpList.Margin = new Padding(5, 5, 5, 5);
+            tbpList.Location = new Point(4, 30);
             tbpList.Name = "tbpList";
-            tbpList.Padding = new Padding(5, 5, 5, 5);
-            tbpList.Size = new Size(1708, 1195);
+            tbpList.Padding = new Padding(3, 3, 3, 3);
+            tbpList.Size = new Size(1053, 739);
             tbpList.TabIndex = 0;
             tbpList.Text = "Listado";
             // 
@@ -113,10 +111,9 @@
             btnAlternatingFlow.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAlternatingFlow.ForeColor = SystemColors.Control;
             btnAlternatingFlow.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAlternatingFlow.Location = new Point(1095, 1019);
-            btnAlternatingFlow.Margin = new Padding(5, 5, 5, 5);
+            btnAlternatingFlow.Location = new Point(674, 637);
             btnAlternatingFlow.Name = "btnAlternatingFlow";
-            btnAlternatingFlow.Size = new Size(231, 53);
+            btnAlternatingFlow.Size = new Size(142, 33);
             btnAlternatingFlow.TabIndex = 16;
             btnAlternatingFlow.Text = "Flujos Alternos";
             btnAlternatingFlow.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -126,22 +123,20 @@
             // 
             panel1.BackColor = Color.Gainsboro;
             panel1.Controls.Add(tbxSearch);
-            panel1.Location = new Point(26, 30);
-            panel1.Margin = new Padding(5, 5, 5, 5);
+            panel1.Location = new Point(16, 19);
             panel1.Name = "panel1";
-            panel1.Size = new Size(406, 50);
+            panel1.Size = new Size(250, 31);
             panel1.TabIndex = 15;
             // 
             // tbxSearch
             // 
             tbxSearch.BackColor = Color.Gainsboro;
             tbxSearch.BorderStyle = BorderStyle.None;
-            tbxSearch.Location = new Point(18, 5);
-            tbxSearch.Margin = new Padding(5, 5, 5, 5);
+            tbxSearch.Location = new Point(11, 3);
             tbxSearch.Multiline = true;
             tbxSearch.Name = "tbxSearch";
             tbxSearch.PlaceholderText = "Clave o nombre";
-            tbxSearch.Size = new Size(369, 40);
+            tbxSearch.Size = new Size(227, 25);
             tbxSearch.TabIndex = 7;
             // 
             // btnDelete
@@ -153,10 +148,9 @@
             btnDelete.ForeColor = SystemColors.Control;
             btnDelete.Image = Properties.Resources.delete;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDelete.Location = new Point(1518, 1019);
-            btnDelete.Margin = new Padding(5, 5, 5, 5);
+            btnDelete.Location = new Point(934, 637);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(171, 53);
+            btnDelete.Size = new Size(105, 33);
             btnDelete.TabIndex = 14;
             btnDelete.Text = "Eliminar";
             btnDelete.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -171,10 +165,9 @@
             btnEdit.ForeColor = SystemColors.Control;
             btnEdit.Image = Properties.Resources.edit;
             btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEdit.Location = new Point(1337, 1019);
-            btnEdit.Margin = new Padding(5, 5, 5, 5);
+            btnEdit.Location = new Point(823, 637);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(171, 53);
+            btnEdit.Size = new Size(105, 33);
             btnEdit.TabIndex = 13;
             btnEdit.Text = "Editar";
             btnEdit.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -189,10 +182,9 @@
             btnSearch.ForeColor = SystemColors.Control;
             btnSearch.Image = Properties.Resources.search;
             btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSearch.Location = new Point(442, 27);
-            btnSearch.Margin = new Padding(5, 5, 5, 5);
+            btnSearch.Location = new Point(272, 17);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(171, 53);
+            btnSearch.Size = new Size(105, 33);
             btnSearch.TabIndex = 12;
             btnSearch.Text = "Buscar";
             btnSearch.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -234,8 +226,7 @@
             dgvBaseAlternativeFlows.DefaultCellStyle = dataGridViewCellStyle7;
             dgvBaseAlternativeFlows.EnableHeadersVisualStyles = false;
             dgvBaseAlternativeFlows.GridColor = Color.White;
-            dgvBaseAlternativeFlows.Location = new Point(26, 104);
-            dgvBaseAlternativeFlows.Margin = new Padding(5, 5, 5, 5);
+            dgvBaseAlternativeFlows.Location = new Point(16, 65);
             dgvBaseAlternativeFlows.MultiSelect = false;
             dgvBaseAlternativeFlows.Name = "dgvBaseAlternativeFlows";
             dgvBaseAlternativeFlows.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -252,7 +243,7 @@
             dgvBaseAlternativeFlows.RowTemplate.Height = 40;
             dgvBaseAlternativeFlows.RowTemplate.ReadOnly = true;
             dgvBaseAlternativeFlows.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvBaseAlternativeFlows.Size = new Size(1662, 974);
+            dgvBaseAlternativeFlows.Size = new Size(1023, 609);
             dgvBaseAlternativeFlows.TabIndex = 10;
             // 
             // btnAdd
@@ -263,10 +254,9 @@
             btnAdd.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = SystemColors.Control;
             btnAdd.Image = Properties.Resources.add;
-            btnAdd.Location = new Point(1518, 30);
-            btnAdd.Margin = new Padding(5, 5, 5, 5);
+            btnAdd.Location = new Point(934, 19);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(171, 53);
+            btnAdd.Size = new Size(105, 33);
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Agregar";
             btnAdd.TextAlign = ContentAlignment.MiddleLeft;
@@ -281,11 +271,10 @@
             tbpAdd.Controls.Add(btnSave);
             tbpAdd.Controls.Add(tbxId);
             tbpAdd.Controls.Add(lblId);
-            tbpAdd.Location = new Point(8, 34);
-            tbpAdd.Margin = new Padding(5, 5, 5, 5);
+            tbpAdd.Location = new Point(4, 30);
             tbpAdd.Name = "tbpAdd";
-            tbpAdd.Padding = new Padding(5, 5, 5, 5);
-            tbpAdd.Size = new Size(1708, 1195);
+            tbpAdd.Padding = new Padding(3, 3, 3, 3);
+            tbpAdd.Size = new Size(1053, 739);
             tbpAdd.TabIndex = 1;
             tbpAdd.Text = "Agregar";
             // 
@@ -294,29 +283,26 @@
             panel5.BackColor = SystemColors.Control;
             panel5.Controls.Add(cmbAlternativeFlow);
             panel5.Controls.Add(label1);
-            panel5.Location = new Point(26, 26);
-            panel5.Margin = new Padding(5, 5, 5, 5);
+            panel5.Location = new Point(16, 16);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1662, 398);
+            panel5.Size = new Size(1023, 249);
             panel5.TabIndex = 22;
             // 
             // cmbAlternativeFlow
             // 
             cmbAlternativeFlow.BackColor = Color.Gainsboro;
             cmbAlternativeFlow.FormattingEnabled = true;
-            cmbAlternativeFlow.Location = new Point(30, 76);
-            cmbAlternativeFlow.Margin = new Padding(5, 5, 5, 5);
+            cmbAlternativeFlow.Location = new Point(18, 48);
             cmbAlternativeFlow.Name = "cmbAlternativeFlow";
-            cmbAlternativeFlow.Size = new Size(441, 41);
+            cmbAlternativeFlow.Size = new Size(273, 29);
             cmbAlternativeFlow.TabIndex = 23;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(30, 28);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(18, 18);
             label1.Name = "label1";
-            label1.Size = new Size(169, 33);
+            label1.Size = new Size(106, 21);
             label1.TabIndex = 22;
             label1.Text = "Flujo Alterno";
             // 
@@ -329,10 +315,9 @@
             btnCancel.ForeColor = SystemColors.Control;
             btnCancel.Image = Properties.Resources.cancelar;
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancel.Location = new Point(1518, 1019);
-            btnCancel.Margin = new Padding(5, 5, 5, 5);
+            btnCancel.Location = new Point(934, 637);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(171, 53);
+            btnCancel.Size = new Size(105, 33);
             btnCancel.TabIndex = 18;
             btnCancel.Text = "Cancelar";
             btnCancel.TextAlign = ContentAlignment.MiddleLeft;
@@ -347,10 +332,9 @@
             btnSave.Font = new Font("Montserrat Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = SystemColors.Control;
             btnSave.Image = Properties.Resources.save;
-            btnSave.Location = new Point(1337, 1019);
-            btnSave.Margin = new Padding(5, 5, 5, 5);
+            btnSave.Location = new Point(823, 637);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(171, 53);
+            btnSave.Size = new Size(105, 33);
             btnSave.TabIndex = 17;
             btnSave.Text = "Guardar";
             btnSave.TextAlign = ContentAlignment.MiddleLeft;
@@ -359,20 +343,18 @@
             // 
             // tbxId
             // 
-            tbxId.Location = new Point(1485, 478);
-            tbxId.Margin = new Padding(5, 5, 5, 5);
+            tbxId.Location = new Point(914, 299);
             tbxId.Name = "tbxId";
-            tbxId.Size = new Size(201, 37);
+            tbxId.Size = new Size(125, 26);
             tbxId.TabIndex = 11;
             tbxId.Visible = false;
             // 
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(1648, 440);
-            lblId.Margin = new Padding(5, 0, 5, 0);
+            lblId.Location = new Point(1014, 275);
             lblId.Name = "lblId";
-            lblId.Size = new Size(38, 33);
+            lblId.Size = new Size(25, 21);
             lblId.TabIndex = 10;
             lblId.Text = "Id";
             lblId.Visible = false;
@@ -381,24 +363,22 @@
             // 
             btnOut.Cursor = Cursors.Hand;
             btnOut.Image = Properties.Resources.close;
-            btnOut.Location = new Point(1648, 37);
-            btnOut.Margin = new Padding(5, 5, 5, 5);
+            btnOut.Location = new Point(1014, 23);
             btnOut.Name = "btnOut";
-            btnOut.Size = new Size(50, 45);
+            btnOut.Size = new Size(31, 28);
             btnOut.SizeMode = PictureBoxSizeMode.Zoom;
             btnOut.TabIndex = 25;
             btnOut.TabStop = false;
             // 
             // BaseAlternativeFlow
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1729, 1280);
+            ClientSize = new Size(1064, 689);
             Controls.Add(lblUseCases);
             Controls.Add(tbcBaseAlternativeFlows);
             Controls.Add(btnOut);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(5, 5, 5, 5);
             Name = "BaseAlternativeFlow";
             Text = "BaseFlow";
             Load += BaseFlow_Load;

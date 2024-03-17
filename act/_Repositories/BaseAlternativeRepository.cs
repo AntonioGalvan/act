@@ -34,7 +34,7 @@ namespace act._Repositories
                 command.Connection = connection;
 
                 command.CommandText = "Insert into BaseAlternativeFlows(ProjectId, BaseFlowId, AlternativeFlowId) values (@projectId, @baseFlowId, @alternativeFlowId)";
-                command.Parameters.Add("@baseFlowId", SqlDbType.Int).Value = baFlowModel.BaseFlowId;
+                command.Parameters.Add("@baseFlowId", SqlDbType.Int).Value = this.bFlowId;
                 command.Parameters.Add("@alternativeFlowId", SqlDbType.NVarChar).Value = baFlowModel.AlternativeFlowId;
 
 

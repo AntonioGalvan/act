@@ -82,7 +82,6 @@ namespace act.Presenters
             //Guardamos en un objeto de tipo flujo base la información de los campos en la vista
             var model = new BaseAlternativeModel();
 
-            model.BaseFlowId = Convert.ToInt32(this.view.BaseFlowId);
             model.AlternativeFlowId = this.view.AlternativeFlowId;
 
 

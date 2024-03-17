@@ -97,11 +97,6 @@ namespace act.Forms.BaseAlternativeFlows.Index
             set { tbxId.Text = value; }
         }
 
-        public string BaseFlowId
-        {
-            get { return tbxId.Text; }
-            set { tbxId.Text = value; }
-        }
 
         public int AlternativeFlowId
         {
@@ -195,6 +190,6 @@ namespace act.Forms.BaseAlternativeFlows.Index
             dgvBaseAlternativeFlows.Columns["ProjectId"].Visible = false;
         }
 
-        
+
     }
 }
