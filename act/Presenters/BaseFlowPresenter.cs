@@ -1,4 +1,8 @@
-﻿using act.Models.BaseFlows;
+﻿using act._Repositories;
+using act.Forms.BaseAlternativeFlows.Index;
+using act.Forms.BaseFlows.Index;
+using act.Models.BaseAlternativeFlows;
+using act.Models.BaseFlows;
 using act.Models.UseCases;
 using act.Views;
 
@@ -36,6 +40,7 @@ namespace act.Presenters
             this.view.DeleteEvent += DeleteSelectedBaseFlow;
             this.view.SaveEvent += SaveBaseFlow;
             this.view.CancelEvent += CancelAction;
+            this.view.OpenbaFlowEvent += OpenBAFlow;
 
             //Asginamos a la vista los binding sources
             this.view.SetProjectListBindingSource(bFlowsBindingSource);
@@ -193,6 +198,17 @@ namespace act.Presenters
             useCaseList = repository.GetAllUseCases(0);
             useCaseBindingSource.DataSource = useCaseList;
             view.IsEdit = false;
+        }
+
+        private void OpenBAFlow(object? sender, EventArgs e)
+        {
+            var bFlow = (BaseFlowModel)bFlowsBindingSource.Current;
+            var bFlowId = bFlow.Id;
+
+            IBaseAlternativeView view = BaseAlternativeFlow.GetInstance((Form)mainView);
+            IBaseAlternativeRepository repository = new BaseAlternativeRepository(sqlConnectionString, projectId, bFlowId);
+            new BaseAlternativePresenter(view, repository, sqlConnectionString, projectId, mainView);
+
         }
     }
 }

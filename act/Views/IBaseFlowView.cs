@@ -28,6 +28,7 @@ namespace act.Views
         event EventHandler DeleteEvent;
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
+        event EventHandler OpenbaFlowEvent;
 
         void SetProjectListBindingSource(BindingSource roleList);
 

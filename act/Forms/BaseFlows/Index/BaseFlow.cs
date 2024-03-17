@@ -54,7 +54,7 @@ namespace act.Forms.BaseFlows.Index
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 tbcBaseFlows.TabPages.Remove(tbpList);
                 tbcBaseFlows.TabPages.Add(tbpAdd);
-                if(idUseCase != null)
+                if (idUseCase != null)
                     cmbUseCases.SelectedValue = idUseCase;
                 tbpAdd.Text = "Editar";
             };
@@ -99,7 +99,7 @@ namespace act.Forms.BaseFlows.Index
             btnAlternatingFlow.Click += delegate
             {
                 this.Close();
-                //OpenbFlowEvent?.Invoke(this, EventArgs.Empty);
+                OpenbaFlowEvent?.Invoke(this, EventArgs.Empty);
             };
         }
 
@@ -182,6 +182,7 @@ namespace act.Forms.BaseFlows.Index
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler OpenbaFlowEvent;
 
         //Asociamos al grid de datos la lista de flujos base
         public void SetProjectListBindingSource(BindingSource baseFlowsList)
